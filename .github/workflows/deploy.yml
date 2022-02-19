@@ -25,5 +25,4 @@ jobs:
           username: ${{ secrets.ftp_user }}
           password: ${{ secrets.ftp_password }}
           local-dir: ./src/
-          server-dir: ./deployment-test/
-          dry-run: true
+          server-dir: ./
