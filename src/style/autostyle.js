@@ -97,4 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     bar.appendChild(buttons);
   }
+  if (window.location.host === "mew151.neocities.org") {
+    const style = document.createElement("style");
+    style.innerHTML = ".only-neocities {display: block !important;}";
+    document.head.appendChild(style);
+  }
 });

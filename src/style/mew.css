@@ -276,6 +276,9 @@ dl {
 .only-mobile {
   display: none;
 }
+.only-neocities {
+  display: none;
+}
 @media only screen and (max-width: 900px) {
   .window-bar {display: none;}
   .main-window {

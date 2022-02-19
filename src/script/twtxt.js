@@ -68,7 +68,7 @@ function buildTweets(text) {
 }
 
 function fetchBlog() {
-  fetch("/twtxt.txt").then((response) => {
+  fetch("https://mew151.net/twtxt.txt").then((response) => {
     response.text().then((text) => {
       makeBlog(buildTweets(text));
     });

@@ -11,11 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-      - name: Install utilities
+      - name: ⚙️ Install utilities
         run: npm install
 
-      - name: Build feed
+      - name: 📰 Build feed
         run: npm run rss
 
       - name: 📂 Sync files
@@ -26,3 +28,10 @@ jobs:
           password: ${{ secrets.ftp_password }}
           local-dir: ./src/
           server-dir: ./
+
+      - name: 🐱🛠️🪞 Deploy to Neocities Mirror
+        uses: bcomnes/deploy-to-neocities@v1.1.4
+        with:
+          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+          cleanup: false
+          dist_dir: src
