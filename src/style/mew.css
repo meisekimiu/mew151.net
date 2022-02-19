@@ -1,0 +1,312 @@
+@font-face {
+  font-family: "W95FA";
+  src: url('fontz/w95fa.woff');
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: #007c78;
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
+  background-size: 100vw 100vh;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.window {
+  color: #000;
+  background: #b8bcb8;
+  border: 2px solid #e9ede9;
+  padding: 1px;
+}
+
+.window-bar {
+  height: 20px;
+  padding: 1px 3px;
+  background: #000078;
+  color: #fff;
+  font-family: "W95FA", "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-smooth: never;
+  font-weight: bold;
+  position: relative;
+}
+
+.window-buttons {
+  height: 20px;
+  position: absolute;
+  right: 3px;
+  top: 1px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.window-buttons > div {
+  height: 11px;
+  width: 12px;
+  padding: 1px;
+  margin: 1px;
+  background-color: #cecece;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-width: 1px;
+  border-style: solid;
+  border-left-color: #dedede;
+  border-top-color: #dedede;
+  border-right-color: #8c8c8c;
+  border-bottom-color: #8c8c8c;
+}
+
+.button-close {
+  background-image: url('windows_close.png');
+}
+
+.button-maximize {
+  background-image: url('windows_max.png');
+}
+
+.button-minimize {
+  background-image: url('windows_min.png');
+}
+
+.window-content {
+  padding: 3px 1px;
+  overflow: auto;
+  max-height: 90vh;
+}
+
+.navigation-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navigation-group > * {
+  margin: 0.6em;
+  padding: 3px;
+  width: 90px;
+}
+
+.navigation-group a {
+  text-decoration: none;
+}
+
+.navigation-group a:active {
+  background-color: #009;
+}
+
+.navigation-group a:active span {
+  color: #fff;
+}
+
+.navigation-group .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navigation-group .icon img {
+  flex-grow: 0;
+  max-width: 32px;
+  max-height: 32px;
+}
+
+.navigation-group .icon span {
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  max-width: 90px;
+}
+
+.explorer {
+  background: #fff;
+  font-size: 15px;
+  font-family: "W95FA", serif;
+}
+
+.nav-window {
+  width: 30%;
+  position: absolute;
+  left: 32px;
+  top: 32px;
+}
+
+.main-window {
+  left: 35%;
+  top: 16px;
+  position: absolute;
+  width: 60%;
+  height: 95vh;
+}
+
+.main-window .window-content {
+  margin: 0;
+}
+
+main {
+  padding: 3px 1.5em;
+  min-height: 95vh;
+  font-size: 1.5rem;
+}
+
+.navigation-header {
+  padding: 2px;
+  font-size: 1.5em;
+  font-weight: bold;
+  font-family: "Arial", sans-serif;
+}
+
+.navigation-header hr {
+  width: 50%;
+  margin: 0;
+}
+
+p, h1 {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+hr {
+  border-color: #000;
+  color: #000;
+  width: 60%;
+}
+
+.zone8831 {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  margin: 1em auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.zone8831 > * {
+  padding: 6px;
+}
+
+.classic-about {
+  background: #000 !important;
+  color: white !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 1em !important;
+}
+.classic-about p:first-letter {
+  color: #ff0000;
+  font-size:xx-large;
+}
+.classic-about a:link {color: white; font-family: arial;}
+.classic-about a:visited {color: white; font-family: arial;}
+.classic-about a:hover {color: white; font-family: arial;}
+.classic-about a:active {color: white; font-family: arial;}
+.classic-about hr {padding: 3px; border-bottom: 2px double #ffffff; margin 10px;}
+.classic-about .container h2 {
+  float: left;
+  background-color: #aaaaaa;
+}
+.classic-about .container {
+  /* align: center; <- This rule never worked lol */
+  padding: 10px;
+  border: 2px dotted white;
+  margin: 2px;
+}
+
+main a {
+  transition: color 0.3s, text-decoration-color 0.3s;
+}
+main a:link {
+  color: #fac;
+  text-decoration: underline;
+}
+main a:visited {
+  color: #caf;
+  text-decoration: underline;
+}
+main a:hover {
+  color: #fac;
+  text-decoration-color: #fdd0;
+}
+main a:active {
+  color: #fff;
+  text-decoration: none;
+}
+main.light a:link {
+  color: #8535d6;
+}
+main.light a:visited {
+  color: #975b84;
+}
+main.light a:hover {
+  color: #ac76e3;
+}
+main.light a:active {
+  color: #000;
+}
+u[title] {
+  text-decoration-style: dashed;
+  text-decoration-color: #fff6;
+  cursor: help;
+}
+span[title] {
+  cursor: help;
+  border-bottom: 1px dashed #fff0;
+  transition: border-bottom-color 0.3s;
+}
+span[title]:hover {
+  border-bottom-color: #fff6;
+}
+dl {
+  padding: 0 1em;
+}
+
+.feed-date {
+  font-weight: bold;
+}
+
+.only-desktop {
+  display: block;
+}
+.only-mobile {
+  display: none;
+}
+@media only screen and (max-width: 900px) {
+  .window-bar {display: none;}
+  .main-window {
+    width: 100%;
+    height: 100%;
+  }
+  .nav-window {
+    width: 100%;
+  }
+  .navigation-header ~ .navigation-header {
+    display: none;
+  }
+  .navigation-group ~ .navigation-group {
+    display: none;
+  }
+  .nav-window .window-bar {
+    display: block;
+  }
+  .window {
+    border: none;
+    padding: 0;
+    position: static;
+  }
+  .window-content {
+    padding: 0;
+    overflow: visible;
+  }
+  .only-mobile {
+    display: block;
+  }
+  .only-desktop {
+    display: none;
+  }
+}

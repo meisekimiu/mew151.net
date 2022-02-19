@@ -1,0 +1,14 @@
+{
+  "name": "mew151.net",
+  "version": "1.0.0",
+  "description": "Source for static side of mew151.net",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "rss": "feedmake -o src/rss.xml ."
+  },
+  "author": "Natalie Martin",
+  "dependencies": {
+    "feedmake": "github:meisekimiu/feedmake"
+  }
+}
