@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>Perfect Pop Star Academy</title>
+    <link>https://blog.mew151.net</link>
+    <description>Blog for Mew151.net</description>
+    <language>en-us</language>
+    <copyright>2009-2022 Natalie Martin</copyright>
+    <webMaster>webmaster@mew151.net</webMaster>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <ttl>180</ttl>
+    <pubDate>Sat, 19 Feb 2022 17:13:36 -0700</pubDate>
+    <item>
+      <title>Musings on My Website Launch</title>
+      <pubDate>Sat, 19 Feb 2022 17:13:36 -0700</pubDate>
+      <link>https://blog.mew151.net/entries/website-launch.html</link>
+      <guid isPermaLink="true">https://blog.mew151.net/entries/website-launch.html</guid>
+      <description>(Or, More Accurately, "Mewsings")</description>
+    </item>
+    <item>
+    <title>W3Schools Then and Now: How Have JavaScript Tutorials Changed?</title>
+    <pubDate>Fri, 06 Nov 2020 09:31:19 -0700</pubDate>
+    <link>https://blog.mew151.net/entries/w3schools-retrospective.html</link>
+    <guid isPermaLink="true">https://blog.mew151.net/entries/w3schools-retrospective.html</guid>
+    <description>JavaScript as a language has changed a LOT in the last few years. How has that affected the way we learn JavaScript?</description>
+    </item>
+    <item>
+    <title>Album Review: The Residents' Metal Meat and Bone</title>
+    <pubDate>Fri, 10 Jul 2020 14:30:56 -0700</pubDate>
+    <link>https://blog.mew151.net/entries/dyingdog-review.html</link>
+    <guid isPermaLink="true">https://blog.mew151.net/entries/dyingdog-review.html</guid>
+    <description>Warning: I break suspension of disbelief in this review. Watch out for that!</description>
+    </item>
+    <item>
+    <title>The Residents' Gingerbread Man and Keyboard Input Weirdness</title>
+    <pubDate>Tue, 26 May 2020 16:42:35 -0700</pubDate>
+    <link>https://blog.mew151.net/entries/gingerbread-man-input.html</link>
+    <guid isPermaLink="true">https://blog.mew151.net/entries/gingerbread-man-input.html</guid>
+    <description>In the README file packed in with The Residents' interactive Gingerbread Man CD-ROM software, it warns you not to turn on the Caps Lock key while playing. I ask: why not?</description>
+    </item>
+    <item>
+    <title>Looking Back at the My Little Pony Game I Made in High School</title>
+    <pubDate>Sun, 05 May 2019 16:42:49 -0700</pubDate>
+    <link>https://blog.mew151.net/entries/mlp-wedding-day-disaster.html</link>
+    <guid isPermaLink="true">https://blog.mew151.net/entries/mlp-wedding-day-disaster.html</guid>
+    <description>I look into one of the most ambitious personal programming projects I have ever worked on: A My Little Pony Game that I made in high school (it was a different time, okay?!)</description>
+    </item>
+    <item>
+    <title>Autogenerating Idol Desktop Backgrounds</title>
+    <pubDate>Tue, 19 Dec 2017 08:23:45 -0700</pubDate>
+    <link>https://blog.mew151.net/entries/autogenerating-idol-bgs.html</link>
+    <guid isPermaLink="true">https://blog.mew151.net/entries/autogenerating-idol-bgs.html</guid>
+    <description>Using idol data and some magick, we can generate some cool minimalist backgrounds on Linux.</description>
+    </item>
+    <item>
+    <title>Game Feature: Joshikousei no Houkago... Pukunpa</title>
+    <pubDate>Wed, 02 Aug 2017 18:59:46 -0700</pubDate>
+    <link>https://blog.mew151.net/entries/pukunpa.html</link>
+    <guid isPermaLink="true">https://blog.mew151.net/entries/pukunpa.html</guid>
+    <description>This forgotten Puyo Puyo ripoff could have been even more forgettable.</description>
+    </item>
+    <item>
+    <title>Live Report: The iDOLM@STER Million Live! 4th Live: TH@NK YOU for SMILE! Day 3</title>
+    <pubDate>Sun, 19 Mar 2017 18:00:54 -0700</pubDate>
+    <link>https://blog.mew151.net/entries/ml4th.html</link>
+    <guid isPermaLink="true">https://blog.mew151.net/entries/ml4th.html</guid>
+    <description>The feels...</description>
+    </item>
+    <item>
+    <title>Album Review: The Residents’ "Ghost of Hope"</title>
+    <pubDate>Mon, 13 Jul 2017 19:55:00 -0700</pubDate>
+    <link>https://blog.mew151.net/entries/ghostofhope.html</link>
+    <guid isPermaLink="true">https://blog.mew151.net/entries/ghostofhope.html</guid>
+    <description>"The chicken crosses the road so that it might attain the other side." - The Residents, 1971</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+# About Links
+RewriteRule ^post/2017/1/31/about-this-blog$ https://blog.mew151.net/about.html [R=301,NC,L]
+RewriteRule ^about$ https://blog.mew151.net/about.html [R=301,NC,L]
+
+# Main Blog Pages
+RewriteRule ^post/2017/3/13/ghost-of-hope-review https://blog.mew151.net/entries/ghostofhope.html [R=301,NC,L]
+RewriteRule ^post/2017/3/19/million-4th-day-3-report https://blog.mew151.net/entries/ml4th.html [R=301,NC,L]
+RewriteRule ^post/2017/8/2/pukunpa https://blog.mew151.net/entries/pukunpa.html [R=301,NC,L]
+RewriteRule ^post/2017/12/19/autogenerating-idol-desktop-backgrounds https://blog.mew151.net/entries/autogenerating-idol-bgs.html [R=301,NC,L]
+RewriteRule ^post/2017/12/19/autogenerating-idol-desktop-backgrounds https://blog.mew151.net/entries/autogenerating-idol-bgs.html [R=301,NC,L]
+RewriteRule ^post/2019/5/5/looking-back-at-the-my-little-pony-game-i-made-in-high-school https://blog.mew151.net/entries/mlp-wedding-day-disaster.html [R=301,NC,L]
+RewriteRule ^post/2020/5/26/gbm-input-handling https://blog.mew151.net/entries/gingerbread-man-input.html [R=301,NC,L]
+RewriteRule ^post/2020/7/10/metal-meat-and-bone-review https://blog.mew151.net/entries/dyingdog-review.html [R=301,NC,L]
+RewriteRule ^post/2020/11/6/w3schools-retrospective https://blog.mew151.net/entries/w3schools-retrospective.html [R=301,NC,L]
+
+
+# Deleted posts:
+RewriteRule ^post/2017/1/31/shipping-side-projects$ https://blog.mew151.net/entries/deleted.html [R=301,NC,L]
+RewriteRule ^post/2017/7/22/whats-the-deal-with-recording-concerts https://blog.mew151.net/entries/deleted.html [R=301,NC,L]

@@ -9,6 +9,8 @@ function setBackground(hour) {
     '1/21', // takane day
     '1/26', // website birthday
     '2/5', // dorothy + leona day
+    '2/18',  // website relaunch birthday
+    '2/19', // legacy saturday
     '2/29', // leap day
     '3/3', // hinamatsuri
     '3/17', // st. patrick's day
@@ -45,7 +47,7 @@ function setBackground(hour) {
     '12/26', // boxing day
     '12/31', // new yearz eve
   ];
-  if (specialDates.includes(code) || date.getDay() === 6) {
+  if (specialDates.includes(code)) {
     const offset = date.getYear() + specialDates.indexOf(code) + date.getDate();
     const backgrounds = [
       '/style/backgrounds/checker.png',

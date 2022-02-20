@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Looking Back at the My Little Pony Game I Made in High School - Perfect Pop Star Academy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Natalie Martin" />
+  <meta name="description" content="Natalie's Blog" />
+  <meta name="theme-color" content="#d66682" />
+  <link rel="stylesheet" type="text/css" href="../style/popstar.css" />
+  <script type="text/javascript">
+  window.baseUrl = "..";
+  </script>
+  <script type="text/javascript" src="../script/background.js"></script>
+</head>
+<body>
+  <header id="header">
+    <div id="logo-cover" class="logo-cover"></div>
+    <a class="logo" href="../index.html">
+      <h1><img src="../img/logo.gif" alt="Perfect Pop Star Academy" /></h1>
+    </a>
+  </header>
+  <nav>
+    <div>
+      <a href="../index.html">Home</a>
+      ・
+      <a href="../about.html">About</a>
+      ・
+      <a href="https://mew151.net">Back to Main Site</a>
+    </div>
+  </nav>
+  <main class="index">
+    <article>
+      <h2>Looking Back at the My Little Pony Game I Made in High School</h2>
+      <time datetime="2019-05-05 16:42-07:00">Posted 2019年5月5日</time>
+      <div style="text-align: center"><img src="img/mlpwdd/mlp_cover.png" title="Why the unsigned long int face?" alt="Horse" /></div>
+
+<h3>The Backstory</h3>
+
+<p>I have a confession to make... I was once a "brony". I was a sophomore in high school when the My Little Pony fad was at its peak. Being a teenager who already found nostalgic charm in watching shows aimed towards little kids, I got sucked into the whole brony thing and after marathoning the entire series until I was ready for the Season 2 premiere, I began the well-known brony habit of making <em>everything</em> I did about those talking cartoon horses. You can probably remember a time way back when it seemed like everyone's profile icons were ponies and all kinds of pony memes were flying fast. Those were the days when memes still had top and bottom text.</p>
+
+<div style="text-align: center"><img src="img/mlpwdd/umadbro.jpg" title="thanks i hate it" alt="Pony smiling with 'u mad bro?' in ancient meme text" /><br />
+<em><span title="Oh god, we're going to look back at today's memes with the same attitude aren't we?">An example of what passed as a meme back in those ancient days</span></em></div>
+
+<p>Anyway, back in high school I took a variety of programming classes. "Computer Programming" was a very basic class, as one would really expect from a high school elective programming class. It did give me my first opportunity to briefly play around with Linux (the idea of Linux blew my mind at the time but I never thought I'd be using it as my main OS) and also for my final project I got the opportunity to do something quite novel: Make a game prototype using nothing but HTML and JavaScript... <em>before HTML5 was actually a thing!</em></p>
+
+<p>But the class that actually had a serious impact on me as a programmer was the next level programming class, "Game Design & Development". It functioned more as a "Computer Programming II" course, though obviously it also focused mainly on game development. I <em>loved</em> this class. I learned so many fundamental programming basics that those huge O'Reilly animal books never really taught me (they taught me the programming languages but more complex and abstract programming concepts either weren't discussed or flew right over my head).</p>
+
+<div style="text-align: center"><img src="img/mlpwdd/generate.png" title="Past me has written some of the worst code future me will ever read" alt="A parody O'Reilly book cover that reads 'Messy Unorganized Code'" /><br />
+<em>I did follow all of the advice in this book though</em></div>
+
+<p>This class was the first time I actually had to work with object-oriented code before. Prior to this course, the idea of classes and objects seemed more like nice syntactic sugar; a fancier way of making an associative array. When I finally learned the magic of inheritance and abstract classes and such I was blown away and made an unnecessarily fleshed out object architecture for a simple game we made in a Java-based tool called Greenfoot. I originally hated Greenfoot until I learned about the delights of OOP. I even had a little journal at the time and you can see my hate for it grow into "How could I live before Object-Oriented Programming? HOW?!". Anyway, here's a picture of the game I made:</p>
+
+<div style="text-align: center"><img src="img/mlpwdd/muffinmare_titlescreen.png" title="Huh. For the original class I had, we made a web portfolio to show off all of our projects. And now I'm doing it again... it's like poetry, it rhymes." alt="Title screen for my Muffin Mare game" /><br />
+<em>Later I remade this game in C++ while trying to preserve the class structure of the original Java code. No. Just no.</em></div>
+
+<p>That game is not the My Little Pony game I'll be talking about in this blog post. Instead, I'll be talking about my final project for the class, made in XNA Game Studio. XNA was especially impressive to me because it was my first opportunity to make a game straight from code... no drag-and-drop interfaces or even any actual "engine" code in the framework to help was actually really exciting. It was like I was a <em>real</em> game developer!</p>
+
+<h3>Code Review Time</h3>
+
+<p>I'll be going over what the actual game itself was like in the next blog post I make. In this post I'll be reviewing some of the actual engineering decisions I made for this game. And oh boy there are plenty of... decisions to review here. But to give a quick introduction to the game, it's a game inspired by roguelikes and turn-based JRPGs. Internally it was always known as "PonyRPG". I wrote a majority of the codebase in two weeks.... as a high schooler with only a very naive grasp on object oriented architecture. Oh no.</p>
+
+<h4>Code Issue #1: A Disorganized Mess</h4>
+
+<p>The most glaring issue with the codebase is just how incredibly messy it is. Code is just kind of stuffed everywhere and at the time I really didn't know about any "clean" architectural design patterns. The "main" game class that contains the basic game loop and drawing loop is... <strong>two thousand</strong> lines long. Shoved everywhere in this class are tons of nested "helper classes" that act more as structs than actual classes with methods. I thought splitting classes into their own files was stupid back then so I jammed a lot of the tinier classes into the files that used them and left it at that.</p>
+
+<div style="text-align: center"><img src="img/mlpwdd/codesample_1.png" title="Yo dawg I heard you like nested classes so I nested classes in your... eh... you get the punchline" alt="Nested classes in nested classes" /><br />
+<em>A look at the various nested classes I use in the codebase. Most of these are all located in the massive main game class.</em></div>
+
+<p>There are a few giant classes like this in the game's codebase, that pretty much are responsible for large sections of game logic and also have tons of subclasses and random helper functions all jammed up inside of them. Spreading out all that code into classes that have a <strong>Single Responsibility</strong> would make the code much cleaner. There are lots groups of functions within these mega-classes that could easily be extracted into their own classes to make the code cleaner and easier to debug.</p>
+
+<h4>Code Issue #2: Enumerator? I Hardly Know Her!</h4>
+
+<p>A core part of design a game's architecture is allowing the game to exist in multiple states or "screens". Title screens, loading screens, different game modes, and minigames are all examples of separate game states. You don't want code that controls the title screen to be found in the main Player class. You also want to be able to free up memory that's no longer used by game states. The game logo that shows up on the title screen should probably be unloaded after you actually enter the game, and be reloaded only after the player chooses to go back to the title screen.</p>
+
+<p>In <em>"PonyRPG"</em>, the title screen graphics are never unloaded, because there's no actual state management system in the game. The game's state is fully managed by a single variable that exists in the main game class and is checked several times per frame: an <kbd>Enum</kbd> called "<kbd>gameMode</kbd>". In the main game loop there are a bunch of <kbd>if</kbd> statements checking what game mode we're in. So we basically end up having 4 game loops all jammed into one game loop.</p>
+
+<div style="text-align: center"><img src="img/mlpwdd/codesample_2.png" title="#REGION CONSIDERED HARMFUL?" alt="Using an Enum instead of Polymorphic Dispatch" /><br />
+<em>Not pictured: the massive "<kbd>mode == gameMode.gameplay</kbd>" section of the code</em></div>
+
+<p>Fortunately that's the only <kbd>Enum</kbd> I use for state management...<br />
+...<br />
+<em><strong>OKAY, ALRIGHT,</strong></em> so in the core gameplay loop I use a very similar design (anti-)pattern to manage the "inner" gameplay state. So there's another <kbd>Enum</kbd> that manages what state the player is in: outside of battle, inside of battle, in a scripted event, using a save point, etc. ...It's pretty bad.</p>
+
+<p>These various states should have been managed with actual classes. The main game loop would only be running the active state object's <kbd>Update()</kbd> function and through polymorphism the main game class wouldn't really know or care what state the game is in. While an Enum and Switch statement are practically functionally identical, using polymorphic dispatch is <em>much</em> easier to contain. Instead of the main game class having a bunch of seemingly random variables everywhere, only the game states that <em>care</em> about said random variables should even know about them. Instead of continually adding another <kbd>if</kbd> or <kbd>case</kbd> statement to my code, I just need to add a new class to the codebase and instantiate it somewhere. The game itself can be updated without having to edit the main game loop or its surrounding class at all.</p>
+
+<h4>Code Issue #3: No Spoilers!</h4>
+
+<p>Alright this next issue isn't really that big of a deal compared to... well those previous massive architectural flaws that contaminate pretty much the entire codebase, but I think this needs to be addressed! The game is pretty data-driven, with enemies and level parameters and... well pretty much everything loaded in from external data files. That's <em>not</em> the bad design part! I wanted to be able to mask this data to not only prevent people from tampering with it and breaking the game, and also to prevent game spoilers such as what the final boss fight will be like and such. I was <em>very</em> protective of this game data, so I not only had it embedded into game's executable itself, I also used <em>AES Encryption</em> to make it impossible to see it if you opened the executable in a hex editor!</p>
+
+<div style="text-align: center"><img src="img/mlpwdd/codesample_3.png" title="Asynchronous Emotion Stimulator" alt="hunter2" /><br />
+<em>Oh god, I've leaked the decryption code, oh god now people can haxxor the game!!!</em></div>
+
+<p>This made managing the data a pain as I'd constantly have to re-encrypt any game data that I wanted to edit. This paranoia handling data also extended to the file used for saved data. I basically used encryption along with a complex "security through obscurity" style format with multiple checksums (and I'm not talking about <a href="https://en.wikipedia.org/wiki/N._Senada#%22Theory_of_Obscurity%22" title="visit the frisco zoo">The Theory of Obscurity</a> here). This complex method of storing saved data was so complex that the latest version of the codebase I'm criticizing right now... can't even load saved data. By adding more and more security measures I broke the saved data feature that was working perfectly fine before!</p>
+
+<p>I think there's definitely value in protecting data from being read and manipulated, but the way I did in this game didn't just prevent anyone playing from tampering with the data. It also hindered the development of the game and broke a feature! I probably should have kept this stuff simpler and added more basic checks.</p>
+
+<h3>It's Not All Bad</h3>
+
+<p>So I've pointed out some of the glaring problems of this horrible code. Does this mean that my high school self was a bad programmer? ... Well, kind of. Though I feel it's important to think of it less in terms of how bad I was back then and more in terms of how much I have grown as a programmer since then. I mean, I was in high school, how was I supposed to know that instead of picturing game state as a finite state machine I should have been picturing it as pushdown automaton instead? This was the first game project I made straight from code, no dragging and dropping. I'm proud that I even made a (mostly) fully playable game! And I think high school me would be proud of present me roasting this code and would also be really curious how the more "professional" game developers do proper game architecture. I mean, to be fair, there's still a lot I don't know about how proper game architecture should be done.</p>
+
+<p>Anyway, there <em>are</em> parts of this codebase that really aren't that bad! The data-driven design I talked about earlier was something I was really proud of when originally developing the game! My previous experiments with XNA used completely hard-coded values. This game has no actual specialized classes for enemies, instead just having a base Enemy class which is instantiated and filled with the proper enemy data from the game data!</p>
+
+<div style="text-align: center"><img src="img/mlpwdd/codesample_4.png" title="Yeah I used XML; you have a problem with that?" alt="xml!" /><br />
+<em>How the data is stored for enemies (unencrypted lol)</em></div>
+
+<p>Another not-too-bad part of the code base revolves around the various in-game dialogues that show up. The <kbd>PonyRPG.engine.TextWindow</kbd> class is probably the best-designed class in the entire codebase. It covers scrolling the text 1 character at a time like old video games, wraps the text properly, and is pretty configurable with various padding and margin settings. It has a related class, <kbd>PonyRPG.engine.TextWindowOptions</kbd> that is just a data structure for its various options... and it exists in its own separate file instead of being a nested class stuffed somewhere else! While the code here could still be improved upon a lot, it's definitely the most pristine code here...</p>
+
+<p>... and the reason it's so nice is because I actually developed it outside of this project! I originally developed this class for another pony-related game I was working on in XNA and I made it as generic as possible so I could reuse it in other games I made. It has features never used in the "PonyRPG" project, like the ability to display character portraits while talking displayed, like in the Harvest Moon series.</p>
+
+<div style="text-align: center"><img src="img/mlpwdd/dd_alpha_1.png" title="I don't use Windows XP, this screenshot is from 2012 when I was developing this game!" alt="Old game" /><br />
+<em>The TextWindow object in the original project it was used in</em></div>
+
+<p>When I first made this textbox it honestly felt magical that I could insert little video gamey dialogue boxes into my games!</p>
+
+<h3>Okay... So What's The Game Actually Like?</h3>
+
+<p>Welp, I've talked enough about the game's code. I bet you're wondering what the game looks like. What's it actually called? Is the Game Design good? Was all the messy code just a sacrifice for an amazing My Little Pony fangame experience? My next blog post will be dedicated to actually reviewing the game as a game itself, and not just diving into all the problems with the code. Keep a lookout for my next post, it's gonna be a MESS!</p>
+
+<div style="text-align: center"><img src="img/mlpwdd/ponyrpg_title2.png" title="Hold my cupcakes, I'm going in!" alt="Twilight Sparkle..." /></div>
+    </article>
+  </main>
+  <footer>
+    <a href="https://mew151.net" title="Mewmewmemwewmewmemw"><img src="https://mew151.net/img/mew151_button.gif" alt="Mew151" /></a>
+    <div class="quote"><em>(Still waiting on that sequel post...)</em></div>
+    <div>Thank you for visiting Perfect Pop Star Academy!</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Musings on My Website Launch - Perfect Pop Star Academy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Natalie Martin" />
+  <meta name="description" content="Natalie's Blog" />
+  <meta name="theme-color" content="#d66682" />
+  <link rel="stylesheet" type="text/css" href="../style/popstar.css" />
+  <script type="text/javascript">
+  window.baseUrl = "..";
+  </script>
+  <script type="text/javascript" src="../script/background.js"></script>
+</head>
+<body>
+  <header id="header">
+    <div id="logo-cover" class="logo-cover"></div>
+    <a class="logo" href="../index.html">
+      <h1><img src="../img/logo.gif" alt="Perfect Pop Star Academy" /></h1>
+    </a>
+  </header>
+  <nav>
+    <div>
+      <a href="../index.html">Home</a>
+      ・
+      <a href="../about.html">About</a>
+      ・
+      <a href="https://mew151.net">Back to Main Site</a>
+    </div>
+  </nav>
+  <main class="index">
+    <article>
+      <h2>Musings on My Website Launch</h2>
+      <time datetime="2022-02-19">Posted 2022年2月19日</time>
+      <h3 style="text-align: center">(Or, More Accurately, <q>Mewsings</q>)</h3>
+      <p>I launched my new personal website yesterday. Today I'm launching the <span title="What's the opposite of cutting edge? Safety handle?">newest version</span> of my blog. I wanted to write about some of the specific technological decisions that went into making the site!</p>
+
+      <h3 id="stack">The Tech Stack, Or Lack Thereof</h3>
+      <p>I started learning PHP over 13 years ago. My initial vision for my personal website was a cool dynamic site with a whole fancy roleplaying neopets-esque game section all powered by PHP and MySQL. That never happened. But still, as the web was growing more dynamic, I continued to make web pages dynamically powered by PHP. In my usual <a href="https://en.wikipedia.org/wiki/Not_invented_here" title="If I really had an aversion to it I wouldn't have linked an outside source"><q>Not Invented Here</q></a> style of my personal projects, I made my own templating engines and fancy experimental frameworks to power the web pages I made.</p>
+
+      <p>Of course, now I'm a <em>professional</em> software engineer working with web technologies every day. And I still love it! Maybe PHP is a bit... crufty compared to more modern fancy languages, but I still like working on complex, feature-rich web apps... <em>for work!</em> But it's a bit exhausting to work on that kind of stuff all day and then attempt to work on my personal website and feel like I'm still at work.</p>
+
+      <p>For this website, I'm relying on a <em>lack</em> of tech stack, for the most part. While the server at <a href="https://mew151.net" title="Wait, should I ping my own webmention endpoint?">mew151.net</a> is still a standard LAMP stack, I'm mostly going to stick to static HTML, CSS, and JavaScript. Though on said server, I will be using <kbd>.htaccess</kbd> to do some cleanup work, like re-routing the old blog post URLs to their new homes and allowing the <a href="https://mew151.neocities.org" title="Oh, I wish someone would explain why I am mirroring my site on Neocities, preferably later in this blog post!">Neocities Mirror</a> to fetch my twtxt feed.</p>
+
+      <p>Because I'm running on such a simple stack, it means that my site can be mirrored easily... like on Neocities! But I'll talk about that more <a href="#neocities" title="Oh praise be! My wish from the previous link's hover text has been answered!">later.</a>
+
+      <h3 id="static">On Site Generators</h3>
+
+      <p>I'm currently not using any kind of <span title="I guess the twtxt command line utility is kind of a static... text file generator? I don't think that counts.">static site generators</span> for this site at all. This again comes from my desire to keep things simple, and just... write HTML. Running a static site generator sounds convenient, but it just doesn't really mesh well with the philosophy of this site. To me it almost feels like I'm using a dynamic back end, but just pre-rendering the HTML so I can upload it onto a static server. Since I wanted to not use any back-end technologies while working on this site, I have included static site generators into that as well.</p>
+
+      <p>Also, I personally associate static site generators with <a href="https://pages.github.com/" title="More like... SHIThub... wait no actually Github Pages is very useful I apologize for that">Github Pages</a> blogs. I want to specify that there's nothing wrong with static site generators <em>or</em> Github Pages blogs, but they don't really match the vibe I'm going for with this site. This site is not a professional website to market myself as a developer. It is a personal place where I can be myself, and I want that to come through in both the user interface and developer experience as well.</p>
+
+      <p>That being said, I'm not totally against the idea of using <a href="https://sass-lang.com/" title="Sass? What's that, some kind of rip off of SCSS?">Sass</a> or <a href="https://babeljs.io/" title="Remember when they removed Guy Fieri from the source code :(">Some Kind of JavaScript Compiler Thing</a> to help working on this site in the future. Right now the JavaScript I do write is just plain JS that I'm writing in modern style. I think it might be useful to compile that to more "compatible" JS? Maybe?</p>
+
+      <p>I'm also using <em>some</em> static generator utility things. Specifically, right now I'm using a custom utility I made to generate my site's RSS feed automatically whenever I deploy. Speaking of which...</p>
+
+      <h3 id="rss">Everyone Should Use RSS</h3>
+      <p>One of the main benefits social media sites provide us with is the ability to <q>follow</q> or <q>subscribe</q> <del>or <q>cyberstalk</q></del> other users and see their updates on the main app's feed. That is just... <span title="Or at least it is when my timeline is sorted chronologically instead of algorithmically. I'm talking to you Twitter. Tumblr's starting to do it too">really convenient,</span> and unfortunately that is also what has killed the more generic feed technology, <span title="If Ruby tags looked good on english acronyms I would have put furigana over &quot;RSS&quot;">RSS.</span></p>
+
+      <p>My dream for the web is for everything to be just a little bit more decentralized. And because I have to explicitly say this nowadays, when I say <q>decentralized</q> I am specifically <strong>NOT</strong> referring to blockchain or any related technology. Fuck crypto. Um... anyway, I want more people to have their own tiny little websites where they post their own blogs or articles or selfies or whatever instead of being stuck on just <a href="https://twitter.com/badnetworker/status/1133363823728091136" title="wait no don't click this link you'll go to centralized social media oh god no!!!">5 websites.</a></p>
+
+      <p>The problem with this kind of decentralization is that it becomes really hard to <q>follow</q> people in the standard social media sense. You just kind of have to bookmark the sites you like, and then remember to occasionally check back in on the sites and see if there's anything new. Hopefully the site has some kind of updates section or changelog.</p>
+
+      <p>In terms of user experience... this kind of sucks? Maybe in <span title="Back when the internet was mainly catalogs, travel blogs, a chatroom or two...">1999</span> it was fine, but these days we can't just ignore how social media sites and apps have shaped user experience. If only there was some kind of standard that represented a generic feed you could follow and you could put it on your website so people could follow that feed whenever your site updated. Oh yeah, it's RSS. Use RSS.</p>
+
+      <p>Unfortunately, writing RSS is kind of painful? With HTML, browsers are very forgiving about loose and incorrect syntax, since it's basically been designed to be written by hand by humans. XML (which RSS is a dialect of) on the other hand, is much stricter, despite the fact that HTML looks like a subset of XML. So writing an RSS feed from hand can be a hassle and you're often prone to error.</p>
+
+      <p>So I've built a utility I've christened <q><a href="https://github.com/meisekimiu/feedmake" title="Wow! How did you come up with that title?">Feedmake</a></q> to generate an RSS feed automatically as part of my website's deployment process. Since I'm keeping my website in a <a href="https://github.com/meisekimiu/mew151.net" title="I would brag about my website being open source, but if you think about it, even if I didn't have a public repo it'd still be open source.">Git repo,</a> I'm already keeping track of the changes of my website through my commits. So I thought... why not just use my site's Git history to generate my site's RSS feed? If you're in a similar situation where you're keeping your static site in a Git repo, feel free to try out my utility. :)</p>
+
+      <p>Or, at the very least, start using a Feed Reader and subscribe to more websites via RSS!</p>
+
+      <h3>Reducing Redundancy With Scripting</h3>
+      <p>While I said earlier that I didn't want to use too many site generator-y things to make my website, I did have to do <em>something</em> about redundancy. The entire point of generating my RSS feed from my Git history was to take advantage of the fact that I'd already be documenting my site's history through Git anyways and it'd be redundant to store that in both git history and RSS at the same time. But what about the <a href="https://mew151.net/#updates" title="If you're not going to use RSS, I'm going to use it for you!">updates</a> section on my website's homepage?</p>
+
+      <p>Well... I use Javascript to fetch my site's RSS feed and paste its contents onto the homepage! That way there's only one <q>source of truth</q> for my site's updates. That sure is convenient for me!</p>
+
+      <p>I've done this in a few other places for my site as well. You can see on the <a href="https://mew151.net/journal.html" title="#microblogging">journal</a> section of my site that it is actually "powered" by a utility called twtxt that you can follow it on. That way I have the fun of a decentralized twitter feed without <em>also</em> having to write some new HTML and redeploy my site every single time I want to tweet out one single thing. I think this usage of dynamic content is fine here since Javascript is just fetching a static text file on my server and parsing it.</p>
+
+      <p>That being said, I know some people browse the web with Javascript blocked or disabled. I've included links to the main sources of truth for those who don't want Javascript to fetch it for them, in the hopes that my site can actually be usable without Javascript (a rare <span title="site">sight</span> these days).</p>
+
+      <h3 id="neocities">Why am I mirroring my site on Neocities?</h3>
+      <p>While I have my own domain and a pretty great web host already, I still kind of like the idea of having a <a href="https://neocities.org" title="I like the Neocities cat it's cute">Neocities</a> site too, for proper retro web aesthetic. But that wasn't really the reason why I created the mirror.</p>
+      <p>One nice thing about Neocities is that you can follow users on the site and be notified when their site actually updates. Since I'm a fan of a bunch of small Neocities websits, I knew I had to create an account so I could actually follow people (of course, I wouldn't have to use this if we all <a href="#rss" title="you're gonna love this blog post">used RSS!</a>). But creating an account would also lets people follow my site <small>(even without RSS!)</small>, which is nice!</p>
+      <p>What really sold me on Neocities is <a href="https://neonaut.neocities.org/cyber/crypt/" title="Tales from the Cyber Crypt">Neonaut's Page on Cyber Mauseoleums,</a> specifically the note on neocities as a web host. Let's face it, one day, the domain mew151.net and this entire website will go down. I hope that this site can stay up for a long time, even after I'm gone, and hosting a mirror on a site like Neocities seems like a good way to preserve my digital legacy.</p>
+      <p>So that's why I have a Neocities mirror. lol.</p>
+    </article>
+  </main>
+  <footer>
+    <a href="https://mew151.net" title="Mewmewmemwewmewmemw"><img src="https://mew151.net/img/mew151_button.gif" alt="Mew151" /></a>
+    <div class="quote">Throughout any changes, at the very least, you can rely on the little tiny text at the bottom of each blog post always being there!</div>
+    <div>Thank you for visiting Perfect Pop Star Academy!</div>
+  </footer>
+</body>
+</html>

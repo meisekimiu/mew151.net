@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Autogenerating Idol Desktop Backgrounds - Perfect Pop Star Academy</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Natalie Martin" />
+  <meta name="description" content="Natalie's Blog" />
+  <meta name="theme-color" content="#d66682" />
+  <link rel="stylesheet" type="text/css" href="../style/popstar.css" />
+  <script type="text/javascript">
+  window.baseUrl = "..";
+  </script>
+  <script type="text/javascript" src="../script/background.js"></script>
+</head>
+<body>
+  <header id="header">
+    <div id="logo-cover" class="logo-cover"></div>
+    <a class="logo" href="../index.html">
+      <h1><img src="../img/logo.gif" alt="Perfect Pop Star Academy" /></h1>
+    </a>
+  </header>
+  <nav>
+    <div>
+      <a href="../index.html">Home</a>
+      ・
+      <a href="../about.html">About</a>
+      ・
+      <a href="https://mew151.net">Back to Main Site</a>
+    </div>
+  </nav>
+  <main class="index">
+    <article>
+      <h2>Autogenerating Idol Desktop Backgrounds</h2>
+      <time datetime="2017-12-19 08:23-07:00">Posted 2017年12月19日</time>
+      <div style="text-align: center"><img src="img/idol-bgs/ml_backgrounds_2.png" title="but seriously, I still have this terminal open how do I quit vim" alt="Konomi Baba background" /><br />
+      <em>Drunk Baba is best Baba</em></div>
+
+      <p>I'm a real big fan of <a href="https://imgur.com/a/sygy2" title="Flat colors, baby!">those super minimalist anime backgrounds</a>. As an Arch Linux user, I have a scary amount of control over every little aspect of my computer's interface, and I prefer clean, flat designs over the <a href="https://www.youtube.com/watch?v=MN5VIVNSJ5I" title="This video represents everything about Linux users in 2009">strange, over-the-top desktop designs</a> associated with Linux a decade ago. I guess I want my system to scream "<em>I don't waste resources on fancy eye candy!</em>", and simple wallpapers help portray that philosophy.</p>
+
+      <p><ins datetime="2022-02-19"><strong>2022-02-19 Update:</strong> Haha... yeah... who wants to recreate strange, over the top designs from decades ago? Not me. Mmhmm... yep. Definitely not me.</ins></p>
+
+      <p>Well, after years of using downloaded <em>Sound Voltex</em>, <em>Serial Experiments Lain</em>, and <em>PriPara</em> wallpapers, I finally decided that my desktop needed a fresh coat of paint. So... I made myself some iDOLM@STER Million Live desktop backgrounds, using the official art extracted from the game! But the idea of generating them myself seemed kind of painful... I mean, opening up the GIMP and using the paint bucket tool isn't <em>hard</em>, but I have a bunch of characters I like so I'd like to rotate between many different backgrounds. It seems pretty tedious, and adding a new idol would be pretty time consuming. After the first batch of backgrounds I'd probably get tired and swear never to add any more to the rotation.</p>
+
+      <p>So... I automated it! Creating a new desktop background is as simple as dropping the art into a folder with that idol's name. Everything else is generated automatically. And check out these cool results!</p>
+
+      <div style="text-align: center"><img src="img/idol-bgs/ml_backgrounds_1.png" alt="Kana Yabuki background" title="Kana is cute. CUTE!" style="width: 45%; min-width: 300px;"/> <img src="img/idol-bgs/ml_backgrounds_3.png" alt="Akane Nonohara background" title="AKANE CHANG"  style="width: 45%; min-width: 300px;"/><br />
+      <em>Oh Like a Orange Sapphire☆passion!!!</em></div>
+
+      <p>So, let's talk about how to generate these backgrounds!</p>
+
+      <h3>Part 1: Idol Data</h3>
+
+      <p>Of course, to actually make such a process automatic, we need some kind of data source. Our utility has to actually <em>know</em> that Konomi Baba's color is <kbd style="color: #f1becb; background-color: #222; padding: 3px; border-radius: 3px;">#f1becb</kbd>. I surely don't have the hex codes for character colors memorized either. Fortunately, I have all of that data recorded in my (needs to be <del>better maintained</del> <ins datetime="2022-02-19">archived</ins>) <a href="https://github.com/meisekimiu/idolmaster-idols" title="Feel free to contribute!">idolmaster-idols</a> data project! Upon cloning the repository and compiling all the modules to one JSON file, I now have all the data necessary to generate backgrounds!</p>
+
+      <div style="text-align: center"><img src="img/idol-bgs/arisa_sticker.png" title="Arisa is excited about idols" title="arisa-idol-database-2017-12.json"/><br />
+      <em>I feel a bit like Arisa with my own idol database.</em></div>
+
+      <h3>Part 2: Making Backgrounds</h3>
+
+      <p>Here's how I have things set up. I have a <kbd>source/</kbd> directory which contains subdirectories for all of our different idol images. Here's a picture of the directories I'm using:</p>
+
+      <div style="text-align: center"><img src="img/idol-bgs/ml_background_directories.png" alt="baba_konomi  julia  kitakami_reika  nonohara_akane  shijou_takane  tokoro_megumi  yabuki_kana" title="Folder? I hardly know 'er!" /></div>
+
+      <p>Inside each folder I've just plopped in the transparent sprites extracted directly from the game:</p>
+
+      <div style="text-align: center"><img src="img/idol-bgs/ml_backgrounds_reikafolder.png"  alt="89aab4334654281e417b1119a90d2bd44b7147dc56c6ce6d9c5ef0fd4861bd12.png 89aab4334654281e417b1119a90d2bd4761181d4fc851ccee3cd44c059828a11.png 89aab4334654281e417b1119a90d2bd4d11842353e9c41845a19a431d55ea5a2.png 89aab4334654281e417b1119a90d2bd4d8243c61b26fb0b7288fa54ac2b77c5f.png 89aab4334654281e417b1119a90d2bd4fedb0e33e682327cb71c99ea4101407f.png" title="Reika!" /><br />
+      <em>(The filenames don't matter; these ones are taken directly from the game)</em></div>
+
+      <p>The Ruby script I have set up will scan these directories to know which idol it's making backgrounds of and will use each source image to make one desktop background. It's only a quick script so I'll be calling lots of external shell commands so it acts more like a "smart bash script" rather than pure Ruby, chunky bacon and all. Anyway, let's generate these things!</p>
+
+      <pre lang="en" class="ruby" style="font-family:monospace; width: 90%; margin: 0 auto; overflow-x: auto"><span style="color:#008000; font-style:italic;">#!/usr/bin/ruby</span>
+      <span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">'json'</span>;
+      FILE_PATH = <span style="color:#996600;">"./idols.json"</span>
+      screenx, screeny = <span style="color:#996600;">`xrandr`</span>.<span style="color:#9900CC;">scan</span><span style="color:#006600; font-weight:bold;">(</span><span style="color:#006600; font-weight:bold;">/</span>current <span style="color:#006600; font-weight:bold;">(</span>\d<span style="color:#006600; font-weight:bold;">+</span><span style="color:#006600; font-weight:bold;">)</span> x <span style="color:#006600; font-weight:bold;">(</span>\d<span style="color:#006600; font-weight:bold;">+</span><span style="color:#006600; font-weight:bold;">)</span><span style="color:#006600; font-weight:bold;">/</span><span style="color:#006600; font-weight:bold;">)</span>.<span style="color:#9900CC;">flatten</span>.<span style="color:#9900CC;">collect</span><span style="color:#006600; font-weight:bold;">{</span><span style="color:#006600; font-weight:bold;">|</span>x<span style="color:#006600; font-weight:bold;">|</span> x.<span style="color:#9900CC;">to_i</span><span style="color:#006600; font-weight:bold;">}</span>
+
+      idols = JSON.<span style="color:#9900CC;">parse</span><span style="color:#006600; font-weight:bold;">(</span><span style="color:#CC00FF; font-weight:bold;">File</span>.<span style="color:#9900CC;">read</span><span style="color:#006600; font-weight:bold;">(</span>FILE_PATH<span style="color:#006600; font-weight:bold;">)</span>, object_class: OpenStruct<span style="color:#006600; font-weight:bold;">)</span>;
+      dir_list = <span style="color:#CC00FF; font-weight:bold;">Dir</span><span style="color:#006600; font-weight:bold;">[</span><span style="color:#996600;">"./source/*"</span><span style="color:#006600; font-weight:bold;">]</span></pre>
+
+
+      <p>I start off the script getting the current resolution of the screen using the output from the <kbd><a href="https://wiki.archlinux.org/index.php/xrandr" title="Honestly, the X tool I've probably used the most">xrandr</a></kbd> command. This part of the script is pretty much Linux-exclusive, but anyone wanting to make a similar script can either hardcode values or use techniques for their own platform to get the screen resolution automatically. Also you can see me loading up the idol JSON data and scanning my <kbd>source/</kbd> directory for its subdirectories.</p>
+
+      <p>From there we loop over <var>dir_list</var>, which is an array of all of our idol subdirectories. And this is where the magick happens.</p>
+
+      <pre lang="en" class="ruby" style="font-family:monospace; width: 90%; margin: 0 auto; overflow-x: auto;">dir_list.<span style="color:#9900CC;">each</span> <span style="color:#9966CC; font-weight:bold;">do</span> <span style="color:#006600; font-weight:bold;">|</span>idol<span style="color:#006600; font-weight:bold;">|</span>
+      	idol_name = idol.<span style="color:#CC0066; font-weight:bold;">gsub</span><span style="color:#006600; font-weight:bold;">(</span><span style="color:#996600;">"./source/"</span>,<span style="color:#996600;">""</span><span style="color:#006600; font-weight:bold;">)</span>
+      	idol_color = idols<span style="color:#006600; font-weight:bold;">[</span>idol_name<span style="color:#006600; font-weight:bold;">]</span>.<span style="color:#9900CC;">color</span>;
+      	<span style="color:#996600;">`mkdir -p bgs/#{idol_name}`</span>
+      	<span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">"Generating #{idols[idol_name].name.western} bg canvas..."</span>
+      	<span style="color:#996600;">`convert -size #{screenx}x#{screeny} canvas:#{idol_color} #{idol_name}.png`</span>
+      	<span style="color:#008000; font-style:italic;">#More stuff will go in this loop later</span>
+      <span style="color:#9966CC; font-weight:bold;">end</span></pre>
+
+      <p>I'm using <a href="https://www.imagemagick.org/script/index.php" title="I assume &quot;ImydjeMagychk&quot; was already taken">ImageMagick</a> command line tools to generate these backgrounds. The first thing we have to do is generate the blank color "slate" which we'll then be overlaying our various idol images over. The <code>convert</code> command generates that blank slate with our idol's color and saves it to a temporary file named after our idol.</p>
+
+      <p>From there we can loop over the idol's image files and start generating the backgrounds.</p>
+
+      <pre lang="en" class="ruby" style="font-family:monospace; width: 90%; margin: 0 auto; overflow-x: auto;">img_list = <span style="color:#CC00FF; font-weight:bold;">Dir</span><span style="color:#006600; font-weight:bold;">[</span><span style="color:#996600;">"#{idol}/*.png"</span><span style="color:#006600; font-weight:bold;">]</span>
+      identifier = <span style="color:#006666;">0</span>
+      img_list.<span style="color:#9900CC;">each</span> <span style="color:#9966CC; font-weight:bold;">do</span> <span style="color:#006600; font-weight:bold;">|</span>img<span style="color:#006600; font-weight:bold;">|</span>
+      	w,h = <span style="color:#996600;">`identify -format "%[fx:w] %[fx:h]" #{img}`</span>.<span style="color:#CC0066; font-weight:bold;">split</span><span style="color:#006600; font-weight:bold;">(</span><span style="color:#996600;">" "</span><span style="color:#006600; font-weight:bold;">)</span>.<span style="color:#9900CC;">collect</span><span style="color:#006600; font-weight:bold;">{</span><span style="color:#006600; font-weight:bold;">|</span>x<span style="color:#006600; font-weight:bold;">|</span> x.<span style="color:#9900CC;">to_i</span><span style="color:#006600; font-weight:bold;">}</span>
+      	geometry_x = screenx<span style="color:#006600; font-weight:bold;">-</span>w
+      	geometry_y = screeny<span style="color:#006600; font-weight:bold;">-</span>h
+      	identifier<span style="color:#006600; font-weight:bold;">+</span>=<span style="color:#006666;">1</span>
+      	<span style="color:#996600;">`convert #{idol_name}.png #{img} -geometry +#{geometry_x}+#{geometry_y} -composite ./bgs/#{idol_name}/#{identifier}.png`</span>
+      <span style="color:#9966CC; font-weight:bold;">end</span></pre>
+
+      <p>I wanted the source images in the lower corner of each background, since it was the most aesthetically pleasing. Also because all the source images tend to cut off before the idols' feet so... they have to be on the bottom of the image. As a result, I use the ImageMagick <code>identify</code> command to grab the width and height of the source image so we can math them into the lower right corner of the screen. We just have to subtract the idol image's width and height from the colored slate's width and height to get the position to put them on the edge of the screen! You can also see I have an <var>identifier</var> variable which is just used to give them individually numbered filenames.</p>
+
+      <p>The results are great! Perfect minimalist backgrounds! And the game-ripped transparent files provide enough "padding" to the images so everything fits rather nicely.</p>
+
+      <div style="text-align: center"><img src="img/idol-bgs/ml_backgrounds_reika_1.png" title="Reika is cute. CUTE!" alt="Reika Kitakami background" /></div>
+
+      <p>That's just splendid! Here's an image of an Akane-chan background that's been—<br />
+      ... <em>oh god</em>...</p>
+
+      <div style="text-align: center"><img src="img/idol-bgs/ml_backgrounds_akane_wrong.png" title="茜ちゃん！？" alt="Akane's hand is cut off" /><br />
+      <em>...Akane-chan's hand!!!</em></div>
+
+      <h3>Part 3: A Problem</h3>
+
+      <p>So... sometimes the Million Live art doesn't just cut off at legs. The high res art typically cuts off on the sides so the sprites sizes are consistent even when characters have big hair or large props. This is fine for our system right now when sprites are cut off on the right side, but when they're cut off on the left side things look pretty awkward. Is there a way to autodetect when an idol is cut off on the left so we can place them there?</p>
+
+      <p>The answer is... <strong>yes!</strong> Or at least I have code that seems to be able to do that. Here's the approach I'm taking: we use ImageMagick to analyze the left and right side of our source image and calculate how much foreground stuff is in it, comparing the quantities to determine whether the image belongs on the left or right side of the background. Here's a visualization of what the algorithm is doing:</p>
+
+      <div style="text-align: center"><img src="img/idol-bgs/ml_backgrounds_konomi_algorithm.png" title="Tuba Konomi is best Konomi" alt="Konomi holding a Tuba" /><br />
+      <em>(Note, the actual areas we're analyzing are only one pixel wide, they've just been exaggerated for illustration purposes)</em></div>
+
+      <p>We analyze those red and blue sections of the image to determine which one has more variety in pixels (in other words, which one has more foreground). In this case the right area has a higher standard deviation so the image belongs on the right side... which was already the default in our implementation... but if we flipped the image the algorithm would correctly identify the left side! Anyway, we use ImageMagick's <code>convert</code> command to crop the areas we're analyzing and then we use the <code>identify</code> command to get the standard deviation of each cropped section.</p>
+
+      <pre lang="en" class="ruby" style="font-family:monospace; width: 90%; margin: 0 auto; overflow-x: auto;">w,h = <span style="color:#996600;">`identify -format "%[fx:w] %[fx:h]" #{img}`</span>.<span style="color:#CC0066; font-weight:bold;">split</span><span style="color:#006600; font-weight:bold;">(</span><span style="color:#996600;">" "</span><span style="color:#006600; font-weight:bold;">)</span>.<span style="color:#9900CC;">collect</span><span style="color:#006600; font-weight:bold;">{</span><span style="color:#006600; font-weight:bold;">|</span>x<span style="color:#006600; font-weight:bold;">|</span> x.<span style="color:#9900CC;">to_i</span><span style="color:#006600; font-weight:bold;">}</span>
+      <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">"Detecting left edge special case..."</span>
+      <span style="color:#996600;">`convert -crop 1x#{h}+0x0 #{img} file_left_mask.png`</span>
+      deviation = <span style="color:#996600;">`identify -format %[standard-deviation] file_left_mask.png`</span>.<span style="color:#9900CC;">to_i</span>
+      <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">"Detecting right edge..."</span>
+      <span style="color:#996600;">`convert -crop 1x#{h}+#{w-1}x0 #{img} file_right_mask.png`</span>
+      deviation_r = <span style="color:#996600;">`identify -format %[standard-deviation] file_right_mask.png`</span>.<span style="color:#9900CC;">to_i</span>
+      geometry_x = screenx<span style="color:#006600; font-weight:bold;">-</span>w
+      geometry_y = screeny<span style="color:#006600; font-weight:bold;">-</span>h
+      <span style="color:#9966CC; font-weight:bold;">if</span> deviation <span style="color:#006600; font-weight:bold;">></span> <span style="color:#006666;">0</span> <span style="color:#006600; font-weight:bold;">&&</span> deviation_r <span style="color:#006600; font-weight:bold;"><</span> deviation
+      	geometry_x = <span style="color:#006666;">0</span>
+      <span style="color:#9966CC; font-weight:bold;">end</span>
+      identifier<span style="color:#006600; font-weight:bold;">+</span>=<span style="color:#006666;">1</span>
+      <span style="color:#996600;">`convert #{idol_name}.png #{img} -geometry +#{geometry_x}+#{geometry_y} -composite ./bgs/#{idol_name}/#{identifier}.png`</span>
+      <span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">"Cleaning up..."</span>
+      <span style="color:#996600;">`rm file_left_mask.png`</span>
+      <span style="color:#996600;">`rm file_right_mask.png`</span></pre>
+
+      <p>That's the new inner loop for each source image. Because we ran those <code>convert</code> commands to get the slices we were analyzing, we have to clean up the files we generated after we're done. I just run the shell <code>rm</code> command since it's a bit easier in a simple script like this. I know some Ruby purists will probably hate me for that.</p>
+
+      <p>The final results are much better! Images generally show up on the side of the screen they belong— the only exception is when an image is cut off on both sides and there's no real fix for that. Still, because of the way the algorithm compares sides, it'll do its best to align it to the side that has <em>more</em> stuff cut off. Also, the code defaults to the right side if it detects nothing is cut off on the left side. This can easily be rewritten to do the opposite.</p>
+
+      <div style="text-align: center"><img src="img/idol-bgs/ml_backgrounds_megumi_right.png" title="BRING ME DA BEATS" alt="Megumi Tokoro background" /><br />
+      <em>Sweet! It works!</em></div>
+
+      <p>Cool! Our code actually works! Well... to the best of my knowledge anyway. All the backgrounds are saved in a <kbd>bgs/</kbd> directory, named after each idol and individually numbered.</p>
+
+      <h3>Part 4: There is No Part 4</h3>
+
+      <p>Overall, generating these backgrounds is a pretty simple task. We do have to use a bit of "magick" to get everything working properly, and the algorithm to check which side the image needs to go on definitely surprised me a bit when I originally wrote this code! I think this is a fun demonstration of what you can make when using idol data like this! From nothing but a JSON file and these source images, we've created simple but nice desktop backgrounds!</p>
+
+      <p>And with this data we can even do more! Right now I have my computer set up to randomly select a new background every 30 minutes... but I wonder if I can set it up so that if it's an idol's birthday, only that idol will appear for that day?</p>
+
+      <p>Anyway, here's the final hacky and unpolished Ruby script that I happened to write:</p>
+
+      <pre lang="en" class="ruby" style="font-family:monospace; width: 90%; margin: 0 auto; overflow-x: auto;"><span style="color:#008000; font-style:italic;">#!/usr/bin/ruby</span>
+      <span style="color:#CC0066; font-weight:bold;">require</span> <span style="color:#996600;">'json'</span>;
+      FILE_PATH = <span style="color:#996600;">"./idols.json"</span>
+      screenx, screeny = <span style="color:#996600;">`xrandr`</span>.<span style="color:#9900CC;">scan</span><span style="color:#006600; font-weight:bold;">(</span><span style="color:#006600; font-weight:bold;">/</span>current <span style="color:#006600; font-weight:bold;">(</span>\d<span style="color:#006600; font-weight:bold;">+</span><span style="color:#006600; font-weight:bold;">)</span> x <span style="color:#006600; font-weight:bold;">(</span>\d<span style="color:#006600; font-weight:bold;">+</span><span style="color:#006600; font-weight:bold;">)</span><span style="color:#006600; font-weight:bold;">/</span><span style="color:#006600; font-weight:bold;">)</span>.<span style="color:#9900CC;">flatten</span>.<span style="color:#9900CC;">collect</span><span style="color:#006600; font-weight:bold;">{</span><span style="color:#006600; font-weight:bold;">|</span>x<span style="color:#006600; font-weight:bold;">|</span> x.<span style="color:#9900CC;">to_i</span><span style="color:#006600; font-weight:bold;">}</span>
+
+      idols = JSON.<span style="color:#9900CC;">parse</span><span style="color:#006600; font-weight:bold;">(</span><span style="color:#CC00FF; font-weight:bold;">File</span>.<span style="color:#9900CC;">read</span><span style="color:#006600; font-weight:bold;">(</span>FILE_PATH<span style="color:#006600; font-weight:bold;">)</span>, object_class: OpenStruct<span style="color:#006600; font-weight:bold;">)</span>;
+      dir_list = <span style="color:#CC00FF; font-weight:bold;">Dir</span><span style="color:#006600; font-weight:bold;">[</span><span style="color:#996600;">"./source/*"</span><span style="color:#006600; font-weight:bold;">]</span>
+      dir_list.<span style="color:#9900CC;">each</span> <span style="color:#9966CC; font-weight:bold;">do</span> <span style="color:#006600; font-weight:bold;">|</span>idol<span style="color:#006600; font-weight:bold;">|</span>
+      	idol_name = idol.<span style="color:#CC0066; font-weight:bold;">gsub</span><span style="color:#006600; font-weight:bold;">(</span><span style="color:#996600;">"./source/"</span>,<span style="color:#996600;">""</span><span style="color:#006600; font-weight:bold;">)</span>
+      	idol_color = idols<span style="color:#006600; font-weight:bold;">[</span>idol_name<span style="color:#006600; font-weight:bold;">]</span>.<span style="color:#9900CC;">color</span>;
+      	<span style="color:#996600;">`mkdir -p bgs/#{idol_name}`</span>
+      	<span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">"Generating #{idols[idol_name].name.western} bg canvas..."</span>
+      	<span style="color:#996600;">`convert -size #{screenx}x#{screeny} canvas:#{idol_color} #{idol_name}.png`</span>
+
+      	img_list = <span style="color:#CC00FF; font-weight:bold;">Dir</span><span style="color:#006600; font-weight:bold;">[</span><span style="color:#996600;">"#{idol}/*.png"</span><span style="color:#006600; font-weight:bold;">]</span>
+      	identifier = <span style="color:#006666;">0</span>
+      	img_list.<span style="color:#9900CC;">each</span> <span style="color:#9966CC; font-weight:bold;">do</span> <span style="color:#006600; font-weight:bold;">|</span>img<span style="color:#006600; font-weight:bold;">|</span>
+      		w,h = <span style="color:#996600;">`identify -format "%[fx:w] %[fx:h]" #{img}`</span>.<span style="color:#CC0066; font-weight:bold;">split</span><span style="color:#006600; font-weight:bold;">(</span><span style="color:#996600;">" "</span><span style="color:#006600; font-weight:bold;">)</span>.<span style="color:#9900CC;">collect</span><span style="color:#006600; font-weight:bold;">{</span><span style="color:#006600; font-weight:bold;">|</span>x<span style="color:#006600; font-weight:bold;">|</span> x.<span style="color:#9900CC;">to_i</span><span style="color:#006600; font-weight:bold;">}</span>
+      		<span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">"Detecting left edge special case..."</span>
+      		<span style="color:#996600;">`convert -crop 1x#{h}+0x0 #{img} file_left_mask.png`</span>
+      		deviation = <span style="color:#996600;">`identify -format %[standard-deviation] file_left_mask.png`</span>.<span style="color:#9900CC;">to_i</span>
+      		<span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">"Detecting right edge..."</span>
+      		<span style="color:#996600;">`convert -crop 1x#{h}+#{w-1}x0 #{img} file_right_mask.png`</span>
+      		deviation_r = <span style="color:#996600;">`identify -format %[standard-deviation] file_right_mask.png`</span>.<span style="color:#9900CC;">to_i</span>
+      		geometry_x = screenx<span style="color:#006600; font-weight:bold;">-</span>w
+      		geometry_y = screeny<span style="color:#006600; font-weight:bold;">-</span>h
+      		<span style="color:#9966CC; font-weight:bold;">if</span> deviation <span style="color:#006600; font-weight:bold;">></span> <span style="color:#006666;">0</span> <span style="color:#006600; font-weight:bold;">&&</span> deviation_r <span style="color:#006600; font-weight:bold;"><</span> deviation
+      			geometry_x = <span style="color:#006666;">0</span>
+      		<span style="color:#9966CC; font-weight:bold;">end</span>
+      		identifier<span style="color:#006600; font-weight:bold;">+</span>=<span style="color:#006666;">1</span>
+      		<span style="color:#996600;">`convert #{idol_name}.png #{img} -geometry +#{geometry_x}+#{geometry_y} -composite ./bgs/#{idol_name}/#{identifier}.png`</span>
+      		<span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">"Cleaning up..."</span>
+      		<span style="color:#996600;">`rm file_left_mask.png`</span>
+      		<span style="color:#996600;">`rm file_right_mask.png`</span>
+      	<span style="color:#9966CC; font-weight:bold;">end</span>
+
+      	<span style="color:#996600;">`rm #{idol_name}.png`</span>
+      	<span style="color:#CC0066; font-weight:bold;">puts</span> <span style="color:#996600;">"Cleaned up #{idols[idol_name].name.western} canvas files"</span>
+      <span style="color:#9966CC; font-weight:bold;">end</span></pre>
+    </article>
+  </main>
+  <footer>
+    <a href="https://mew151.net" title="Mewmewmemwewmewmemw"><img src="https://mew151.net/img/mew151_button.gif" alt="Mew151" /></a>
+    <div class="quote">Wait, these aren't true minimalist backgrounds since the characters still have faces!</div>
+    <div>Thank you for visiting Perfect Pop Star Academy!</div>
+  </footer>
+</body>
+</html>

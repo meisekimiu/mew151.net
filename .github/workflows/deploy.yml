@@ -29,6 +29,9 @@ jobs:
           local-dir: ./src/
           server-dir: ./
 
+      - name: 🐱 Prepare Neocities Deploy
+        run: npm run neocities-prepare
+
       - name: 🐱🛠️🪞 Deploy to Neocities Mirror
         uses: bcomnes/deploy-to-neocities@v1.1.4
         with:

@@ -270,6 +270,10 @@ dl {
   font-weight: bold;
 }
 
+.quiz-results-list > * {
+  margin: 1em;
+}
+
 .only-desktop {
   display: block;
 }
@@ -279,6 +283,24 @@ dl {
 .only-neocities {
   display: none;
 }
+
+.webrings {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#hotline {
+  border: 1px solid #000;
+  background-color: #fa9aba;
+  color: #fff;
+}
+#hotline a {
+  font-style: italic;
+  text-transform: uppercase;
+  color: #fff !important;
+}
+
 @media only screen and (max-width: 900px) {
   .window-bar {display: none;}
   .main-window {

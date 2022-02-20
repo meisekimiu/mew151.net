@@ -23,7 +23,7 @@ function makeBlog(tweets) {
 }
 
 function expandWordle(text) {
-  const matches = text.match(/(.+?)Wordle \d+ \d\/\d\*?/i)
+  const matches = text.match(/(.+?)Wordle \d+ (\d|X)\/\d\*?/i)
   if (matches && matches.length > 0) {
     const wordleHeader = matches[0];
     const wordleBody = text.substr(matches[0].length).trim();
