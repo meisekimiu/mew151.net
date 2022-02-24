@@ -134,7 +134,7 @@ const quotes = [
 "食べないでください！",
 "Does anyone want some roses?",
 "It's just like, it's just like, a mini JAPAN",
-"D E F G E D",
+"D E F G E C D",
 "Happy Lucky!",
 "みあが一番！",
 ];
