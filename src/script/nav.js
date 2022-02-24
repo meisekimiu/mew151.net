@@ -32,11 +32,11 @@ const navigation = [
       //   name: "Music",
       //   link: "/music.html",
       // },
-      // {
-      //   icon: "/img/nav/accordion.png",
-      //   name: "Accordion",
-      //   link: "/accordion.html",
-      // },
+      {
+        icon: "/img/nav/accordion.png",
+        name: "Accordion",
+        link: "/accordion",
+      },
       {
         icon: "/img/nav/recycle_bin_full-0.png",
         name: "Random Stuff",
