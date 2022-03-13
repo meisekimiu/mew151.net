@@ -36,13 +36,29 @@ main {
   border-radius: 1em;
 }
 
+a {
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.3s, text-decoration-color 0.3s;
+}
+
+a:link, a:visited {
+  color: #e4007e;
+}
+
+a:hover, a:active {
+  color: #ab005e;
+  text-decoration-color: transparent;
+}
+
 .anime_btn {
   display: block;
   margin: 0 auto;
   text-align: center;
   padding: 0;
-  width: 900px;
-  height: 190px;
+  max-width: 900px;
+  max-height: 190px;
+  background-size: cover !important;
 }
 
 .disabled_btn {
@@ -57,6 +73,7 @@ main {
 .anime_btn > img {
   background: transparent;
   transition: background-color 0.3s;
+  width: 100%;
 }
 
 .anime_btn > img:hover {
@@ -76,8 +93,8 @@ main {
 }
 
 .btn_wrapper {
-  width: 900px;
-  height: 190px;
+  max-width: 900px;
+  max-height: 190px;
   padding: 0;
   position: relative;
   margin: 0 auto;
@@ -95,8 +112,8 @@ main {
   text-align: center;
   transform: rotate(11.92deg);
   z-index: 1;
-  top: 95px;
-  left: -450px;
+  top: 50%;
+  left: -50%;
 }
 
 .under_construction_banner p {
