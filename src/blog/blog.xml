@@ -9,7 +9,14 @@
     <webMaster>webmaster@mew151.net</webMaster>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <ttl>180</ttl>
-    <pubDate>Sat, 19 Feb 2022 17:13:36 -0700</pubDate>
+    <pubDate>Tue, 26 Apr 2022 19:56:44 -0700</pubDate>
+    <item>
+      <title>An Exploration Of Fediverse Server Software</title>
+      <pubDate>Tue, 26 Apr 2022 19:56:44 -0700</pubDate>
+      <link>https://blog.mew151.net/entries/website-launch.html</link>
+      <guid isPermaLink="true">https://blog.mew151.net/entries/fediverse-1.html</guid>
+      <description>(Or: How Do I Own My Social Media Feed?)</description>
+    </item>
     <item>
       <title>Musings on My Website Launch</title>
       <pubDate>Sat, 19 Feb 2022 17:13:36 -0700</pubDate>
@@ -68,7 +75,7 @@
     </item>
     <item>
     <title>Album Review: The Residents’ "Ghost of Hope"</title>
-    <pubDate>Mon, 13 Jul 2017 19:55:00 -0700</pubDate>
+    <pubDate>Thu, 13 Jul 2017 19:55:00 -0700</pubDate>
     <link>https://blog.mew151.net/entries/ghostofhope.html</link>
     <guid isPermaLink="true">https://blog.mew151.net/entries/ghostofhope.html</guid>
     <description>"The chicken crosses the road so that it might attain the other side." - The Residents, 1971</description>

@@ -188,3 +188,19 @@ ins[datetime] {
   padding: 5px;
   line-height: 1.5;
 }
+
+figure {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+figure img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+figcaption {
+  font-style: italic;
+}
