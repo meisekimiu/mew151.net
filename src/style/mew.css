@@ -146,6 +146,15 @@ img {
   height: 95vh;
 }
 
+.maximized-window {
+  height: 99vh;
+}
+
+.maximized-window .window-content {
+  height: 100%;
+  max-height: 100vh;
+}
+
 .main-window .window-content {
   margin: 0;
 }
