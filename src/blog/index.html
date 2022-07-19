@@ -1,58 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Perfect Pop Star Academy</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Natalie Martin" />
-  <meta name="description" content="Natalie's Blog" />
-  <meta name="theme-color" content="#d66682" />
-  <link rel="alternate" type="application+rss/xml" href="/blog.xml" />
-  <link rel="stylesheet" type="text/css" href="style/popstar.css" />
-  <script type="text/javascript" src="script/background.js"></script>
-</head>
-<body>
-  <header id="header">
-    <div id="logo-cover" class="logo-cover"></div>
-    <a class="logo" href="index.html">
-      <h1><img src="img/logo.gif" alt="Perfect Pop Star Academy" /></h1>
-    </a>
-  </header>
-  <nav>
-    <div>
-      <a href="index.html">Home</a>
-      ・
-      <a href="about.html">About</a>
-      ・
-      <a href="https://mew151.net">Back to Main Site</a>
-    </div>
-  </nav>
-  <main class="index">
-    <h2>Perfect Pop Star Academy</h2>
-    <p>This is my personal blog, where I'll write up assorted posts from time to time, mainly stuff that wouldn't really fit as a full page on my <a href="https://mew151.net">personal website.</a> If you want super short form entries, please check out <a href="https://mew151.net/journal.html">my microblog.</a> Anyways, I hope you enjoy your stay. :)</p>
-    <div style="text-align: right"><a href="blog.xml" title="Please I'm begging you use RSS">Subscribe to this Blog via RSS <img src="img/rss.png" style="max-height: 1em; max-width: 1em;" alt="RSS Logo" / ></a></div>
-    <h3>General Posts</h3>
-    <ul>
-      <li><a href="entries/fediverse-1.html">An Exploration Of Fediverse Server Software (Or: How Do I Own My Social Media Feed?)</a> <time datetime="2022-04-26">Posted 2022年4月26日</time>
-      <li><a href="entries/website-launch.html">Musings on My Website Launch</a> <time datetime="2022-02-19">Posted 2022年2月19日</time>
-    </ul>
-    <h3>Legacy Posts</h3>
-    <ul>
-      <li><span style="font-size: 0.9em; font-style: italic">(Posts imported from the older version of this blog.)</span></li>
-      <li><a href="entries/w3schools-retrospective.html">W3Schools Retrospective</a> <time datetime="2020-11-06 09:31-07:00">Posted 2020年11月6日</time></li>
-      <li><a href="entries/dyingdog-review.html">Album Review: The Residents' Metal Meat and Bone</a>  <time datetime="2020-07-10 14:30-07:00">Posted 2020年7月10日</time></li>
-      <li><a href="entries/gingerbread-man-input.html">The Residents’ Gingerbread Man and Keyboard Input Weirdness</a> <time datetime="2020-05-26 16:42-07:00">Posted 2020年5月26日</time></li>
-      <li><a href="entries/mlp-wedding-day-disaster.html">Looking Back at the My Little Pony Game I Made in High School</a> <time datetime="2019-05-05 16:42-07:00">Posted 2019年5月5日</time></li>
-      <li><a href="entries/autogenerating-idol-bgs.html">Autogenerating Idol Desktop Backgrounds</a> <time datetime="2017-12-19 08:23-07:00">Posted 2017年12月19日</time></li>
-      <li><a href="entries/pukunpa.html">Game Feature: Joshikousei no Houkago... Pukunpa</a> <time datetime="2017-08-02 18:59-07:00">Posted 2017年8月2日</time></li>
-      <li><a href="entries/ml4th.html">Live Report: The iDOLM@STER Million Live! 4th Live: TH@NK YOU for SMILE! Day 3</a> <time datetime="2017-03-19 18:00-07:00">Posted 2017年3月19日</time></li>
-      <li><a href="entries/ghostofhope.html">Album Review: The Residents’ “Ghost of Hope”</a> <time datetime="2017-03-13 19:55-07:00">Posted 2017年3月13日</time></li>
-    </ul>
-  </main>
-  <footer>
-    <a href="https://mew151.net" title="Mewmewmemwewmewmemw"><img src="https://mew151.net/img/mew151_button.gif" alt="Mew151" /></a>
-    <div id="random-quote" class="quote" onclick="generateRandomQuote()"></div>
-    <div>Thank you for visiting Perfect Pop Star Academy!</div>
-  </footer>
-</body>
+  <head>
+    <title>Perfect Pop Star Academy</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natalie" />
+    <meta name="description" content="Natalie's Blog" />
+    <meta name="theme-color" content="#d66682" />
+    <link rel="alternate" type="application+rss/xml" href="/blog.xml" />
+    <link rel="stylesheet" type="text/css" href="style/popstar.css" />
+    <script type="text/javascript" src="script/background.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div id="logo-cover" class="logo-cover"></div>
+      <a class="logo" href="index.html">
+        <h1><img src="img/logo.gif" alt="Perfect Pop Star Academy" /></h1>
+      </a>
+    </header>
+    <nav>
+      <div>
+        <a href="index.html">Home</a>
+        ・
+        <a href="about.html">About</a>
+        ・
+        <a href="https://mew151.net">Back to Main Site</a>
+      </div>
+    </nav>
+    <main class="index">
+      <h2>Perfect Pop Star Academy</h2>
+      <p>
+        This is my personal blog, where I'll write up assorted posts from time
+        to time, mainly stuff that wouldn't really fit as a full page on my
+        <a href="https://mew151.net">personal website.</a> If you want super
+        short form entries, please check out
+        <a href="https://mew151.net/journal.html">my microblog.</a> Anyways, I
+        hope you enjoy your stay. :)
+      </p>
+      <div style="text-align: right">
+        <a href="blog.xml" title="Please I'm begging you use RSS"
+          >Subscribe to this Blog via RSS <img src="img/rss.png"
+          style="max-height: 1em; max-width: 1em;" alt="RSS Logo" / ></a
+        >
+      </div>
+      <h3>General Posts</h3>
+      <ul>
+        <li>
+          <a href="entries/fediverse-1.html"
+            >An Exploration Of Fediverse Server Software (Or: How Do I Own My
+            Social Media Feed?)</a
+          >
+          <time datetime="2022-04-26">Posted 2022年4月26日</time>
+        </li>
+        <li>
+          <a href="entries/website-launch.html">Musings on My Website Launch</a>
+          <time datetime="2022-02-19">Posted 2022年2月19日</time>
+        </li>
+      </ul>
+
+      <h3>Legacy Posts</h3>
+      <ul>
+        <li>
+          <span style="font-size: 0.9em; font-style: italic"
+            >(Posts imported from the older version of this blog.)</span
+          >
+        </li>
+        <li>
+          <a href="entries/w3schools-retrospective.html"
+            >W3Schools Retrospective</a
+          >
+          <time datetime="2020-11-06 09:31-07:00">Posted 2020年11月6日</time>
+        </li>
+        <li>
+          <a href="entries/dyingdog-review.html"
+            >Album Review: The Residents' Metal Meat and Bone</a
+          >
+          <time datetime="2020-07-10 14:30-07:00">Posted 2020年7月10日</time>
+        </li>
+        <li>
+          <a href="entries/gingerbread-man-input.html"
+            >The Residents’ Gingerbread Man and Keyboard Input Weirdness</a
+          >
+          <time datetime="2020-05-26 16:42-07:00">Posted 2020年5月26日</time>
+        </li>
+        <li>
+          <a href="entries/mlp-wedding-day-disaster.html"
+            >Looking Back at the My Little Pony Game I Made in High School</a
+          >
+          <time datetime="2019-05-05 16:42-07:00">Posted 2019年5月5日</time>
+        </li>
+        <li>
+          <a href="entries/autogenerating-idol-bgs.html"
+            >Autogenerating Idol Desktop Backgrounds</a
+          >
+          <time datetime="2017-12-19 08:23-07:00">Posted 2017年12月19日</time>
+        </li>
+        <li>
+          <a href="entries/pukunpa.html"
+            >Game Feature: Joshikousei no Houkago... Pukunpa</a
+          >
+          <time datetime="2017-08-02 18:59-07:00">Posted 2017年8月2日</time>
+        </li>
+        <li>
+          <a href="entries/ml4th.html"
+            >Live Report: The iDOLM@STER Million Live! 4th Live: TH@NK YOU for
+            SMILE! Day 3</a
+          >
+          <time datetime="2017-03-19 18:00-07:00">Posted 2017年3月19日</time>
+        </li>
+        <li>
+          <a href="entries/ghostofhope.html"
+            >Album Review: The Residents’ “Ghost of Hope”</a
+          >
+          <time datetime="2017-03-13 19:55-07:00">Posted 2017年3月13日</time>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <a href="https://mew151.net" title="Mewmewmemwewmewmemw"
+        ><img src="https://mew151.net/img/mew151_button.gif" alt="Mew151"
+      /></a>
+      <div
+        id="random-quote"
+        class="quote"
+        onclick="generateRandomQuote()"
+      ></div>
+      <div>Thank you for visiting Perfect Pop Star Academy!</div>
+    </footer>
+  </body>
 </html>

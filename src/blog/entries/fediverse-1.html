@@ -1,185 +1,501 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>An Exploration Of Fediverse Server Software - Perfect Pop Star Academy</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Natalie Martin" />
-  <meta name="description" content="Natalie's Blog" />
-  <meta name="theme-color" content="#d66682" />
-  <link rel="stylesheet" type="text/css" href="../style/popstar.css" />
-  <link rel="alternate" type="application+rss/xml" href="/blog.xml" />
-  <script type="text/javascript">
-  window.baseUrl = "..";
-  </script>
-  <script type="text/javascript" src="../script/background.js"></script>
-</head>
-<body>
-  <header id="header">
-    <div id="logo-cover" class="logo-cover"></div>
-    <a class="logo" href="../index.html">
-      <h1><img src="../img/logo.gif" alt="Perfect Pop Star Academy" /></h1>
-    </a>
-  </header>
-  <nav>
-    <div>
-      <a href="../index.html">Home</a>
-      ・
-      <a href="../about.html">About</a>
-      ・
-      <a href="https://mew151.net">Back to Main Site</a>
-    </div>
-  </nav>
-  <main class="index">
-    <article>
-      <h2>An Exploration Of Fediverse Server Software</h2>
-      <h3>(Or: How Do I Own My Social Media Feed?)</h3>
-      <time datetime="2022-04-26">Posted 2022年4月26日</time>
-      <p>Originally my personal website was created to escape from centralized social media. I mean, that's literally what <a href="https://mew151.net/" title="And probably About page too">my homepage</a> continues to say. And I definitely still think that a personal website is a great way to really own your online presence! So, in case it needs repeating... <a href="https://neocities.org/" title="And please follow me: mew151">make a Neocities for free!</a></p>
-      <p>When I initially created my site though, I still planned on sticking to my centralized social media, but hopefully decreasing my time spent on there substantially by exploring Neocities and other indie web sites instead. However, given the news of <a href="https://www.cnn.com/2022/04/25/tech/elon-musk-twitter-sale-agreement/index.html" title="stupid idiot bought Twitter for billions of dollars when i made a twitter account for free">Elon Musk's purchase of Twitter</a> for the purpose of <span title="Obligatory note that I'm not &quot;anti-free speech,&quot; I just think moderation tools in private online communities are... a good thing to have usually???"><q>protecting free speech</q>,</span> I feel like I finally have the motivation to completely start distancing myself from Twitter.</p>
-      <p>One thing I love about having my own personal website is that it belongs to me. There are no algorithms on this website trying to stir up engagement or advertise to you. There are no restrictions on how I want my web pages to look. It's just... a space for my assorted internet things, and if one day I want to take it all down I can at any moment!</p>
-      <p>Still, I think the format of microblogging is still really fun and has its own uses (as well as normal "macro" blogging) so while I would love to migrate away from Twitter, I still want to have something <em>like</em> Twitter... just decentralized and preferably something I could own an instance of. ...Which brings me to....</p>
-      <h3>Twtxt - Text Based Tweets for Hackers</h3>
-      <p>Currently on my website's <a href="https://mew151.net/journal.html" title="I love the way this page looks">Journal</a> section, I run a microblog that is <q>powered</q> by a utility called <a href="https://twtxt.readthedocs.io/en/latest/" title="How do you pronounce this? I always read it as &quot;TWEE-text&quot; but that's probably wrong.">twtxt.</a> I put powered in quotes there because the actual microblog is just a simple text file and the command line utility just appends a date and status to a new line of the text file every time I want to <q>tweet</q>. I then use JavaScript to parse this text file and render it out onto the journal page. Seriously, that's it.</p>
-      <p>Twtxt is a dead simple way to create a self-hosted social media feed. I just FTP up the file every time I want to tweet something out and my feed updates automatically. And because I'm using the Twtxt format, if <em>you</em> use Twtxt, you can load up my feed in your Twtxt client and see my statuses right on your timeline! How neat is that? Also, more importantly, I can actually edit my tweets, since I just have to edit the text file!</p>
-      <p>Well... while it's fun to have a feed that's totally under my control, it definitely comes with its drawbacks. Because Twtxt is so simple, it's ultimately a very limited and lonely experience without fancier clients and extensions to the format. Because you're only subscribing to other people's feeds, there's no way for you to be notified if someone follows you. And there are <em>no</em> concepts of retweets or likes/favorites in twtxt at all. Multimedia posting is basically non-existent, outside of manually uploading your media elsewhere and then linking to it. Multiline tweets aren't supported without <a href="https://github.com/buckket/twtxt/issues/157" title="This is what my Journal section uses to display multiline status updates">weird</a> <a href="https://dev.twtxt.net/doc/multilineextension.html" title="Kinda wish I found this one earlier tbh :/">extensions</a> to the format. And as far as I can tell, outside of <a href="https://twtxt.net/" title="This instance heavily extends the format to actually make it somewhat usable as a replacement for Twitter">this single instance,</a> basically no one uses Twtxt at all. <span title="It doesn't help that Twtxt is broken in my Arch Linux system right now.">I don't follow anyone on my twtxt client,</span> and it is lonely.</p>
-      <p>I was initially skeptical of tech like Mastodon when Twtxt was a lot simpler... but after facing these limitations for a while (and after the drop of the previously mentioned Twitter news), I decided that maybe, just maybe, I should actually see what the fuss was about so I could do basic things like... interact with people and <span title="Technically I could make a mobile app that allows me to post from my phone but... who has time for that????">post from my phone.</span></p>
-
-      <h3>Mastadon and The Great Twitter Refugee Crisis</h3>
-      <h4 style="margin-left: 1em; font-style: italic; opacity: 0.8;">「それ…アイカツか？」</h4>
-      <p>On April 25th, I decided I wanted to try joining a Mastodon instance. I already had the instance I wanted to join picked out, too: <a href="https://kirakiratter.com/about" title="I want Moon to cryptically tweet to me... :(">Kirakiratter</a>. It's an instance themed around my favorite anime series, <em>Aikatsu,</em> and I'd been wanting to join it for a while, just for the fun of being able to say I have an account on Kirakiratter <em>(the in-universe Twitter equivalent)</em>. I mean... this blog is vaguely Aikatsu-themed so I'm down to make my microblog Aikatsu-themed as well! Time to finally sign up!</p>
-
-      <figure>
-        <img src="img/fediverse-1/kirakiratter.png" alt="Temporarily closing registrations to prevent people from signing up on here just because Elon Musk acquired Twitter. Please check back later!!" title="まだまだ！" />
-        <figcaption>Oh... oh...</figcaption>
-      </figure>
-
-      <p>Well, since KiraKiratter wasn't open for signups... I guess it was time to find another Mastodon instance to jump onto. I browsed through instances for a while, and even found <a href="https://mastodon.gamedev.place/about/more" title="gamedev.place">some</a> <a href="https://gamemaking.social/about/more" title="gamemaking.social">interesting</a> <a href="https://indieweb.social/about/more" title="indieweb.social">ones,</a> but I was kind of initimidated by the idea of joining any Mastodon instance.</p>
-
-      <p>All of the instances I linked to, and honestly most fediverse instances in general, are small themed instances. While it usually seems pretty chill, I wasn't completely sure if going off-topic in a themed instance was frowned upon or not. Plus I didn't want to join one of the bigger general instances because I specifically wanted to be on a smaller instance and see the powers of ~federation~ happen right before my eyes.</p>
-
-      <p>But I wanted to own my social media feed anyways, so instead of joining some random Mastodon instance, what if I just made my own? Then I'd never be off topic even if I wanted to tweet about Aikatsu, game dev, OR accordions!</p>
-
-      <h3>Hosting a Mastodon Instance: More Like MastoDON'T</h3>
-
-      <p>I seriously looked into hosting my own Mastodon instance, right down to being a click away from setting up a Digital Ocean droplet with the Mastodon auto-config thing on it.</p>
-
-      <p>The one thing that bothered me was that everyone was saying that Mastodon was quite heavy. It's a Rails app with a lot of extra things you need to set up alongside it. Since I haven't even <em>tried out</em> the Fediverse yet, I didn't exactly want to shell out a bunch of money on a powerful droplet if the $5 a month droplet would work just fine. But it was looking more like it'd cost extra money to keep the server running, even for just myself and maybe a couple of friends.</p>
-
-      <p>While there are those who claimed they could run Mastodon on the most basic droplet, I didn't want to take that risk, especially once I discovered that there was <span title="Or back before I knew what The Fediverse was, I just thought of it as &quot;other things that could connect to Mastodon&quot;">other software you could set up that wasn't Mastodon but still could interact with the larger Fediverse.</span></p>
-
-      <h3>Pleroma</h3>
-
-      <p><a href="https://pleroma.social/" title="how do u pronounce this">Pleroma</a> is an alternative to Mastodon and it seemed <em>perfect</em> for me! It's much lighter weight (so much that it can run on a Raspberry Pi), but is still fully compatible with Mastodon to the point where you can even use some mobile apps built for Mastodon with a Pleroma instance! And it doesn't use Rails! Wowee!</p>
-
-      <p>Pleroma also seemed to be used for a lot more personal instances consisting of just the server host and maybe a few friends, since it was also easier to set up, so seeing these instances also gave me the confidence that setting up my own instance was possible and also like... a normal thing people did.</p>
-
-      <p>But there is one serious issue with Pleroma, and it's not technical: It's the people.</p>
-
-      <p>Now while there are plenty of cool people using Pleroma, there's a reputation out there that Pleroma is the fediverse software used by nazis. While my initial exploration of Mastodon broke my stereotypical assumption that the Fediverse was occupied by a disproportionate amount of bad people who were only there because they were banned from Twitter, exploring the Pleroma-verse made me realize that... well, that assumption is true to some degree if you look in the right places.</p>
-
-      <p>There is a more specific accusation that the dev(s?) of Pleroma are bad people. I don't actually know who the dev team is, and I don't know if those accusations are true. But regardless, certain Mastodon instances will refuse to federate any Pleroma instances immediately because of it.</p>
-
-      <p>... I'd really prefer if my fediverse instance was <em>not</em> associated with nazis or caught on a blocklist for no real reason. So... I don't think Pleroma is it for me. Maybe if a fork comes along it will be the great fediverse software... but until then, I don't know man.</p>
-
-      <h3>Misskey</h3>
-
-      <p><a href="https://join.misskey.page/en-US/" title="An InterNYANetary Microblogging System">Misskey</a> is another alternative to Mastodon, and also an alternative to Pleroma too I guess. It's not quite as lightweight as Pleroma is, but it still beats out Mastodon. One of the immediate downsides of Misskey is that it isn't compatible with most Mastodon apps, and even the apps that are compatible lack the Misskey-exclusive features.</p>
-
-      <p>But there are quite a few notable unique features to Misskey. I won't n<small style="font-size: 0.5em;">y</small>ame all of them, but I'm quite fond of the emoji reactions, the cat mode <small>nya nya</small>, and the drive.</p>
-
-      <p><span title="Well, I guess on Misskey they'd more accurately be called &quot;nyazis&quot;">I was unsure if Misskey also had any weird nazi associations.</span> And while there are probably nazis who use Misskey, I don't really immediately get results if I search the web for <q>Misskey nazis</q> whereas I get plenty of results when I search for <q>Pleroma nazis</q>.</p>
-
-      <p>There is one thing I'll say about Misskey that might be offputting to people looking to simply abandon Twitter. When it comes to the tech and features, Mastodon and Pleroma are inherently very neutral platforms. The nazi thing for Pleroma is only associated with the people and communities that use Pleroma; <span title="actually I haven't checked this myself, so for all I know there's just an entire copy of Mein Kampf in the source code. ...But I'm going to give them the benefit of the doubt here.">there is no inherently "nazi-ish" functionality to Pleroma.</span></p>
-
-      <p>However, there exists functionality that is fundamentally built into Misskey that really shows who its target audience is. And that target audience seems to be gay weeaboo catpeople.</p>
-
-      <p>There is an inherent <q>weebiness</q> to Misskey and that might scare away some people. It's not really a con for me, but I still can't believe that the cat ears are built into the platform itself and not just a plugin that one instance has.</p>
-
-      <h3>So Which Server Software Do I Choose?</h3>
-
-      <p>Here's a table of my findings researching these three different fediverse servers:</p>
-
-      <style>
-        #table-wrapper {
-          max-width: 100%;
-          overflow-x: auto;
-        }
-        #comparisontable td {
-          padding: 0.5em;
-        }
-      </style>
-      <div id="table-wrapper">
-        <table id="comparisontable" border="1">
-          <thead>
-            <tr>
-              <th>Software</th>
-              <th>Owned by Elon?</th>
-              <th>Footprint</th>
-              <th>Good Mobile App?</th>
-              <th>Nazis?</th>
-              <th>Gay?</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Twitter</td>
-              <td style="background: #ffcccb">Yes</td>
-              <td style="background: #ffcccb">Centralized</td>
-              <td style="background: lightyellow">Yes if you like ads</td>
-              <td style="background: #ffcccb">Yes</td>
-              <td style="background: #ffcccb">It's owned by Elon Musk. Come on.</td>
-            </tr>
-            <tr>
-              <td>Twtxt</td>
-              <td style="background: #d7f2f3">No</td>
-              <td style="background: #d7f2f3">Literally Just A Plain Text File</td>
-              <td style="background: #ffcccb">None</td>
-              <td style="background: lightgrey">There are no users</td>
-              <td style="background: lightgrey">There are no users</td>
-            </tr>
-            <tr>
-              <td>Mastodon</td>
-              <td style="background: #d7f2f3">No</td>
-              <td style="background: #ffcccb">Heavy</td>
-              <td style="background: #d7f2f3">Multiple Fully Functional Apps</td>
-              <td style="background: #d7f2f3">Generally good moderation</td>
-              <td style="background: lightyellow">Kind of</td>
-            </tr>
-            <tr>
-              <td>Pleroma</td>
-              <td style="background: #d7f2f3">No</td>
-              <td style="background: #d7f2f3">Lightest</td>
-              <td style="background: #d7f2f3">Multiple Fully Functional Apps</td>
-              <td style="background: #ffcccb">Yes</td>
-              <td style="background: #ffcccb">The least gay one here tbh</td>
-            </tr>
-            <tr>
-              <td>Misskey</td>
-              <td style="background: #d7f2f3">No</td>
-              <td style="background: #d7f2f3">Light-ish</td>
-              <td style="background: lightyellow">One app still in development, good mobile interface though.</td>
-              <td style="background: #d7f2f3">No</td>
-              <td style="background: #d7f2f3">Indisputably gay</td>
-          </tbody>
-        </table>
-
-        <p>Hopefully if you're wondering which one to choose this table helps out!</p>
-        <p>...Alright, it is <em>mainly</em> a joke. But I think you can tell which software I'm leaning towards here.</p>
-
-        <h3>So... Where is Mew151's Instance?</h3>
-        <p>While I'm leaning towards Misskey for now, I don't want to bite the bullet just yet and set up a personal instance. I'm <em>pretty sure</em> I'm going to use Misskey at this point since there are a few other advantages; it's written in node so as a JS developer it should be easy to customize a personal instance if necessary. Plus, I think it'd be cool to have a fun custom domain name, though I do admit that definitely comes from past me's desire for a cool IRC vhost.</p>
-
-        <p>Right now I'm on the small-ish instance of Misskey somewhere. I'm not sure what compelled me to join it, but it seems <span title="one might even perhaps say... snug">cozy and cool.</span> Maybe eventually I'll move somewhere else or start my own personal Misskey instance.</p>
-
-        <p>Stay tuned for a potential part two to this post, where I'll discuss my thoughts on the fediverse as I explore it more and, if it happens, discuss how I set up my personal instance!</p>
+  <head>
+    <title>
+      An Exploration Of Fediverse Server Software - Perfect Pop Star Academy
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natalie" />
+    <meta name="description" content="Natalie's Blog" />
+    <meta name="theme-color" content="#d66682" />
+    <link rel="stylesheet" type="text/css" href="../style/popstar.css" />
+    <link rel="alternate" type="application+rss/xml" href="/blog.xml" />
+    <script type="text/javascript">
+      window.baseUrl = "..";
+    </script>
+    <script type="text/javascript" src="../script/background.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div id="logo-cover" class="logo-cover"></div>
+      <a class="logo" href="../index.html">
+        <h1><img src="../img/logo.gif" alt="Perfect Pop Star Academy" /></h1>
+      </a>
+    </header>
+    <nav>
+      <div>
+        <a href="../index.html">Home</a>
+        ・
+        <a href="../about.html">About</a>
+        ・
+        <a href="https://mew151.net">Back to Main Site</a>
       </div>
-    </article>
-  </main>
-  <footer>
-    <a href="https://mew151.net" title="Mewmewmemwewmewmemw"><img src="https://mew151.net/img/mew151_button.gif" alt="Mew151" /></a>
-    <div class="quote">Use these tips to eliminate musky odors from your social media!</div>
-    <div>Thank you for visiting the Mew151.net instance of Perfect Pop Star Academy!</div>
-  </footer>
-</body>
+    </nav>
+    <main class="index">
+      <article>
+        <h2>An Exploration Of Fediverse Server Software</h2>
+        <h3>(Or: How Do I Own My Social Media Feed?)</h3>
+        <time datetime="2022-04-26">Posted 2022年4月26日</time>
+        <p>
+          Originally my personal website was created to escape from centralized
+          social media. I mean, that's literally what
+          <a href="https://mew151.net/" title="And probably About page too"
+            >my homepage</a
+          >
+          continues to say. And I definitely still think that a personal website
+          is a great way to really own your online presence! So, in case it
+          needs repeating...
+          <a href="https://neocities.org/" title="And please follow me: mew151"
+            >make a Neocities for free!</a
+          >
+        </p>
+        <p>
+          When I initially created my site though, I still planned on sticking
+          to my centralized social media, but hopefully decreasing my time spent
+          on there substantially by exploring Neocities and other indie web
+          sites instead. However, given the news of
+          <a
+            href="https://www.cnn.com/2022/04/25/tech/elon-musk-twitter-sale-agreement/index.html"
+            title="stupid idiot bought Twitter for billions of dollars when i made a twitter account for free"
+            >Elon Musk's purchase of Twitter</a
+          >
+          for the purpose of
+          <span
+            title='Obligatory note that I&apos;m not "anti-free speech," I just think moderation tools in private online communities are... a good thing to have usually???'
+            ><q>protecting free speech</q>,</span
+          >
+          I feel like I finally have the motivation to completely start
+          distancing myself from Twitter.
+        </p>
+        <p>
+          One thing I love about having my own personal website is that it
+          belongs to me. There are no algorithms on this website trying to stir
+          up engagement or advertise to you. There are no restrictions on how I
+          want my web pages to look. It's just... a space for my assorted
+          internet things, and if one day I want to take it all down I can at
+          any moment!
+        </p>
+        <p>
+          Still, I think the format of microblogging is still really fun and has
+          its own uses (as well as normal "macro" blogging) so while I would
+          love to migrate away from Twitter, I still want to have something
+          <em>like</em> Twitter... just decentralized and preferably something I
+          could own an instance of. ...Which brings me to....
+        </p>
+        <h3>Twtxt - Text Based Tweets for Hackers</h3>
+        <p>
+          Currently on my website's
+          <a
+            href="https://mew151.net/journal.html"
+            title="I love the way this page looks"
+            >Journal</a
+          >
+          section, I run a microblog that is <q>powered</q> by a utility called
+          <a
+            href="https://twtxt.readthedocs.io/en/latest/"
+            title='How do you pronounce this? I always read it as "TWEE-text" but that&apos;s probably wrong.'
+            >twtxt.</a
+          >
+          I put powered in quotes there because the actual microblog is just a
+          simple text file and the command line utility just appends a date and
+          status to a new line of the text file every time I want to
+          <q>tweet</q>. I then use JavaScript to parse this text file and render
+          it out onto the journal page. Seriously, that's it.
+        </p>
+        <p>
+          Twtxt is a dead simple way to create a self-hosted social media feed.
+          I just FTP up the file every time I want to tweet something out and my
+          feed updates automatically. And because I'm using the Twtxt format, if
+          <em>you</em> use Twtxt, you can load up my feed in your Twtxt client
+          and see my statuses right on your timeline! How neat is that? Also,
+          more importantly, I can actually edit my tweets, since I just have to
+          edit the text file!
+        </p>
+        <p>
+          Well... while it's fun to have a feed that's totally under my control,
+          it definitely comes with its drawbacks. Because Twtxt is so simple,
+          it's ultimately a very limited and lonely experience without fancier
+          clients and extensions to the format. Because you're only subscribing
+          to other people's feeds, there's no way for you to be notified if
+          someone follows you. And there are <em>no</em> concepts of retweets or
+          likes/favorites in twtxt at all. Multimedia posting is basically
+          non-existent, outside of manually uploading your media elsewhere and
+          then linking to it. Multiline tweets aren't supported without
+          <a
+            href="https://github.com/buckket/twtxt/issues/157"
+            title="This is what my Journal section uses to display multiline status updates"
+            >weird</a
+          >
+          <a
+            href="https://dev.twtxt.net/doc/multilineextension.html"
+            title="Kinda wish I found this one earlier tbh :/"
+            >extensions</a
+          >
+          to the format. And as far as I can tell, outside of
+          <a
+            href="https://twtxt.net/"
+            title="This instance heavily extends the format to actually make it somewhat usable as a replacement for Twitter"
+            >this single instance,</a
+          >
+          basically no one uses Twtxt at all.
+          <span
+            title="It doesn't help that Twtxt is broken in my Arch Linux system right now."
+            >I don't follow anyone on my twtxt client,</span
+          >
+          and it is lonely.
+        </p>
+        <p>
+          I was initially skeptical of tech like Mastodon when Twtxt was a lot
+          simpler... but after facing these limitations for a while (and after
+          the drop of the previously mentioned Twitter news), I decided that
+          maybe, just maybe, I should actually see what the fuss was about so I
+          could do basic things like... interact with people and
+          <span
+            title="Technically I could make a mobile app that allows me to post from my phone but... who has time for that????"
+            >post from my phone.</span
+          >
+        </p>
+
+        <h3>Mastadon and The Great Twitter Refugee Crisis</h3>
+        <h4 style="margin-left: 1em; font-style: italic; opacity: 0.8">
+          「それ…アイカツか？」
+        </h4>
+        <p>
+          On April 25th, I decided I wanted to try joining a Mastodon instance.
+          I already had the instance I wanted to join picked out, too:
+          <a
+            href="https://kirakiratter.com/about"
+            title="I want Moon to cryptically tweet to me... :("
+            >Kirakiratter</a
+          >. It's an instance themed around my favorite anime series,
+          <em>Aikatsu,</em> and I'd been wanting to join it for a while, just
+          for the fun of being able to say I have an account on Kirakiratter
+          <em>(the in-universe Twitter equivalent)</em>. I mean... this blog is
+          vaguely Aikatsu-themed so I'm down to make my microblog Aikatsu-themed
+          as well! Time to finally sign up!
+        </p>
+
+        <figure>
+          <img
+            src="img/fediverse-1/kirakiratter.png"
+            alt="Temporarily closing registrations to prevent people from signing up on here just because Elon Musk acquired Twitter. Please check back later!!"
+            title="まだまだ！"
+          />
+          <figcaption>Oh... oh...</figcaption>
+        </figure>
+
+        <p>
+          Well, since KiraKiratter wasn't open for signups... I guess it was
+          time to find another Mastodon instance to jump onto. I browsed through
+          instances for a while, and even found
+          <a
+            href="https://mastodon.gamedev.place/about/more"
+            title="gamedev.place"
+            >some</a
+          >
+          <a
+            href="https://gamemaking.social/about/more"
+            title="gamemaking.social"
+            >interesting</a
+          >
+          <a href="https://indieweb.social/about/more" title="indieweb.social"
+            >ones,</a
+          >
+          but I was kind of initimidated by the idea of joining any Mastodon
+          instance.
+        </p>
+
+        <p>
+          All of the instances I linked to, and honestly most fediverse
+          instances in general, are small themed instances. While it usually
+          seems pretty chill, I wasn't completely sure if going off-topic in a
+          themed instance was frowned upon or not. Plus I didn't want to join
+          one of the bigger general instances because I specifically wanted to
+          be on a smaller instance and see the powers of ~federation~ happen
+          right before my eyes.
+        </p>
+
+        <p>
+          But I wanted to own my social media feed anyways, so instead of
+          joining some random Mastodon instance, what if I just made my own?
+          Then I'd never be off topic even if I wanted to tweet about Aikatsu,
+          game dev, OR accordions!
+        </p>
+
+        <h3>Hosting a Mastodon Instance: More Like MastoDON'T</h3>
+
+        <p>
+          I seriously looked into hosting my own Mastodon instance, right down
+          to being a click away from setting up a Digital Ocean droplet with the
+          Mastodon auto-config thing on it.
+        </p>
+
+        <p>
+          The one thing that bothered me was that everyone was saying that
+          Mastodon was quite heavy. It's a Rails app with a lot of extra things
+          you need to set up alongside it. Since I haven't even
+          <em>tried out</em> the Fediverse yet, I didn't exactly want to shell
+          out a bunch of money on a powerful droplet if the $5 a month droplet
+          would work just fine. But it was looking more like it'd cost extra
+          money to keep the server running, even for just myself and maybe a
+          couple of friends.
+        </p>
+
+        <p>
+          While there are those who claimed they could run Mastodon on the most
+          basic droplet, I didn't want to take that risk, especially once I
+          discovered that there was
+          <span
+            title='Or back before I knew what The Fediverse was, I just thought of it as "other things that could connect to Mastodon"'
+            >other software you could set up that wasn't Mastodon but still
+            could interact with the larger Fediverse.</span
+          >
+        </p>
+
+        <h3>Pleroma</h3>
+
+        <p>
+          <a href="https://pleroma.social/" title="how do u pronounce this"
+            >Pleroma</a
+          >
+          is an alternative to Mastodon and it seemed <em>perfect</em> for me!
+          It's much lighter weight (so much that it can run on a Raspberry Pi),
+          but is still fully compatible with Mastodon to the point where you can
+          even use some mobile apps built for Mastodon with a Pleroma instance!
+          And it doesn't use Rails! Wowee!
+        </p>
+
+        <p>
+          Pleroma also seemed to be used for a lot more personal instances
+          consisting of just the server host and maybe a few friends, since it
+          was also easier to set up, so seeing these instances also gave me the
+          confidence that setting up my own instance was possible and also
+          like... a normal thing people did.
+        </p>
+
+        <p>
+          But there is one serious issue with Pleroma, and it's not technical:
+          It's the people.
+        </p>
+
+        <p>
+          Now while there are plenty of cool people using Pleroma, there's a
+          reputation out there that Pleroma is the fediverse software used by
+          nazis. While my initial exploration of Mastodon broke my stereotypical
+          assumption that the Fediverse was occupied by a disproportionate
+          amount of bad people who were only there because they were banned from
+          Twitter, exploring the Pleroma-verse made me realize that... well,
+          that assumption is true to some degree if you look in the right
+          places.
+        </p>
+
+        <p>
+          There is a more specific accusation that the dev(s?) of Pleroma are
+          bad people. I don't actually know who the dev team is, and I don't
+          know if those accusations are true. But regardless, certain Mastodon
+          instances will refuse to federate any Pleroma instances immediately
+          because of it.
+        </p>
+
+        <p>
+          ... I'd really prefer if my fediverse instance was
+          <em>not</em> associated with nazis or caught on a blocklist for no
+          real reason. So... I don't think Pleroma is it for me. Maybe if a fork
+          comes along it will be the great fediverse software... but until then,
+          I don't know man.
+        </p>
+
+        <h3>Misskey</h3>
+
+        <p>
+          <a
+            href="https://join.misskey.page/en-US/"
+            title="An InterNYANetary Microblogging System"
+            >Misskey</a
+          >
+          is another alternative to Mastodon, and also an alternative to Pleroma
+          too I guess. It's not quite as lightweight as Pleroma is, but it still
+          beats out Mastodon. One of the immediate downsides of Misskey is that
+          it isn't compatible with most Mastodon apps, and even the apps that
+          are compatible lack the Misskey-exclusive features.
+        </p>
+
+        <p>
+          But there are quite a few notable unique features to Misskey. I won't
+          n<small style="font-size: 0.5em">y</small>ame all of them, but I'm
+          quite fond of the emoji reactions, the cat mode
+          <small>nya nya</small>, and the drive.
+        </p>
+
+        <p>
+          <span
+            title='Well, I guess on Misskey they&apos;d more accurately be called "nyazis"'
+            >I was unsure if Misskey also had any weird nazi associations.</span
+          >
+          And while there are probably nazis who use Misskey, I don't really
+          immediately get results if I search the web for
+          <q>Misskey nazis</q> whereas I get plenty of results when I search for
+          <q>Pleroma nazis</q>.
+        </p>
+
+        <p>
+          There is one thing I'll say about Misskey that might be offputting to
+          people looking to simply abandon Twitter. When it comes to the tech
+          and features, Mastodon and Pleroma are inherently very neutral
+          platforms. The nazi thing for Pleroma is only associated with the
+          people and communities that use Pleroma;
+          <span
+            title="actually I haven't checked this myself, so for all I know there's just an entire copy of Mein Kampf in the source code. ...But I'm going to give them the benefit of the doubt here."
+            >there is no inherently "nazi-ish" functionality to Pleroma.</span
+          >
+        </p>
+
+        <p>
+          However, there exists functionality that is fundamentally built into
+          Misskey that really shows who its target audience is. And that target
+          audience seems to be gay weeaboo catpeople.
+        </p>
+
+        <p>
+          There is an inherent <q>weebiness</q> to Misskey and that might scare
+          away some people. It's not really a con for me, but I still can't
+          believe that the cat ears are built into the platform itself and not
+          just a plugin that one instance has.
+        </p>
+
+        <h3>So Which Server Software Do I Choose?</h3>
+
+        <p>
+          Here's a table of my findings researching these three different
+          fediverse servers:
+        </p>
+
+        <style>
+          #table-wrapper {
+            max-width: 100%;
+            overflow-x: auto;
+          }
+          #comparisontable td {
+            padding: 0.5em;
+          }
+        </style>
+        <div id="table-wrapper">
+          <table id="comparisontable" border="1">
+            <thead>
+              <tr>
+                <th>Software</th>
+                <th>Owned by Elon?</th>
+                <th>Footprint</th>
+                <th>Good Mobile App?</th>
+                <th>Nazis?</th>
+                <th>Gay?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Twitter</td>
+                <td style="background: #ffcccb">Yes</td>
+                <td style="background: #ffcccb">Centralized</td>
+                <td style="background: lightyellow">Yes if you like ads</td>
+                <td style="background: #ffcccb">Yes</td>
+                <td style="background: #ffcccb">
+                  It's owned by Elon Musk. Come on.
+                </td>
+              </tr>
+              <tr>
+                <td>Twtxt</td>
+                <td style="background: #d7f2f3">No</td>
+                <td style="background: #d7f2f3">
+                  Literally Just A Plain Text File
+                </td>
+                <td style="background: #ffcccb">None</td>
+                <td style="background: lightgrey">There are no users</td>
+                <td style="background: lightgrey">There are no users</td>
+              </tr>
+              <tr>
+                <td>Mastodon</td>
+                <td style="background: #d7f2f3">No</td>
+                <td style="background: #ffcccb">Heavy</td>
+                <td style="background: #d7f2f3">
+                  Multiple Fully Functional Apps
+                </td>
+                <td style="background: #d7f2f3">Generally good moderation</td>
+                <td style="background: lightyellow">Kind of</td>
+              </tr>
+              <tr>
+                <td>Pleroma</td>
+                <td style="background: #d7f2f3">No</td>
+                <td style="background: #d7f2f3">Lightest</td>
+                <td style="background: #d7f2f3">
+                  Multiple Fully Functional Apps
+                </td>
+                <td style="background: #ffcccb">Yes</td>
+                <td style="background: #ffcccb">The least gay one here tbh</td>
+              </tr>
+              <tr>
+                <td>Misskey</td>
+                <td style="background: #d7f2f3">No</td>
+                <td style="background: #d7f2f3">Light-ish</td>
+                <td style="background: lightyellow">
+                  One app still in development, good mobile interface though.
+                </td>
+                <td style="background: #d7f2f3">No</td>
+                <td style="background: #d7f2f3">Indisputably gay</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>
+            Hopefully if you're wondering which one to choose this table helps
+            out!
+          </p>
+          <p>
+            ...Alright, it is <em>mainly</em> a joke. But I think you can tell
+            which software I'm leaning towards here.
+          </p>
+
+          <h3>So... Where is Mew151's Instance?</h3>
+          <p>
+            While I'm leaning towards Misskey for now, I don't want to bite the
+            bullet just yet and set up a personal instance. I'm
+            <em>pretty sure</em> I'm going to use Misskey at this point since
+            there are a few other advantages; it's written in node so as a JS
+            developer it should be easy to customize a personal instance if
+            necessary. Plus, I think it'd be cool to have a fun custom domain
+            name, though I do admit that definitely comes from past me's desire
+            for a cool IRC vhost.
+          </p>
+
+          <p>
+            Right now I'm on the small-ish instance of Misskey somewhere. I'm
+            not sure what compelled me to join it, but it seems
+            <span title="one might even perhaps say... snug"
+              >cozy and cool.</span
+            >
+            Maybe eventually I'll move somewhere else or start my own personal
+            Misskey instance.
+          </p>
+
+          <p>
+            Stay tuned for a potential part two to this post, where I'll discuss
+            my thoughts on the fediverse as I explore it more and, if it
+            happens, discuss how I set up my personal instance!
+          </p>
+        </div>
+      </article>
+    </main>
+    <footer>
+      <a href="https://mew151.net" title="Mewmewmemwewmewmemw"
+        ><img src="https://mew151.net/img/mew151_button.gif" alt="Mew151"
+      /></a>
+      <div class="quote">
+        Use these tips to eliminate musky odors from your social media!
+      </div>
+      <div>
+        Thank you for visiting the Mew151.net instance of Perfect Pop Star
+        Academy!
+      </div>
+    </footer>
+  </body>
 </html>

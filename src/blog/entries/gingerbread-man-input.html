@@ -1,151 +1,481 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>The Residents’ Gingerbread Man and Keyboard Input Weirdness - Perfect Pop Star Academy</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Natalie Martin" />
-  <meta name="description" content="Natalie's Blog" />
-  <meta name="theme-color" content="#d66682" />
-  <link rel="stylesheet" type="text/css" href="../style/popstar.css" />
-  <link rel="alternate" type="application+rss/xml" href="/blog.xml" />
-  <script type="text/javascript">
-  window.baseUrl = "..";
-  </script>
-  <script type="text/javascript" src="../script/background.js"></script>
-</head>
-<body>
-  <header id="header">
-    <div id="logo-cover" class="logo-cover"></div>
-    <a class="logo" href="../index.html">
-      <h1><img src="../img/logo.gif" alt="Perfect Pop Star Academy" /></h1>
-    </a>
-  </header>
-  <nav>
-    <div>
-      <a href="../index.html">Home</a>
-      ・
-      <a href="../about.html">About</a>
-      ・
-      <a href="https://mew151.net">Back to Main Site</a>
-    </div>
-  </nav>
-  <main class="index">
-    <article>
-      <h2>The Residents’ Gingerbread Man and Keyboard Input Weirdness</h2>
-      <time datetime="2020-05-26 16:42-07:00">Posted 2020年5月26日</time>
-      <p>In the README file packed in with The Residents' interactive <em>Gingerbread Man</em> CD-ROM software, good ol' Uncle Willie gives you some cryptic advice in operating the interactive movies:</p>
+  <head>
+    <title>
+      The Residents’ Gingerbread Man and Keyboard Input Weirdness - Perfect Pop
+      Star Academy
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natalie" />
+    <meta name="description" content="Natalie's Blog" />
+    <meta name="theme-color" content="#d66682" />
+    <link rel="stylesheet" type="text/css" href="../style/popstar.css" />
+    <link rel="alternate" type="application+rss/xml" href="/blog.xml" />
+    <script type="text/javascript">
+      window.baseUrl = "..";
+    </script>
+    <script type="text/javascript" src="../script/background.js"></script>
+  </head>
+  <body>
+    <header id="header">
+      <div id="logo-cover" class="logo-cover"></div>
+      <a class="logo" href="../index.html">
+        <h1><img src="../img/logo.gif" alt="Perfect Pop Star Academy" /></h1>
+      </a>
+    </header>
+    <nav>
+      <div>
+        <a href="../index.html">Home</a>
+        ・
+        <a href="../about.html">About</a>
+        ・
+        <a href="https://mew151.net">Back to Main Site</a>
+      </div>
+    </nav>
+    <main class="index">
+      <article>
+        <h2>The Residents’ Gingerbread Man and Keyboard Input Weirdness</h2>
+        <time datetime="2020-05-26 16:42-07:00">Posted 2020年5月26日</time>
+        <p>
+          In the README file packed in with The Residents' interactive
+          <em>Gingerbread Man</em> CD-ROM software, good ol' Uncle Willie gives
+          you some cryptic advice in operating the interactive movies:
+        </p>
 
-<blockquote>
-<strong>Uncle Willie sez: If it hurts when you do that, then DON'T DO THAT!</strong><br />
-(In other words, avoid the following...)<br />
-- If the Caps Lock key is down then the buttons don't work.  This continually torments some of the slower testers around here.
-</blockquote>
+        <blockquote>
+          <strong
+            >Uncle Willie sez: If it hurts when you do that, then DON'T DO
+            THAT!</strong
+          ><br />
+          (In other words, avoid the following...)<br />
+          - If the Caps Lock key is down then the buttons don't work. This
+          continually torments some of the slower testers around here.
+        </blockquote>
 
-<p>Why don't the buttons work when Caps Lock is activated? I'm pretty sure <em>DOOM II</em>, released the same year, doesn't suddenly lock up if you accidentally hit caps lock... and since this is clearly written up in the README, it means that <em>someone</em> who worked on this game noticed this before it was shipped!</p>
+        <p>
+          Why don't the buttons work when Caps Lock is activated? I'm pretty
+          sure <em>DOOM II</em>, released the same year, doesn't suddenly lock
+          up if you accidentally hit caps lock... and since this is clearly
+          written up in the README, it means that <em>someone</em> who worked on
+          this game noticed this before it was shipped!
+        </p>
 
-<p>So why did this happen and why wasn't it fixed? In this post I'd like to look at the code to examine why exactly they could have missed such an obvious error.</p>
+        <p>
+          So why did this happen and why wasn't it fixed? In this post I'd like
+          to look at the code to examine why exactly they could have missed such
+          an obvious error.
+        </p>
 
-<h3>So why doesn't it work with Caps Lock?</h3>
-<p>Adobe Director's Lingo programming language can handle keyboard input in multiple ways. Keyboard event functions basically have a few magical variables they can use.</p>
-<p>One of these variables, called <code><span style="color:#0000BB">the keyCode</span></code> <small>(and yes, Lingo's verbose syntax means that articles can be randomly tossed around variable names like that)</small> returns a number called... well, the "Key Code" which represents the actual physical button being pressed on a keyboard. Analyzing the key code is the most effective way of handling most keyboard input (and mouse button input for that matter!) since key code just abstractly represents that button's pressed state, with no other information getting in the way of that. What that means is that if you, say, flip on Caps Lock, it won't have any effect on the key codes being thrown at your input handlers.</p>
-<p>However... there is another variable that input handlers can also used: the more simply-named <code><span style="color:#0000BB">the key</span></code> returns a single character string representing the actual ASCII character being input. What this means is that things like the Caps Lock and Shift keys will affect what value this <code><span style="color:#0000BB">the key</span></code> parameter holds! So, if you're using this parameter to check if, say, the <code>a</code> key is pressed, you'll have to check if <code><span style="color:#0000BB">the key</span><span style="color:#007700"> = </span><span style="color:#DD0000">"a"</span><span style="color:#007700"> or </span><span style="color:#0000BB">the key</span><span style="color:#007700"> = </span><span style="color:#DD0000">"A"</span></code>. Yeesh, talk about verbose!</p>
-<h3>Okay, so they didn't use Key Codes? Is that it?</h3>
-<p>Not using keycodes is <em>one</em> reason why this seemingly glaring issue is present in the game. But as I demonstrated, you can still have "case insensitive" key detection in your code by using character strings. So were they really just too lazy to do this?</p>
+        <h3>So why doesn't it work with Caps Lock?</h3>
+        <p>
+          Adobe Director's Lingo programming language can handle keyboard input
+          in multiple ways. Keyboard event functions basically have a few
+          magical variables they can use.
+        </p>
+        <p>
+          One of these variables, called
+          <code><span style="color: #0000bb">the keyCode</span></code>
+          <small
+            >(and yes, Lingo's verbose syntax means that articles can be
+            randomly tossed around variable names like that)</small
+          >
+          returns a number called... well, the "Key Code" which represents the
+          actual physical button being pressed on a keyboard. Analyzing the key
+          code is the most effective way of handling most keyboard input (and
+          mouse button input for that matter!) since key code just abstractly
+          represents that button's pressed state, with no other information
+          getting in the way of that. What that means is that if you, say, flip
+          on Caps Lock, it won't have any effect on the key codes being thrown
+          at your input handlers.
+        </p>
+        <p>
+          However... there is another variable that input handlers can also
+          used: the more simply-named
+          <code><span style="color: #0000bb">the key</span></code> returns a
+          single character string representing the actual ASCII character being
+          input. What this means is that things like the Caps Lock and Shift
+          keys will affect what value this
+          <code><span style="color: #0000bb">the key</span></code> parameter
+          holds! So, if you're using this parameter to check if, say, the
+          <code>a</code> key is pressed, you'll have to check if
+          <code
+            ><span style="color: #0000bb">the key</span
+            ><span style="color: #007700"> = </span
+            ><span style="color: #dd0000">"a"</span
+            ><span style="color: #007700"> or </span
+            ><span style="color: #0000bb">the key</span
+            ><span style="color: #007700"> = </span
+            ><span style="color: #dd0000">"A"</span></code
+          >. Yeesh, talk about verbose!
+        </p>
+        <h3>Okay, so they didn't use Key Codes? Is that it?</h3>
+        <p>
+          Not using keycodes is <em>one</em> reason why this seemingly glaring
+          issue is present in the game. But as I demonstrated, you can still
+          have "case insensitive" key detection in your code by using character
+          strings. So were they really just too lazy to do this?
+        </p>
 
-<p>Well... <em>kind of</em>. Because of the way the code in <em>Gingerbread Man</em> is organized, implementing this case insensitivity is way harder than it should be. Let me show you an example of some uncompiled code found in the actual game's files!</p>
+        <p>
+          Well... <em>kind of</em>. Because of the way the code in
+          <em>Gingerbread Man</em> is organized, implementing this case
+          insensitivity is way harder than it should be. Let me show you an
+          example of some uncompiled code found in the actual game's files!
+        </p>
 
-<div style="background: #00000011; padding: 1em; border: 1px solid #d66682; border-radius:5px;">
-<code>
-<span style="color:#0000BB">InkEffect(1_2_3_4_5)</span><span style="color:#007700">:</span><br />
- <span style="color:#0000BB">49</span> <span style="color:#007700">: set the</span> <span style="color:#0000BB">ink</span> <span style="color:#007700">of</span> <span style="color:#0000BB">sprite 37</span> <span style="color:#007700">=</span> <span style="color:#0000BB">36</span><br />
- <span style="color:#0000BB">50</span><span style="color:#007700"> : set the </span><span style="color:#0000BB">ink </span><span style="color:#007700">of </span><span style="color:#0000BB">sprite 37</span><span style="color:#007700"> = </span><span style="color:#0000BB">3</span><br />
- <span style="color:#0000BB">51</span><span style="color:#007700"> : set the </span><span style="color:#0000BB">ink </span><span style="color:#007700">of </span><span style="color:#0000BB">sprite 37</span><span style="color:#007700"> = </span><span style="color:#0000BB">1</span><br />
- <span style="color:#0000BB">52</span><span style="color:#007700"> : set the </span><span style="color:#0000BB">ink </span><span style="color:#007700">of </span><span style="color:#0000BB">sprite 37</span><span style="color:#007700"> = </span><span style="color:#0000BB">39</span><br />
- <span style="color:#0000BB">53</span><span style="color:#007700"> : set the </span><span style="color:#0000BB">ink </span><span style="color:#007700">of </span><span style="color:#0000BB">sprite 37</span><span style="color:#007700"> = </span><span style="color:#0000BB">2</span><br />
-</code>
-</div>
-<small>(From SHARED.DIR in The Gingerbread Man)</small>
+        <div
+          style="
+            background: #00000011;
+            padding: 1em;
+            border: 1px solid #d66682;
+            border-radius: 5px;
+          "
+        >
+          <code>
+            <span style="color: #0000bb">InkEffect(1_2_3_4_5)</span
+            ><span style="color: #007700">:</span><br />
+            <span style="color: #0000bb">49</span>
+            <span style="color: #007700">: set the</span>
+            <span style="color: #0000bb">ink</span>
+            <span style="color: #007700">of</span>
+            <span style="color: #0000bb">sprite 37</span>
+            <span style="color: #007700">=</span>
+            <span style="color: #0000bb">36</span><br />
+            <span style="color: #0000bb">50</span
+            ><span style="color: #007700"> : set the </span
+            ><span style="color: #0000bb">ink </span
+            ><span style="color: #007700">of </span
+            ><span style="color: #0000bb">sprite 37</span
+            ><span style="color: #007700"> = </span
+            ><span style="color: #0000bb">3</span><br />
+            <span style="color: #0000bb">51</span
+            ><span style="color: #007700"> : set the </span
+            ><span style="color: #0000bb">ink </span
+            ><span style="color: #007700">of </span
+            ><span style="color: #0000bb">sprite 37</span
+            ><span style="color: #007700"> = </span
+            ><span style="color: #0000bb">1</span><br />
+            <span style="color: #0000bb">52</span
+            ><span style="color: #007700"> : set the </span
+            ><span style="color: #0000bb">ink </span
+            ><span style="color: #007700">of </span
+            ><span style="color: #0000bb">sprite 37</span
+            ><span style="color: #007700"> = </span
+            ><span style="color: #0000bb">39</span><br />
+            <span style="color: #0000bb">53</span
+            ><span style="color: #007700"> : set the </span
+            ><span style="color: #0000bb">ink </span
+            ><span style="color: #007700">of </span
+            ><span style="color: #0000bb">sprite 37</span
+            ><span style="color: #007700"> = </span
+            ><span style="color: #0000bb">2</span><br />
+          </code>
+        </div>
+        <small>(From SHARED.DIR in The Gingerbread Man)</small>
 
-<p>I'm not entirely sure how this code works since I don't have access to the entire game's codebase, only random snippets that were left uncompiled. However, it appears to be using Lingo's <code>case</code> syntax to run specific bits of code based on the ASCII character code being pressed (probably gotten by passing <code><span style="color:#007700">the key</span></code> into the <code><span style="color:#007700">charToNum()</span></code>). In Lingo, multiple cases can't point to the same block of code and you can't put logical expressions in them either. So to make things case insensitive with this input handling framework in place, you'll need to double up every single line of code... and there are a LOT of lines of code like this, since this code is duplicated for each character's Director movie.</p>
+        <p>
+          I'm not entirely sure how this code works since I don't have access to
+          the entire game's codebase, only random snippets that were left
+          uncompiled. However, it appears to be using Lingo's
+          <code>case</code> syntax to run specific bits of code based on the
+          ASCII character code being pressed (probably gotten by passing
+          <code><span style="color: #007700">the key</span></code> into the
+          <code><span style="color: #007700">charToNum()</span></code
+          >). In Lingo, multiple cases can't point to the same block of code and
+          you can't put logical expressions in them either. So to make things
+          case insensitive with this input handling framework in place, you'll
+          need to double up every single line of code... and there are a LOT of
+          lines of code like this, since this code is duplicated for each
+          character's Director movie.
+        </p>
 
-<p>Here's some more code that responds to actual alphabetical characters:</p>
+        <p>
+          Here's some more code that responds to actual alphabetical characters:
+        </p>
 
-<div style="background: #00000011; padding: 1em; border: 1px solid #d66682; border-radius:5px;">
-<code>
-<span style="color:#0000BB">AnimatedThought(a_s_d_f_g)</span><span style="color:#007700">:</span><br />
- <span style="color:#0000BB">97</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">1</span><br />
- <span style="color:#0000BB">115</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">2</span><br />
- <span style="color:#0000BB">100</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">3</span><br />
- <span style="color:#0000BB">102</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">4</span><br />
- <span style="color:#0000BB">103</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">5</span><br />
-</code>
-</div>
+        <div
+          style="
+            background: #00000011;
+            padding: 1em;
+            border: 1px solid #d66682;
+            border-radius: 5px;
+          "
+        >
+          <code>
+            <span style="color: #0000bb">AnimatedThought(a_s_d_f_g)</span
+            ><span style="color: #007700">:</span><br />
+            <span style="color: #0000bb">97</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">1</span><br />
+            <span style="color: #0000bb">115</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">2</span><br />
+            <span style="color: #0000bb">100</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">3</span><br />
+            <span style="color: #0000bb">102</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">4</span><br />
+            <span style="color: #0000bb">103</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">5</span><br />
+          </code>
+        </div>
 
-<p>And here's how that code has to be edited to make it be "case insensitive":</p>
+        <p>
+          And here's how that code has to be edited to make it be "case
+          insensitive":
+        </p>
 
-<div style="background: #00000011; padding: 1em; border: 1px solid #d66682; border-radius:5px;">
-<code>
-<span style="color:#0000BB">AnimatedThought(a_s_d_f_g)</span><span style="color:#007700">:</span><br />
- <span style="color:#0000BB">97</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">1</span><br />
- <span style="color:#0000BB">65</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">1</span><br />
- <span style="color:#0000BB">115</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">2</span><br />
- <span style="color:#0000BB">83</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">2</span><br />
- <span style="color:#0000BB">100</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">3</span><br />
- <span style="color:#0000BB">68</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">3</span><br />
- <span style="color:#0000BB">102</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">4</span><br />
- <span style="color:#0000BB">70</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">4</span><br />
- <span style="color:#0000BB">103</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">5</span><br />
- <span style="color:#0000BB">71</span><span style="color:#007700"> : </span><span style="color:#0000BB">mPlaceAnimThought gDirectorObj</span><span style="color:#007700">, </span><span style="color:#0000BB">5</span><br />
-</code>
-</div>
+        <div
+          style="
+            background: #00000011;
+            padding: 1em;
+            border: 1px solid #d66682;
+            border-radius: 5px;
+          "
+        >
+          <code>
+            <span style="color: #0000bb">AnimatedThought(a_s_d_f_g)</span
+            ><span style="color: #007700">:</span><br />
+            <span style="color: #0000bb">97</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">1</span><br />
+            <span style="color: #0000bb">65</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">1</span><br />
+            <span style="color: #0000bb">115</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">2</span><br />
+            <span style="color: #0000bb">83</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">2</span><br />
+            <span style="color: #0000bb">100</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">3</span><br />
+            <span style="color: #0000bb">68</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">3</span><br />
+            <span style="color: #0000bb">102</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">4</span><br />
+            <span style="color: #0000bb">70</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">4</span><br />
+            <span style="color: #0000bb">103</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">5</span><br />
+            <span style="color: #0000bb">71</span
+            ><span style="color: #007700"> : </span
+            ><span style="color: #0000bb">mPlaceAnimThought gDirectorObj</span
+            ><span style="color: #007700">, </span
+            ><span style="color: #0000bb">5</span><br />
+          </code>
+        </div>
 
-<p>Now in this example we only had to add 5 more lines of code, but also remember that because of the way this is organized, we're adding extra code that needs to be maintained! If we want to redefine the functionality of the "A" key for instance, we'd have to make sure that both the lowercase <em>and</em> uppercase blocks of code are updated. I assume having horribly rigid code like this would seriously inhibit creative tinkerers like The Residents (and would probably just be very time consuming to fix everywhere since Director didn't exactly have the most robust development tools!), so in the end they just slapped a "<strong>DON'T TURN ON CAPS LOCK OR YOU'LL BREAK EVERYTHING!</strong>" into the README file that came with the software.</p>
+        <p>
+          Now in this example we only had to add 5 more lines of code, but also
+          remember that because of the way this is organized, we're adding extra
+          code that needs to be maintained! If we want to redefine the
+          functionality of the "A" key for instance, we'd have to make sure that
+          both the lowercase <em>and</em> uppercase blocks of code are updated.
+          I assume having horribly rigid code like this would seriously inhibit
+          creative tinkerers like The Residents (and would probably just be very
+          time consuming to fix everywhere since Director didn't exactly have
+          the most robust development tools!), so in the end they just slapped a
+          "<strong>DON'T TURN ON CAPS LOCK OR YOU'LL BREAK EVERYTHING!</strong>"
+          into the README file that came with the software.
+        </p>
 
-<h3>Well I guess that solves that mystery!</h3>
+        <h3>Well I guess that solves that mystery!</h3>
 
-<p>Well, not quite. There is a bit of code that caught my eye in the first defined text node of SHARED.DIR:</p>
+        <p>
+          Well, not quite. There is a bit of code that caught my eye in the
+          first defined text node of SHARED.DIR:
+        </p>
 
-<div style="background: #00000011; padding: 1em; border: 1px solid #d66682; border-radius:5px;">
-<code>
-<span style="color:#0000BB">Special(esc_\_|_)</span><span style="color:#007700">:</span><br />
- <span style="color:#0000BB">92</span><span style="color:#007700"> : put the </span><span style="color:#0000BB">freebytes</span><span style="color:#007700">/</span><span style="color:#0000BB">1024</span><br />
- <span style="color:#0000BB">124</span><span style="color:#007700"> : put the </span><span style="color:#0000BB">pactiveobjlist</span><span style="color:#007700"> of</span><span style="color:#0000BB"> gdirectorobj</span><br />
-</code>
-</div>
+        <div
+          style="
+            background: #00000011;
+            padding: 1em;
+            border: 1px solid #d66682;
+            border-radius: 5px;
+          "
+        >
+          <code>
+            <span style="color: #0000bb">Special(esc_\_|_)</span
+            ><span style="color: #007700">:</span><br />
+            <span style="color: #0000bb">92</span
+            ><span style="color: #007700"> : put the </span
+            ><span style="color: #0000bb">freebytes</span
+            ><span style="color: #007700">/</span
+            ><span style="color: #0000bb">1024</span><br />
+            <span style="color: #0000bb">124</span
+            ><span style="color: #007700"> : put the </span
+            ><span style="color: #0000bb">pactiveobjlist</span
+            ><span style="color: #007700"> of</span
+            ><span style="color: #0000bb"> gdirectorobj</span><br />
+          </code>
+        </div>
 
-<p>These seem to be key bindings for debugging functions! This code defines two key behaviors: it makes the <code><kbd>\ (Backslash)</kbd></code> key print out the amount of free kilobytes in memory to Director's message window, and it makes the <code><kbd>| (Vertical Bar)</kbd></code> key print out what I assume to be a list of active objects belonging to the global scene to Director's message window.</p>
+        <p>
+          These seem to be key bindings for debugging functions! This code
+          defines two key behaviors: it makes the
+          <code><kbd>\ (Backslash)</kbd></code> key print out the amount of free
+          kilobytes in memory to Director's message window, and it makes the
+          <code><kbd>| (Vertical Bar)</kbd></code> key print out what I assume
+          to be a list of active objects belonging to the global scene to
+          Director's message window.
+        </p>
 
-<p>It's strange since on most keyboards, backslash and the vertical bar are on the same key and you have to actually press shift to type the vertical bar. This suggests that the programmer(s?) knew about this whole case insensitive input thing rather early on, and even took advantage of it to easily bind two debugging commands to the same key!</p>
+        <p>
+          It's strange since on most keyboards, backslash and the vertical bar
+          are on the same key and you have to actually press shift to type the
+          vertical bar. This suggests that the programmer(s?) knew about this
+          whole case insensitive input thing rather early on, and even took
+          advantage of it to easily bind two debugging commands to the same key!
+        </p>
 
-<p>(By the way, if anyone does have a copy of GBM and a computer that can run it, I'd be interested in seeing if this functionality is still enabled in the game. Perhaps the debug information is spit out to standard output and can be read if you launch the game from the command prompt?)</p>
+        <p>
+          (By the way, if anyone does have a copy of GBM and a computer that can
+          run it, I'd be interested in seeing if this functionality is still
+          enabled in the game. Perhaps the debug information is spit out to
+          standard output and can be read if you launch the game from the
+          command prompt?)
+        </p>
 
-<p>I think this suggests that the whole Caps Lock issue was known pretty early on and they just straight up decided to ignore it. Maybe they designed the key handler like this early on and forgot later in development, until a tester couldn't get the game working with Caps Lock on? Or what if this software really <em>was</em> programmed by The Residents and as a result it is just kind of weird and clunky? Perhaps The Residents wanted to map separate behavior to the uppercase alphabet but stopped when they realized they couldn't really do much more, leaving uppercase letters to do mostly nothing at all.</p>
+        <p>
+          I think this suggests that the whole Caps Lock issue was known pretty
+          early on and they just straight up decided to ignore it. Maybe they
+          designed the key handler like this early on and forgot later in
+          development, until a tester couldn't get the game working with Caps
+          Lock on? Or what if this software really <em>was</em> programmed by
+          The Residents and as a result it is just kind of weird and clunky?
+          Perhaps The Residents wanted to map separate behavior to the uppercase
+          alphabet but stopped when they realized they couldn't really do much
+          more, leaving uppercase letters to do mostly nothing at all.
+        </p>
 
-<p>And yes, I did say they <em>mostly</em> do nothing, since it seems that uppercase <strong>F, M, and S</strong> keys actually <em>do</em> something, specifically set the "random speed" parameter of the global director object... I assume it's the exact amount of time that has to pass between random events occurring on their own in the game. F, M, and S stand for "Fast", "Medium", and "Slow" respectively... I would assume.</p>
+        <p>
+          And yes, I did say they <em>mostly</em> do nothing, since it seems
+          that uppercase <strong>F, M, and S</strong> keys actually
+          <em>do</em> something, specifically set the "random speed" parameter
+          of the global director object... I assume it's the exact amount of
+          time that has to pass between random events occurring on their own in
+          the game. F, M, and S stand for "Fast", "Medium", and "Slow"
+          respectively... I would assume.
+        </p>
 
-<div style="background: #00000011; padding: 1em; border: 1px solid #d66682; border-radius:5px;">
-<code>
-<span style="color:#0000BB">randomSpeed(F_M_S_)</span><span style="color:#007700">:</span><br />
- <span style="color:#0000BB">70</span><span style="color:#007700"> : set the </span><span style="color:#0000BB">pRandomSpeed</span><span style="color:#007700"> of </span><span style="color:#0000BB">gDirectorObj</span><span style="color:#007700"> = </span><span style="color:#0000BB">25</span><br />
- <span style="color:#0000BB">77</span><span style="color:#007700"> : set the </span><span style="color:#0000BB">pRandomSpeed</span><span style="color:#007700"> of </span><span style="color:#0000BB">gDirectorObj</span><span style="color:#007700"> = </span><span style="color:#0000BB">100</span><br />
- <span style="color:#0000BB">83</span><span style="color:#007700"> : set the </span><span style="color:#0000BB">pRandomSpeed</span><span style="color:#007700"> of </span><span style="color:#0000BB">gDirectorObj</span><span style="color:#007700"> = </span><span style="color:#0000BB">200</span><br />
-</code>
-</div>
+        <div
+          style="
+            background: #00000011;
+            padding: 1em;
+            border: 1px solid #d66682;
+            border-radius: 5px;
+          "
+        >
+          <code>
+            <span style="color: #0000bb">randomSpeed(F_M_S_)</span
+            ><span style="color: #007700">:</span><br />
+            <span style="color: #0000bb">70</span
+            ><span style="color: #007700"> : set the </span
+            ><span style="color: #0000bb">pRandomSpeed</span
+            ><span style="color: #007700"> of </span
+            ><span style="color: #0000bb">gDirectorObj</span
+            ><span style="color: #007700"> = </span
+            ><span style="color: #0000bb">25</span><br />
+            <span style="color: #0000bb">77</span
+            ><span style="color: #007700"> : set the </span
+            ><span style="color: #0000bb">pRandomSpeed</span
+            ><span style="color: #007700"> of </span
+            ><span style="color: #0000bb">gDirectorObj</span
+            ><span style="color: #007700"> = </span
+            ><span style="color: #0000bb">100</span><br />
+            <span style="color: #0000bb">83</span
+            ><span style="color: #007700"> : set the </span
+            ><span style="color: #0000bb">pRandomSpeed</span
+            ><span style="color: #007700"> of </span
+            ><span style="color: #0000bb">gDirectorObj</span
+            ><span style="color: #007700"> = </span
+            ><span style="color: #0000bb">200</span><br />
+          </code>
+        </div>
 
-<p>I don't think this functionality is documented anywhere, and again, I'm not even sure it works in the final game (given how it's plastered everywhere in the code I think it might still be functional though). But I think it seems to indicate that the game was designed around this weird case sensitive input system. Personally I think that's a really weird design decision, but hey, if the README is to believed this software <em>was</em> programmed by The Residents so I guess that makes sense...</p>
+        <p>
+          I don't think this functionality is documented anywhere, and again,
+          I'm not even sure it works in the final game (given how it's plastered
+          everywhere in the code I think it might still be functional though).
+          But I think it seems to indicate that the game was designed around
+          this weird case sensitive input system. Personally I think that's a
+          really weird design decision, but hey, if the README is to believed
+          this software <em>was</em> programmed by The Residents so I guess that
+          makes sense...
+        </p>
 
-<hr />
+        <hr />
 
-<p>So... that was a rather deep dive into how <em>The Gingerbread Man</em> probably handles keyboard input. This piece of software is such an anomaly to me as a Residents fan and computer programmer... and doing a deep dive like this leaves me only more puzzled as to why the developers designed the game in such way that you can't have caps lock on while playing it. <em>Gingerbread Man</em> was developed with the same technology as the other Residents CD-ROM projects, <em>Freak Show CD-ROM</em> and <em>Bad Day on the Midway</em>, but it was handled by a completely different development studio. I haven't looked at <em>Freak Show</em> yet, but I can tell just from how the available uncompiled code is laid out that <em>Bad Day</em> was... much better put together, to say the least.</p>
+        <p>
+          So... that was a rather deep dive into how
+          <em>The Gingerbread Man</em> probably handles keyboard input. This
+          piece of software is such an anomaly to me as a Residents fan and
+          computer programmer... and doing a deep dive like this leaves me only
+          more puzzled as to why the developers designed the game in such way
+          that you can't have caps lock on while playing it.
+          <em>Gingerbread Man</em> was developed with the same technology as the
+          other Residents CD-ROM projects, <em>Freak Show CD-ROM</em> and
+          <em>Bad Day on the Midway</em>, but it was handled by a completely
+          different development studio. I haven't looked at
+          <em>Freak Show</em> yet, but I can tell just from how the available
+          uncompiled code is laid out that <em>Bad Day</em> was... much better
+          put together, to say the least.
+        </p>
 
-<p>I found all of this while researching these Residents CD-ROMs (with the ultimate goal to document <em>Bad Day on the Midway</em> in its entirety) and I hope I can learn more interesting things about these games as I continue trying to dig through the game files. Thanks for reading!</p>
-    </article>
-  </main>
-  <footer>
-    <a href="https://mew151.net" title="Mewmewmemwewmewmemw"><img src="https://mew151.net/img/mew151_button.gif" alt="Mew151" /></a>
-    <div class="quote">My favorite song from this album is THE CONFUSED INPUT HANDLER</div>
-    <div>Thank you for visiting Perfect Pop Star Academy!</div>
-  </footer>
-</body>
+        <p>
+          I found all of this while researching these Residents CD-ROMs (with
+          the ultimate goal to document <em>Bad Day on the Midway</em> in its
+          entirety) and I hope I can learn more interesting things about these
+          games as I continue trying to dig through the game files. Thanks for
+          reading!
+        </p>
+      </article>
+    </main>
+    <footer>
+      <a href="https://mew151.net" title="Mewmewmemwewmewmemw"
+        ><img src="https://mew151.net/img/mew151_button.gif" alt="Mew151"
+      /></a>
+      <div class="quote">
+        My favorite song from this album is THE CONFUSED INPUT HANDLER
+      </div>
+      <div>Thank you for visiting Perfect Pop Star Academy!</div>
+    </footer>
+  </body>
 </html>
