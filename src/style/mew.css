@@ -310,6 +310,11 @@ dl {
   color: #fff !important;
 }
 
+#fediring {
+  border: 1px dashed #fff;
+  padding: 0.25em;
+}
+
 @media only screen and (max-width: 900px) {
   .window-bar {display: none;}
   .main-window {
