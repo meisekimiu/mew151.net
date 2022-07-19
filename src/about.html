@@ -1,80 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <title>About - Mew151.net</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Natalie Martin" />
-  <meta name="description" content="Natalie Martin's Personal Website" />
-  <link rel="stylesheet" type="text/css" href="style/mew.css" />
-  <link rel="alternate" type="application+rss/xml" href="/rss.xml" />
-  <link rel="me" href="https://github.com/meisekimiu" />
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  <link rel="canonical" href="https://mew151.net/about.html" />
-  <link rel="webmention" href="https://webmention.io/mew151.net/webmention" />
-  <link rel="pingback" href="https://webmention.io/mew151.net/xmlrpc" />
-  <script src="style/autostyle.js" type="text/javascript"></script>
-  <script src="script/nav.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    function activateClassicMode() {
-      document.getElementsByTagName("main")[0].className = "classic-about";
-      document.getElementById("classic-switch").innerHTML = `<em>This page is now styled like my original Freewebs-era website!</em>`
-    }
-  </script>
-</head>
-<body>
-  <div class="window nav-window">
-    <div class="window-bar">
-      <div class="window-title">
-        My Computer
+  <head>
+    <title>About - Mew151.net</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natalie Martin" />
+    <meta name="description" content="Natalie Martin's Personal Website" />
+    <link rel="stylesheet" type="text/css" href="style/mew.css" />
+    <link rel="alternate" type="application+rss/xml" href="/rss.xml" />
+    <link rel="me" href="https://github.com/meisekimiu" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="canonical" href="https://mew151.net/about.html" />
+    <link rel="webmention" href="https://webmention.io/mew151.net/webmention" />
+    <link rel="pingback" href="https://webmention.io/mew151.net/xmlrpc" />
+    <script src="style/autostyle.js" type="text/javascript"></script>
+    <script src="script/nav.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      function activateClassicMode() {
+        document.getElementsByTagName("main")[0].className = "classic-about";
+        document.getElementById(
+          "classic-switch"
+        ).innerHTML = `<em>This page is now styled like my original Freewebs-era website!</em>`;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="window nav-window">
+      <div class="window-bar">
+        <div class="window-title">My Computer</div>
+      </div>
+      <div class="window-content">
+        <nav class="explorer">
+          <iframe
+            src="/nav-fallback.html"
+            style="width: 100%; height: 100%"
+          ></iframe>
+        </nav>
       </div>
     </div>
-    <div class="window-content">
-      <nav class="explorer">
-        <iframe src="/nav-fallback.html" style="width: 100%; height: 100%"></iframe>
-      </nav>
-    </div>
-  </div>
-  <div class="window main-window">
-    <div class="window-bar">
-      <div class="window-title">
-        About
+    <div class="window main-window">
+      <div class="window-bar">
+        <div class="window-title">About</div>
+      </div>
+      <div class="window-content">
+        <main style="background: #200; color: #eee" class="about">
+          <div style="text-align: center">
+            <h1>About This Site</h1>
+          </div>
+          <div style="text-align: center; margin: 1em" id="classic-switch">
+            <button
+              style="
+                padding: 6px;
+                background: #666;
+                color: #200;
+                font-weight: bold;
+              "
+              onclick="activateClassicMode()"
+            >
+              Click Me to Activate &quot;Classic Style&quot; Mode :)
+            </button>
+            <br />
+          </div>
+          <p>
+            This site is a tribute to the World Wide Web. I have been fascinated
+            by the web from a young age, and I've always wanted to have my own
+            website. There was just something so fun and interesting about
+            having your own digital world to do whatever you want with. I think
+            the site
+            <a
+              href="http://catfish.it.cx/trsrockin/trsrockin.com/index.html"
+              title='Oh great, now I have "Double Trouble" stuck in my head...'
+              >TRsRockin</a
+            >
+            in particular was a big influence on me... there was so much to
+            explore on this site and it made me want to become a webmaster!
+          </p>
+          <p>
+            I first learned HTML through Neopets, making pages dedicated to my
+            virtual pets. A few years later I eventually got my own free website
+            on
+            <a
+              href="https://en.wikipedia.org/wiki/Webs_(web_hosting)"
+              title="How are they still up"
+              >Freewebs,</a
+            >
+            but as I was learning more and more about backend programming in
+            PHP, I wanted <em>more power.</em> I developed a local intranet
+            prototype for the next iteration of my personal site, expanded using
+            fancy PHP instead of lame static HTML.
+          </p>
+          <p>
+            In 2009, I was somehow able to
+            <small>(convince my parents to allow me to)</small> buy my own
+            website and domain, hosted by
+            <u title="now known as HostPapa">LunarPages</u>. At this point, the
+            idea for a personal website had been
+            <span title='was this some kind of setup for a "Lunar Eclipse" pun?'
+              >eclipsed</span
+            >
+            by a larger vision: a complex browser-based Pok&eacute;mon
+            roleplaying game website, similar in design to Neopets. You could
+            have your own Pok&eacute;mon, battle with other users, and also
+            there was this whole economy system and blogging functionality
+            and... well, lots of scope creep. As a result, I never even finished
+            an alpha version of the site.
+          </p>
+          <p>
+            The Pok&eacute;mon website was eventually abandoned, and my domain
+            and website mainly laid dormant. I'd still upload stuff to the site
+            to share privately with friends, but the actual root of the domain
+            was blanked out for basically a decade.
+          </p>
+          <p>
+            Many of the <q>sub-sites</q> that are currently part of this website
+            were the small pieces of content I'd subtly link to on my bare-bones
+            homepage. My art project
+            <a href="subsite/bios.html">{ bios }</a> was the first page actually
+            linked to on the homepage, starting in 2014. Starting in 2017,
+            <a href="subsite/blog.html">Perfect Pop Star Academy</a> effectively
+            became my personal website, though it was just a blog I seldom
+            posted to. I began hosting the
+            <a href="subsite/hac.html">Home Age Conversations</a> podcast
+            website in late 2018. And in 2021, I started my
+            <a href="subsite/games.html">Gamez Archive</a> site. Throughout all
+            of this, my own homepage was still mostly blanked out, only linking
+            out to these other sub-sites.
+          </p>
+          <p>
+            But... the urge to host a dedicated personal website at mew151.net
+            was still with me throughout all these years. In early 2022, I grew
+            fascinated with
+            <a href="https://neocities.org/" title="This site is the coolest"
+              >Neocities,</a
+            >
+            the
+            <a
+              href="https://indieweb.org/"
+              title="wait I should have pinged their webmention service when I made this link"
+              >IndieWeb,</a
+            >
+            and... well the general aesthetic of Web 1.0 style websites. I think
+            it's at least partially a pushback against the current push for
+            <q>web3,</q> which in my opinion is currently co-opting the word
+            <q>decentralization</q> to specifically imply the harmful and
+            pointless usage of blockchain technology. I want to instead simply
+            focus on having my own space away from social media, with the hope
+            that maybe others will join me and we can have a web that is at
+            least a little bit more decentralized and free. :)
+          </p>
+          <p>
+            Plus... I just want to dump a bunch of stuff onto here anyway! No
+            one on Twitter wants to hear my thoughts on accordions or obscure
+            Japanese new wave bands! But on here I can shout into the void as
+            much as I want!
+          </p>
+          <hr />
+          <h2 id="about-webmaster">About Me</h2>
+          <h3><em>The Dossier on Mew151</em></h3>
+          <ul>
+            <li><strong>Name:</strong> Natalie</li>
+            <li><strong>Code Name:</strong> Mew</li>
+            <li><strong>Gender:</strong> Female</li>
+            <li><strong>Category:</strong> Webmaster</li>
+            <li>
+              <strong>Current Mood:</strong>
+              <a href="https://www.imood.com/users/mew151"
+                ><img
+                  src="https://moods.imood.com/display/uname-mew151/fg-ffffff/trans-1/imood.gif"
+                  alt="The current mood of mew151 at www.imood.com"
+                  border="0"
+              /></a>
+            </li>
+            <li><strong>Operating System:</strong> Arch Linux</li>
+            <li>
+              <strong>Hobbies:</strong> Programming, Gaming, Surfing the Web,
+              Playing the Accordion, Lucid Dreaming
+            </li>
+            <li><strong>Nintendo Switch:</strong> SW-7145-2463-1623</li>
+            <li><strong>Fediverse:</strong> @natalie@prismst.one</li>
+          </ul>
+          <p>
+            Hi, I'm Natalie! If you're into
+            <em>~cooler internet aliases~</em> instead, you can call me
+            <q>Mew</q>. Like the domain name! I'm a professional software
+            engineer and hobbyist game developer. I currently do professional
+            work with modern web technologies, and working on this site is a
+            great break from all of that stuff! I believe in free and open
+            source software, and yes, I use
+            <span title="I'd like to interject for a moment...">Linux.</span>
+            You can see a variety of my silly internet quiz results
+            <a href="/random/quiz_results.html" title="Which ____ are you?"
+              >here</a
+            >
+            if you think they'd give insight into my personality.
+          </p>
+          <p>
+            I love anime, especially idol anime! (My producer name is
+            <q>MewP</q>). I'm also a
+            <a
+              href="https://en.wikipedia.org/wiki/Lucid_dream"
+              title="Reality Check!"
+              >Lucid Dreamer.</a
+            >
+            I love weird avant-garde music (specifically from The Residents or
+            anyone else related to Ralph Records). Also I love rhythm games. I
+            currently play two musical instruments, both of which I love:
+            Accordion and
+            <a
+              href="https://www.youtube.com/watch?v=2nBJjL-NV1U"
+              title="Robo Oboe"
+              >EWI</a
+            >.
+          </p>
+          <p>
+            By the way, my favorite Pok&eacute;mon is obviously Mew, though
+            Oddish is my favorite non-<span title="mythical?">legendary</span>
+            Pok&eacute;mon.
+          </p>
+        </main>
       </div>
     </div>
-    <div class="window-content">
-      <main style="background: #200; color: #eee;" class="about">
-        <div style="text-align: center">
-          <h1>About This Site</h1>
-        </div>
-        <div style="text-align: center; margin: 1em;" id="classic-switch">
-          <button style="padding: 6px; background: #666; color: #200; font-weight: bold;" onclick="activateClassicMode()">Click Me to Activate &quot;Classic Style&quot; Mode :)</button>
-          <br />
-        </div>
-        <p>This site is a tribute to the World Wide Web. I have been fascinated by the web from a young age, and I've always wanted to have my own website. There was just something so fun and interesting about having your own digital world to do whatever you want with. I think the site <a href="http://catfish.it.cx/trsrockin/trsrockin.com/index.html" title="Oh great, now I have &quot;Double Trouble&quot; stuck in my head...">TRsRockin</a> in particular was a big influence on me... there was so much to explore on this site and it made me want to become a webmaster!</p>
-        <p>I first learned HTML through Neopets, making pages dedicated to my virtual pets. A few years later I eventually got my own free website on <a href="https://en.wikipedia.org/wiki/Webs_(web_hosting)" title="How are they still up">Freewebs,</a> but as I was learning more and more about backend programming in PHP, I wanted <em>more power.</em> I developed a local intranet prototype for the next iteration of my personal site, expanded using fancy PHP instead of lame static HTML.</p>
-        <p>In 2009, I was somehow able to <small>(convince my parents to allow me to)</small> buy my own website and domain, hosted by <u title="now known as HostPapa">LunarPages</u>. At this point, the idea for a personal website had been <span title="was this some kind of setup for a &quot;Lunar Eclipse&quot; pun?">eclipsed</span> by a larger vision: a complex browser-based Pok&eacute;mon roleplaying game website, similar in design to Neopets. You could have your own Pok&eacute;mon, battle with other users, and also there was this whole economy system and blogging functionality and... well, lots of scope creep. As a result, I never even finished an alpha version of the site.</p>
-        <p>The Pok&eacute;mon website was eventually abandoned, and my domain and website mainly laid dormant. I'd still upload stuff to the site to share privately with friends, but the actual root of the domain was blanked out for basically a decade.</p>
-        <p>Many of the <q>sub-sites</q> that are currently part of this website were the small pieces of content I'd subtly link to on my bare-bones homepage. My art project <a href="subsite/bios.html">{ bios }</a> was the first page actually linked to on the homepage, starting in 2014. Starting in 2017, <a href="subsite/blog.html">Perfect Pop Star Academy</a> effectively became my personal website, though it was just a blog I seldom posted to. I began hosting the <a href="subsite/hac.html">Home Age Conversations</a> podcast website in late 2018. And in 2021, I started my <a href="subsite/games.html">Gamez Archive</a> site. Throughout all of this, my own homepage was still mostly blanked out, only linking out to these other sub-sites.</p>
-        <p>But... the urge to host a dedicated personal website at mew151.net was still with me throughout all these years. In early 2022, I grew fascinated with <a href="https://neocities.org/" title="This site is the coolest">Neocities,</a> the <a href="https://indieweb.org/" title="wait I should have pinged their webmention service when I made this link">IndieWeb,</a> and... well the general aesthetic of Web 1.0 style websites. I think it's at least partially a pushback against the current push for <q>web3,</q> which in my opinion is currently co-opting the word <q>decentralization</q> to specifically imply the harmful and pointless usage of blockchain technology. I want to instead simply focus on having my own space away from social media, with the hope that maybe others will join me and we can have a web that is at least a little bit more decentralized and free. :)</p>
-        <p>Plus... I just want to dump a bunch of stuff onto here anyway! No one on Twitter wants to hear my thoughts on accordions or obscure Japanese new wave bands! But on here I can shout into the void as much as I want!</p>
-        <hr />
-        <h2 id="about-webmaster">About Me</h2>
-        <h3><em>The Dossier on Mew151</em></h3>
-        <ul>
-          <li><strong>Name:</strong> Natalie</li>
-          <li><strong>Code Name:</strong> Mew</li>
-          <li><strong>Gender:</strong> Female</li>
-          <li><strong>Category:</strong> Webmaster</li>
-          <li><strong>Current Mood:</strong> <a href="https://www.imood.com/users/mew151"><img src="https://moods.imood.com/display/uname-mew151/fg-ffffff/trans-1/imood.gif" alt="The current mood of mew151 at www.imood.com" border="0"></a></li>
-          <li><strong>Operating System:</strong> Arch Linux</li>
-          <li><strong>Hobbies:</strong> Programming, Gaming, Surfing the Web, Playing the Accordion, Lucid Dreaming</li>
-          <li><strong>Nintendo Switch:</strong> SW-7145-2463-1623</li>
-        </ul>
-        <p>Hi, I'm Natalie! If you're into <em>~cooler internet aliases~</em> instead, you can call me <q>Mew</q>. Like the domain name! I'm a professional software engineer and hobbyist game developer. I currently do professional work with modern web technologies, and working on this site is a great break from all of that stuff! I believe in free and open source software, and yes, I use <span title="I'd like to interject for a moment...">Linux.</span> You can see a variety of my silly internet quiz results <a href="/random/quiz_results.html" title="Which ____ are you?">here</a> if you think they'd give insight into my personality.</p>
-        <p>I love anime, especially idol anime! (My producer name is <q>MewP</q>). I'm also a <a href="https://en.wikipedia.org/wiki/Lucid_dream" title="Reality Check!">Lucid Dreamer.</a> I love weird avant-garde music (specifically from The Residents or anyone else related to Ralph Records). Also I love rhythm games. I currently play two musical instruments, both of which I love: Accordion and <a href="https://www.youtube.com/watch?v=2nBJjL-NV1U" title="Robo Oboe">EWI</a>.</p>
-        <p>By the way, my favorite Pok&eacute;mon is obviously Mew, though Oddish is my favorite non-<span title="mythical?">legendary</span> Pok&eacute;mon.</p>
-      </main>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
