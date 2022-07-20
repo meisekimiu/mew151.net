@@ -1,19 +1,27 @@
 <?xml version="1.0"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Perfect Pop Star Academy</title>
     <link>https://blog.mew151.net</link>
+    <atom:link href="https://blog.mew151.net/blog.xml" rel="self" type="application/rss+xml" />
     <description>Blog for Mew151.net</description>
     <language>en-us</language>
     <copyright>2009-2022 Natalie Martin</copyright>
-    <webMaster>webmaster@mew151.net</webMaster>
+    <webMaster>webmaster@mew151.net (Natalie)</webMaster>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <ttl>180</ttl>
-    <pubDate>Tue, 26 Apr 2022 19:56:44 -0700</pubDate>
+    <pubDate>Tue, 19 Jul 2022 18:02:36 -0700</pubDate>
+    <item>
+      <title>More Thoughts On The Fediverse</title>
+      <pubDate>Tue, 19 Jul 2022 18:02:36 -0700</pubDate>
+      <link>https://blog.mew151.net/entries/fediverse-2.html</link>
+      <guid isPermaLink="true">https://blog.mew151.net/entries/fediverse-2.html</guid>
+      <description>(Fediverse Part 2)</description>
+    </item>
     <item>
       <title>An Exploration Of Fediverse Server Software</title>
       <pubDate>Tue, 26 Apr 2022 19:56:44 -0700</pubDate>
-      <link>https://blog.mew151.net/entries/website-launch.html</link>
+      <link>https://blog.mew151.net/entries/fediverse-1.html</link>
       <guid isPermaLink="true">https://blog.mew151.net/entries/fediverse-1.html</guid>
       <description>(Or: How Do I Own My Social Media Feed?)</description>
     </item>
