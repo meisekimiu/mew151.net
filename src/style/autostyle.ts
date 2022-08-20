@@ -1,4 +1,4 @@
-function setBackground(hour) {
+function setBackground(hour?: number) {
   const date = new Date();
 
   const code = date.getMonth() + 1 + "/" + date.getDate();
@@ -48,7 +48,9 @@ function setBackground(hour) {
     "12/31", // new yearz eve
   ];
   if (specialDates.includes(code)) {
-    const offset = date.getYear() + specialDates.indexOf(code) + date.getDate();
+    // Subtract 1900 from date to emulate date.getYear() for full Y2K aesthetic lol
+    const offset =
+      date.getFullYear() - 1900 + specialDates.indexOf(code) + date.getDate();
     const backgrounds = [
       "/style/backgrounds/checker.png",
       "/style/backgrounds/diamonds.png",
@@ -57,41 +59,41 @@ function setBackground(hour) {
       "/style/backgrounds/purple.png",
     ];
     let bg = backgrounds[offset % backgrounds.length];
-    document.querySelector("body").style.backgroundImage = "url('" + bg + "')";
-    document.querySelector("body").style.backgroundSize = "auto";
+    document.body.style.backgroundImage = "url('" + bg + "')";
+    document.body.style.backgroundSize = "auto";
     return;
   }
 
   const minutes = date.getMinutes();
   const hours = hour ?? date.getHours();
+  const html = document.querySelector("html") as HTMLHtmlElement; // Assert that it exists
   if ((hours >= 18 && hours < 19) || hours === 6) {
-    document.querySelector("body").style.backgroundImage =
+    document.body.style.backgroundImage =
       "linear-gradient(#000, #110058, orangered)";
     return;
   } else if ((hours >= 19 && hours < 23) || hours === 5) {
-    document.querySelector("html").style.backgroundColor = "#000";
-    document.querySelector("body").style.backgroundImage =
-      "url('/style/backgrounds/stars.png')";
-    document.querySelector("body").style.backgroundSize = "auto";
+    html.style.backgroundColor = "#000";
+    document.body.style.backgroundImage = "url('/style/backgrounds/stars.png')";
+    document.body.style.backgroundSize = "auto";
     return;
   } else if (hours === 4 && minutes === 44) {
-    document.querySelector("html").style.backgroundColor = "#000";
-    document.querySelector("body").style.backgroundImage =
+    html.style.backgroundColor = "#000";
+    document.body.style.backgroundImage =
       "url('/style/backgrounds/giygas.png')";
-    document.querySelector("body").style.backgroundSize = "auto";
+    document.body.style.backgroundSize = "auto";
     return;
   } else if (hours >= 23 || hours <= 4) {
-    document.querySelector("html").style.backgroundColor = "#000";
-    document.querySelector("body").style.backgroundImage =
+    html.style.backgroundColor = "#000";
+    document.body.style.backgroundImage =
       "url('/style/backgrounds/After_Dark_Flying_Toasters.png')";
-    document.querySelector("body").style.backgroundSize = "auto";
+    document.body.style.backgroundSize = "auto";
     return;
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   setBackground();
-  const windowBars = document.getElementsByClassName("window-bar");
+  const windowBars = Array.from(document.getElementsByClassName("window-bar"));
   for (const bar of windowBars) {
     const buttons = document.createElement("div");
     buttons.className = "window-buttons";

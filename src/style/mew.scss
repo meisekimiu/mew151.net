@@ -1,6 +1,6 @@
 @font-face {
   font-family: "W95FA";
-  src: url('fontz/w95fa.woff');
+  src: url("fontz/w95fa.woff");
 }
 
 html {
@@ -66,15 +66,15 @@ img {
 }
 
 .button-close {
-  background-image: url('windows_close.png');
+  background-image: url("windows_close.png");
 }
 
 .button-maximize {
-  background-image: url('windows_max.png');
+  background-image: url("windows_max.png");
 }
 
 .button-minimize {
-  background-image: url('windows_min.png');
+  background-image: url("windows_min.png");
 }
 
 .window-content {
@@ -177,7 +177,8 @@ main {
   margin: 0;
 }
 
-p, h1 {
+p,
+h1 {
   margin: 0;
   margin-bottom: 1em;
 }
@@ -209,13 +210,28 @@ hr {
 }
 .classic-about p:first-letter {
   color: #ff0000;
-  font-size:xx-large;
+  font-size: xx-large;
 }
-.classic-about a:link {color: white; font-family: arial;}
-.classic-about a:visited {color: white; font-family: arial;}
-.classic-about a:hover {color: white; font-family: arial;}
-.classic-about a:active {color: white; font-family: arial;}
-.classic-about hr {padding: 3px; border-bottom: 2px double #ffffff; margin 10px;}
+.classic-about a:link {
+  color: white;
+  font-family: arial;
+}
+.classic-about a:visited {
+  color: white;
+  font-family: arial;
+}
+.classic-about a:hover {
+  color: white;
+  font-family: arial;
+}
+.classic-about a:active {
+  color: white;
+  font-family: arial;
+}
+.classic-about hr {
+  padding: 3px;
+  border-bottom: 2px double #ffffff; /*margin: 10px;*/
+}
 .classic-about .container h2 {
   float: left;
   background-color: #aaaaaa;
@@ -288,14 +304,13 @@ dl {
 }
 
 .directory-listing .file {
-  list-style-type: '(FILE) ';
+  list-style-type: "(FILE) ";
   margin-left: 6ex;
 }
 
 .directory-listing .dir {
-  list-style-type: ' (DIR) ';
+  list-style-type: " (DIR) ";
   margin-left: 6ex;
-
 }
 
 .only-desktop {
@@ -331,7 +346,9 @@ dl {
 }
 
 @media only screen and (max-width: 900px) {
-  .window-bar {display: none;}
+  .window-bar {
+    display: none;
+  }
   .main-window {
     width: 100%;
     height: 100%;

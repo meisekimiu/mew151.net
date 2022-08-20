@@ -1,13 +1,19 @@
-function buildPosts(text) {
+const markdown = require("snarkdown");
+
+function buildPosts(text: string) {
   const parser = new DOMParser();
-  const doc = parser.parseFromString(text, 'text/xml');
-  const items = doc.querySelectorAll('item');
-  document.getElementById("updates").innerHTML = "";
+  const doc = parser.parseFromString(text, "text/xml");
+  const items = doc.querySelectorAll("item");
+  const updates = document.getElementById("updates");
+  if (updates) {
+    updates.innerHTML = "";
+  }
   let i = 0;
-  for (const item of items) {
-    const title = item.querySelector("title")?.innerHTML;
-    const date = item.querySelector("pubDate")?.innerHTML;
-    const description = item.querySelector("description")?.innerHTML;
+  for (let j = 0; j < items.length; j++) {
+    const item = items[j];
+    const title = item.querySelector("title")?.innerHTML ?? "";
+    const date = item.querySelector("pubDate")?.innerHTML ?? "";
+    const description = item.querySelector("description")?.innerHTML ?? "";
 
     const feedItem = document.createElement("div");
     feedItem.className = "feed-item";
@@ -16,7 +22,7 @@ function buildPosts(text) {
     const dateElement = document.createElement("time");
     dateElement.className = "feed-date";
     dateElement.setAttribute("datetime", date);
-    const humanDate = (new Date(date)).toLocaleDateString("ja-JP");
+    const humanDate = new Date(date).toLocaleDateString("ja-JP");
     dateElement.innerText = humanDate + ": ";
     header.appendChild(dateElement);
 
@@ -31,17 +37,19 @@ function buildPosts(text) {
       const descriptionElement = document.createElement("div");
       descriptionElement.className = "feed-desc";
       if (markdown) {
-        descriptionElement.innerHTML = markdown.toHTML(description);
+        descriptionElement.innerHTML = markdown(description);
       } else {
         descriptionElement.innerHTML = description;
       }
       feedItem.appendChild(descriptionElement);
     }
 
-    document.getElementById("updates").appendChild(feedItem);
-    if (i++ < items.length - 1) {
-      const hr = document.createElement("hr");
-      document.getElementById("updates").appendChild(hr);
+    if (updates) {
+      updates.appendChild(feedItem);
+      if (i++ < items.length - 1) {
+        const hr = document.createElement("hr");
+        updates.appendChild(hr);
+      }
     }
   }
 }

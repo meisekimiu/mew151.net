@@ -2,7 +2,7 @@ name: Deploy to Mew151.net
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
   workflow_dispatch:
 
@@ -16,6 +16,9 @@ jobs:
 
       - name: ⚙️ Install utilities
         run: npm install
+
+      - name: 🍹 Build TypeScript / Sass
+        run: npm run build
 
       - name: 📰 Build feed
         run: npm run rss
