@@ -23,11 +23,6 @@ const navigation = [
         link: "/shrines.html",
       },
       // {
-      //   icon: "/img/nav/console_prompt-0.png",
-      //   name: "Programming",
-      //   link: "/programming.html",
-      // },
-      // {
       //   icon: "/img/nav/cd_audio_cd-0.png",
       //   name: "Music",
       //   link: "/music.html",
@@ -36,6 +31,11 @@ const navigation = [
         icon: "/img/nav/accordion.png",
         name: "Accordion",
         link: "/accordion",
+      },
+      {
+        icon: "/img/nav/console_prompt-0.png",
+        name: "Cyberspace",
+        link: "/cyber",
       },
       {
         icon: "/img/nav/recycle_bin_full-0.png",
@@ -52,7 +52,7 @@ const navigation = [
         name: "Sitemap",
         link: "/sitemap.html",
       },
-    ]
+    ],
   },
   {
     name: "Sub-Sites",
@@ -77,7 +77,7 @@ const navigation = [
         name: "Perfect Pop Star Academy",
         link: "/subsite/blog.html",
       },
-    ]
+    ],
   },
   {
     name: "Find Me Elsewhere",
@@ -93,13 +93,12 @@ const navigation = [
         rel: "me",
         link: "https://github.com/meisekimiu",
       },
-    ]
-  }
+    ],
+  },
 ];
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  const nav = document.getElementsByTagName('nav')[0];
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.getElementsByTagName("nav")[0];
   if (nav) {
     nav.innerHTML = "";
     for (const section of navigation) {
@@ -131,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       nav.appendChild(body);
     }
-   } else {
+  } else {
     // No nav found
   }
 });

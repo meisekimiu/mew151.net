@@ -283,6 +283,21 @@ dl {
   margin: 1em;
 }
 
+.directory-listing {
+  list-style-type: none;
+}
+
+.directory-listing .file {
+  list-style-type: '(FILE) ';
+  margin-left: 6ex;
+}
+
+.directory-listing .dir {
+  list-style-type: ' (DIR) ';
+  margin-left: 6ex;
+
+}
+
 .only-desktop {
   display: block;
 }

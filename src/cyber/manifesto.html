@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Website Manifesto - Mew151.net</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natalie" />
+    <meta name="description" content="Natalie's Personal Website" />
+    <link rel="stylesheet" type="text/css" href="../style/mew.css" />
+    <link rel="alternate" type="application+rss/xml" href="/rss.xml" />
+    <link rel="me" href="https://github.com/meisekimiu" />
+    <link rel="me" href="https://prismst.one/@natalie" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="canonical" href="https://mew151.net/cyber/manifesto.html" />
+    <link rel="webmention" href="https://webmention.io/mew151.net/webmention" />
+    <link rel="pingback" href="https://webmention.io/mew151.net/xmlrpc" />
+    <script src="../style/autostyle.js" type="text/javascript"></script>
+    <script src="../script/nav.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="window nav-window">
+      <div class="window-bar">
+        <div class="window-title">My Computer</div>
+      </div>
+      <div class="window-content">
+        <nav class="explorer">
+          <iframe
+            src="/nav-fallback.html"
+            style="width: 100%; height: 100%"
+          ></iframe>
+        </nav>
+      </div>
+    </div>
+    <div class="window main-window">
+      <div class="window-bar">
+        <div class="window-title">Website Manifesto</div>
+      </div>
+      <div class="window-content">
+        <main
+          style="
+            background: url('../img/backgrounds/purpskybg.jpg');
+            color: #eee;
+          "
+        >
+          <div style="text-align: center">
+            <h1>Website Manifesto</h1>
+          </div>
+          <p>
+            I've been exploring Neocities and the general Indie Web for some
+            time now, and I've noticed a diversity of opinions about the current
+            problems with the World Wide Web and what should be done about them.
+            I've seen a lot of people's thoughts on things like nostalgia,
+            accessiblity, corporations, javascript, and more. So I thought I'd
+            write up the philosophies and technologies that my site are built
+            upon.
+          </p>
+          <h2 id="websites-as-homes">Websites As Homes</h2>
+          <p>
+            I believe that websites are a wonderful form of personal expression.
+            If you visit someone's actual living space, you can probably learn a
+            lot about them just by looking around. Well, to me the ideal
+            personal website feels like a lived-in space; a place you can wander
+            around and get lost in. There's always going to be that one page
+            that no one ever visits because it's an obscure index page or it's
+            buried beneath multiple nested sections or something.
+          </p>
+          <p>
+            In the real world, a home evolves over time. It fills up with new
+            furniture. Walls may be painted new colors. New decorations go up
+            and down with the seasons. Furniture breaks and needs to be
+            replaced. You just accumulate more... STUFF over time. All of these
+            things accumulate to make your home feel lived in by
+            <em>you</em> and I think websites are very similar as well. As time
+            goes on a website updates and adds pages and new areas to explore. I
+            prefer visiting <em>lived-in</em> websites, and my goal is to
+            hopefully build out this site more and more to make it feel more
+            like my own every time I update it.
+          </p>
+          <p>
+            I am very disappointed by sterile, shallow websites. You know the
+            ones that are just a single page linking to social media profiles or
+            store pages, where the <em>real</em> content goes? These websites
+            are not really homes and feel more like a billboard or highway sign
+            intended to direct you somewhere else.
+          </p>
+          <p>
+            I truly value websites that feel more like an explorable space. As
+            such, I don't really prefer websites that are <em>only</em> blogs
+            even when they are independently hosted. I mean, I think blogs have
+            a place and are totally welcome as a feature of websites, but when a
+            website is <em>only</em> a blog it doesn't really feel like a place
+            to get lost in, it just feels like a one dimensional feed. I want to
+            explore, and not just scroll. That being said, I'm not trying to say
+            I hate blog websites, I just don't want my site to be only a blog. I
+            tried that and didn't like it myself.
+          </p>
+          <h2 id="privacy">Privacy Policy</h2>
+          <p>
+            Fuck Google. Fuck Analytics. This website does not contain any
+            client-side analytics, tracking, marketing, or other scripts
+            designed to invade your privacy. Go ahead and check the source code,
+            and you'll find I only use scripting for goofy effects, loading in
+            feeds, and other things that respect your privacy. See the next
+            section for my specific thoughts on JavaScript.
+          </p>
+          <p>
+            Both of my hosts have basic server-side tools enabled which do track
+            things like page visits and unique visitors. Neocities provides
+            <a
+              href="https://neocities.org/site/mew151/stats"
+              title="praying my numbers aren't embarrassing here"
+              >public access</a
+            >
+            to these site traffic stats if you'd like to see them. Both
+            instances of these server-side analytics only record very basic data
+            that your browser and network provide to the server while
+            connecting: things like IP address and
+            <a
+              href="https://en.wikipedia.org/wiki/User_agent"
+              title="come in, user agent"
+              >user agent string</a
+            >. This kind of stuff is enabled on basically every website ever.
+            This data is only used internally for those traffic charts, and will
+            never be used to profile or target you in particular.
+            <small
+              >(I guess if you try to DoS attack this site then you'll probably
+              be IP-banned which is technically targeting you in particular with
+              this data but. Obviously that's a special circumstance.)</small
+            >
+          </p>
+          <p>
+            As of right now, this website does not use any cookies at all. If,
+            for some reason, I ever add some goofy functionality that requires
+            cookies, they will never be used to track you and will only be used
+            for goofy functionality.
+          </p>
+          <h2 id="tech">My Stance On Web Technologies</h2>
+          <p>
+            Personally, I'm actually a fan of JavaScript as long as it isn't
+            used in evil or particularly annoying ways. However, for my personal
+            website I have a very specific technicality that I wish to avoid: I
+            do not want to use any modern JavaScript frameworks. Things like
+            <a href="https://reactjs.org/" title="Facebook's React">React</a> or
+            <a href="https://angular.io/" title="Google's Angular">Angular</a>
+            or even
+            <a href="https://jquery.com/" title='"modern" framework'>jQuery</a>.
+            I don't want to bundle together megabytes of other libraries just to
+            get my pages to load. But sometimes I want to have fun buttons to
+            click that do silly things. The <q>Classic Mode</q> button on my
+            <a href="/about.html" title="I love classic mode">About page</a>
+            was such a fun addition to the page and made me realize how much I
+            love random JavaScript like this every now and then.
+          </p>
+          <p>
+            I also use JavaScript to automatically adjust and style certain
+            parts of the website. Things like changing the
+            <q>desktop background</q> of this site depending on the date and
+            time of day, which was an idea I've wanted to put onto a website
+            since I was a kid. The navigation menu is also built using
+            JavaScript so whenever I add new navigation I can adjust it in one
+            place instead of a million. You can read more about how I use
+            scripting in my
+            <a
+              href="https://blog.mew151.net/entries/website-launch.html#scripting"
+              title="Didn't I just say that I dislike blogs"
+              >blog post about my site's launch.</a
+            >
+          </p>
+          <p>
+            While I use <abbr title="JavaScript">JS</abbr> throughout my
+            website, I make sure that it is still perfectly usable without
+            scripting (outside of things like quizzes and games which just can't
+            exist without it obviously!). If you ever find a webpage that should
+            work with scripts disabled but it doesn't, please
+            <a
+              href="/contact.html"
+              title="seriously, don't be afraid to reach out"
+              >contact me</a
+            >
+            and I'll fix it!
+          </p>
+          <p>
+            In regards to HTML and CSS, I prefer to use their modern versions
+            (HTML5 and CSS3). I know some people prefer to make retro-styled
+            websites using retro-styled HTML, but I prefer to remake the old in
+            more modern tech. For those who want to access my site on older,
+            potentially <em>ancient</em> hardware, check out the version of my
+            site hosted on the Gopher protocol. For those on modern machines
+            that would still like a text-only experience, you can view a version
+            hosted on the Gemini protocol. For more information, visit
+            <a href="text" title="Hipster text protocols"
+              >my page on those protocols.</a
+            >
+          </p>
+          <h2 id="cringe">Cringe is Dead</h2>
+          <p>
+            The web is a place to be passionate. The world of slow and static
+            websites is not typically filled with drama or bullies because
+            things like algorithms and notifications do not typically exist, and
+            <a href="https://indieweb.org/Webmention">when they do exist</a>
+            they are still uncommon, manual, and decentralized.
+            <span
+              title="The only reason you should be afraid of sharing your passions is because they are illegal and the government wants to [THIS MESSAGE HAS BEEN REDACTED AS IT IS A KEY PART OF AN ONGOING U.S. DEPARTMENT OF JUSTICE INVESTIGATION]"
+              >On this side of the world wide web, you should never be afraid to
+              share what you're passionate about just because it's deemed as
+              cringe.</span
+            >
+          </p>
+          <p>
+            Cringe is dead. Be passionate and talk about whatever you want to on
+            your personal website. I have a whole accordion section on my site.
+            So yeah.
+          </p>
+          <hr />
+          <p>
+            This page was partially inspired by
+            <a href="https://sadgrl.online/cyberspace/internet-manifesto.html"
+              >Sadness's Internet Manifesto.</a
+            >
+          </p>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
