@@ -345,6 +345,10 @@ dl {
   padding: 0.25em;
 }
 
+.twtxt-content br {
+  margin-bottom: 1rem;
+}
+
 @media only screen and (max-width: 900px) {
   .window-bar {
     display: none;

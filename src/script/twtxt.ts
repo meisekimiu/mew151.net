@@ -37,19 +37,6 @@ function makeBlog(tweets: Tweet[]) {
   }
 }
 
-function expandWordle(text: string) {
-  const matches = text.match(/(.+?)Wordle \d+ (\d|X)\/\d\*?/i);
-  if (matches && matches.length > 0) {
-    const wordleHeader = matches[0];
-    const wordleBody = text.substr(matches[0].length).trim();
-    const wordleTurns = wordleBody.split(/\s+\/?\s*/).join("<br />");
-    return `<p>${wordleHeader}<br />
-    <br />
-    ${wordleTurns}`;
-  }
-  return text;
-}
-
 function buildTweets(text: string) {
   const lines = text.split("\n");
   const tweets: Tweet[] = [];
@@ -75,20 +62,18 @@ function buildTweets(text: string) {
       });
     }
   }
-  console.log(tweets);
   tweets.sort((a, b) => b.date.getTime() - a.date.getTime());
   return tweets.map((tweet) => {
     return {
       date: tweet.date,
-      text: snarkdown
-        ? expandWordle(snarkdown(tweet.text))
-        : expandWordle(tweet.text),
+      text: snarkdown ? snarkdown(tweet.text) : tweet.text,
     };
   });
 }
 
 function fetchBlog() {
-  fetch("https://mew151.net/twtxt.txt").then((response) => {
+  const dateString = Math.floor(new Date().getMinutes() / 30);
+  fetch(`https://mew151.net/twtxt.txt?t=${dateString}`).then((response) => {
     response.text().then((text) => {
       makeBlog(buildTweets(text));
     });
