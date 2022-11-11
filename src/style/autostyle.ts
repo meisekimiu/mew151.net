@@ -48,6 +48,7 @@ function setBackground(hour?: number) {
     "12/31", // new yearz eve
   ];
   if (specialDates.includes(code)) {
+    (window as any)["specialDay"] = true;
     // Subtract 1900 from date to emulate date.getYear() for full Y2K aesthetic lol
     const offset =
       date.getFullYear() - 1900 + specialDates.indexOf(code) + date.getDate();
