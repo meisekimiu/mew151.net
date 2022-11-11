@@ -1,0 +1,1 @@
+{"subject":"acct:natalie@prismst.one","links":[{"rel":"self","type":"application/activity+json","href":"https://prismst.one/users/92ceirbnty"},{"rel":"http://webfinger.net/rel/profile-page","type":"text/html","href":"https://prismst.one/@natalie"},{"rel":"http://ostatus.org/schema/1.0/subscribe","template":"https://prismst.one/authorize-follow?acct={uri}"}]}
