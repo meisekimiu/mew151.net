@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Ancient Poem Built Into Your Browser - Mew151.net</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natalie" />
+    <meta name="description" content="Natalie's Personal Website" />
+    <link rel="stylesheet" type="text/css" href="../style/mew.css" />
+    <link rel="alternate" type="application+rss/xml" href="/rss.xml" />
+    <link rel="me" href="https://github.com/meisekimiu" />
+    <link rel="me" href="https://prismst.one/@natalie" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="canonical" href="https://mew151.net/cyber/index.html" />
+    <link rel="webmention" href="https://webmention.io/mew151.net/webmention" />
+    <link rel="pingback" href="https://webmention.io/mew151.net/xmlrpc" />
+    <script src="../style/autostyle.js" type="text/javascript"></script>
+    <script src="../script/nav.js" type="text/javascript"></script>
+    <style type="text/css">
+      .iroha {
+        counter-reset: iroha;
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        flex-direction: column;
+        height: 10em;
+        align-items: center;
+        justify-content: center;
+      }
+      .iroha li:not(.breaker)::before {
+        counter-increment: iroha;
+        content: counter(iroha, hiragana-iroha);
+        /* The standard hiragana-iroha list-style-type uses the 、 character after each character so to print out our poem cleanly we're using a custom counter that is based on hiragana-iroha that's a bit cleaner :)*/
+      }
+      .iroha li.breaker {
+        /* These are line breakers to denote each line of the poem */
+        flex-basis: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="window nav-window">
+      <div class="window-bar">
+        <div class="window-title">My Computer</div>
+      </div>
+      <div class="window-content">
+        <nav class="explorer">
+          <iframe
+            src="/nav-fallback.html"
+            style="width: 100%; height: 100%"
+          ></iframe>
+        </nav>
+      </div>
+    </div>
+    <div class="window main-window">
+      <div class="window-bar">
+        <div class="window-title">The Ancient Poem Built Into Your Browser</div>
+      </div>
+      <div class="window-content">
+        <main
+          class="light"
+          style="
+            background: url('../img/backgrounds/yello-bkg3.gif');
+            color: #002;
+          "
+        >
+          <h1 style="margin: 1.25rem 0">The いろは (Iroha)</h1>
+          <h2 style="margin: 1.25rem 0">
+            (The Ancient Poem That's Built Into Your Browser)
+          </h2>
+          <p>
+            Did you know that there is an ancient poem that is
+            <small>(probably)</small> built into your browser? If you're using
+            one of the <del>many</del> <ins>two</ins> modern browsers that exist
+            today,
+            <span
+              title="I think specifically there is some general CSS stylesheet somewhere that defines all this."
+              >your browser has an old Japanese poem hardcoded into it
+              somewhere.</span
+            >
+          </p>
+          <p>
+            The "Iroha" is an old Japanese poem that is the equivalent of the
+            English
+            <abbr title="The Quick Brown Fox Jumps Over The Lazy Dog"
+              >"Quick brown fox"</abbr
+            >
+            sentence; in other words it uses all of the available Japanese
+            phonetic characters. Unlike the
+            <abbr title="The Quick Brown Fox Jumps Over The Lazy Dog"
+              >"quick brown fox"</abbr
+            >
+            sentence, the Iroha poem uses each Japanese phonetic character only
+            <em>once</em> each!
+          </p>
+          <p>
+            What this means is that sometimes this poem is used as a way to list
+            a specific order of things in Japanese, like how we would order
+            things with letters in alphabetical order in english. One
+            <span title="wait is this a pun">notable</span> example I've found
+            is that musical notes in Japanese can be referred to by the first
+            few characters of the Iroha poem! (Although I have seen the
+            <em>solfège</em> system used more commonly)
+          </p>
+          <p>
+            Because of the poem's occasional usage as a list ordering system,
+            there is a built-in CSS
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-type"
+              title="there are probably lots of other cool fun facts on that page"
+              ><kbd>list-style-type</kbd></a
+            >
+            that allows for the usage of the Iroha poem on
+            <kbd>&lt;li&gt;</kbd> elements on web pages. ... At least in any
+            browsers that
+            <a
+              href="https://caniuse.com/mdn-css_properties_list-style-type_hiragana-iroha"
+              >support it.</a
+            >
+          </p>
+          <p>
+            Using the <strong>~POWERS OF CSS~</strong> we can display the poem
+            right here without having to actually write it out. Check the HTML
+            source of this page to verify it!
+          </p>
+          <p><i>(The poem is read top-to-bottom, right-to-left)</i></p>
+          <h2 style="text-align: center">
+            いろは<ruby><rb>歌</rb><rp>(</rp><rt>うた</rt><rp>)</rp></ruby>
+          </h2>
+          <ol class="iroha">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="breaker"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="breaker"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="breaker"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="breaker"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="breaker"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="breaker"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="breaker"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ol>
+          <p>
+            Want to learn more about the poem? Well, I'm not a historian! Read
+            up on it yourself!
+          </p>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
