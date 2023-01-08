@@ -10,7 +10,14 @@
     <webMaster>webmaster@mew151.net (Natalie)</webMaster>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <ttl>180</ttl>
-    <pubDate>Tue, 19 Jul 2022 18:02:36 -0700</pubDate>
+    <pubDate>Sat, 07 Jan 2023 21:05:32 -0700</pubDate>
+    <item>
+      <title>Disorganized Ramblings On 2022</title>
+      <pubDate>Sat, 07 Jan 2023 21:05:32 -0700</pubDate>
+      <link>https://blog.mew151.net/entries/2022.html</link>
+      <guid isPermaLink="true">https://blog.mew151.net/entries/2022.html</guid>
+      <description>It's 2023! But I have thoughts on 2022. Kind of.</description>
+    </item>
     <item>
       <title>More Thoughts On The Fediverse</title>
       <pubDate>Tue, 19 Jul 2022 18:02:36 -0700</pubDate>
