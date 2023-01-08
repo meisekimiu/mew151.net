@@ -244,6 +244,16 @@ hr {
   margin: 2px;
 }
 
+a.inactive {
+  &:hover {
+    filter: saturate(100%);
+    opacity: 1;
+  }
+  filter: saturate(0%);
+  opacity: 0.3;
+  transition: filter 0.5s, opacity 0.5s;
+  cursor: not-allowed;
+}
 main a {
   transition: color 0.3s, text-decoration-color 0.3s;
 }
