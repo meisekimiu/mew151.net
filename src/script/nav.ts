@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const maybePluralizeWithZ = (str: string): string => {
+    if (!str.endsWith("s") || Math.random() < 0.9) {
+      return str;
+    }
+    return str.substring(0, str.length - 1) + "z";
+  };
   const navigation = [
     {
       name: "Main Website",
@@ -123,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
         icon.setAttribute("alt", item.name);
         container.appendChild(icon);
         const text = document.createElement("span");
-        text.innerText = item.name;
+        text.innerText = maybePluralizeWithZ(item.name);
         container.appendChild(text);
         link.appendChild(container);
         body.appendChild(link);
