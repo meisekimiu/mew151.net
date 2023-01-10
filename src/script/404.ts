@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 )
             ) {
               const p = document.createElement("p");
-              p.innerHTML = `Based on my calculations, it looks like you <em>might</em> have been trying to visit this page:<br /><a href="${closestLink.href}">${closestLink.title} (<kbd>/${closestLink.href}</kbd>)</a><br /><br />Hope this helps?`;
+              p.innerHTML = `Based on my calculations, it looks like you <em>might</em> have been trying to visit this page:<br /><a href="/${closestLink.href}">${closestLink.title} (<kbd>/${closestLink.href}</kbd>)</a><br /><br />Hope this helps?`;
               document.body.appendChild(p);
             }
           })
