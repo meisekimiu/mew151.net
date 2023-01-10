@@ -418,6 +418,24 @@ figure {
   }
 }
 
+.blog-archive {
+  li {
+    time {
+      float: right;
+      font-style: italic;
+    }
+    margin-bottom: 0.3em;
+  }
+}
+.article-history {
+  time {
+    display: block;
+    font-style: italic;
+    margin-bottom: 0.25em;
+  }
+  margin-bottom: 1em;
+}
+
 @media only screen and (max-width: 900px) {
   .window-bar {
     display: none;
