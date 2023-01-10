@@ -11,6 +11,7 @@
   "author": "Natalie Martin",
   "dependencies": {
     "@tsconfig/node16": "^1.0.3",
+    "fast-levenshtein": "^3.0.0",
     "feedmake": "github:meisekimiu/feedmake",
     "sass": "^1.54.5",
     "snarkdown": "^2.0.0",
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.18.10",
+    "@types/fast-levenshtein": "^0.0.2",
     "browserify": "^17.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
