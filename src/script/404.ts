@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const run404Page = () => {
-    if (window.location.pathname === "/not_found.html") {
+    if (window.location.pathname.replace(/\.html$/, "") === "/not_found") {
       const style = document.createElement("style");
       style.innerHTML = `.if-200{display:block !important;}.del-if-200{text-decoration:line-through;}`;
       document.head.appendChild(style);
@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
             )
               .map((node) => {
                 const href = node.getAttribute("href") as string;
-                console.log(href, generateDistanceScore(href));
                 return {
                   title: (node as HTMLElement).innerText,
                   href,
