@@ -436,6 +436,10 @@ figure {
   margin-bottom: 1em;
 }
 
+summary {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 900px) {
   .window-bar {
     display: none;
