@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mew151.net - Squeeze Blog</title>
+    <link>https://blog.mew151.net</link>
+    <atom:link href="https://www.mew151.net/accordion/blog/accordion.xml" rel="self" type="application/rss+xml" />
+    <description>Accordion Blog from for Mew151.net</description>
+    <language>en-us</language>
+    <copyright>2023 Natalie Martin</copyright>
+    <webMaster>webmaster@mew151.net (Natalie)</webMaster>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <ttl>180</ttl>
+    <pubDate>Mon Jan 9 22:10:57 2023 -0700</pubDate>
+    <item>
+      <title>How Long Does It Take To Learn The Accordion?</title>
+      <pubDate></pubDate>
+      <link>https://www.mew151.net/accordion/blog/posts/learning-accordion.html</link>
+      <guid isPermaLink="true">https://www.mew151.net/accordion/blog/posts/learning-accordion.html</guid>
+      <description>Surely it only takes a few days to play a song. Hahah...</description>
+    </item>
+    <item>
+      <title>Where Do You Get Accordion Sheet Music?</title>
+      <pubDate>Mon Jan 9 22:10:57 2023 -0700</pubDate>
+      <link>https://www.mew151.net/accordion/blog/posts/sheet-music.html</link>
+      <guid isPermaLink="true">https://www.mew151.net/accordion/blog/posts/sheet-music.html</guid>
+      <description>There *is* a lot of sheet music out there on the internet for accordion, right? ... Right???</description>
+    </item>
+  </channel>
+</rss>
