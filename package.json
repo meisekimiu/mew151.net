@@ -4,9 +4,12 @@
   "description": "Source for static side of mew151.net",
   "main": "index.js",
   "scripts": {
+    "portfolio-prepare": "rm -f src/portfolio/*.template",
+    "mew151-prepare": "rm -r src/portfolio",
     "neocities-prepare": "rm -r src/blog",
     "rss": "feedmake -o src/rss.xml .",
-    "build": "gulp"
+    "build": "gulp",
+    "build:watch": "gulp watch"
   },
   "author": "Natalie Martin",
   "dependencies": {
@@ -23,10 +26,13 @@
     "@babel/core": "^7.18.10",
     "@types/fast-levenshtein": "^0.0.2",
     "browserify": "^17.0.0",
+    "dotenv": "^16.0.3",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-browserify": "^0.5.1",
     "gulp-imagemin": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-sass": "^5.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-uglify": "^3.0.2"
