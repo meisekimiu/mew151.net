@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ABBR: ${{ secrets.ABBR }}
+      COMPANY_FULLNAME: ${{ secrets.COMPANY_FULLNAME }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -22,6 +25,19 @@ jobs:
 
       - name: 📰 Build feed
         run: npm run rss
+
+      - name: 💼 Prepare Portfolio
+        run: npm run portfolio-prepare
+
+      - name: 🐱📄💼 Run Portfolio Deploy
+        uses: bcomnes/deploy-to-neocities@v1.1.4
+        with:
+          api_token: ${{ secrets.PORTFOLIO_API_KEY }}
+          cleanup: false
+          dist_dir: src/portfolio
+
+      - name: 🥳 Prepare mew151.net
+        run: npm run mew151-prepare
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.2.0

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Extreme Tax Masters - Natalie Martin: Software Engineer &amp; Game
+      Developer
+    </title>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="Natalie Martin" />
+    <meta
+      name="description"
+      content="Natalie Martin's Game Development Portfolio"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <a class="theme-switcher"></a>
+    <div class="about-me">
+      <div class="name-bio">
+        <h1>Natalie Martin</h1>
+        <span class="pronouns">(she/her)</span>
+      </div>
+      <h2>Software Engineer and Game Developer</h2>
+      <hr />
+    </div>
+    <div class="game-summary">
+      <h2 title="An Inky Itchy Debut">Extreme Tax Masters</h2>
+      <div class="cover-gameinfo">
+        <img
+          src="img/tax_title.png"
+          alt="Extreme Tax Masters"
+          title="If I made this game now I might make the ultimate villain be Peepy from ItemLabel"
+        />
+        <table class="gameinfo">
+          <thead>
+            <tr>
+              <td colspan="2">Game Info</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Name:</td>
+              <td>Extreme Tax Masters</td>
+            </tr>
+            <tr>
+              <td>Year:</td>
+              <td>2021</td>
+            </tr>
+            <tr>
+              <td>Made in:</td>
+              <td>Pixi.js (TypeScript)</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <a href="https://meisekimiu.itch.io/extreme-tax-masters"
+                  >Play Game on itch.io</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Extreme Tax Masters is a silly visual novel all about working at an
+        office as a tax associate. In between chatting with coworkers and
+        talking with various clients, play an <em>extreme</em> tax minigame
+        where you smash on your keyboard to do taxes. What first seems like an
+        ordinary day might just be the most important day of your career. Can
+        you become a tax master?
+      </p>
+      <p>
+        You can play the game on
+        <a href="https://meisekimiu.itch.io/extreme-tax-masters">Itch.io</a>
+        right now!
+      </p>
+      <h3>Technologies</h3>
+      <ul>
+        <li>
+          <strong>Programmed in:</strong>
+          <span
+            title="Though technically all JavaScript is just TypeScript with a LOT of `any` type declarations"
+            >TypeScript</span
+          >
+        </li>
+        <li>
+          <a
+            href="https://pixijs.com/"
+            title="Whenever I read the name of this library I think of Pixie Stix candy"
+            >Pixi.js</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.inklestudios.com/ink/"
+            title="I love Ink so much it's VERY good"
+            >Ink</a
+          >
+          /
+          <a
+            href="https://github.com/y-lohse/inkjs"
+            title="I love Ink.js just for the fact that Ink is too complex for me to port over to Javascript for the amount of time I had to make this silly tax game"
+            >Ink.js</a
+          >
+        </li>
+      </ul>
+      <h3>Roles and Development</h3>
+      <p>
+        This game was a <strong>solo project.</strong> This game was made in an
+        environment similar to a <strong>Game Jam.</strong> Specifically it was
+        made for Nicole He's <q>Extreme</q> Stream from March of 2021. The game
+        was made in about a week.
+      </p>
+      <p>
+        The game was made in a custom TypeScript-based engine that uses
+        <strong>Pixi.js</strong> as its renderer. The narrative script is
+        written in <strong>Ink,</strong> and that script is interpreted by the
+        game to display the visual novel portions. Ink is pretty barebones and
+        built to be extensible, so there are custom commands implemented to do
+        things like load and display sprites as well as change game states.
+      </p>
+      <p>
+        The design of the game engine was based on all the things I learned from
+        building the game engine for
+        <a
+          href="czp.html"
+          title="For legal reasons I couldn't re-use the same engine obviously; {{ COMPANY_FULLNAME }} technically owns that game engine!"
+          >{{ ABBR }} Racer.</a
+        >
+      </p>
+      <p>
+        Originally the game was intended to rank your performance during the Tax
+        Gameplay segments, with the intention that you could rely on either your
+        <q>social links</q> or your pure tax skills to deal with the final
+        scenario of the game. Ultimately this was dropped for two reasons.
+        Accessibility was a concern; I didn't want to punsh a player if they had
+        issues with smashing their keyboard or were just on a laptop. There was
+        also a ludonarrative reason. The game is <em>supposed</em> to be very
+        positive and uplifting, but the idea of being a <q>tax master</q> in the
+        narrative while you receive failing grades in the gameplay didn't really
+        mesh well with me.
+      </p>
+      <h3>Image Gallery</h3>
+      <div class="gallery">
+        <a href="img/tax_info.jpg" target="_blank">
+          <img
+            src="img/tax_info.jpg"
+            alt="Extreme Tax Masters Image"
+            title="Like 40% of the energy I put into making this game was because I was so excited to make the Social Security Number joke on this screen."
+          />
+        </a>
+        <a href="img/tax_steves.jpg" target="_blank"
+          ><img
+            src="img/tax_steves.jpg"
+            alt="Extreme Tax Masters Image"
+            title="Wait... isn't this a Game Grumps bit?"
+        /></a>
+        <a href="img/tax_tutorial.png" target="_blank">
+          <img
+            src="img/tax_tutorial.png"
+            alt="Extreme Tax Masters Image"
+            title="this game is still one of the only things I've made with 'coach marks'"
+          />
+        </a>
+        <a href="img/tax_gameplay.jpg" target="_blank">
+          <img
+            src="img/tax_gameplay.jpg"
+            alt="Extreme Tax Masters Image"
+            title="taxes go boom"
+          />
+        </a>
+        <a href="img/tax_consultant.png" target="_blank">
+          <img
+            src="img/tax_consultant.png"
+            alt="Extreme Tax Masters Image"
+            title="This character was named after the first male names my partner could think of, all combined together."
+          />
+        </a>
+        <a href="img/tax_karen.png" target="_blank">
+          <img
+            src="img/tax_karen.png"
+            alt="Extreme Tax Masters Image"
+            title="Yes, this game gets political: It defends people named 'Karen'"
+          />
+        </a>
+        <a href="img/tax_obamna.png" target="_blank">
+          <img
+            src="img/tax_obamna.png"
+            alt="Extreme Tax Masters Image"
+            title="Oh my goodness! I think I saw this guy on iCarly once!"
+          />
+        </a>
+        <a href="img/tax_yoshi.png" target="_blank">
+          <img
+            src="img/tax_yoshi.png"
+            alt="Extreme Tax Masters Image"
+            title="(looking at wanted poster) i wonder who that is for"
+          />
+        </a>
+        <a href="img/taxworld_credits.png" target="_blank">
+          <img
+            src="img/taxworld_credits.png"
+            alt="Extreme Tax Masters Image"
+            title="Petscop music? Why would I be playing Petscop music while doing taxes?"
+          />
+        </a>
+      </div>
+      <br /><br />
+      <a href="." class="back-to-homepage">Back to main page</a>
+    </div>
+  </body>
+</html>

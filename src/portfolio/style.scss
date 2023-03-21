@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Source+Serif+Pro&display=swap");
+
+$bgcolor-light: #fafafa;
+$fgcolor-light: #110;
+$gamelink-light: #333;
+$gamelink-hover-light: lighten(#333, 30%);
+$gametime-light: #555;
+$pronouns-light: #666;
+
+$bgcolor-dark: #333;
+$fgcolor-dark: #ddd;
+$gamelink-dark: #fff;
+$gamelink-hover-dark: darken(#fff, 30%);
+$gametime-dark: #bbb;
+$pronouns-dark: #aaa;
+
+$bgcolor-muffins: #f5f8aa;
+$fgcolor-muffins: #545454;
+$gamelink-muffins: #212121;
+$gamelink-hover-muffins: #545454;
+$gametime-muffins: #545454;
+$pronouns-muffins: #333333;
+
+.dark {
+  --bgcolor: #{$bgcolor-dark};
+  --fgcolor: #{$fgcolor-dark};
+  --gamelink: #{$gamelink-dark};
+  --gamelink-hover: #{$gamelink-hover-dark};
+  --gametime: #{$gametime-dark};
+  --pronouns: #{$pronouns-dark};
+
+  .name-bio h1 {
+    color: #fff;
+  }
+}
+
+.light {
+  --bgcolor: #{$bgcolor-light};
+  --fgcolor: #{$fgcolor-light};
+  --gamelink: #{$gamelink-light};
+  --gamelink-hover: #{$gamelink-hover-light};
+  --gametime: #{$gametime-light};
+  --pronouns: #{$pronouns-light};
+}
+
+.muffins {
+  --bgcolor: #{$bgcolor-muffins};
+  --fgcolor: #{$fgcolor-muffins};
+  --gamelink: #{$gamelink-muffins};
+  --gamelink-hover: #{$gamelink-hover-muffins};
+  --gametime: #{$gametime-muffins};
+  --pronouns: #{$pronouns-muffins};
+  background-image: url("img/derpy.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom right;
+}
+
+.transition {
+  transition: color 0.5s, background-color 0.5s;
+}
+
+%header {
+  font-family: "Crimson Text", "Times New Roman", Times, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Serif Pro", "Times New Roman", Times, serif;
+  font-size: 1.35rem;
+  color: var(--fgcolor);
+  background-color: var(--bgcolor);
+}
+
+.theme-switcher {
+  font-size: 1.5em;
+  position: fixed;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 0.25em;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+.light {
+  .theme-switcher {
+    background-color: $bgcolor-dark;
+  }
+}
+
+.about-me {
+  text-align: center;
+  p {
+    width: 80vw;
+    margin: 0 auto;
+  }
+  h2 {
+    margin-top: 0.25em;
+  }
+}
+
+h1,
+h2,
+h3 {
+  @extend %header;
+  text-align: center;
+}
+
+.name-bio {
+  h1 {
+    margin-bottom: 0;
+  }
+  .pronouns {
+    color: var(--pronouns);
+    font-size: 1.25em;
+    font-style: italic;
+  }
+}
+
+.gameslist {
+  margin: 0 auto;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-evenly;
+}
+
+a {
+  transition: color 0.5s;
+  transition: text-decoration-color 0.5s;
+  color: var(--gamelink);
+  text-decoration-color: var(--gamelink);
+  font-weight: bold;
+
+  &:hover,
+  &:active {
+    color: var(--gamelink-hover);
+    text-decoration-color: transparent;
+  }
+  &:visited {
+    color: var(--gamelink);
+    text-decoration-color: var(--gamelink);
+    text-decoration: underline;
+  }
+}
+
+.game:nth-child(even) {
+  .title {
+    img:hover {
+      transform: scale(105%) rotate(5deg);
+    }
+  }
+}
+
+.game {
+  .title {
+    img {
+      &:hover {
+        transform: scale(105%) rotate(-5deg);
+        // Fun fact: The functions here actually generate a transformation matrix! Isn't that neat?
+        opacity: 0.5;
+      }
+      display: block;
+      margin: 0 auto;
+      max-width: 315px;
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+    a {
+      &:hover,
+      &:active {
+        color: var(--gamelink-hover);
+        text-decoration-color: transparent;
+      }
+      &:visited {
+        color: var(--gamelink);
+        text-decoration-color: var(--gamelink);
+        text-decoration: underline;
+      }
+      time {
+        color: var(--gametime);
+        font-size: 0.9em;
+        text-decoration: none;
+      }
+      @extend %header;
+      font-size: 1.5em;
+      color: var(--gamelink);
+      text-decoration-color: var(--gamelink);
+    }
+    text-align: center;
+    padding-bottom: 0.5em;
+  }
+  width: 40%;
+  padding: 1em;
+}
+
+.links {
+  text-align: center;
+  list-style-type: none;
+  padding: 0;
+  li {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.game-summary {
+  padding: 0 10vw;
+}
+
+.cover-gameinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+  img {
+    max-width: 50%;
+    max-height: 12em;
+  }
+}
+
+.gameinfo {
+  border: 2px solid var(--fgcolor);
+  border-collapse: collapse;
+}
+.gameinfo td[colspan="2"] {
+  text-align: center;
+}
+.gameinfo tr,
+.gameinfo td {
+  border: 2px solid var(--fgcolor);
+  padding: 0.5em;
+  background-color: var(--bgcolor);
+}
+
+.gameinfo td {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.gallery {
+  text-align: center;
+  img {
+    max-width: 25%;
+  }
+}
+
+.back-to-homepage {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
