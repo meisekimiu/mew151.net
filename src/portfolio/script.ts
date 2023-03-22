@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (theme === "muffins") {
     const description = document.querySelector(".about-me h2") as HTMLElement;
     if (description) {
-      description.innerText = description.innerText.replace(/dev/i, "DERPv");
+      description.innerText = description.innerText.replace(/game/i, "Ditzy");
       description.innerText = description.innerText.replace(
         /software/i,
         "MUFFIN"

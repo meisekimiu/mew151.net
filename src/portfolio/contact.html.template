@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Natalie Martin: Software Engineer &amp; Game Developer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="Natalie Martin" />
+    <meta
+      name="description"
+      content="Natalie Martin&rsquo;s Game Development Portfolio"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <a class="theme-switcher"></a>
+    <div class="about-me">
+      <div class="name-bio">
+        <h1>Natalie Martin</h1>
+        <span class="pronouns">(she/her)</span>
+      </div>
+      <h2>
+        <span class="avoid-wrap">Software Engineer</span> and
+        <span class="avoid-wrap">Game Developer</span>
+      </h2>
+      <hr />
+    </div>
+    <div class="game-summary">
+      <h2>Links / Contact</h2>
+      <ul>
+        <li>
+          I can be reached at my e-mail address:
+          <a
+            href="mailto:{{ EMAIL }}"
+            title="Spam filters have really improved, it used to be that you were NEVER supposed to put your actual e-mail address on a website."
+            >{{ EMAIL }}</a
+          >
+        </li>
+        <li>
+          You can see some of my engineering work on
+          <a href="https://github.com/meisekimiu" title="I do work on here!"
+            >my Github profile.</a
+          >
+        </li>
+        <li>
+          You can play my latest games on
+          <a
+            href="https://meisekimiu.itch.io/"
+            title="They're already on my portfolio tho"
+            >Itch profile.</a
+          >
+        </li>
+      </ul>
+      <br /><br />
+      <a href="." class="back-to-homepage">Back to main page</a>
+    </div>
+  </body>
+</html>

@@ -6,11 +6,21 @@
       Developer
     </title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="author" content="Natalie Martin" />
     <meta
       name="description"
-      content="Natalie Martin's Game Development Portfolio"
+      content="A silly visual novel where you do people’s taxes by smashing on your keyboard and causing explosions."
+    />
+    <meta
+      property="og:image"
+      content="https://{{ SITE_DOMAIN }}/img/tax_title.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Natalie Martin: Software Engineer &amp; Game Developer"
     />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" type="text/javascript"></script>
@@ -22,7 +32,10 @@
         <h1>Natalie Martin</h1>
         <span class="pronouns">(she/her)</span>
       </div>
-      <h2>Software Engineer and Game Developer</h2>
+      <h2>
+        <span class="avoid-wrap">Software Engineer</span> and
+        <span class="avoid-wrap">Game Developer</span>
+      </h2>
       <hr />
     </div>
     <div class="game-summary">
@@ -107,39 +120,44 @@
       </ul>
       <h3>Roles and Development</h3>
       <p>
-        This game was a <strong>solo project.</strong> This game was made in an
-        environment similar to a <strong>Game Jam.</strong> Specifically it was
-        made for Nicole He's <q>Extreme</q> Stream from March of 2021. The game
-        was made in about a week.
+        This game was a <strong>solo project</strong> made in a Game Jam
+        environment. Specifically, it was made in a week for Nicole He&rsquo;s
+        <q>Extreme</q> Stream in March of 2021.
       </p>
+
       <p>
-        The game was made in a custom TypeScript-based engine that uses
-        <strong>Pixi.js</strong> as its renderer. The narrative script is
-        written in <strong>Ink,</strong> and that script is interpreted by the
-        game to display the visual novel portions. Ink is pretty barebones and
-        built to be extensible, so there are custom commands implemented to do
+        Extreme Tax Masters was made in a custom TypeScript-based engine that
+        uses <strong>Pixi.js</strong> as its renderer. The narrative script was
+        written in <strong>Ink</strong>
+        and is interpreted by the game to display the visual novel portions. As
+        Ink was built to be extensible, custom commands were implemented to do
         things like load and display sprites as well as change game states.
       </p>
+
       <p>
-        The design of the game engine was based on all the things I learned from
-        building the game engine for
+        The design of the game engine was based on things learned from building
+        the game engine for
         <a
           href="czp.html"
-          title="For legal reasons I couldn't re-use the same engine obviously; {{ COMPANY_FULLNAME }} technically owns that game engine!"
+          title="For legal reasons I couldn&rsquo;t re-use the same engine obviously; {{
+            COMPANY_FULLNAME
+          }} technically owns that game engine!"
           >{{ ABBR }} Racer.</a
         >
       </p>
+
       <p>
-        Originally the game was intended to rank your performance during the Tax
-        Gameplay segments, with the intention that you could rely on either your
-        <q>social links</q> or your pure tax skills to deal with the final
-        scenario of the game. Ultimately this was dropped for two reasons.
-        Accessibility was a concern; I didn't want to punsh a player if they had
-        issues with smashing their keyboard or were just on a laptop. There was
-        also a ludonarrative reason. The game is <em>supposed</em> to be very
-        positive and uplifting, but the idea of being a <q>tax master</q> in the
-        narrative while you receive failing grades in the gameplay didn't really
-        mesh well with me.
+        Originally, the game was intended to rank a player&rsquo;s performance
+        during the Tax Gameplay segments, with the intention they could rely on
+        either their social links or their pure tax skills to deal with the
+        game&rsquo;s final scenario. Ultimately, this idea was dropped as
+        accessibility was a concern—it would be unfair to punish a player if
+        they had issues with smashing their keyboard or didn&rsquo;t have an
+        external keyboard. This idea was also dropped due to ludonarrative
+        reasons: the game is <em>supposed</em> to be positive and uplifting, but
+        the idea of being a <q>tax master</q> in the narrative while receiving
+        failing grades in the gameplay didn&rsquo;t mesh well with the
+        game&rsquo;s intentions.
       </p>
       <h3>Image Gallery</h3>
       <div class="gallery">
@@ -188,7 +206,7 @@
           <img
             src="img/tax_obamna.png"
             alt="Extreme Tax Masters Image"
-            title="Oh my goodness! I think I saw this guy on iCarly once!"
+            title="Oh my goodness! I think this guy is the husband of this woman I saw on iCarly!"
           />
         </a>
         <a href="img/tax_yoshi.png" target="_blank">
