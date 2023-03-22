@@ -1,11 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Source+Serif+Pro&display=swap");
 
+@mixin on-phone {
+  @media screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin printed {
+  @media print {
+    @content;
+  }
+}
+
 $bgcolor-light: #fafafa;
 $fgcolor-light: #110;
 $gamelink-light: #333;
 $gamelink-hover-light: lighten(#333, 30%);
 $gametime-light: #555;
 $pronouns-light: #666;
+$underline-light: #0006;
 
 $bgcolor-dark: #333;
 $fgcolor-dark: #ddd;
@@ -13,6 +26,7 @@ $gamelink-dark: #fff;
 $gamelink-hover-dark: darken(#fff, 30%);
 $gametime-dark: #bbb;
 $pronouns-dark: #aaa;
+$underline-dark: #fff6;
 
 $bgcolor-muffins: #f5f8aa;
 $fgcolor-muffins: #545454;
@@ -20,6 +34,7 @@ $gamelink-muffins: #212121;
 $gamelink-hover-muffins: #545454;
 $gametime-muffins: #545454;
 $pronouns-muffins: #333333;
+$underline-muffins: darken($bgcolor-muffins, 50%);
 
 .dark {
   --bgcolor: #{$bgcolor-dark};
@@ -28,6 +43,7 @@ $pronouns-muffins: #333333;
   --gamelink-hover: #{$gamelink-hover-dark};
   --gametime: #{$gametime-dark};
   --pronouns: #{$pronouns-dark};
+  --underline: #{$underline-dark};
 
   .name-bio h1 {
     color: #fff;
@@ -41,6 +57,7 @@ $pronouns-muffins: #333333;
   --gamelink-hover: #{$gamelink-hover-light};
   --gametime: #{$gametime-light};
   --pronouns: #{$pronouns-light};
+  --underline: #{$underline-light};
 }
 
 .muffins {
@@ -50,7 +67,8 @@ $pronouns-muffins: #333333;
   --gamelink-hover: #{$gamelink-hover-muffins};
   --gametime: #{$gametime-muffins};
   --pronouns: #{$pronouns-muffins};
-  background-image: url("img/derpy.png");
+  --underline: #{$underline-muffins};
+  background-image: url("img/ditzy.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: bottom right;
@@ -73,6 +91,26 @@ body {
   font-size: 1.35rem;
   color: var(--fgcolor);
   background-color: var(--bgcolor);
+
+  @include printed() {
+    color: #000 !important;
+    background: #fff !important;
+    a:link {
+      color: $gamelink-light !important;
+    }
+    a:hover {
+      color: $gamelink-hover-light !important;
+    }
+    a:active {
+      color: $gamelink-hover-light !important;
+    }
+    a:visited {
+      color: $gamelink-light !important;
+    }
+    .theme-switcher {
+      display: none;
+    }
+  }
 }
 
 .theme-switcher {
@@ -83,12 +121,11 @@ body {
   padding: 0.25em;
   border-radius: 0.25em;
   cursor: pointer;
+  background-color: $bgcolor-dark;
 }
 
-.light {
-  .theme-switcher {
-    background-color: $bgcolor-dark;
-  }
+.avoid-wrap {
+  display: inline-block;
 }
 
 .about-me {
@@ -127,8 +164,15 @@ h3 {
   flex-direction: row;
   list-style-type: none;
   flex-wrap: wrap;
-  align-items: start;
+  align-items: stretch;
   justify-content: space-evenly;
+
+  @include on-phone() {
+    width: 90vw;
+  }
+  @include printed() {
+    width: 100vw;
+  }
 }
 
 a {
@@ -169,6 +213,7 @@ a {
       display: block;
       margin: 0 auto;
       max-width: 315px;
+      width: 100%;
       transition: opacity 0.3s ease-out, transform 0.3s ease-out;
     }
     a {
@@ -197,6 +242,13 @@ a {
   }
   width: 40%;
   padding: 1em;
+
+  @include on-phone() {
+    width: 80%;
+  }
+  @include printed() {
+    width: 50%;
+  }
 }
 
 .links {
@@ -218,9 +270,29 @@ a {
   flex-direction: row;
   justify-content: space-evenly;
 
+  @include on-phone() {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include printed() {
+    flex-direction: column;
+    align-items: center;
+  }
+
   img {
     max-width: 50%;
     max-height: 12em;
+    @include on-phone() {
+      max-width: 80%;
+      max-height: none;
+      margin: 1em;
+    }
+    @include printed() {
+      max-width: 80%;
+      max-height: none;
+      margin: 1em;
+    }
   }
 }
 
@@ -244,9 +316,28 @@ a {
 }
 
 .gallery {
-  text-align: center;
-  img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  & > * {
     max-width: 25%;
+    margin: 3px;
+    @include on-phone() {
+      max-width: 450px;
+      width: 90%;
+    }
+    @include printed() {
+      max-width: 90%;
+      width: 90%;
+    }
+  }
+  img {
+    &:hover {
+      transform: scale(105%);
+    }
+    transition: transform 0.3s;
+    width: 100%;
   }
 }
 
@@ -256,4 +347,15 @@ a {
   text-align: center;
   width: 100%;
   display: block;
+}
+
+span[title] {
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.5s;
+  &:hover {
+    text-decoration-color: var(--underline);
+  }
 }

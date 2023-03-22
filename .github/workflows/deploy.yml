@@ -12,6 +12,8 @@ jobs:
     env:
       ABBR: ${{ secrets.ABBR }}
       COMPANY_FULLNAME: ${{ secrets.COMPANY_FULLNAME }}
+      SITE_DOMAIN: ${{ secrets.SITE_DOMAIN }}
+      EMAIL: ${{ secrets.EMAIL }}
     steps:
       - uses: actions/checkout@v2
         with:

@@ -5,11 +5,21 @@
       {{ ABBR }} Racer - Natalie Martin: Software Engineer &amp; Game Developer
     </title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="author" content="Natalie Martin" />
     <meta
       name="description"
-      content="Natalie Martin's Game Development Portfolio"
+      content="A 2D racing minigame styled after Outrun. Drive through the Arizona desert in the CZP GT-R and reach the goal in the time limit."
+    />
+    <meta
+      property="og:image"
+      content="https://{{ SITE_DOMAIN }}/img/czpracer_title.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Natalie Martin: Software Engineer &amp; Game Developer"
     />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" type="text/javascript"></script>
@@ -21,7 +31,10 @@
         <h1>Natalie Martin</h1>
         <span class="pronouns">(she/her)</span>
       </div>
-      <h2>Software Engineer and Game Developer</h2>
+      <h2>
+        <span class="avoid-wrap">Software Engineer</span> and
+        <span class="avoid-wrap">Game Developer</span>
+      </h2>
       <hr />
     </div>
     <div class="game-summary">
@@ -54,7 +67,7 @@
             <tr>
               <td colspan="2">
                 <a href="https://bit.ly/3JzueWv" referrerpolicy="no-referrer"
-                  >Play Game on {{ ABBR }}'s website</a
+                  >Play Game on {{ ABBR }}&rsquo;s website</a
                 >
               </td>
             </tr>
@@ -65,24 +78,30 @@
         {{ ABBR }} Racer is a retro-styled arcade racing minigame made for
         {{ COMPANY_FULLNAME }}. It is heavily inspired by <em>Outrun,</em> with
         similar faux-3D effects and sprite scaling. Race through the Arizona
-        desert in {{ COMPANY_FULLNAME }}'s GT-R and reach the goal in the time
-        limit.
+        desert in {{ COMPANY_FULLNAME }}&rsquo;s
+        <a
+          href="https://en.wikipedia.org/wiki/Nissan_GT-R"
+          target="_blank"
+          title="cue eurobeat"
+          >GT-R</a
+        >
+        and reach the goal in the time limit.
       </p>
       <p>
-        Here's a fun little fact about the game: You can unlock a hidden hard
-        mode if you beat the game without hitting any cars on the road or
-        crashing. If you successfully do that, upon restarting the game you'll
-        see you're playing as
+        Here&rsquo;s a fun little fact about the game: You can unlock a hidden
+        hard mode if you beat the game without hitting any cars on the road or
+        crashing. If you successfully do that, upon restarting the game
+        you&rsquo;ll see you&rsquo;re playing as
         <q title="An inside joke from the company at the time">Terry Turbo</q>
-        and the game will have slightly different stats: the car's top speed,
-        acceleration, and handling will all increase, but the time limit will
-        decrease. And higher speed means you're more likely to run off the track
-        after hitting an opponent driver!
+        and the game will have slightly different stats: the car&rsquo;s top
+        speed, acceleration, and handling will all increase, but the time limit
+        will decrease. And higher speed means you&rsquo;re more likely to run
+        off the track after hitting an opponent driver!
       </p>
       <p>
         You can play the game on
         <a href="https://bit.ly/3JzueWv" referrerpolicy="no-referrer"
-          >{{ COMPANY_FULLNAME }}'s website.</a
+          >{{ COMPANY_FULLNAME }}&rsquo;s website.</a
         >
       </p>
       <h3>Technologies</h3>
@@ -95,71 +114,69 @@
           >
         </li>
         <li>
-          ... and that's it! Just TypeScript calling browser APIs.
+          ... and that&rsquo;s it! Just TypeScript calling browser APIs.
           <span
-            title="I guess I used Webpack in the compilation process, but that's getting a bit too pedantic."
+            title="I guess I used Webpack in the compilation process, but that&rsquo;s getting a bit too pedantic."
             >There were no other dependencies.</span
           >
         </li>
       </ul>
       <h3>Roles and Development</h3>
       <p>
-        This game was technically a <strong>collaborative effort,</strong> made
-        during my employment at {{ COMPANY_FULLNAME }}, though I was the only
-        software engineer working on the project. I was also in charge of
-        designing whatever kind of minigame I wanted.
+        Created during employment at {{ COMPANY_FULLNAME }}, the making of this
+        game involved being its software engineer and lead of concept design.
         <span
-          title="Though technically some of the graphics were done by me: specifically the road graphics and the bottom parallax mountain layer, which was supposed to be a temporary graphic!"
-          >Another employee at {{ ABBR }} ended up making most of the pixel art
-          found in the game,</span
+          title="Although I did make the road graphics and the lower-detail mountain graphic used as the bottom parallax layer."
+          >The pixel art was created by another employee,</span
         >
-        and management at {{ ABBR }} ended up taking up standard project
-        management duties. They ended up calling the shots on when the game was
-        done, and
-        <span
-          title="I was fine with no audio and no mobile support! They were not and... I'm glad they forced me to do that!"
-          >also required certain features before the game was ready to go
-          live.</span
-        >
-        Because I was mainly hired to be a web developer and not a game
-        developer at {{ COMPANY_FULLNAME }}, the game was worked on in between
-        larger projects from 2019-2020. The game ended up becoming a priority
-        during the start of the pandemic in 2020, while there was still a lot of
-        uncertainty about how long working from home would last.
+        with project management duties being taken up by {{ ABBR }}&rsquo;s
+        management. This game involved working collaboratively as a team,
+        adhering to strict detail requirements, and ensuring deadlines were met
+        for completion in 2020.
       </p>
+
       <p>
-        The game was made in a custom TypeScript-based engine. Unlike later
-        games, this one does not use any dependencies for rendering and instead
-        relies on the native browser <q>2D Canvas</q> API to render everything.
-        This canvas API is also used to dynamically generate the road textures
-        that are stored in memory and manipulated to create the faux-3D effect.
+        {{ ABBR }} Racer was made in a custom TypeScript-based engine. Unlike
+        later games, this one does not use any dependencies for rendering,
+        instead relying on the native browser
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API"
+          title="I think if I made a game like this today I could pull off similar effects with shaders."
+          target="_blank"
+          >2D Canvas</a
+        >
+        API for all rendering needs. The Canvas API was also used to dynamically
+        generate the road textures, which are stored in memory and manipulated
+        to create a faux-3D effect.
       </p>
+
       <p>
         The game was originally intended to be longer, with multiple different
-        areas that could transition into each other just like in
-        <em>Outrun.</em> The code to handle this transition effect is actually
-        in the final game, but only one area is defined: the desert area.
+        areas which would transition into each other, just like in
+        <em>Outrun.</em> While the code to handle this transition effect is in
+        the final game, only one area is actually defined: the desert area.
       </p>
+
       <h3>Image Gallery</h3>
       <div class="gallery">
         <a href="img/czpracer_start.png" target="_blank">
           <img
             src="img/czpracer_start.png"
             alt="{{ ABBR }} Racer Image"
-            title="Hey I'm Grump"
+            title="Hey I&rsquo;m Grump"
           />
         </a>
         <a href="img/czpracer_signs.png" target="_blank"
           ><img
             src="img/czpracer_signs.png"
             alt="{{ ABBR }} Racer Image"
-            title="I don't know why they bought so many billboards for this road in the middle of the desert."
+            title="I don&rsquo;t know why they bought so many billboards for this road in the middle of the desert."
         /></a>
         <a href="img/czpracer_terry.png" target="_blank">
           <img
             src="img/czpracer_terry.png"
             alt="{{ ABBR }} Racer Image"
-            title="You know what... I'm surprised no one ever asked why there's no manual transmission in this game."
+            title="I&rsquo;m surprised no one ever asked why there&rsquo;s no manual transmission in this game."
           />
         </a>
         <a href="img/czp_thanks.png" target="_blank">

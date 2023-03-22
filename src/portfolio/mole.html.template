@@ -5,11 +5,21 @@
       Hymn of the Moles - Natalie Martin: Software Engineer &amp; Game Developer
     </title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="author" content="Natalie Martin" />
     <meta
       name="description"
-      content="Natalie Martin's Game Development Portfolio"
+      content="A rhythm game based on The Residents' 1981 album, Mark of the Mole and its cancelled Atari game."
+    />
+    <meta
+      property="og:image"
+      content="https://{{ SITE_DOMAIN }}/img/hymn_harsh.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Natalie Martin: Software Engineer &amp; Game Developer"
     />
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" type="text/javascript"></script>
@@ -21,7 +31,10 @@
         <h1>Natalie Martin</h1>
         <span class="pronouns">(she/her)</span>
       </div>
-      <h2>Software Engineer and Game Developer</h2>
+      <h2>
+        <span class="avoid-wrap">Software Engineer</span> and
+        <span class="avoid-wrap">Game Developer</span>
+      </h2>
       <hr />
     </div>
     <div class="game-summary">
@@ -60,12 +73,12 @@
         </table>
       </div>
       <p>
-        Hymn of the Moles is a rhythm game based on The Residents' 1981 album,
-        <q>Mark of the Mole,</q> and the unfinished Atari game that was supposed
-        to be based on it. You play as a <q>Mole,</q> hired to work in the
-        mines. While working, you sing songs and this creates the main gameplay:
-        hit the arrow keys in time with the various notes on screen and the
-        beat.
+        Hymn of the Moles is a rhythm game based on The Residents&rsquo; 1981
+        album,
+        <q>Mark of the Mole,</q> and its unfinished Atari game. You play as a
+        <q>Mole,</q> hired to work in the mines. While working, you sing songs
+        and this creates the main gameplay: hit the arrow keys in time with the
+        various notes on screen and the beat.
       </p>
       <p>
         You can download the game <a href="download/moles.zip">here.</a> This is
@@ -77,7 +90,7 @@
         <li>
           <strong>Programmed in:</strong>
           <span
-            title="It's true! I can make games in more than just Javascript!"
+            title="It&rsquo;s true! I can make games in more than just Javascript!"
             >C++</span
           >
         </li>
@@ -85,7 +98,7 @@
         <li>SDL2</li>
         <li>
           <span
-            title="as someone with serious imposter syndrome when it comes to game dev, this is the single line of my portfolio that makes me thing 'woah, am i an actual game developer?'"
+            title='as someone with serious imposter syndrome when it comes to game dev, this is the single line of my portfolio that makes me thing "woah, am i an actual game developer?"'
             >FMOD Ex</span
           >
         </li>
@@ -93,18 +106,21 @@
       <h3>Roles and Development</h3>
       <p>
         This game was a <strong>solo project,</strong> made during the 29th
-        Ludum Dare game jam. The theme for this jam was
-        <q>Beneath the Surface.</q>
+        Ludum Dare Game Jam. The theme for the Jam was
+        <q>Beneath the Surface.</q> The game was developed for both Linux and
+        Windows.
       </p>
       <p>
-        The game was written in C++ with OpenGL, SDL2, and FMOD. A lot of the
-        library code was written ahead of time. An interesting fact about the
-        engine code I'm using here: it was written before I had taken Linear
-        Algebra and so a lot of the code doing transformations like
-        scaling/rotation are doing them <q>manually,</q> rather than using
-        matrices to perform linear transformations. In hindsight, it would have
-        been much easier to just use matrix multiplication... but I didn't know
-        better at the time.
+        Hymn of the Moles was written in <strong>C++</strong> with
+        <strong>OpenGL, SDL2, and FMOD.</strong> Most of the library code was
+        written ahead of the Game Jam. I made this game while in high school,
+        before I had any exposure to Linear Algebra, and in hindsight it would
+        have been much easier to create using matrices to perform linear
+        transformations.
+        <span title="At least I didn&rsquo;t try this with a 3D game"
+          >Instead, much of the scaling/rotation transformations were manually
+          coded!</span
+        >
       </p>
       <p>The game uses music and characters by The Residents.</p>
       <h3>Image Gallery</h3>
@@ -132,7 +148,7 @@
           <img
             src="img/hymn_ed2.png"
             alt="Hymn of the Moles Image"
-            title="oh god it's my cringe ludum dare username nooooo"
+            title="oh god it&rsquo;s my cringe ludum dare username nooooo"
           />
         </a>
       </div>
