@@ -87,6 +87,16 @@
         >
         and reach the goal in the time limit.
       </p>
+      <div class="webm">
+        <video
+          src="webm/czpracer.webm"
+          loop="loop"
+          autoplay="autoplay"
+          muted="muted"
+        >
+          CZP Racer Video
+        </video>
+      </div>
       <p>
         Here&rsquo;s a fun little fact about the game: You can unlock a hidden
         hard mode if you beat the game without hitting any cars on the road or
@@ -113,13 +123,8 @@
             >TypeScript</span
           >
         </li>
-        <li>
-          ... and that&rsquo;s it! Just TypeScript calling browser APIs.
-          <span
-            title="I guess I used Webpack in the compilation process, but that&rsquo;s getting a bit too pedantic."
-            >There were no other dependencies.</span
-          >
-        </li>
+        <li><strong>Build System:</strong> Webpack</li>
+        <li>Browser 2D Canvas API</li>
       </ul>
       <h3>Roles and Development</h3>
       <p>
@@ -156,6 +161,20 @@
         <em>Outrun.</em> While the code to handle this transition effect is in
         the final game, only one area is actually defined: the desert area.
       </p>
+
+      <div class="youtube">
+        <h3>Gameplay Video</h3>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/az1pZ6oA7Tw"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
 
       <h3>Image Gallery</h3>
       <div class="gallery">

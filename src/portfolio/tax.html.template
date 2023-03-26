@@ -88,6 +88,16 @@
         <a href="https://meisekimiu.itch.io/extreme-tax-masters">Itch.io</a>
         right now!
       </p>
+      <div class="webm">
+        <video
+          src="webm/taxworld.webm"
+          loop="loop"
+          autoplay="autoplay"
+          muted="muted"
+        >
+          Extreme Tax Masters Video
+        </video>
+      </div>
       <h3>Technologies</h3>
       <ul>
         <li>
@@ -159,6 +169,19 @@
         failing grades in the gameplay didn&rsquo;t mesh well with the
         game&rsquo;s intentions.
       </p>
+      <div class="youtube">
+        <h3>Gameplay Video</h3>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/Kt6nRzYRvmw"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
       <h3>Image Gallery</h3>
       <div class="gallery">
         <a href="img/tax_info.jpg" target="_blank">
