@@ -359,3 +359,31 @@ span[title] {
     text-decoration-color: var(--underline);
   }
 }
+
+.webm {
+  text-align: center;
+
+  video {
+    max-width: 40%;
+    @include on-phone() {
+      max-width: 80%;
+    }
+    @include printed() {
+      display: none;
+    }
+  }
+}
+
+.youtube {
+  text-align: center;
+
+  iframe {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  @include printed() {
+    display: none;
+  }
+}

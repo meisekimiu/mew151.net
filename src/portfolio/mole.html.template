@@ -80,10 +80,24 @@
         and this creates the main gameplay: hit the arrow keys in time with the
         various notes on screen and the beat.
       </p>
+      <div class="webm">
+        <video
+          src="webm/moles.webm"
+          loop="loop"
+          autoplay="autoplay"
+          muted="muted"
+        >
+          Let our children live in a holey land...
+        </video>
+      </div>
       <p>
         You can download the game <a href="download/moles.zip">here.</a> This is
-        a Windows EXE, but I have tested it with Wine on my Linux computer and
-        it works fine!
+        a Windows EXE,
+        <span
+          title="Did I really just do a 'It works on MY machine!' on my professional portfolio?"
+          >but I have tested it with Wine on my Linux computer and it works
+          fine!</span
+        >
       </p>
       <h3>Technologies</h3>
       <ul>
@@ -123,6 +137,19 @@
         >
       </p>
       <p>The game uses music and characters by The Residents.</p>
+      <div class="youtube">
+        <h3>Gameplay Video</h3>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/fRCGKSy8TvU"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
       <h3>Image Gallery</h3>
       <div class="gallery">
         <a href="img/hymn_gameplay.png" target="_blank">
