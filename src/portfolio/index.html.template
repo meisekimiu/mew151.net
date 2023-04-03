@@ -31,6 +31,38 @@
     <div class="gameslist">
       <div class="game">
         <div class="title">
+          <a href="czp.html" title="{{ ABBR }} Racer">
+            <img src="img/czpracer_title.png" alt="{{ ABBR }} Racer" />
+          </a>
+          <a href="czp.html" title="Twin Turbocharged Typescript">
+            <strong>{{ ABBR }} Racer</strong>
+            <time datetime="2020-04-03">(2020)</time>
+          </a>
+        </div>
+        <div class="description">
+          A 2D racing minigame styled after <em>Outrun</em>. Drive through the
+          Arizona desert in the {{ ABBR }} GT-R and reach the goal in the time
+          limit. Race like Terry Turbo!
+        </div>
+      </div>
+      <div class="game">
+        <div class="title">
+          <a href="tax.html" title="Extreme Tax Masters">
+            <img src="img/tax_title.png" alt="Extreme Tax Masters" />
+          </a>
+          <a href="tax.html" title="An Inky Itchy Debut"
+            ><strong>Extreme Tax Masters</strong>
+            <time datetime="2021-03-11">(2021)</time></a
+          >
+        </div>
+        <div class="description">
+          A silly visual novel where you do people&rsquo;s taxes by smashing on
+          your keyboard and causing explosions. Can you save the day and become
+          the ultimate Tax Master?
+        </div>
+      </div>
+      <div class="game">
+        <div class="title">
           <a href="vacation.html" title="Virtual Vacation Zone"
             ><img src="img/vacationzone_title.png" alt="Virtual Vacation Zone"
           /></a>
@@ -52,38 +84,6 @@
             vacation memories for other players to see. Embark on a cerebral
             getaway today!</span
           >
-        </div>
-      </div>
-      <div class="game">
-        <div class="title">
-          <a href="tax.html" title="Extreme Tax Masters">
-            <img src="img/tax_title.png" alt="Extreme Tax Masters" />
-          </a>
-          <a href="tax.html" title="An Inky Itchy Debut"
-            ><strong>Extreme Tax Masters</strong>
-            <time datetime="2021-03-11">(2021)</time></a
-          >
-        </div>
-        <div class="description">
-          A silly visual novel where you do people&rsquo;s taxes by smashing on
-          your keyboard and causing explosions. Can you save the day and become
-          the ultimate Tax Master?
-        </div>
-      </div>
-      <div class="game">
-        <div class="title">
-          <a href="czp.html" title="{{ ABBR }} Racer">
-            <img src="img/czpracer_title.png" alt="{{ ABBR }} Racer" />
-          </a>
-          <a href="czp.html" title="Twin Turbocharged Typescript">
-            <strong>{{ ABBR }} Racer</strong>
-            <time datetime="2020-04-03">(2020)</time>
-          </a>
-        </div>
-        <div class="description">
-          A 2D racing minigame styled after <em>Outrun</em>. Drive through the
-          Arizona desert in the {{ ABBR }} GT-R and reach the goal in the time
-          limit. Race like Terry Turbo!
         </div>
       </div>
       <div class="game">
