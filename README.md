@@ -4,6 +4,21 @@ This is my personal website. :)
 
 [<img alt="Deployed with FTP Deploy Action" src="https://img.shields.io/badge/Deployed With-FTP DEPLOY ACTION-%3CCOLOR%3E?style=for-the-badge&color=0077b6">](https://github.com/SamKirkland/FTP-Deploy-Action)
 
+## Building / Development
+
+This website uses Sass and TypeScript in places for styles and scripting. To actually build the website for deployment, you have to build it with npm:
+
+```
+npm install
+npm run build
+```
+
+For local development, instead of running the build step manually every time you change a script file, you can instead run a watch script that will compile whenever you make changes. You can run it with this npm command:
+
+```
+npm run build:watch
+```
+
 ## About Commit Messages
 
 I'm using a utility to generate my site's RSS history via my Git history, so my commit messages are more verbose than standard commit messages. In most of my personal projects my commit messages are stuff like "skldjflkasjfl" anyway, so this is actually an improvement.
