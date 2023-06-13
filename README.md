@@ -36,7 +36,7 @@ I'm using a utility to generate my site's RSS history via my Git history, so my 
 This website is just a static HTML website. It is not a web application. It does not have any function besides loading in layout and things like RSS and the Journal. As a result, I have disabled Dependabot Security Alerts on this repository because:
 
 1. It's a static website.
-2. Basically all of these security alerts are going to be on dependencies only needed for the deployment process. In other wordss, code that's not even going out to the browser.
+2. Basically all of these security alerts are going to be on dependencies only needed for the deployment process. In other words, code that's not even going out to the browser.
 
 Usually I'm at least a little bit stricter on security alerts, but this is a personal project that's made just for fun and I don't want to be pestered with security alerts for it.
 
