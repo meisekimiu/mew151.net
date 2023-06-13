@@ -19,6 +19,14 @@ For local development, instead of running the build step manually every time you
 npm run build:watch
 ```
 
+A dev server is also provided so this site can be properly tested on the root of a domain. You can run it with:
+
+```
+npm run start
+```
+
+And the site should open in your browser.
+
 ## About Commit Messages
 
 I'm using a utility to generate my site's RSS history via my Git history, so my commit messages are more verbose than standard commit messages. In most of my personal projects my commit messages are stuff like "skldjflkasjfl" anyway, so this is actually an improvement.
