@@ -56,9 +56,11 @@ function buildPosts(text: string) {
 
 function fetchRss() {
   fetch("/rss.xml").then((response) => {
-    response.text().then((text) => {
-      buildPosts(text);
-    });
+    if (response.ok) {
+      response.text().then((text) => {
+        buildPosts(text);
+      });
+    }
   });
 }
 
