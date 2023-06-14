@@ -34,6 +34,7 @@
     "browserify": "^17.0.0",
     "dotenv": "^16.0.3",
     "expect-puppeteer": "^9.0.0",
+    "glob": "^10.2.7",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-browserify": "^0.5.1",
