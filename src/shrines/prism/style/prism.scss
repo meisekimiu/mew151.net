@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Parisienne&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Parisienne&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  background: url('bg.gif');
+  background: url("bg.gif");
   font-family: serif;
   color: #ab005e;
   font-size: 1.25em;
@@ -16,8 +16,13 @@ header {
   font-size: 2em;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Alex Brush', cursive;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Alex Brush", cursive;
   color: #e4007e;
   font-size: 150%;
   margin-top: 0;
@@ -42,11 +47,13 @@ a {
   transition: color 0.3s, text-decoration-color 0.3s;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: #e4007e;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   color: #ab005e;
   text-decoration-color: transparent;
 }
@@ -81,15 +88,15 @@ a:hover, a:active {
 }
 
 .aurora_dream_btn {
-  background: url('./aurora_dream_button_bg.png');
+  background: url("./aurora_dream_button_bg.png");
 }
 
 .dear_my_future_btn {
-  background: url('./dear_my_future_button_bg.png');
+  background: url("./dear_my_future_button_bg.png");
 }
 
 .rainbow_live_btn {
-  background: url('./rainbow_live_button_bg.png');
+  background: url("./rainbow_live_button_bg.png");
 }
 
 .btn_wrapper {
@@ -152,7 +159,8 @@ aside {
   display: block;
 }
 
-.watch_progress meter, .watch_progress img {
+.watch_progress meter,
+.watch_progress img {
   width: 100%;
 }
 
@@ -184,11 +192,8 @@ footer .return {
   display: inline-block;
   font-size: 2.5em;
   font-weight: bold;
-  font-family: 'Parisienne', cursive;
-  text-shadow:
-    -1px -1px 0 #ab005e,
-    1px -1px 0 #ab005e,
-    -1px 1px 0 #ab005e,
+  font-family: "Parisienne", cursive;
+  text-shadow: -1px -1px 0 #ab005e, 1px -1px 0 #ab005e, -1px 1px 0 #ab005e,
     1px 1px 0 #ab005e;
 }
 
