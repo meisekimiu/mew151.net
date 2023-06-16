@@ -1,5 +1,6 @@
 import "expect-puppeteer";
 import { globSync } from "glob";
+import { getSiteUrl } from "./util/getSiteUrl";
 
 const skipFiles = [
   "src/not_found.html",
@@ -22,7 +23,7 @@ describe("Canonical URL Testing", () => {
   test.each(htmlFiles)("Canonical URL: %s", async (file) => {
     const relativeFileName = file.replace(/^src\//, "");
     const expectedCanonicalUrl = PROTOCOL + DOMAIN + "/" + relativeFileName;
-    await page.goto("http://127.0.0.1:8081/" + relativeFileName);
+    await page.goto(getSiteUrl(relativeFileName));
     const linkHref = await page.$eval('link[rel="canonical"]', (element) => {
       return element.href;
     });
@@ -31,7 +32,7 @@ describe("Canonical URL Testing", () => {
   });
   test("Canonical URL: src/index.html", async () => {
     const expectedCanonicalUrl = PROTOCOL + DOMAIN + "/";
-    await page.goto("http://127.0.0.1:8081/");
+    await page.goto(getSiteUrl("/"));
     const linkHref = await page.$eval('link[rel="canonical"]', (element) => {
       return element.href;
     });

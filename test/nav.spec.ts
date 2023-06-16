@@ -1,4 +1,5 @@
 import "expect-puppeteer";
+import { getSiteUrl } from "./util/getSiteUrl";
 
 interface NavLink {
   image: string | undefined;
@@ -7,7 +8,7 @@ interface NavLink {
 
 describe("Navigation", () => {
   test("JS and Fallback Nav Parity", async () => {
-    await page.goto("http://127.0.0.1:8081");
+    await page.goto(getSiteUrl("/"));
     const navLinks = await page.$eval("nav .navigation-group", (group) =>
       Array.from(group.querySelectorAll("a")).map((element) => {
         const obj: NavLink = {
@@ -17,7 +18,7 @@ describe("Navigation", () => {
         return obj;
       })
     );
-    await page.goto("http://127.0.0.1:8081/nav-fallback.html");
+    await page.goto(getSiteUrl("/nav-fallback.html"));
     const fallbackLinks = await page.$eval(".navigation-group", (group) =>
       Array.from(group.querySelectorAll("a")).map((element) => {
         const obj: NavLink = {
@@ -37,7 +38,7 @@ describe("Navigation", () => {
     expect(fallbackLinks.length).toBeGreaterThan(navLinks.length);
   });
   test("Fallback Nav opens in parent frame", async () => {
-    await page.goto("http://127.0.0.1:8081/nav-fallback.html");
+    await page.goto(getSiteUrl("/nav-fallback.html"));
     const linkCount = await page.$eval(
       ".navigation-group",
       (group) => group.querySelectorAll("a").length

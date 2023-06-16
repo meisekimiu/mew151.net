@@ -1,5 +1,6 @@
 import "expect-puppeteer";
 import { globSync } from "glob";
+import { getSiteUrl } from "./util/getSiteUrl";
 
 const skipFiles = [
   "src/not_found.html",
@@ -18,7 +19,7 @@ const htmlFiles = globSync("src/**/*.html").filter(
 describe("Sitemap verification", () => {
   let linkPaths: string[];
   beforeAll(async () => {
-    await page.goto("http://127.0.0.1:8081/sitemap.html");
+    await page.goto(getSiteUrl("/sitemap.html"));
     linkPaths = await page.$eval("main", (main) => {
       return Array.from(main.querySelectorAll("a[href]")).map(
         (element) => (element as HTMLAnchorElement).href
