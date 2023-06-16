@@ -2,6 +2,6 @@
 module.exports = {
   server: {
     command: "npm run test-dev-server",
-    port: 8081,
+    port: process.env.PORT ?? 8081,
   },
 };

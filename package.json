@@ -11,7 +11,7 @@
     "build": "gulp",
     "build:watch": "gulp watch",
     "dev-server": "http-server src -o",
-    "test-dev-server": "http-server src --port 8081",
+    "test-dev-server": "http-server src --port \"${PORT:-8081}\"",
     "start": "npm-run-all --parallel build:watch dev-server",
     "test": "jest"
   },

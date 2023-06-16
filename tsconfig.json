@@ -4,7 +4,7 @@
     "lib": ["DOM"],
     "target": "ES3",
     "outDir": "build/tsc",
-    "rootDir": "src",
+    "rootDir": ".",
     "resolveJsonModule": true
   }
 }
