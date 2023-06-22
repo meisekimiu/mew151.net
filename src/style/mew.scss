@@ -164,6 +164,9 @@ main {
   padding: 3px 1.5em;
   min-height: 95vh;
   font-size: 1.5rem;
+  @media only screen and (max-width: 900px) {
+    font-size: 1.25rem;
+  }
 }
 
 .navigation-header {
