@@ -10,7 +10,7 @@ function setBackground(hour?: number) {
   const specialDates = [
     { code: "1/1", reason: "new year" },
     { code: "1/5", reason: "shion day" },
-    { code: "1/18", reason: "mlk day" },
+    { code: "1/18", reason: "(legacy) mlk day" },
     { code: "1/21", reason: "takane day" },
     { code: "1/26", reason: "classic website birthday" },
     { code: "2/5", reason: "dorothy + leona day" },
@@ -28,6 +28,7 @@ function setBackground(hour?: number) {
     { code: "5/6", reason: "world accordion day" },
     { code: "6/6", reason: "aroma day" },
     { code: "6/12", reason: "konomi day" },
+    { code: "6/20", reason: "??? anniversary <3" },
     { code: "6/21", reason: "summer solstice" },
     { code: "7/4", reason: "AX weekend day (lol)" },
     { code: "7/25", reason: "??? birthday" },
