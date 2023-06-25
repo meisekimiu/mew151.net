@@ -67,28 +67,34 @@ jobs:
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.GMI_HOST }}
-          username: ${{ secrets.GMI_USERNAME }}
+          username: ${{ vars.GMI_USER }}
           password: ${{ secrets.GMI_PASSWORD }}
           port: ${{ secrets.GMI_PORT }}
           source: "text/gemini/build"
           target: ${{ secrets.GMI_DIRECTORY }}
+          strip_components: 3
+          overwrite:
 
       - name: ⛳🌌 Deploy Gopher
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.GMI_HOST }}
-          username: ${{ secrets.GMI_USERNAME }}
+          username: ${{ vars.GMI_USER }}
           password: ${{ secrets.GMI_PASSWORD }}
           port: ${{ secrets.GMI_PORT }}
           source: "text/gopher/build"
           target: ${{ secrets.GOPHER_DIRECTORY }}
+          strip_components: 3
+          overwrite:
 
       - name: 🧾🌌 Deploy HTML to text.mew151.net
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.GMI_HOST }}
-          username: ${{ secrets.GMI_USERNAME }}
+          username: ${{ vars.GMI_USE }}
           password: ${{ secrets.GMI_PASSWORD }}
           port: ${{ secrets.GMI_PORT }}
           source: "text/www"
           target: ${{ secrets.TEXT_WWW_DIRECTORY }}
+          strip_components: 2
+          overwrite:
