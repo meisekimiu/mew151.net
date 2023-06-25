@@ -1,0 +1,21 @@
+# Gopher / Gemini Launch
+Posted 2022-08-20
+
+Well... here we are! If you're reading this, you're probably reading it through a Gopher or Gemini client. And that means I finally have these services up and running! Yay!
+
+I initially was drawn to these protocols when I was thinking about the technology behind my HTTP website. I love that website, but I know that some people are very anti-script, anti-image, and anti... BLOAT as a whole when wanting to escape the modern web. I also realized that while my site was retro in aesthetic, it wouldn't exactly render well on actual older hardware. And I didn't exactly want to write my website to be IE6-compatible... some things should stay in the past and IE6 compatibility is one of those things.
+
+Gemini and Gopher seemed like good ways to make content from my main website accessible to those who want a more lightweight experience. And I initially treated it as an accessibility thing. Just something to do to theoretically allow more people to access my website. But then... I'm not sure what happened... but I actually started to really like these protocols.
+
+There's something really fun and satisfying in the simplicity of these protocols. I really want to post more exclusive stuff to these services because it's so fun. It gets my imagination going... I can imagine a version of the SCP Foundation site hosted on Gopher to increase the immersion of you browsing classified files you're not supposed to be reading. It'd totally be fun on Gemini too, though.
+
+Anyway, setting up the servers was kind of challenging. I run Motsognir for the Gopher server, and it's overall a pretty good server. But the Gemini server situation is a bit more complicated. I initially settled on `gmid` when I was running a server locally to design out the whole Gemini capsule. But I had trouble getting it working on my actual live server. I tried out a Rust-based server called Kepler next. I got it working, but it had some issues, particularly there was some weirdness in navigating relative links (which I use everywhere for both versions of the site). Finally I chose `Agate`, which seems to be much more mature and did not have the relative link issue. I was also able to install it from cargo instead of having to clone down the git repo manually so... that was nice.
+
+=> http://motsognir.sourceforge.net/ Motsognir - a robust, reliable and easy to install gopher server
+=> gemini://gemini.omarpolo.com/pages/gmid.gmi gmid - a fast, small, and secure Gemini server
+=> https://github.com/ambyshframber/kepler kepler - simple gemini server in rust 
+=> gemini://qwertqwefsday.eu/agate.gmi agate - simple Gemini server for static files
+
+One thing I'm not fully decided on yet is how exactly I want to deploy this site. I have automated deployments set up with my main WWW site's Github repo, but because I wanted to keep this content ~exclusive~ to encourage people to explore these other protocols, I don't really want to set up a public repo for this stuff. Right now I'm just deploying the site as a `.tar.gz` file, but I should probably figure out a better way of doing it.
+
+Anyways, thanks for visiting this version of my site! And happy explorations through whichever protocol you're using!

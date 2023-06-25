@@ -1,0 +1,12 @@
+iMew151's Phlog
+
+iThis is my phlog. Sometimes it will be a mirror of my WWW blog.
+iSometimes smaller unique posts will find there way here. Hope you enjoy!
+
+iYou may see me refer to this as my "gemlog". That's because generally this
+icontent is mirrored on both Gemini *and* Gopher. Typically I write for Gemini
+ifirst (since it has a bit more fancy extra formatting) and then downgrade the
+icontent to plain text. So if you see that... that's why. Maybe I'll
+ioccasionally post stuff exclusive to Gopher here though. Idk.
+
+=../bin/phlog.sh

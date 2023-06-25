@@ -59,3 +59,36 @@ jobs:
           api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
           cleanup: false
           dist_dir: src
+
+      - name: 🌙 Build text versions of site
+        run: npm run generate-text
+
+      - name: 💎🌌 Deploy Gemini
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.GMI_HOST }}
+          username: ${{ secrets.GMI_USERNAME }}
+          password: ${{ secrets.GMI_PASSWORD }}
+          port: ${{ secrets.GMI_PORT }}
+          source: "text/gemini/build"
+          target: ${{ secrets.GMI_DIRECTORY }}
+
+      - name: ⛳🌌 Deploy Gopher
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.GMI_HOST }}
+          username: ${{ secrets.GMI_USERNAME }}
+          password: ${{ secrets.GMI_PASSWORD }}
+          port: ${{ secrets.GMI_PORT }}
+          source: "text/gopher/build"
+          target: ${{ secrets.GOPHER_DIRECTORY }}
+
+      - name: 🧾🌌 Deploy HTML to text.mew151.net
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.GMI_HOST }}
+          username: ${{ secrets.GMI_USERNAME }}
+          password: ${{ secrets.GMI_PASSWORD }}
+          port: ${{ secrets.GMI_PORT }}
+          source: "text/www"
+          target: ${{ secrets.TEXT_WWW_DIRECTORY }}
