@@ -91,7 +91,7 @@ jobs:
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.GMI_HOST }}
-          username: ${{ vars.GMI_USE }}
+          username: ${{ vars.GMI_USER }}
           password: ${{ secrets.GMI_PASSWORD }}
           port: ${{ secrets.GMI_PORT }}
           source: "text/www"
