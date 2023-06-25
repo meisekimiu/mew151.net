@@ -59,6 +59,7 @@
           <h1
             class="tutorial-paper"
             style="padding: 1em 0; margin: 0.25em auto"
+            data-gmi-ignore
           >
             Welcome to my Website!
           </h1>
@@ -73,6 +74,7 @@
             <a
               href="manifesto.html#websites-as-homes"
               title="read my whole web manifesto ig"
+              data-gmi-drop-link
               >best way to have digital presence online,</a
             >
             especially compared to centralized, corporate, algorithmically
@@ -84,6 +86,7 @@
           <div
             class="tutorial-paper"
             style="rotate: 3deg; padding: 1em; width: 250px"
+            data-gmi-ignore
           >
             <img src="/neocities.png" alt="Hosted By Neocities" />
           </div>
@@ -123,14 +126,17 @@
             seen it done before. Neocities, please remove that one if you
             haven't already.)
           </p>
-          <ins datetime="2023-06-01"
-            >June 2023 Update: Neocities has removed some of the "noise" you see
-            on your feed, so the main way of discovering new sites now is just
-            to browse and check the global activity page. On one hand, it's way
-            easier to see updates from sites you follow! On the other hand, no
-            more site discoverabilty through that random noise. :(</ins
-          >
-          <aside>
+          <p>
+            <ins datetime="2023-06-01"
+              >June 2023 Update: Neocities has removed some of the "noise" you
+              see on your feed, so the main way of discovering new sites now is
+              just to browse and check the global activity page. On one hand,
+              it's way easier to see updates from sites you follow! On the other
+              hand, no more site discoverabilty through that random noise.
+              :(</ins
+            >
+          </p>
+          <aside data-gmi-ignore>
             <p style="rotate: -3deg" class="tutorial-paper">
               <span
                 >Here's how you can make <strong>bold</strong> and
@@ -149,6 +155,7 @@
             <a
               href="https://neocities.org/activity"
               title="In theory, someone could have come to this very page from the Global Activity feed..."
+              data-gmi-drop-link
               >Global Activity</a
             >
             page on Neocities? I've noticed that whenever I publish an update to
@@ -158,6 +165,7 @@
             <a
               href="https://neocities.org/browse?sort_by=special_sauce"
               title="can i get my websites animal style with fries thank you"
+              data-gmi-drop-link
               >"Special Sauce"</a
             >
             sorting setting on the website directory? That (along with its
@@ -166,6 +174,7 @@
             <a
               href="https://github.com/neocities/neocities"
               title="My site is open source too, btw!"
+              data-gmi-drop-link
               >open source,</a
             >
             so we can actually look into the code and figure out for
@@ -226,14 +235,17 @@
           <ul>
             <li>Remove sites below 3000 views</li>
             <li>Remove sites marked 18+ (NSFW)</li>
-            <li style="text-decoration: line-through">
+            <li style="text-decoration: line-through" data-gmi-ignore>
               Remove sites that are too slow to load for the screenshot bot
             </li>
             <li>Remove multiple occurrences of the same site in the list</li>
             <li>
               Removes <strong>jerks</strong
               ><sup
-                ><a href="#footnote-1-definition" id="footnote-1-context"
+                ><a
+                  href="#footnote-1-definition"
+                  id="footnote-1-context"
+                  data-gmi-drop-link
                   >[1]</a
                 ></sup
               >
@@ -257,6 +269,7 @@
             <a
               href="https://www.merriam-webster.com/dictionary/algorithm"
               target="The dictionary page that shows you the definition of algorithm uses an algorithm"
+              data-gmi-drop-link
               >any computer system uses algorithms</a
             >, but it isn't a magic machine learning one like Twitter or TikTok.
             The Special Sauce sort mode
@@ -293,7 +306,10 @@
             </li>
             <li>
               For every 1000 views<sup
-                ><a href="#footnote-2-definition" id="footnote-2-context"
+                ><a
+                  href="#footnote-2-definition"
+                  id="footnote-2-context"
+                  data-gmi-drop-link=""
                   >[2]</a
                 ></sup
               >, <strong>add 1 point.</strong>
@@ -315,7 +331,10 @@
             <li>
               If a site has credentials for the Neocities API and has hit
               endpoints over 1000 times<sup
-                ><a href="#footnote-3-definition" id="footnote-3-context"
+                ><a
+                  href="#footnote-3-definition"
+                  id="footnote-3-context"
+                  data-gmi-drop-link
                   >[3]</a
                 ></sup
               >,
@@ -360,12 +379,12 @@
             Follows" and "Followers" sections on a user's profile, those sites
             are <strong>also</strong> sorted by score! Neat!
           </p>
-          <aside>
+          <aside data-gmi-ignore="">
             <p style="rotate: 3deg" class="tutorial-paper">
               Here's how you can add an image:
             </p>
           </aside>
-          <figure>
+          <figure data-gmi-ignore="">
             <img
               src="neocities/follows.png"
               alt="Neocities Followers"
@@ -395,7 +414,7 @@
             algorithm on that site as well since engagement algorithms are just
             the new normal now.
           </p>
-          <figure>
+          <figure data-gmi-ignore>
             <a href="neocities/ao3_algorithm.jpg" target="_blank">
               <img
                 src="neocities/ao3_algorithm.jpg"
@@ -452,7 +471,7 @@
             Oh.. and Neocities? Please let me use your API for automated
             deployments without supressing my account in search results. lol.
           </p>
-          <p style="rotate: -3deg" class="tutorial-paper">
+          <p style="rotate: -3deg" class="tutorial-paper" data-gmi-ignore>
             <span
               >To learn more HTML/CSS, check out these
               <a href="https://neocities.org/tutorials">tutorials</a>!</span
@@ -463,13 +482,13 @@
           <strong id="footnote-1-definition">1:</strong> "Jerks" are sites who
           have been blocked by at least four other accounts. That is what they
           are actually called in the code.
-          <a href="#footnote-1-context">&uarr;</a><br /><br />
+          <a href="#footnote-1-context" data-gmi-ignore>&uarr;</a><br /><br />
           <strong id="footnote-2-definition">2:</strong> The code uses
           <code>views / 1000</code> to compute this part of the score, but I
           believe the <var>views</var> value here is an integer, so in Ruby
           (what Neocities runs on) this will be handled with Integer Division.
           No decimal points or remainders.
-          <a href="#footnote-2-context">&uarr;</a><br /><br />
+          <a href="#footnote-2-context" data-gmi-ignore>&uarr;</a><br /><br />
           <strong id="footnote-3-definition">3:</strong> Wait... but... I use
           the Neocities API to deploy this website... oh god, are you telling me
           I only have a limited number of deploys before I get completely
@@ -477,7 +496,7 @@
           Neocities source code, each API call is tracked in the database and I
           can't find a place where that value is ever reset...? (Maybe this is
           to encourage API key rotation???)
-          <a href="#footnote-3-context">&uarr;</a>
+          <a href="#footnote-3-context" data-gmi-ignore>&uarr;</a>
         </main>
       </div>
     </div>

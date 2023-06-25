@@ -13,7 +13,8 @@
     "dev-server": "http-server src -o",
     "test-dev-server": "http-server src --port \"${PORT:-8081}\"",
     "start": "npm-run-all --parallel build:watch dev-server",
-    "test": "jest"
+    "test": "jest",
+    "generate-text": "text/gemini/build.sh && text/gopher/build.sh"
   },
   "author": "Natalie Martin",
   "dependencies": {
@@ -35,6 +36,7 @@
     "dotenv": "^16.0.3",
     "expect-puppeteer": "^9.0.0",
     "glob": "^10.2.7",
+    "gmi2gopher": "github:meisekimiu/gmi2gopher",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-browserify": "^0.5.1",
@@ -44,6 +46,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-uglify": "^3.0.2",
+    "html2gmi": "github:meisekimiu/html2gmi",
     "http-server": "^14.1.1",
     "jest": "^29.5.0",
     "jest-puppeteer": "^9.0.0",

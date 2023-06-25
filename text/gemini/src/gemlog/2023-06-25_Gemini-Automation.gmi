@@ -1,0 +1,36 @@
+# Gemini Automation
+Posted 2023-06-25
+
+Welp. It's been almost a year since my Gemini capsule and Gopherhole have gone up and... it's been tough to maintain everything. Let me explain.
+
+I've set up my main WWW site with automated deployments on a Github repo. The idea is that I want it to be really REALLY easy to edit my site from everywhere, and as long as I have Github access I can deploy the site easily. This deployment process also lets me run a bunch of automated processes such as building TypeScript to JavaScript and Sass to CSS.
+
+But for Gemini/Gopher, I stuck to manually SCP'ing up files to my server. There was SOME scripting magic involved; most of the content on the Gopher version of the site was actually just automatically generated over from the Gemini version with a utility I wrote.
+
+I love the convenience of my WWW site's deployments, but I intentionally kept it simpler with Gemini/Gopher since I didn't want these versions of the site to show up in public version control. Ideally I wanted users to have to actually jump through the hoops of installing a Gemini/Gopher client to actually access the site. And so deployment was painful.
+
+There was another pain point to all of this: I generally want there to be some level of parity between my WWW site and its text-based versions on Gemini/Gopher (With the exception of the stuff that's a bit TOO dependent on being run in a WWW Internet Browser... either because it uses JavaScript/CSS trickery, is too image heavy, or is packed with too many WWW links with no other text content at all).
+
+That meant that when I decided to add the "Squeeze Blog" section to my Accordion Corner I'd have to write and maintain separate Gemtext versions of these posts alongside the HTML versions. I did not want to do this; I've already touched up those articles with various typo fixes and other bits of maintenance work and I hated the idea of doubling up that maintenance work on the Gemini side of things too. Ultimately that resulted in my Gemini capsule and Gopherhole slowly losing parity with my WWW site.
+
+## Automatically Generating Gemini
+
+And so that brings me to what is hopefully the solution to all of this: I now have all of the contents of `text.mew151.net` kept in source control with the rest of my WWW site. And not only that, I have written a new (and very imperfect) utility called "html2gmi" that helps generate Gemtext from my WWW site's HTML.
+
+I was really hesitant to do this since I really wanted my Gemini capsule to feel like it was fully intended to be on Gemini to begin with, even if it was actually hosting some duplicate content from my WWW site. I also didn't even know how to start writing a converter. Ultimately I settled on a converter utility that is very much based on the specific HTML layout of my website. Also, in order to give myself much more control over the final generated Gemtext, my utility responds to various `data-gmi-*` attributes thrown around in my HTML. With these attributes, I can do things like select HTML elements to completely delete from Gemtext output, rewrite the contents of an HTML element when converting over, and control how links are output in the Gemtext document.
+
+## Links
+
+Links in particular are tricky. I settled on 3 types of link behaviors, although I mainly use 2 types in my site. The "drop link" behavior just straight up ignores the link and writes it out as plain text. In HTML, I like to add random links everywhere in the middle of text, but Gemini's format makes me a lot more selective of the links I want to include in my document, so a lot of links from my WWW site just get dropped like this.
+
+The "default" link behavior just straight up rips the link out of the HTML it was in and spits it out after the next paragraph. The way I write links, this often does not work well since my links usually only apply to a specific sentence fragment. This results in those sentence fragments being ripped out of the paragraph completely and spit out nonsensically after the paragraph. Still, this behavior is good if you have a "Click Here" link or a link that otherwise applies to a whole sentence.
+
+Finally there is the "footnote" link behavior, which I use all the time. This one is basically a blend of the previous two link behaviors. It converts the link to plain text and ALSO will spit out a Gemtext link after the main paragraph. This is useful if you mention something and want to add a link below the paragraph for more clarification.
+
+## Do I Want This Though?
+
+I think I'm happy with this system. While I'm not handwriting all of the Gemtext on my capsule (although there is still some Gemini/Gopher exclusive content such as this very article), I am pleased with the amount of control I have over the output Gemtext files. There are still a few bugs I'd like to work out, but I hope I can iron them out.
+
+I'm curious to know how others in the Gemini/Gopher space feel about this. Have I crossed a line in autoconverting such a heavy, unrefined, and corporate format like HTML over to beautiful Gemtext? (I will not say that Gophermaps are beautiful though. They are neat, but let's be real. They are not beautiful).
+
+I think it's fine, since my main goal is just to have my site hosted in a space that's less bloated (and for Gopher in particular, compatible with the retro machines my site tries to emulate). But let me know if I crossed a line hehe.

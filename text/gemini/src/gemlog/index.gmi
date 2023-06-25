@@ -1,0 +1,10 @@
+# Mew151's Gemlog
+
+This is my Gemlog. Sometimes it will be a mirror of my WWW blog. Sometimes smaller unique posts will find their way here. Hope you enjoy!
+
+You may see me refer to this as my "phlog". That's because generally this content is mirrored on both Gemini *and* Gopher. But typically I write for Gemini first and then copy over to Gopher so that should never happen. lol.
+
+## Post Directory
+=> 2023-06-25_Gemini-Automation.gmi 2023-06-25: Gemini Automation
+=> 2022-08-20_GoGemLaunch.gmi 2022-08-20: Gopher / Gemini Launch
+=> 2022-07-19_More-Thoughts-On-Fediverse.gmi 2022-07-19: More Thoughts On The Fediverse

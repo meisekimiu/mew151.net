@@ -1,0 +1,11 @@
+# About "antimoon"
+
+{ bios } is the de-facto name for an ongoing art project I have worked on since 2012. While technically, the actual project itself doesn't have a name, I had to name the directory something when it was first published, and it ended up taking the name of the first "gate" of the project, also named {bios}.
+
+## ...What does this have to do with "antimoon", and why is it on this service?
+
+"antimoon" is the second of the three gates of { bios }. It is currently the only static, non-interactable "gate" of the art project. As a result, it was pretty easy to convert to Gemini/Gopher formats. Maybe one day I'll convert {bios} to the format, but for now you'll have to view them on the World Wide Web due to its dynamic and interactive nature.
+
+=> https://www.mew151.net/subsite/bios.html the { bios } gates (WWW)
+
+=> /antimoon Back to "antimoon"

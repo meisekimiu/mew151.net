@@ -1,0 +1,28 @@
+```
+ __  __            _ ___ _ 
+|  \/  |_____ __ _/ | __/ |
+| |\/| / -_) V  V / |__ \ |
+|_|  |_\___|\_/\_/|_|___/_|
+```
+Mew151
+
+Welcome to Natalie's Gemini capsule
+
+=> about.gmi About
+=> accordion Natalie's Accordion Corner
+=> cyber Cyberspace
+=> gemlog Gemlog
+=> antimoon Antimoon
+
+You can also find me on other nerdy protocols:
+* Email: webmaster@mew151.net
+* ActivityPub: @natalie@prismst.one
+* Gopher: gopher://text.mew151.net
+
+And the World Wide Web:
+=> https://www.mew151.net WWW: https://www.mew151.net
+=> https://mew151.neocities.org WWW (Neocities Mirror): https://mew151.neocities.org
+
+-----
+This service is powered by Agate
+=> gemini://qwertqwefsday.eu/agate.gmi Agate: Simple Gemini server for static files
