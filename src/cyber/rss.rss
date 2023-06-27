@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>You did it! You found the secret RSS feed!</title>
+    <link>https://www.mew151.net/cyber/rss.html</link>
+    <atom:link href="https://www.mew151.net/cyber/rss.rss" rel="self" type="application/rss+xml" />
+    <description>I told you to try adding ".rss" to the end of a URL and you actually tried it! Unfortunately this is not a "real" RSS feed and I am probably not going to update this ever lol.</description>
+    <language>en-us</language>
+    <copyright>2023 Mew151.net</copyright>
+    <webMaster>webmaster@mew151.net (Natalie)</webMaster>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <ttl>86400</ttl>
+    <pubDate>Sun Jun 25 19:00:00 2023 -0700</pubDate>
+    <item>
+      <title>RSS: Really Simple Syndication!</title>
+      <pubDate>Sun Jun 25 19:00:00 2023 -0700</pubDate>
+      <link>https://www.mew151.net/cyber/rss.html</link>
+      <guid isPermaLink="true">https://www.mew151.net/cyber/rss.html</guid>
+      <description>Random Silly Stuff</description>
+    </item>
+  </channel>
+</rss>
