@@ -1,0 +1,67 @@
+main.light {
+  background-color: #ff69b4 !important;
+  color: #880350 !important;
+  font-family: "Anime Ace", "Comic Sans MS", cursive, sans-serif !important;
+  font-size: 1rem;
+}
+#title {
+  text-align: center;
+  text-decoration: underline;
+}
+#description {
+  padding: 0 15px;
+  text-align: justify;
+}
+#resultsbox {
+  border: 1px solid #880350;
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+#results {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.username {
+  flex-grow: 1;
+  font-size: 1.25rem;
+  margin: 0 1ex;
+  flex-basis: 30%;
+  line-height: 2.5;
+  @media screen and (max-width: 900px) {
+    flex-basis: 45%;
+  }
+}
+#kawaii {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 15px;
+  border: 1px solid #880350;
+}
+#kawaii img {
+  display: block;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+#source {
+  float: right;
+  margin-right: 15px;
+}
+#copyright {
+  text-align: center;
+}
+#ticker {
+  margin: 0 auto;
+}
+#tweet_button {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 151;
+}
+
+td {
+  color: color-mix(pink, skyblue);
+}
