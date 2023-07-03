@@ -1,0 +1,14 @@
+# People Actually Use Gemini?!
+Posted 2023-07-03
+
+This week, my Gemini capsule earned the newly created "Cool Capsule of the Week" (CCOW) award from DJ Chase's Site. Thanks to everyone for checking my capsule out! To be honest, I'm a bit weirded out; Gemini is already a pretty niche protocol and I have not really done much marketing of my Gemini/Gopher sites at all. I was actually pretty confident that my Gemini capsule was in like... the Gemini equivalent of the "Dark Web", as if Gemini space wasn't already kind of a "Dark Web" itself.
+
+=> gemini://dj-chase.com/documents/cap-of-week/index.gmi Cool Capsule of the Week
+
+I assume this is at least somewhat related to me using the #Gemini hashtag in the fediverse to push my latest blog post, since earlier I also got linked to on Senders' gemlog.
+
+=> gemini://senders.io/gemlog/writing-my-own-software.gmi "Software? That someone else wrote?"
+
+I don't really have a point to any of this besides saying: "Woah, people actually have accessed my Gemini capsule... neat!". I wasn't sure if anyone would ever really access these text-based versions of my WWW site, but I was happy to keep them online just for the fun of it anyway.
+
+I now feel more inspired to actually start fleshing out my "Gemini and Gopher" pages... I need to link to more cool Gemini capsules and Gopher sites myself!

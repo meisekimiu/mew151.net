@@ -4,7 +4,10 @@ This is my Gemlog. Sometimes it will be a mirror of my WWW blog. Sometimes small
 
 You may see me refer to this as my "phlog". That's because generally this content is mirrored on both Gemini *and* Gopher. But typically I write for Gemini first and then copy over to Gopher so that should never happen. lol.
 
+(remind me to make an RSS feed for this eventually lol)
+
 ## Post Directory
+=> 2023-07-03_PeopleUseGemini.gmi 2023-07-03: People Actually Use Gemini?!
 => 2023-06-25_Gemini-Automation.gmi 2023-06-25: Gemini Automation
 => 2022-08-20_GoGemLaunch.gmi 2022-08-20: Gopher / Gemini Launch
 => 2022-07-19_More-Thoughts-On-Fediverse.gmi 2022-07-19: More Thoughts On The Fediverse
