@@ -1,7 +1,7 @@
 const linkTransformations: { [key: string]: string } = {
   "https://blog.mew151.net/entries/ghostofhope.html": "ghostofhope.html",
   "https://blog.mew151.net/entries/intruders.html": "intruders.html",
-  "https://blog.mew151.net/entries/dyingdog-review.html": "dyingdog.html",
+  "https://blog.mew151.net/entries/dyingdog-review.html": "dyindog.html",
 };
 
 const changeRelativeLinks = (article: HTMLElement, origin: string) => {
