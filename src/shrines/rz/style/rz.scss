@@ -77,3 +77,38 @@ article ins {
   background-color: #dfc12a33;
   display: block;
 }
+
+.nobr {
+  white-space: nowrap;
+}
+
+table {
+  margin: 0 auto;
+  width: 75%;
+  min-width: 900px;
+  table-layout: fixed;
+  border: 1px solid #fff;
+
+  td {
+    text-align: center;
+    border: 1px solid #fff;
+    padding: 0.5em;
+    max-width: 50%;
+  }
+}
+
+ruby {
+  cursor: help;
+  border-bottom: 1px dashed #fff;
+
+  rt {
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+
+  &:hover {
+    rt {
+      opacity: 1;
+    }
+  }
+}
