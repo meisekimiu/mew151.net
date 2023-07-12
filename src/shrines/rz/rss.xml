@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RESIDENTS WORLD</title>
+    <link>https://www.mew151.net/shrines/rz/</link>
+    <atom:link href="https://www.mew151.net/shrines/rz/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Updates to my Residents fanpage</description>
+    <language>en-us</language>
+    <copyright>2023 Natalie Martin</copyright>
+    <webMaster>webmaster@mew151.net (Natalie)</webMaster>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <ttl>180</ttl>
+    <pubDate>Wed, 11 Jul 2023 20:13:37</pubDate>
+    <item>
+      <title>RESIDENTS WORLD is up!</title>
+      <pubDate>Wed, 11 Jul 2023 20:13:37</pubDate>
+      <link>https://www.mew151.net/shrines/rz/</link>
+      <guid isPermaLink="true">https://www.mew151.net/shrines/rz/</guid>
+      <description>The shrine is up! The shrine is up! ... It's mostly old content lol.</description>
+      <category domain="rz-world">general</category><category domain="rz-world">collection</category>
+    </item>
+  </channel>
+</rss>
