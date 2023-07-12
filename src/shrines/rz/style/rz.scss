@@ -20,6 +20,7 @@ figure {
 
 main {
   ul,
+  ol,
   dl {
     max-width: 1200px;
     padding: 1em;
@@ -28,12 +29,29 @@ main {
       margin-bottom: 0.5em;
     }
   }
-  p {
+  p,
+  blockquote,
+  ins.correction {
+    display: block;
     max-width: 1200px;
     padding: 1em;
     margin: 0 auto;
     &::first-letter {
       font-size: 1.5rem;
+    }
+  }
+  blockquote {
+    &::before {
+      content: "❝";
+    }
+    &::after {
+      content: "❞";
+    }
+    font-style: italic;
+    padding-left: 2em;
+    &.translation {
+      padding-left: 3em;
+      font-style: normal;
     }
   }
 }
@@ -71,7 +89,8 @@ span[title]:hover {
   border-bottom: 1px dashed #fff9;
 }
 
-article ins {
+article ins,
+ins.correction {
   padding: 1em;
   border-radius: 1em;
   background-color: #dfc12a33;
@@ -111,4 +130,34 @@ ruby {
       opacity: 1;
     }
   }
+}
+
+.big {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.forumtime {
+  text-align: center;
+  color: #ccc;
+  display: block;
+}
+
+.forum-foreword {
+  color: #ccc;
+  font-style: italic;
+  &::first-letter {
+    font-size: 1em !important;
+  }
+}
+
+.interview-q {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding-bottom: 0;
+}
+
+.interview-a {
+  margin-left: 1em;
+  padding-top: 0.25em;
 }
