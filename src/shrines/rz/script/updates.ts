@@ -11,11 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
     newStamp.src = "/shrines/rz/img/new2.gif";
     newStamp.alt = "New!";
     newStamp.title = "This has been updated in the last week";
-    node.after(newStamp);
+    if (!node.hasAttribute("data-new")) {
+      node.after(newStamp);
+      node.setAttribute("data-new", "new");
+    }
   };
   const addNewStamp = (update: SiteUpdate) => {
     const links: HTMLAnchorElement[] = Array.from(
-      document.querySelectorAll("dt a")
+      document.querySelectorAll("dt a, li a")
     );
     const updatePath = new URL(update.link).pathname;
     for (const link of links) {
@@ -23,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const linkPath = link.href.match(/^https?:\/\//)
           ? new URL(link.href).pathname
           : new URL(link.href, window.location.href).pathname;
-        console.log(linkPath);
         if (linkPath === updatePath) {
           appendStamp(link);
           continue;
@@ -36,19 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     }
-    // if (!node.parentElement) {
-    //   return;
-    // }
-    // const newStamp = document.createElement("img");
-    // newStamp.src = "new2.gif";
-    // newStamp.alt = "New!";
-    // newStamp.title = "This has been updated in the last week";
-    // const link = node.parentElement.querySelector("a");
-    // if (link) {
-    //   link.before(newStamp);
-    // } else {
-    //   node.parentElement.insertBefore(newStamp, node.parentElement.firstChild);
-    // }
   };
   const getFeed = async () => {
     const res = await fetch("/shrines/rz/rss.xml");
