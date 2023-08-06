@@ -17,7 +17,7 @@ const htmlFiles = globSync("src/**/*.html").filter(
 );
 
 const PROTOCOL = "https://";
-const DOMAIN = "mew151.net";
+const DOMAIN = "www.mew151.net";
 
 describe("Canonical URL Testing", () => {
   test.each(htmlFiles)("Canonical URL: %s", async (file) => {
