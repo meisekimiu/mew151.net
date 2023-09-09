@@ -1,0 +1,6 @@
+{
+  "extends": ["html-validate:a11y", "html-validate:standard"],
+  "rules": {
+    "no-autoplay": ["error", { "exclude": ["video"] }]
+  }
+}
