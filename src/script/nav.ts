@@ -1,3 +1,17 @@
+function addSkipLink(element: Element | null) {
+  if (element) {
+    const link = document.createElement("a");
+    link.className = "skiplink";
+    link.innerText = "Skip Navigation";
+    link.href = "#main";
+    link.tabIndex = 0;
+    link.onfocus = () => {
+      link.style.position = "static";
+    };
+    element.after(link);
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const maybePluralizeWithZ = (str: string): string => {
     if (!str.endsWith("s") || Math.random() < 0.9) {
@@ -107,10 +121,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const nav = document.getElementsByTagName("nav")[0];
   if (nav) {
     nav.innerHTML = "";
+    let skipLinkAdded = false;
     for (const section of navigation) {
       const header = document.createElement("div");
       header.className = "navigation-header";
       header.innerHTML = `<strong>${section.name}</strong><hr />`;
+      if (!skipLinkAdded) {
+        addSkipLink(header.firstElementChild);
+        skipLinkAdded = true;
+      }
       nav.appendChild(header);
       const body = document.createElement("div");
       body.className = "navigation-group";
