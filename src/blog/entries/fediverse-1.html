@@ -15,6 +15,15 @@
       window.baseUrl = "..";
     </script>
     <script type="text/javascript" src="../script/background.js"></script>
+    <style>
+      #table-wrapper {
+        max-width: 100%;
+        overflow-x: auto;
+      }
+      #comparisontable td {
+        padding: 0.5em;
+      }
+    </style>
   </head>
   <body>
     <header id="header">
@@ -371,25 +380,16 @@
           fediverse servers:
         </p>
 
-        <style>
-          #table-wrapper {
-            max-width: 100%;
-            overflow-x: auto;
-          }
-          #comparisontable td {
-            padding: 0.5em;
-          }
-        </style>
         <div id="table-wrapper">
           <table id="comparisontable" border="1">
             <thead>
               <tr>
-                <th>Software</th>
-                <th>Owned by Elon?</th>
-                <th>Footprint</th>
-                <th>Good Mobile App?</th>
-                <th>Nazis?</th>
-                <th>Gay?</th>
+                <th scope="col">Software</th>
+                <th scope="col">Owned by Elon?</th>
+                <th scope="col">Footprint</th>
+                <th scope="col">Good Mobile App?</th>
+                <th scope="col">Nazis?</th>
+                <th scope="col">Gay?</th>
               </tr>
             </thead>
             <tbody>
