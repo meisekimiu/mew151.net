@@ -347,12 +347,12 @@ dl {
 #hotline {
   border: 1px solid #000;
   background-color: #fa9aba;
-  color: #fff;
+  color: #520052;
 }
 #hotline a {
   font-style: italic;
   text-transform: uppercase;
-  color: #fff !important;
+  color: #520052 !important;
 }
 
 #fediring {
@@ -457,6 +457,30 @@ summary {
   &:visited {
     color: blue;
   }
+}
+
+%like-header {
+  font-weight: bold;
+}
+
+.like-h1 {
+  @extend %like-header;
+  font-size: 2em;
+}
+
+.like-h2 {
+  @extend %like-header;
+  font-size: 1.5em;
+}
+
+.like-h3 {
+  @extend %like-header;
+  font-size: 1.17em;
+}
+
+.like-h4 {
+  @extend %like-header;
+  font-size: 1em;
 }
 
 @media only screen and (max-width: 900px) {
