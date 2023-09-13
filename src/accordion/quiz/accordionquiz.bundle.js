@@ -5,6 +5,8 @@ if (window.NeoQuiz) {
       description:
         "There are many different types of accordions out there! Piano accordions, chromatic button accordions, diatonic button accordions, and probably more! All of these can have different configurations as well! Why not take a quiz to find out what kind of accordion YOU are?!",
       image: "quiz/images/title.jpg",
+      altText:
+        "Two different types of accordions: A free bass piano accordion and a russian bayan accordion.",
       imageAttribution:
         '<a href="https://commons.wikimedia.org/wiki/File:A_convertor_free-bass_piano-accordion_and_a_Russian_bayan.jpg">Photo</a> by Henry Doktorski / <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0</a>',
     },
@@ -15,6 +17,7 @@ if (window.NeoQuiz) {
         image: "quiz/images/Concert_Chromatic_Accordion.jpeg",
         imageAttribution:
           '<a href="https://commons.wikimedia.org/wiki/File:Concert_Chromatic_Accordion.jpeg" target="_blank">Photo</a> by Frncdnd / <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank">CC-BY-SA 4.0</a>',
+        altText: "A chromatic button accordion",
         answers: [
           {
             text: "Just some chips or another kind of salty snack.",
@@ -82,6 +85,7 @@ if (window.NeoQuiz) {
         image: "quiz/images/Tabanyi_Mihaly_Hohner_Gola_Accordion.jpg",
         imageAttribution:
           '<a href="https://commons.wikimedia.org/wiki/File:Tab%C3%A1nyi_Mih%C3%A1ly_Hohner_Gola_Accordion.jpg" target="_blank">Photo</a> by Matepyt / <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank">CC-SA-BY 4.0</a>',
+        altText: "A Hohner piano accordion",
         answers: [
           {
             text: "Marching Band! (And yes, I'm definitely going to band camp too!)",
@@ -135,6 +139,7 @@ if (window.NeoQuiz) {
         image: "quiz/images/508px-Kouvola_Casotto_Accordion.jpg",
         imageAttribution:
           '<a href="https://commons.wikimedia.org/wiki/File:Kouvola_Casotto_Accordion.jpg" target="_blank">Photo</a> by Tetopa / <a href="https://creativecommons.org/licenses/by/3.0/deed.en" target="_blank">CC-BY-3.0</a>',
+        altText: "A chromatic button accordion",
         answers: [
           {
             text: "QWERTY",
@@ -205,6 +210,8 @@ if (window.NeoQuiz) {
         title:
           "It's karaoke night and it's your turn to sing! What kind of song are you going to sing?",
         image: "quiz/images/bellows_shake_meme.png",
+        altText:
+          'Meme of people at a party. An accordionist is sitting in the corner and thinking "They don\'t know how hard the bellow shake is"',
         answers: [
           {
             text: "Classic Rock",
@@ -256,6 +263,7 @@ if (window.NeoQuiz) {
         image: "quiz/images/Soinu_txikia_edo_trikitixa.jpg",
         imageAttribution:
           '<a href="https://commons.wikimedia.org/wiki/File:Soinu_txikia_edo_trikitixa.jpg" target="_blank"> by Soinuenea / <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank">CC-BY-SA 4.0</a>',
+        altText: "An old diatonic accordion",
         answers: [
           {
             text: "I make sure we all plan multiple songs ahead so all the songs flow together.",
@@ -290,6 +298,8 @@ if (window.NeoQuiz) {
       {
         title: "Pick a SpongeBob Squarepants character.",
         image: "quiz/images/spongebob.jpg",
+        altText:
+          "Characters from Spongebob Squarepants: Mr. Krabs, Patrick Star, Spongebo Squarepants, Sandy Cheeks, Squidward.",
         answers: [
           {
             text: "Spongebob Squarepants",
@@ -351,6 +361,13 @@ if (window.NeoQuiz) {
         image: "quiz/images/quiz.png",
         imageAttribution:
           '<a href="https://twitter.com/DollipDaze/status/1279112751990833154" target="_blank">Tweet by @DollipDaze</a>',
+        altText: `Tweet from @DollipDaze:
+every single "what avatar element are you" personality quiz is like
+question 1. where would you like to go on vacation?
+A). a place with lots of fire
+B). a place with lots of water
+C). a place with lots of earth
+D). a place with lots of air`,
         answers: [
           {
             text: "A place with lots of fire",
@@ -384,6 +401,7 @@ if (window.NeoQuiz) {
         title: "Did you enjoy the quiz?",
         shuffleAnswers: false,
         image: "quiz/images/random-anime-screenshot.png",
+        altText: "The Pair Friends from Pretty Rhythm Rainbow Live",
         answers: [
           "Yes. ^.^",
           "It was fine...",
