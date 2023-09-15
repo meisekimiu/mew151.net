@@ -10,7 +10,15 @@
     <webMaster>webmaster@mew151.net (Natalie)</webMaster>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <ttl>180</ttl>
-    <pubDate>Wed, 11 Jul 2023 20:13:37</pubDate>
+    <pubDate>Thu, 14 Sep 2023 17:00:00</pubDate>
+    <item>
+      <title>Collection Update</title>
+      <pubDate>Thu, 14 Sep 2023 17:00:00</pubDate>
+      <link>https://www.mew151.net/shrines/rz/collection/index.html</link>
+      <guid>2023-09-14 Collection Update</guid>
+      <description>Added A Sight For Sore Eyes, Vol 2</description>
+      <category domain="rz-world">collection</category>
+    </item>
     <item>
       <title>In Between Dreams Archived Review</title>
       <pubDate>Wed, 12 Jul 2023 18:00:00</pubDate>
