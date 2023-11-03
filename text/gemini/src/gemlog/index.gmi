@@ -7,6 +7,7 @@ You may see me refer to this as my "phlog". That's because generally this conten
 (remind me to make an RSS feed for this eventually lol)
 
 ## Post Directory
+=> 2023-11-02_WhyIsGaiaOnline.gmi 2023-11-02: Why Is Gaia Online?
 => 2023-07-03_PeopleUseGemini.gmi 2023-07-03: People Actually Use Gemini?!
 => 2023-06-25_Gemini-Automation.gmi 2023-06-25: Gemini Automation
 => 2022-08-20_GoGemLaunch.gmi 2022-08-20: Gopher / Gemini Launch

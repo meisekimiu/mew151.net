@@ -1,0 +1,28 @@
+# Why is Gaia Online?
+Crossposted to my Gemlog on 2023-11-02
+
+(Note: This is an edited version of a journal post I actually posted on my Gaia Online profile on 2023-10-31.)
+
+What is your web browser homepage? These days I don't actually have one; I just use about:blank as a homepage since I typically just use my bookmarks menu to specify where I actually want to go. But when I was younger, my homepage was Gaia Online.
+
+Gaia Online is one of those online social browser games built on server-side rendered PHP that were big in the 2000's. Its anime-style customizable avatars drew in a lot of extremely online young nerds. The multiple flash games allowed avatars to socialize and have fun in yet another virtual space that predates Facebook's attempts to "invent" the Metaverse. And its forums were filled with roleplayers who I was always a bit jealous of until I realized that forum roleplaying wasn't really my thing. It was a vibrant site and I always had it open in at least a few tabs.
+
+Anyway, the last time I logged into Gaia Online was on Halloween in 2013. I set my status to "Happy Nightmare Night!" (a reference to some cartoon about colorful horses I was obsessed about back then) and decided to log out of Gaia Online forever. Some years later I decided maybe it would be interesting to revisit Gaia briefly, mainly just to transition my character to reflect ...real life gender developments that have happened since my last login. But I decided I didn't want to return right away. I thought I would wait exactly 10 years since my last login before returning to the site, just because I didn't really want to return. I was done with this site, and I knew none of my friends were coming back. So what's the point?
+
+Anyways, now that I am back, I have to say. I'm kind of disappointed. I wasn't expecting much at all, but the site really has just been completely abandoned. Someone's keeping the lights on and so one must assume that users are continuing to pay the bills somehow but like... how is that even possible?
+
+Gaia Online was one of a few sites (also including Neopets and some other personal websites I followed back in the day) that really inspired me to pursue web development, especially the kind of PHP-based browser games you used to see back in the day (and apparently still exist unchanged in the form of Gaia Online in the year 2023). Anyways, since I last logged into Gaia 10 years ago, I have since become a professional web developer. So as a professional I have to say... ouch. It's really clear, even from just doing a surface level look at the site, that large parts of Gaia Online's infrastructure is completely unchanged to how it was 10 years ago. Honestly, probably 15 or more years ago even.
+
+I was thinking that, as time goes on, the likelihood that Gaia could find a "retro resurgence" was just going to go up. And this year I felt those feelings really strongly. Y2K-era nostalgia is getting even more popular, and distrust in mainstream social media is also pretty widespread right now. This is a perfect time for some millenials to come back to their favorite childhood sites and bask in the nostalgia of their extremely online youth.
+
+But like. That's not going to work because the site is crumbling with age. All of the classic games are unplayable. How are we supposed to relive our childhoods of cybering in Gaia Towns if we can't even launch it because Flash Player is dead? I was actually kind of hyped to play the slots and blackjack games because I remember playing those before school sometimes... but they're unplayable, and the official fix that Gaia Online recommends is just: "Hey just download this weird open source browsers that was built before flash died".
+
+They are slowly using JavaScript-based flash emulation but this is... not ideal. It seems like in between 2013 and 2018 they launched a new "Towns 2", but it also uses flash. How did they not see the warning signs approaching? Why did they not make it in HTML5? I don't know.
+
+I was never planning on staying for very long. I just wanted to change my avatar one last time so it could reflect a newer version of myself. But surely there was an audience for other people to come back and stay for a bit. The site just isn't usable at all though. I struggled with the UI here on my 1080p monitor, I hate to imagine what browsing this site in 4K is like.
+
+(Most importantly, the hair styles are so rooted in 2000's styles. How are you supposed to appeal to younger players if there's no middle part hairstyle!)
+
+So my main question here is: Why is Gaia Online in 2023? Who is still here? Is the audience big enough, is it growing? Who is paying money to Gaia Online in the year 2023? Is there like a data harvesting or crypto scam side of the business I'm not aware of that's keeping the lights on? I just don't understand how this still even exists. I feel sorry for anyone who is a programmer on this website because they're presumably working on a 15+ year old legacy codebase, probably with no unit test coverage at all.
+
+Anyways... that's my Gaia Online rant. Now up in plain text for some reason lol.
