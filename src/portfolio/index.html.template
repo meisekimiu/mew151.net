@@ -27,6 +27,13 @@
       <p>
         I am a professional Software Engineer who loves programming video games.
       </p>
+      <p>
+        Want to see some of my C++ code? Check out my
+        <a href="https://github.com/meisekimiu/advent-of-code-2023"
+          title="I'm gonna save Christmas!">
+          Advent of Code 2023 repository!
+        </a>
+      </p>
     </div>
     <div class="gameslist">
       <div class="game">
