@@ -1,0 +1,24 @@
+name: Accessibility Tests
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: ⚙️ Install utilities
+        run: npm install
+
+      - name: 🍹 Build TypeScript / Sass
+        run: npm run build
+
+      - name: ✅ Run tests
+        run: npm test
