@@ -387,3 +387,20 @@ span[title] {
     display: none;
   }
 }
+
+.bottom-links {
+  text-align: center;
+
+  li {
+    list-style-type: none;
+    display: inline-block;
+
+    & + li::before {
+      content: " • ";
+    }
+  }
+}
+
+.now-summary {
+  text-align: center;
+}
