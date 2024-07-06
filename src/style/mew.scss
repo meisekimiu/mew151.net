@@ -367,7 +367,7 @@ dl {
 @keyframes rainbow {
   100%,
   0% {
-    color: rgb(255, 0, 0);
+    color: #ff6161;
   }
   8% {
     color: rgb(255, 127, 0);
@@ -391,16 +391,16 @@ dl {
     color: rgb(0, 127, 255);
   }
   66% {
-    color: rgb(0, 0, 255);
+    color: #2499ff;
   }
   75% {
-    color: rgb(127, 0, 255);
+    color: #bf75ff;
   }
   83% {
-    color: rgb(255, 0, 255);
+    color: #ff33ff;
   }
   91% {
-    color: rgb(255, 0, 127);
+    color: #ff52ae;
   }
 }
 .rainbow {
