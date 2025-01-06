@@ -10,7 +10,15 @@
     <webMaster>webmaster@mew151.net (Natalie)</webMaster>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <ttl>180</ttl>
-    <pubDate>Wed, 14 Aug 2024 18:00:00</pubDate>
+    <pubDate>Mon, 06 Jan 2025 16:00:00</pubDate>
+    <item>
+      <title>Collection Update</title>
+      <pubDate>Mon, 06 Jan 2025 16:00:00</pubDate>
+      <link>https://www.mew151.net/shrines/rz/collection/index.html</link>
+      <guid>2025-01-06 Collection Update</guid>
+      <description>Added Shadowland + Faceless Forever</description>
+      <category domain="rz-world">collection</category>
+    </item>
     <item>
       <title>Collection Update</title>
       <pubDate>Wed, 14 Aug 2024 18:00:00</pubDate>
