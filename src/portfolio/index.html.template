@@ -40,6 +40,24 @@
     <div class="gameslist">
       <div class="game">
         <div class="title">
+          <a href="muffins.html" title="Muffin Mare">
+            <img src="img/muffins_title.png" alt="Muffin Mare" />
+          </a>
+          <a
+            href="muffins.html"
+            title="This is your consolation: Always a next year"
+          >
+            <strong>Muffin Mare</strong>
+            <time datetime="2024-11-03">(2024)</time>
+          </a>
+        </div>
+        <div class="description">
+          A small minigame made in a custom C++ game engine. Eat muffins, avoid
+          cupcakes, and go for a high score!
+        </div>
+      </div>
+      <div class="game">
+        <div class="title">
           <a href="czp.html" title="{{ ABBR }} Racer">
             <img src="img/czpracer_title.png" alt="{{ ABBR }} Racer" />
           </a>
@@ -93,22 +111,6 @@
             vacation memories for other players to see. Embark on a cerebral
             getaway today!</span
           >
-        </div>
-      </div>
-      <div class="game">
-        <div class="title">
-          <a href="mole.html" title="Hymn of the Moles">
-            <img src="img/hymn_harsh.png" alt="Hymn of the Moles" />
-          </a>
-          <a href="mole.html" title="Subterranean Segfaults">
-            <strong>Hymn of the Moles</strong>
-            <time datetime="2014-04-26">(2014)</time>
-          </a>
-        </div>
-        <div class="description">
-          A rhythm game based on The Residents&rsquo; 1981 album,
-          <em>Mark of the Mole</em> and its cancelled Atari game. Play as a Mole
-          singing songs in the mines.
         </div>
       </div>
     </div>

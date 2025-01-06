@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Muffin Mare - Natalie Martin: Software Engineer &amp; Game Developer
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="Natalie Martin" />
+    <meta
+      name="description"
+      content="A minigame about eating muffins and ignoring cupcakes. It's a simple test game for my custom C++ game engine."
+    />
+    <meta
+      property="og:image"
+      content="https://{{ SITE_DOMAIN }}/img/tax_title.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Natalie Martin: Software Engineer &amp; Game Developer"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <a class="theme-switcher"></a>
+    <div class="about-me">
+      <div class="name-bio">
+        <h1>Natalie Martin</h1>
+        <span class="pronouns">(she/her)</span>
+      </div>
+      <h2>
+        <span class="avoid-wrap">Software Engineer</span> and
+        <span class="avoid-wrap">Game Developer</span>
+      </h2>
+      <hr />
+    </div>
+    <div class="game-summary">
+      <h2 title="This is your consolation: Always a next year">Muffin Mare</h2>
+      <div class="cover-gameinfo">
+        <img
+          src="img/muffins_title.png"
+          alt="Muffin Mare"
+          title="I made this PNG back in 2012 and have never updated it. Er, I mean... I am a professional please hire me."
+        />
+        <table class="gameinfo">
+          <thead>
+            <tr>
+              <td colspan="2">Game Info</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Name:</td>
+              <td>Muffin Mare</td>
+            </tr>
+            <tr>
+              <td>Year:</td>
+              <td>2024</td>
+            </tr>
+            <tr>
+              <td>Made in:</td>
+              <td>C++</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <a href="https://github.com/meisekimiu/muffin-mare"
+                  >Source Code on Github</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <a href="https://meisekimiu.itch.io/muffin-mare"
+                  >Play Game on itch.io</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Muffin Mare is a game based on the show
+        <em>My Little Pony: Friendship is Magic.</em> It's a simple one-button
+        minigame where the player must eat muffins and avoid cupcakes. Once the
+        player makes one mistake, the game ends and they have to restart.
+      </p>
+      <p>
+        You can play the game on
+        <a href="https://meisekimiu.itch.io/muffin-mare">Itch.io</a>
+        and view its source code on
+        <a href="https://github.com/meisekimiu/muffin-mare">Github</a>.
+      </p>
+      <div class="webm">
+        <video
+          src="webm/muffins.webm"
+          loop="loop"
+          autoplay="autoplay"
+          muted="muted"
+        >
+          Muffin Mare Video
+        </video>
+      </div>
+      <h3>Technologies</h3>
+      <ul>
+        <li>
+          <strong>Programmed in:</strong>
+          <span
+            title="Finally a real C++ game on this portfolio! And this time the code's not completely horrible!"
+            >C++</span
+          >
+        </li>
+        <li>
+          <span title="CMake: At least it's not the worst C++ build system?"
+            >CMake</span
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.raylib.com/"
+            title="One day this will be replaced with straight up SDL"
+            >Raylib</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://solhsa.com/soloud/"
+            title="Apparently used in the Mini SNES?!"
+            >SoLoud</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/skypjack/entt"
+            title="Apparently used in Minecraft?! ... oh, Bedrock edition..."
+            >EnTT</a
+          >
+        </li>
+      </ul>
+      <h3>Roles and Development</h3>
+      <p>
+        This game was a <strong>solo project.</strong> The game's assets are
+        borrowed from various fan recreations of assets from the original
+        <em>My Little Pony: Frienship is Magic</em> show.
+      </p>
+
+      <p>
+        I originally designed this game for a high school class back in 2012
+        <small>(which hopefully explains the ponies)</small>. The initial
+        implementation was done in Java. The game's simple design has made it a
+        useful game to test new game engines or tools before making a larger
+        game. This newest version, built in 2024, is done in C++ and is compiled
+        to WebAssembly.
+      </p>
+
+      <p>
+        This game is made in a custom C++ game engine. Its current
+        implementation uses Raylib, SoLoud, and EnTT. The engine is designed to
+        be flexible so in the future I can swap out some of the underlying
+        graphics/sound libraries for others if needed. The main gameplay uses
+        EnTT's Entity-Component-System architecture. It's a bit overkill for
+        such a simple game, but I want to learn more about
+        <abbr title="Entity-Component-System">ECS</abbr> architecture and use it
+        in more complex ways in future games.
+      </p>
+
+      <div class="youtube">
+        <h3>Gameplay Video</h3>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/gfzzzKQjMWU?si=w-iWtzZnPbIxZYDe"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <h3>Image Gallery</h3>
+      <div class="gallery">
+        <a href="img/muffins_titlescreen.png" target="_blank">
+          <img
+            src="img/muffins_titlescreen.png"
+            alt="Muffin Mare Image"
+            title="She is the best title screen pony"
+          />
+        </a>
+        <a href="img/muffins_muffin.png" target="_blank">
+          <img
+            src="img/muffins_muffin.png"
+            alt="Muffin Mare Image"
+            title="To muffin or not to muffin..."
+          />
+        </a>
+        <a href="img/muffins_cupcake.png" target="_blank">
+          <img
+            src="img/muffins_cupcake.png"
+            alt="Muffin Mare Image"
+            title="Why can't she eat cupcakes anyway? Is she allergic?"
+          />
+        </a>
+        <a href="img/muffins_gameover.png" target="_blank">
+          <img
+            src="img/muffins_gameover.png"
+            alt="Muffin Mare Image"
+            title="And you should hear the Chopin music"
+          />
+        </a>
+        <a href="img/muffins_about.png" target="_blank">
+          <img
+            src="img/muffins_about.png"
+            alt="Muffin Mare Image"
+            title="I should have edited this for the newest release..."
+          />
+        </a>
+      </div>
+      <br /><br />
+      <a href="." class="back-to-homepage">Back to main page</a>
+    </div>
+  </body>
+</html>
