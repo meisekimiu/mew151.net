@@ -7,7 +7,7 @@
     "portfolio-prepare": "rm -f src/portfolio/*.template",
     "mew151-prepare": "rm -r src/portfolio",
     "neocities-prepare": "rm -r src/blog",
-    "rss": "feedmake -o src/rss.xml .",
+    "rss": "feedmake -o src/rss.xml --format-markdown .",
     "build": "gulp",
     "build:watch": "gulp watch",
     "dev-server": "http-server src -o",
@@ -20,7 +20,7 @@
   "dependencies": {
     "@tsconfig/node16": "^1.0.3",
     "fast-levenshtein": "^3.0.0",
-    "feedmake": "github:meisekimiu/feedmake",
+    "feedmake": "github:meisekimiu/feedmake#44341b7a3a77d91e2e1a72b8277e081de9b5f616",
     "sass": "^1.54.5",
     "snarkdown": "^2.0.0",
     "typescript": "^4.7.4",

@@ -1,5 +1,3 @@
-const markdown = require("snarkdown");
-
 function buildPosts(text: string) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(text, "text/xml");
@@ -36,11 +34,9 @@ function buildPosts(text: string) {
     if (description) {
       const descriptionElement = document.createElement("div");
       descriptionElement.className = "feed-desc";
-      if (markdown) {
-        descriptionElement.innerHTML = markdown(description);
-      } else {
-        descriptionElement.innerHTML = description;
-      }
+      descriptionElement.innerHTML = description
+        .replace(/^<!\[CDATA\[/, "")
+        .replace(/\]\]>$/, "");
       feedItem.appendChild(descriptionElement);
     }
 
