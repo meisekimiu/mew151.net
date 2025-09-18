@@ -7,6 +7,7 @@ var tsProject = ts.createProject("tsconfig.json");
 const sass = require("gulp-sass")(require("sass"));
 const replace = require("gulp-replace");
 const rename = require("gulp-rename");
+const header = require("gulp-header");
 
 require("dotenv").config({ path: "src/portfolio/.env" });
 
@@ -25,6 +26,11 @@ function megatranspile() {
         },
       })
     )
+    .pipe(
+      header(
+        "/* This file was compiled from TypeScript. You can view the original un-minified source code here: ${file.path.replace(/^(.+?)\\/src\\/(.+?)\\.js$/, 'https://www.github.com/meisekimiu/mew151.net/tree/main/src/$2.ts')} */\n"
+      )
+    )
     .pipe(dest("src"));
 }
 
@@ -34,6 +40,11 @@ function sassy() {
       sass({
         outputStyle: "compressed",
       })
+    )
+    .pipe(
+      header(
+        "/* This file was compiled from Sass. You can view the original un-minified source code here: ${file.path.replace(/^(.+?)\\/src\\/(.+?)\\.css$/, 'https://www.github.com/meisekimiu/mew151.net/tree/main/src/$2.scss')} */\n"
+      )
     )
     .pipe(dest("src"));
 }
