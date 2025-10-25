@@ -1,4 +1,4 @@
-name: Deploy to Mew151.net
+name: Test and Deploy to Mew151.net
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
           cache: "npm"
 
       - name: ⚙️ Install utilities
-        run: npm ci
+        run: npm ci --prefer-offline --only=production
 
       - name: 🌙 Build text versions of site
         run: npm run generate-text
@@ -84,7 +84,7 @@ jobs:
           cache: "npm"
 
       - name: ⚙️ Install utilities
-        run: npm ci
+        run: npm ci --prefer-offline --only=production
 
       - name: 🍹 Build TypeScript / Sass
         run: npm run build
@@ -113,7 +113,7 @@ jobs:
           cache: "npm"
 
       - name: ⚙️ Install utilities
-        run: npm ci
+        run: npm ci --prefer-offline --only=production
 
       - name: 🍹 Build TypeScript / Sass
         run: npm run build
