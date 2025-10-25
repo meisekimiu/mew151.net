@@ -1,6 +1,6 @@
 # mew151.net
 
-![Accessibility Test Status](https://github.com/meisekimiu/mew151.net/actions/workflows/test.yml/badge.svg)
+![Test and Deploy Status](https://github.com/meisekimiu/mew151.net/actions/workflows/deploy.yml/badge.svg)
 
 This is my personal website. :)
 
