@@ -7,13 +7,12 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
+    uses: meisekimiu/mew151.net/.github/workflows/test.yml@deploy-refactor
+
+  deploy-text:
     runs-on: ubuntu-latest
-    env:
-      ABBR: ${{ secrets.ABBR }}
-      COMPANY_FULLNAME: ${{ secrets.COMPANY_FULLNAME }}
-      SITE_DOMAIN: ${{ secrets.SITE_DOMAIN }}
-      EMAIL: ${{ secrets.EMAIL }}
+    needs: test
     steps:
       - uses: actions/checkout@v2
         with:
@@ -21,44 +20,6 @@ jobs:
 
       - name: ⚙️ Install utilities
         run: npm install
-
-      - name: 🍹 Build TypeScript / Sass
-        run: npm run build
-
-      - name: 📰 Build feed
-        run: npm run rss
-
-      - name: 💼 Prepare Portfolio
-        run: npm run portfolio-prepare
-
-      - name: 🐱📄💼 Run Portfolio Deploy
-        uses: bcomnes/deploy-to-neocities@v1.1.4
-        with:
-          api_token: ${{ secrets.PORTFOLIO_API_KEY }}
-          cleanup: false
-          dist_dir: src/portfolio
-
-      - name: 🥳 Prepare mew151.net
-        run: npm run mew151-prepare
-
-      - name: 📂 Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.2.0
-        with:
-          server: ${{ secrets.ftp_server }}
-          username: ${{ secrets.ftp_user }}
-          password: ${{ secrets.ftp_password }}
-          local-dir: ./src/
-          server-dir: ./
-
-      - name: 🐱 Prepare Neocities Deploy
-        run: npm run neocities-prepare
-
-      - name: 🐱🛠️🪞 Deploy to Neocities Mirror
-        uses: bcomnes/deploy-to-neocities@v1.1.4
-        with:
-          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
-          cleanup: false
-          dist_dir: src
 
       - name: 🌙 Build text versions of site
         run: npm run generate-text
@@ -98,3 +59,71 @@ jobs:
           target: ${{ secrets.TEXT_WWW_DIRECTORY }}
           strip_components: 2
           overwrite:
+
+  deploy-portfolio:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: ⚙️ Install utilities
+        run: npm install
+
+      - name: 🍹 Build TypeScript / Sass
+        run: npm run build
+
+      - name: 💼 Prepare Portfolio
+        run: npm run portfolio-prepare
+
+      - name: 🐱📄💼 Run Portfolio Deploy
+        uses: bcomnes/deploy-to-neocities@v1.1.4
+        with:
+          api_token: ${{ secrets.PORTFOLIO_API_KEY }}
+          cleanup: false
+          dist_dir: src/portfolio
+
+  deploy-main:
+    runs-on: ubuntu-latest
+    needs: test
+    env:
+      ABBR: ${{ secrets.ABBR }}
+      COMPANY_FULLNAME: ${{ secrets.COMPANY_FULLNAME }}
+      SITE_DOMAIN: ${{ secrets.SITE_DOMAIN }}
+      EMAIL: ${{ secrets.EMAIL }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: ⚙️ Install utilities
+        run: npm install
+
+      - name: 🍹 Build TypeScript / Sass
+        run: npm run build
+
+      - name: 📰 Build feed
+        run: npm run rss
+
+      - name: 🥳 Prepare mew151.net
+        run: npm run mew151-prepare
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.2.0
+        with:
+          server: ${{ secrets.ftp_server }}
+          username: ${{ secrets.ftp_user }}
+          password: ${{ secrets.ftp_password }}
+          local-dir: ./src/
+          server-dir: ./
+
+      - name: 🐱 Prepare Neocities Deploy
+        run: npm run neocities-prepare
+
+      - name: 🐱🛠️🪞 Deploy to Neocities Mirror
+        uses: bcomnes/deploy-to-neocities@v1.1.4
+        with:
+          api_token: ${{ secrets.NEOCITIES_API_TOKEN }}
+          cleanup: false
+          dist_dir: src
