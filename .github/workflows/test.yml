@@ -6,15 +6,20 @@ on:
   workflow_call:
 
 jobs:
-  build:
+  accessibility-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 20
+          cache: "npm"
+
       - name: ⚙️ Install utilities
-        run: npm install
+        run: npm ci
 
       - name: 🍹 Build TypeScript / Sass
         run: npm run build
