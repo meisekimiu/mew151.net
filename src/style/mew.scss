@@ -21,6 +21,29 @@ img {
   max-width: 100%;
 }
 
+code,
+kbd {
+  font-size: 1rem;
+  font-family: monospace;
+  border: 1px solid #ffffff33;
+  border-radius: 3px;
+  color: #ffddff;
+  background-color: #222;
+  padding: 0.333ex;
+  display: inline-block;
+}
+
+code.multiline {
+  display: block;
+  padding: 0.5rem;
+  line-height: 1.25;
+  margin: 0.25rem 1rem;
+}
+
+.signoff {
+  text-align: right;
+}
+
 .window {
   color: #000;
   background: #b8bcb8;
