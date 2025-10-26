@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    uses: meisekimiu/mew151.net/.github/workflows/test.yml@deploy-refactor
+    uses: meisekimiu/mew151.net/.github/workflows/test.yml@main
 
   deploy-text:
     runs-on: ubuntu-latest
