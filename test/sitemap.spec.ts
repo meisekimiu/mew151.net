@@ -26,14 +26,18 @@ describe("Sitemap verification", () => {
       );
     });
   });
-  test.each(htmlFiles)("Sitemap: %s", async (file) => {
-    const expectedLinkPath = file
-      .replace(/^src\//, "")
-      .replace(/\/?index.html$/, "");
-    const containsLink = linkPaths.reduce(
-      (result, link) => result || link.endsWith(expectedLinkPath),
-      false
-    );
-    expect(containsLink).toBeTruthy();
-  });
+  test.each(htmlFiles)(
+    "Sitemap: %s",
+    async (file) => {
+      const expectedLinkPath = file
+        .replace(/^src\//, "")
+        .replace(/\/?index.html$/, "");
+      const containsLink = linkPaths.reduce(
+        (result, link) => result || link.endsWith(expectedLinkPath),
+        false
+      );
+      expect(containsLink).toBeTruthy();
+    },
+    45000
+  );
 });

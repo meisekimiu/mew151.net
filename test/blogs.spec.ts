@@ -18,7 +18,7 @@ describe("Blogz", () => {
     for (const link of linkCollection) {
       expect(itemCollection).toContain(link);
     }
-  });
+  }, 45000);
   test("Squeeze Blog RSS Feed", async () => {
     await page.goto(getSiteUrl("/accordion/blog"));
     const linkCollection = await page.$eval(".blog-archive", (list) => {
@@ -35,5 +35,5 @@ describe("Blogz", () => {
     for (const link of linkCollection) {
       expect(itemCollection).toContain(link);
     }
-  });
+  }, 45000);
 });

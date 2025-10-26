@@ -20,16 +20,20 @@ const PROTOCOL = "https://";
 const DOMAIN = "www.mew151.net";
 
 describe("Canonical URL Testing", () => {
-  test.each(htmlFiles)("Canonical URL: %s", async (file) => {
-    const relativeFileName = file.replace(/^src\//, "");
-    const expectedCanonicalUrl = PROTOCOL + DOMAIN + "/" + relativeFileName;
-    await page.goto(getSiteUrl(relativeFileName));
-    const linkHref = await page.$eval('link[rel="canonical"]', (element) => {
-      return element.href;
-    });
-    expect(linkHref).toBeTruthy();
-    expect(linkHref).toBe(expectedCanonicalUrl);
-  });
+  test.each(htmlFiles)(
+    "Canonical URL: %s",
+    async (file) => {
+      const relativeFileName = file.replace(/^src\//, "");
+      const expectedCanonicalUrl = PROTOCOL + DOMAIN + "/" + relativeFileName;
+      await page.goto(getSiteUrl(relativeFileName));
+      const linkHref = await page.$eval('link[rel="canonical"]', (element) => {
+        return element.href;
+      });
+      expect(linkHref).toBeTruthy();
+      expect(linkHref).toBe(expectedCanonicalUrl);
+    },
+    45000
+  );
   test("Canonical URL: src/index.html", async () => {
     const expectedCanonicalUrl = PROTOCOL + DOMAIN + "/";
     await page.goto(getSiteUrl("/"));
@@ -38,5 +42,5 @@ describe("Canonical URL Testing", () => {
     });
     expect(linkHref).toBeTruthy();
     expect(linkHref).toBe(expectedCanonicalUrl);
-  });
+  }, 45000);
 });

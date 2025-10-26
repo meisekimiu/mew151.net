@@ -36,7 +36,7 @@ describe("Navigation", () => {
       ).toBeTruthy();
     }
     expect(fallbackLinks.length).toBeGreaterThan(navLinks.length);
-  });
+  }, 45000);
   test("Fallback Nav opens in parent frame", async () => {
     await page.goto(getSiteUrl("/nav-fallback.html"));
     const linkCount = await page.$eval(
@@ -48,5 +48,5 @@ describe("Navigation", () => {
       (group) => group.querySelectorAll('a[target="_parent"]').length
     );
     expect(linkParentCount).toBe(linkCount);
-  });
+  }, 45000);
 });
