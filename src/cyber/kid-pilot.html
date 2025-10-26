@@ -48,7 +48,7 @@
               Uncovering a 20+ Year Old Easter Egg in a Forgotten Game
             </h2>
           </div>
-          <figure>
+          <figure data-gmi-ignore>
             <img
               src="kidpilot/kidpilot.jpg"
               alt="Cover art of Kid Pilot by Dynamix Inc"
@@ -80,6 +80,7 @@
             <a
               href="https://www.youtube.com/@oddheader"
               title="I find this Youtube channel oddly comforting because it reminds me of watching these kinds of videos growing up."
+              data-gmi-footnote="Youtube: @oddheader"
               >Youtuber's</a
             >
             coverage of this discovery.
@@ -101,7 +102,7 @@
             set up his joystick usually reserved for the more advanced grown-up
             types of plane games so that I could play <em>Kid Pilot.</em>
           </p>
-          <figure>
+          <figure data-gmi-ignore>
             <img
               src="kidpilot/phoenix.png"
               alt="Screenshot of Kid Pilot. Flying around a low-poly 1998 version of downtown Phoenix, Arizona's skyline."
@@ -117,12 +118,17 @@
             And at the very least, it was fun to play with the fancy joystick.
           </p>
           <figure>
-            <img
-              src="kidpilot/Grin1.bmp"
-              alt="A screen capture of the penguin from Kid Pilot smiling."
-              title="This is actually a texture extracted from the game's files. I don't know what it's doing there tbh. More on that later though."
-            />
-            <figcaption>The cartoon penguin</figcaption>
+            <a
+              href="kidpilot/Grin1.bmp"
+              data-gmi-footnote="The cartoon penguin"
+            >
+              <img
+                src="kidpilot/Grin1.bmp"
+                alt="A screen capture of the penguin from Kid Pilot smiling."
+                title="This is actually a texture extracted from the game's files. I don't know what it's doing there tbh. More on that later though."
+              />
+            </a>
+            <figcaption data-gmi-ignore>The cartoon penguin</figcaption>
           </figure>
           <p>
             But something happened that haunted me for years after the fact. I
@@ -174,12 +180,17 @@
             into the ground. No popup. No skull. Nothing!
           </p>
           <figure>
-            <img
-              src="kidpilot/MB0000.bmp"
-              alt="A screenshot from Kid Pilot. The plane has crashed but there's no popup on screen, just a cracked windshield and other damage to the UI."
-              title="Good thing there were no buildings where I crashed. Just incredibly large texels."
-            />
-            <figcaption>No popup?!</figcaption>
+            <a
+              href="kidpilot/MB0000.bmp"
+              data-gmi-footnote="Kid Pilot Screenshot with no popup?"
+            >
+              <img
+                src="kidpilot/MB0000.bmp"
+                alt="A screenshot from Kid Pilot. The plane has crashed but there's no popup on screen, just a cracked windshield and other damage to the UI."
+                title="Good thing there were no buildings where I crashed. Just incredibly large texels."
+              />
+            </a>
+            <figcaption data-gmi-ignore="">No popup?!</figcaption>
           </figure>
           <p>
             This was really strange. I know memory can be a fickle thing,
@@ -193,12 +204,14 @@
             <a
               href="https://www.spriters-resource.com/"
               title="ohhhh this is bringing in the nostalgia"
+              data-gmi-footnote="The Spriters Resource"
               >The Spriters Resource</a
             >
             and
             <a
               href="https://tcrf.net/The_Cutting_Room_Floor"
               title="I love this site so much"
+              data-gmi-footnote="The Cutting Room Floor"
               >The Cutting Room Floor,</a
             >
             I knew that if I really wanted to solve this mystery, I'd have to go
@@ -223,7 +236,7 @@
             <code>.vol</code> extension and this looked like it was an in-house
             format made specifically by Dynamix.
           </p>
-          <figure>
+          <figure data-gmi-ignore>
             <img
               src="kidpilot/filelisting.png"
               alt="The `Art` directory in Kid Pilot's files: a directory named `Intro`, a directory named `TERRAIN`, and files named: `3DShapes.vol`, `Dml.vol`, `Dml-low.vol`, `Palettes.vol`, `Panel.vol`, `Wx.vol`"
@@ -252,6 +265,7 @@
             <a
               href="https://www.outpost2.net/"
               title="Our destinies may be divided but our tooling remains united"
+              data-gmi-footnote="Outpost Universe"
               >The <em>Outpost 2: Divided Destiny</em> Fan Community.</a
             >
             It turns out that in between making flight simulators, Dynamix also
@@ -263,7 +277,7 @@
             game... tools that happen to be able to read and write from
             <code>.vol</code> files!
           </p>
-          <figure>
+          <figure data-gmi-ignore>
             <img
               src="kidpilot/outpost2.jpg"
               alt="A screenshot of Outpost 2"
@@ -283,6 +297,7 @@
             <a
               href="https://github.com/OutpostUniverse/OP2Utility"
               title="Or as I call it, KPUtility"
+              data-gmi-footnote="Github: OutpostUniverse/OP2Utility"
               >OP2Utility</a
             >
             and I pointed it towards one of the <code>.vol</code> archives
@@ -293,12 +308,14 @@
             <code>IsThis.Bmp</code>
           </p>
           <figure>
-            <img
-              src="kidpilot/IsThis.Bmp"
-              alt='A texture extracted from Kid Pilot. It seems to be a UI panel with "Is This Your Card?" at the top with the skull-and-crossbones graphic I was looking at underneath and a blank spot in the middle where an additional graphic should go.'
-              title="no I have a 3 of Clubs not a 2 of Penguin Skulls"
-            />
-            <figcaption>
+            <a href="kidpilot/IsThis.Bmp" data-gmi-footnote="IsThis.Bmp">
+              <img
+                src="kidpilot/IsThis.Bmp"
+                alt='A texture extracted from Kid Pilot. It seems to be a UI panel with "Is This Your Card?" at the top with the skull-and-crossbones graphic I was looking at underneath and a blank spot in the middle where an additional graphic should go.'
+                title="no I have a 3 of Clubs not a 2 of Penguin Skulls"
+              />
+            </a>
+            <figcaption data-gmi-ignore="">
               <code style="font-style: normal">IsThis.Bmp</code><br />Huh... It
               <em>is</em> kind of creepy!
             </figcaption>
@@ -320,12 +337,14 @@
             placed into the <q>Is This Your Card</q> blank spot.
           </p>
           <figure>
-            <img
-              src="kidpilot/FullDeck.Bmp"
-              alt="A texture from Kid Pilot. It contains all 52 basic playing cards in a grid."
-              title="I think this is a yakuman"
-            />
-            <figcaption>
+            <a href="kidpilot/FullDeck.Bmp" data-gmi-footnote="FullDeck.Bmp">
+              <img
+                src="kidpilot/FullDeck.Bmp"
+                alt="A texture from Kid Pilot. It contains all 52 basic playing cards in a grid."
+                title="I think this is a yakuman"
+              />
+            </a>
+            <figcaption data-gmi-ignore>
               <kbd style="font-style: normal">FullDeck.Bmp</kbd>
             </figcaption>
           </figure>
@@ -346,7 +365,9 @@
           </p>
           <ul>
             <li>
-              When the player crashes their plane, do the following:
+              <span data-gmi-ignore
+                >When the player crashes their plane, do the following:</span
+              >
               <ol>
                 <li>
                   Call some mysterious Windows API functions with the strings
@@ -388,12 +409,19 @@
             if it would work and...
           </p>
           <figure>
-            <img
-              src="kidpilot/MB0002.bmp"
-              alt='A screenshot of Kid Pilot. The player has crashed their plane and there is a dialog box on the screen that is the "Is This Your Card?" graphic from earlier, with a King of Diamonds placed in the empty area.'
-              title="ive never been so excited to watch a plane crash"
-            />
-            <figcaption>It appeared! I got it to work!!!</figcaption>
+            <a
+              href="kidpilot/MB0002.bmp"
+              data-gmi-footnote="The results: It worked!"
+            >
+              <img
+                src="kidpilot/MB0002.bmp"
+                alt='A screenshot of Kid Pilot. The player has crashed their plane and there is a dialog box on the screen that is the "Is This Your Card?" graphic from earlier, with a King of Diamonds placed in the empty area.'
+                title="ive never been so excited to watch a plane crash"
+              />
+            </a>
+            <figcaption data-gmi-ignore>
+              It appeared! I got it to work!!!
+            </figcaption>
           </figure>
           <p>
             And so <em>finally</em> I was able to recreate the experience I
@@ -468,6 +496,7 @@
                 <a
                   href="https://www.mobygames.com/game/29126/sabrina-the-teenage-witch-spellbound/"
                   title="you don't know how badly I wanted this to be the answer to this mystery it would have been SO COOL"
+                  data-gmi-footnote="Sabrina: The Teenage Witch - Spellbound"
                   ><em>Sabrina: The Teenage Witch - Spellbound</em></a
                 >
                 seemed like an excellent lead. It at least had the same
@@ -487,12 +516,18 @@
             <em>Kid Pilot</em> and what I saw shocked me.
           </p>
           <figure>
-            <img
-              src="kidpilot/error.png"
-              alt="An error message popup in Kid Pilot. It features the same skull found in the earlier card dialog."
-              title="is THIS your card?! (throws an exception)"
-            />
-            <figcaption>Hey! It's our spooky friend again!</figcaption>
+            <a
+              href="kidpilot/error.png"
+              data-gmi-footnote="Kid Pilot Error Message"
+            >
+              <img
+                src="kidpilot/error.png"
+                alt="An error message popup in Kid Pilot. It features the same skull found in the earlier card dialog."
+                title="is THIS your card?! (throws an exception)"
+            /></a>
+            <figcaption data-gmi-ignore>
+              Hey! It's our spooky friend again!
+            </figcaption>
           </figure>
           <p>
             Yeah so turns out the skull graphic is used in more than one place.
@@ -656,7 +691,7 @@
             I'll find out in a few decades.
           </p>
           <p class="signoff">- Natalie</p>
-          <strong>Special Thanks:</strong>
+          <strong>Special Thanks:</strong><br />
           <ul style="list-style-type: none">
             <li>Glen Wolfram</li>
             <li>oddheader</li>
