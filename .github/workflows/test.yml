@@ -19,7 +19,7 @@ jobs:
           cache: "npm"
 
       - name: ⚙️ Install utilities
-        run: npm ci --prefer-offline
+        run: npm ci --prefer-offline --verbose
 
       - name: 🍹 Build TypeScript / Sass
         run: npm run build
