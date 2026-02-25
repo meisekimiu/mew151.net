@@ -79,13 +79,25 @@ a {
   }
 }
 
+.ai-generated {
+  & > a {
+    cursor: help;
+    color: rgb(255, 75, 75) !important;
+  }
+  font-weight: bold;
+  cursor: help;
+  color: rgb(255, 75, 75);
+  border-bottom: 1px dashed #aaa9;
+  transition: border-color 0.3s;
+}
 span[title] {
   cursor: help;
   border-color: transparent;
   border: 1px dashed #fff0;
   transition: border-color 0.3s;
 }
-span[title]:hover {
+span[title]:hover,
+.ai-generated:hover {
   border-bottom: 1px dashed #fff9;
 }
 

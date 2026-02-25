@@ -278,11 +278,15 @@ a.inactive {
   }
   filter: saturate(0%);
   opacity: 0.3;
-  transition: filter 0.5s, opacity 0.5s;
+  transition:
+    filter 0.5s,
+    opacity 0.5s;
   cursor: not-allowed;
 }
 main a {
-  transition: color 0.3s, text-decoration-color 0.3s;
+  transition:
+    color 0.3s,
+    text-decoration-color 0.3s;
 }
 main a:link {
   color: #fac;
@@ -317,12 +321,24 @@ u[title] {
   text-decoration-color: #fff6;
   cursor: help;
 }
+.ai-generated {
+  & > a {
+    cursor: help;
+    color: rgb(255, 75, 75) !important;
+  }
+  font-weight: bold;
+  cursor: help;
+  color: rgb(255, 75, 75);
+  border-bottom: 1px dashed #aaa9;
+  transition: border-color 0.3s;
+}
 span[title] {
   cursor: help;
   border-bottom: 1px dashed #fff0;
   transition: border-bottom-color 0.3s;
 }
-span[title]:hover {
+span[title]:hover,
+.ai-generated:hover {
   border-bottom-color: #fff6;
 }
 dl {
