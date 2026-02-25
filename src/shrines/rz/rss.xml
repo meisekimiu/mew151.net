@@ -6,11 +6,20 @@
     <atom:link href="https://www.mew151.net/shrines/rz/rss.xml" rel="self" type="application/rss+xml" />
     <description>Updates to my Residents fanpage</description>
     <language>en-us</language>
-    <copyright>2025 Natalie Martin</copyright>
+    <copyright>2026 Natalie Martin</copyright>
     <webMaster>webmaster@mew151.net (Natalie)</webMaster>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <ttl>180</ttl>
-    <pubDate>Mon, 06 Jan 2025 16:00:00</pubDate>
+    <pubDate>Wed, 25 Feb 2026 17:00:00</pubDate>
+    <item>
+      <title>NEW ARTICLE + Collection Update</title>
+      <pubDate>Wed, 25 Feb 2026 17:00:00</pubDate>
+      <link>https://www.mew151.net/shrines/rz/articles/iceberg/index.html</link>
+      <guid>2026-02-25-iceberg</guid>
+      <description>New featured article: "Exploring The Residents Iceberg" + Some small collection updates</description>
+      <category domain="rz-world">iceberg</category>
+      <category domain="rz-world">collection</category>
+    </item>
     <item>
       <title>Collection Update</title>
       <pubDate>Mon, 06 Jan 2025 16:00:00</pubDate>
