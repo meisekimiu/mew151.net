@@ -13,7 +13,7 @@ const skipFiles = [
 
 const htmlFiles = globSync("src/**/*.html").filter(
   (file) =>
-    !skipFiles.reduce((result, skip) => result || !!file.match(skip), false)
+    !skipFiles.reduce((result, skip) => result || !!file.match(skip), false),
 );
 
 describe("Sitemap verification", () => {
@@ -22,7 +22,7 @@ describe("Sitemap verification", () => {
     await page.goto(getSiteUrl("/sitemap.html"));
     linkPaths = await page.$eval("main", (main) => {
       return Array.from(main.querySelectorAll("a[href]")).map(
-        (element) => (element as HTMLAnchorElement).href
+        (element) => (element as HTMLAnchorElement).href,
       );
     });
   });
@@ -34,10 +34,14 @@ describe("Sitemap verification", () => {
         .replace(/\/?index.html$/, "");
       const containsLink = linkPaths.reduce(
         (result, link) => result || link.endsWith(expectedLinkPath),
-        false
+        false,
       );
-      expect(containsLink).toBeTruthy();
+      try {
+        expect(containsLink).toBeTruthy();
+      } catch {
+        throw new Error(`Expected ${expectedLinkPath} to be linked in sitemap`);
+      }
     },
-    45000
+    45000,
   );
 });
