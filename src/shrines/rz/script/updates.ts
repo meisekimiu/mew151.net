@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const addNewStamp = (update: SiteUpdate) => {
     const links: HTMLAnchorElement[] = Array.from(
-      document.querySelectorAll("dt a, li a")
+      document.querySelectorAll("dt a, li a"),
     );
     const updatePath = new URL(update.link).pathname;
     for (const link of links) {
@@ -40,7 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   const getFeed = async () => {
-    const res = await fetch("/shrines/rz/rss.xml");
+    const res = await fetch(
+      `/shrines/rz/rss.xml?t=${getCacheInvalidationString()}`,
+    );
     const parser = new DOMParser();
     const feed = parser.parseFromString(await res.text(), "text/xml");
     return Array.from(feed.querySelectorAll("item")).map((item) => {
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const link =
         item.querySelector("link")?.innerHTML ?? "https://www.example.com";
       const categories = Array.from(item.querySelectorAll("category")).map(
-        (cat) => cat.innerHTML
+        (cat) => cat.innerHTML,
       );
       return {
         updated: new Date(date),
@@ -71,3 +73,14 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   checkForNewEntries();
 });
+
+/**
+ * Generates a string for the time that updates once every 6 hours.
+ */
+function getCacheInvalidationString() {
+  return (
+    Math.floor(new Date().getHours() / 6) +
+    "-" +
+    Math.floor(new Date().getDate())
+  );
+}
