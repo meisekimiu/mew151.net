@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
           icon: "/img/nav/journal.png",
-          name: "Journal",
+          name: "Posts",
           link: "/journal.html",
         },
         {

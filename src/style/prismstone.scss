@@ -1,0 +1,27 @@
+.reblog {
+  margin-bottom: 0.5em;
+
+  .webmaster-name,
+  .oomfie-name {
+    .handle::before {
+      content: "(";
+    }
+    .handle::after {
+      content: ")";
+    }
+    &::after {
+      content: ":";
+    }
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  .webmaster-name {
+    color: darkred;
+  }
+
+  .webmaster-name + .reblog-post-content,
+  .oomfie-name + .reblog-post-content {
+    margin-left: 2em;
+  }
+}
