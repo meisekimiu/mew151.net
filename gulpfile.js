@@ -8,8 +8,13 @@ const sass = require("gulp-sass")(require("sass"));
 const replace = require("gulp-replace");
 const rename = require("gulp-rename");
 const header = require("gulp-header");
+const grun = require("gulp-run");
 
 require("dotenv").config({ path: "src/portfolio/.env" });
+
+function webcomponents() {
+  return grun("npm run build-components").exec();
+}
 
 function megatranspile() {
   return src("src/**/*.ts")
@@ -24,12 +29,12 @@ function megatranspile() {
         output: {
           comments: "some",
         },
-      })
+      }),
     )
     .pipe(
       header(
-        "/* This file was compiled from TypeScript. You can view the original un-minified source code here: ${file.path.replace(/^(.+?)\\/src\\/(.+?)\\.js$/, 'https://www.github.com/meisekimiu/mew151.net/tree/main/src/$2.ts')} */\n"
-      )
+        "/* This file was compiled from TypeScript. You can view the original un-minified source code here: ${file.path.replace(/^(.+?)\\/src\\/(.+?)\\.js$/, 'https://www.github.com/meisekimiu/mew151.net/tree/main/src/$2.ts')} */\n",
+      ),
     )
     .pipe(dest("src"));
 }
@@ -39,12 +44,12 @@ function sassy() {
     .pipe(
       sass({
         outputStyle: "compressed",
-      })
+      }),
     )
     .pipe(
       header(
-        "/* This file was compiled from Sass. You can view the original un-minified source code here: ${file.path.replace(/^(.+?)\\/src\\/(.+?)\\.css$/, 'https://www.github.com/meisekimiu/mew151.net/tree/main/src/$2.scss')} */\n"
-      )
+        "/* This file was compiled from Sass. You can view the original un-minified source code here: ${file.path.replace(/^(.+?)\\/src\\/(.+?)\\.css$/, 'https://www.github.com/meisekimiu/mew151.net/tree/main/src/$2.scss')} */\n",
+      ),
     )
     .pipe(dest("src"));
 }
@@ -54,13 +59,13 @@ function htmly() {
     .pipe(
       replace(/\{\{\s*(\w+?)\s*\}\}/g, (_match, key) => {
         return process.env[key] ?? key;
-      })
+      }),
     )
     .pipe(
       rename((path) => {
         path.basename = path.basename.replace(/.html$/, "");
         path.extname = ".html";
-      })
+      }),
     )
     .pipe(dest("src"));
 }
@@ -69,9 +74,10 @@ function watchy() {
   watch("src/**/*.scss", sassy);
   watch("src/**/*.ts", megatranspile);
   watch("src/**/*.html.template", htmly);
+  watch("mew151-components/src/**/*", webcomponents);
 }
 
 exports.sass = sassy;
 exports.html = htmly;
-exports.default = series(htmly, megatranspile, sassy);
+exports.default = series(htmly, webcomponents, megatranspile, sassy);
 exports.watch = watchy;

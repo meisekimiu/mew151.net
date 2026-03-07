@@ -4,6 +4,7 @@
   "description": "Source for static side of mew151.net",
   "main": "index.js",
   "scripts": {
+    "build-components": "npm run build -ws mew151-components && cp mew151-components/dist/*.js src/components",
     "portfolio-prepare": "rm -f src/portfolio/*.template",
     "mew151-prepare": "rm -r src/portfolio",
     "neocities-prepare": "rm -r src/blog",
@@ -22,6 +23,7 @@
     "@babel/core": "^7.18.10",
     "@tsconfig/node16": "^1.0.3",
     "@types/fast-levenshtein": "^0.0.2",
+    "@types/jest-environment-puppeteer": "^5.0.3",
     "@types/shuffle-array": "^1.0.5",
     "dotenv": "^16.0.3",
     "fast-levenshtein": "^3.0.0",
@@ -34,10 +36,12 @@
     "gulp-imagemin": "^8.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
+    "gulp-run": "^1.7.1",
     "gulp-sass": "^5.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-uglify": "^3.0.2",
     "html2gmi": "github:meisekimiu/html2gmi",
+    "mew151-components": "^0.0.1",
     "sass": "^1.54.5",
     "shuffle-array": "^1.0.1",
     "snarkdown": "^2.0.0",
@@ -46,7 +50,6 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.2",
-    "@types/jest-environment-puppeteer": "^5.0.3",
     "browserify": "^17.0.0",
     "expect-puppeteer": "^9.0.0",
     "glob": "^10.2.7",
@@ -57,5 +60,8 @@
     "npm-run-all": "^4.1.5",
     "puppeteer": "^20.7.1",
     "ts-jest": "^29.1.0"
-  }
+  },
+  "workspaces": [
+    "mew151-components"
+  ]
 }

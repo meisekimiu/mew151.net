@@ -2,5 +2,6 @@
   "preset": "jest-puppeteer",
   "transform": {
     "^.+\\.(ts|tsx)$": "ts-jest"
-  }
+  },
+  "testPathIgnorePatterns": ["<rootDir>/mew151-components"]
 }
