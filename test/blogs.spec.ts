@@ -1,37 +1,32 @@
-import "expect-puppeteer";
-import { getSiteUrl } from "./util/getSiteUrl";
+import { getPage } from "./util/getPage";
 
 describe("Blogz", () => {
   test("Perfect Pop Star Academy RSS Feed", async () => {
-    await page.goto(getSiteUrl("/blog/"));
-    const linkCollection = await page.$eval("main", (list) => {
-      return Array.from(list.querySelectorAll("li a[href]")).map((el) =>
-        (el as HTMLAnchorElement).href.replace(/^(.+?)entries/, "entries")
-      );
-    });
-    await page.goto(getSiteUrl("/blog/blog.xml"));
-    const itemCollection = await page.$eval("channel", (channel) => {
-      return Array.from(channel.querySelectorAll("item > link")).map((el) =>
-        el.innerHTML.replace(/^(.+?)entries/, "entries")
-      );
-    });
+    const doc = getPage("/blog/");
+    const linkCollection = Array.from(
+      doc.querySelector("main")!.querySelectorAll("li a[href]"),
+    ).map((el) =>
+      (el as HTMLAnchorElement).href.replace(/^(.+?)entries/, "entries"),
+    );
+    const rssDoc = getPage("/blog/blog.xml", "application/xml");
+    const itemCollection = Array.from(
+      rssDoc.querySelector("channel")!.querySelectorAll("item > link"),
+    ).map((el) => el.innerHTML.replace(/^(.+?)entries/, "entries"));
     for (const link of linkCollection) {
       expect(itemCollection).toContain(link);
     }
   }, 45000);
   test("Squeeze Blog RSS Feed", async () => {
-    await page.goto(getSiteUrl("/accordion/blog"));
-    const linkCollection = await page.$eval(".blog-archive", (list) => {
-      return Array.from(list.querySelectorAll("li a[href]")).map((el) =>
-        (el as HTMLAnchorElement).href.replace(/^(.+?)posts/, "posts")
-      );
-    });
-    await page.goto(getSiteUrl("accordion/blog/accordion.xml"));
-    const itemCollection = await page.$eval("channel", (channel) => {
-      return Array.from(channel.querySelectorAll("item > link")).map((el) =>
-        el.innerHTML.replace(/^(.+?)posts/, "posts")
-      );
-    });
+    const doc = getPage("/accordion/blog/");
+    const linkCollection = Array.from(
+      doc.querySelector("main")!.querySelectorAll("li a[href]"),
+    ).map((el) =>
+      (el as HTMLAnchorElement).href.replace(/^(.+?)posts/, "posts"),
+    );
+    const rssDoc = getPage("/accordion/blog/accordion.xml", "application/xml");
+    const itemCollection = Array.from(
+      rssDoc.querySelector("channel")!.querySelectorAll("item > link"),
+    ).map((el) => el.innerHTML.replace(/^(.+?)posts/, "posts"));
     for (const link of linkCollection) {
       expect(itemCollection).toContain(link);
     }

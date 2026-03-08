@@ -25,7 +25,7 @@
     <script src="script.js" type="text/javascript"></script>
   </head>
   <body>
-    <a class="theme-switcher"></a>
+    <a class="theme-switcher">Switch Themes</a>
     <div class="about-me">
       <div class="name-bio">
         <h1>Natalie Martin</h1>

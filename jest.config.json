@@ -1,5 +1,5 @@
 {
-  "preset": "jest-puppeteer",
+  "testEnvironment": "jsdom",
   "transform": {
     "^.+\\.(ts|tsx)$": "ts-jest"
   },

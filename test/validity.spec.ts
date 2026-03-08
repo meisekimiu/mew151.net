@@ -1,7 +1,6 @@
-import "expect-puppeteer";
 import "html-validate/jest";
 import { globSync } from "glob";
-import { getSiteUrl } from "./util/getSiteUrl";
+import { getPage } from "./util/getPage";
 
 const htmlFiles = globSync("src/**/*.html");
 
@@ -10,10 +9,9 @@ describe("HTML Validity and Accessibility", () => {
     "HTML Validity: %s",
     async (file) => {
       const relativeFileName = file.replace(/^src\//, "");
-      await page.goto(getSiteUrl(relativeFileName));
-      const pageContents = await page.content();
+      const pageContents = getPage(relativeFileName).documentElement.outerHTML;
       expect(pageContents).toHTMLValidate();
     },
-    45000
+    45000,
   );
 });

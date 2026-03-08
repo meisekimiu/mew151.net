@@ -1,6 +1,5 @@
-import "expect-puppeteer";
 import { globSync } from "glob";
-import { getSiteUrl } from "./util/getSiteUrl";
+import { getPage } from "./util/getPage";
 
 const skipFiles = [
   "src/not_found.html",
@@ -19,12 +18,9 @@ const htmlFiles = globSync("src/**/*.html").filter(
 describe("Sitemap verification", () => {
   let linkPaths: string[];
   beforeAll(async () => {
-    await page.goto(getSiteUrl("/sitemap.html"));
-    linkPaths = await page.$eval("main", (main) => {
-      return Array.from(main.querySelectorAll("a[href]")).map(
-        (element) => (element as HTMLAnchorElement).href,
-      );
-    });
+    linkPaths = Array.from(
+      getPage("/sitemap.html").querySelectorAll("main a[href]"),
+    ).map((el) => el.getAttribute("href")!);
   });
   test.each(htmlFiles)(
     "Sitemap: %s",

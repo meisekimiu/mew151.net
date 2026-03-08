@@ -1,6 +1,5 @@
-import "expect-puppeteer";
 import { globSync } from "glob";
-import { getSiteUrl } from "./util/getSiteUrl";
+import { getPage } from "./util/getPage";
 
 const skipFiles = [
   "src/not_found.html",
@@ -13,7 +12,7 @@ const skipFiles = [
 
 const htmlFiles = globSync("src/**/*.html").filter(
   (file) =>
-    !skipFiles.reduce((result, skip) => result || !!file.match(skip), false)
+    !skipFiles.reduce((result, skip) => result || !!file.match(skip), false),
 );
 
 const PROTOCOL = "https://";
@@ -25,22 +24,18 @@ describe("Canonical URL Testing", () => {
     async (file) => {
       const relativeFileName = file.replace(/^src\//, "");
       const expectedCanonicalUrl = PROTOCOL + DOMAIN + "/" + relativeFileName;
-      await page.goto(getSiteUrl(relativeFileName));
-      const linkHref = await page.$eval('link[rel="canonical"]', (element) => {
-        return element.href;
-      });
+      const doc = getPage(relativeFileName);
+      const linkHref = doc.querySelector('link[rel="canonical"]');
       expect(linkHref).toBeTruthy();
-      expect(linkHref).toBe(expectedCanonicalUrl);
+      expect(linkHref?.getAttribute("href")).toBe(expectedCanonicalUrl);
     },
-    45000
+    45000,
   );
   test("Canonical URL: src/index.html", async () => {
-    const expectedCanonicalUrl = PROTOCOL + DOMAIN + "/";
-    await page.goto(getSiteUrl("/"));
-    const linkHref = await page.$eval('link[rel="canonical"]', (element) => {
-      return element.href;
-    });
+    const expectedCanonicalUrl = PROTOCOL + DOMAIN;
+    const doc = getPage("/");
+    const linkHref = doc.querySelector('link[rel="canonical"]');
     expect(linkHref).toBeTruthy();
-    expect(linkHref).toBe(expectedCanonicalUrl);
+    expect(linkHref?.getAttribute("href")).toBe(expectedCanonicalUrl);
   }, 45000);
 });
