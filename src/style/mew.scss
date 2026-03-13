@@ -452,6 +452,16 @@ figure {
   margin: 1em auto;
   text-align: center;
 
+  &.image-slideshow {
+    & > * {
+      margin: 1ex;
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
   img {
     max-width: 50%;
   }
@@ -520,6 +530,12 @@ summary {
 .like-h4 {
   @extend %like-header;
   font-size: 1em;
+}
+
+ul.sitemap {
+  li.secret {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 900px) {
