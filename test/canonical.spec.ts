@@ -6,6 +6,7 @@ const skipFiles = [
   "src/nav-fallback.html",
   "src/accordion/blog/posts/index.html",
   "src/index.html",
+  "src/ai/index.html",
   /^src\/blog/,
   /^src\/portfolio/,
 ];
