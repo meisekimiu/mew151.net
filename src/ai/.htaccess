@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^(.*)$ https://www.mew151.net/about-ai.html [R=301,L,NC]
