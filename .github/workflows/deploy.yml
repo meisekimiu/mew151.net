@@ -10,60 +10,60 @@ jobs:
   test:
     uses: meisekimiu/mew151.net/.github/workflows/test.yml@main
 
-  deploy-text:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+  # deploy-text:
+  #   runs-on: ubuntu-latest
+  #   needs: test
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         fetch-depth: 0
 
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 20
-          cache: "npm"
+  #     - uses: actions/setup-node@v6
+  #       with:
+  #         node-version: 20
+  #         cache: "npm"
 
-      - name: ⚙️ Install utilities
-        run: npm ci --prefer-offline --only=production
+  #     - name: ⚙️ Install utilities
+  #       run: npm ci --prefer-offline --only=production
 
-      - name: 🌙 Build text versions of site
-        run: npm run generate-text
+  #     - name: 🌙 Build text versions of site
+  #       run: npm run generate-text
 
-      - name: 💎🌌 Deploy Gemini
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.GMI_HOST }}
-          username: ${{ vars.GMI_USER }}
-          password: ${{ secrets.GMI_PASSWORD }}
-          port: ${{ secrets.GMI_PORT }}
-          source: "text/gemini/build"
-          target: ${{ secrets.GMI_DIRECTORY }}
-          strip_components: 3
-          overwrite:
+  #     - name: 💎🌌 Deploy Gemini
+  #       uses: appleboy/scp-action@v0.1.4
+  #       with:
+  #         host: ${{ secrets.GMI_HOST }}
+  #         username: ${{ vars.GMI_USER }}
+  #         password: ${{ secrets.GMI_PASSWORD }}
+  #         port: ${{ secrets.GMI_PORT }}
+  #         source: "text/gemini/build"
+  #         target: ${{ secrets.GMI_DIRECTORY }}
+  #         strip_components: 3
+  #         overwrite:
 
-      - name: ⛳🌌 Deploy Gopher
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.GMI_HOST }}
-          username: ${{ vars.GMI_USER }}
-          password: ${{ secrets.GMI_PASSWORD }}
-          port: ${{ secrets.GMI_PORT }}
-          source: "text/gopher/build"
-          target: ${{ secrets.GOPHER_DIRECTORY }}
-          strip_components: 3
-          overwrite:
+  #     - name: ⛳🌌 Deploy Gopher
+  #       uses: appleboy/scp-action@v0.1.4
+  #       with:
+  #         host: ${{ secrets.GMI_HOST }}
+  #         username: ${{ vars.GMI_USER }}
+  #         password: ${{ secrets.GMI_PASSWORD }}
+  #         port: ${{ secrets.GMI_PORT }}
+  #         source: "text/gopher/build"
+  #         target: ${{ secrets.GOPHER_DIRECTORY }}
+  #         strip_components: 3
+  #         overwrite:
 
-      - name: 🧾🌌 Deploy HTML to text.mew151.net
-        uses: appleboy/scp-action@v0.1.4
-        with:
-          host: ${{ secrets.GMI_HOST }}
-          username: ${{ vars.GMI_USER }}
-          password: ${{ secrets.GMI_PASSWORD }}
-          port: ${{ secrets.GMI_PORT }}
-          source: "text/www"
-          target: ${{ secrets.TEXT_WWW_DIRECTORY }}
-          strip_components: 2
-          overwrite:
+  #     - name: 🧾🌌 Deploy HTML to text.mew151.net
+  #       uses: appleboy/scp-action@v0.1.4
+  #       with:
+  #         host: ${{ secrets.GMI_HOST }}
+  #         username: ${{ vars.GMI_USER }}
+  #         password: ${{ secrets.GMI_PASSWORD }}
+  #         port: ${{ secrets.GMI_PORT }}
+  #         source: "text/www"
+  #         target: ${{ secrets.TEXT_WWW_DIRECTORY }}
+  #         strip_components: 2
+  #         overwrite:
 
   deploy-portfolio:
     runs-on: ubuntu-latest
