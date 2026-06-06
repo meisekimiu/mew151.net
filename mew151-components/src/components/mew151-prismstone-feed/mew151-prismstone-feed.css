@@ -1,0 +1,43 @@
+:host {
+  display: block;
+}
+
+mew151-prismstone-post {
+  border: 1px solid #0006;
+  padding: 1rem;
+  margin: 8px 0.5rem;
+  display: block;
+}
+
+mew151-prismstone-post time {
+  font-style: italic;
+  text-align: right;
+}
+
+mew151-prismstone-post hr {
+  border: 2px dotted #0006;
+  margin: 1.5ex auto;
+  max-width: 4rem;
+}
+
+mew151-prismstone-post .image-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+}
+
+mew151-prismstone-post .image-container img {
+  max-width: 100%;
+  max-height: 512px;
+}
+
+mew151-prismstone-post .emoji {
+  max-height: 4rem;
+  vertical-align: middle;
+  transition: max-height 0.5s;
+}
+
+mew151-prismstone-post .emoji:hover {
+  max-height: 8rem;
+}

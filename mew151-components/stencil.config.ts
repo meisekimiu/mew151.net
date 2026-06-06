@@ -2,6 +2,7 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'mew151-components',
+  buildDist: true,
   outputTargets: [
     {
       type: 'dist',
