@@ -25,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: ✅ Run web component tests
-        run: npm test -ws mew151-components
+        run: npm run test -w mew151-components
 
       - name: ✅ Run tests
         run: npm test
