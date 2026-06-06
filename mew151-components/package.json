@@ -34,8 +34,8 @@
     "prepare": "npm run build",
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
+    "test": "stencil-test",
+    "test.watch": "stencil-test --watch",
     "generate": "stencil generate"
   },
   "dependencies": {
@@ -46,5 +46,9 @@
     "jest-cli": "^29.7.0",
     "puppeteer": "^24.3.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@stencil/vitest": "^1.12.1",
+    "vitest": "^4.1.7"
+  }
 }

@@ -12,12 +12,12 @@ export class Mew151Mew {
   /**
    * The image source to be passed in.
    */
-  @Prop() public src: string;
+  @Prop() public src: string = '';
 
   /**
    * Alt text to apply to the sprite.
    */
-  @Prop() public alt: string;
+  @Prop() public alt: string = '';
 
   /**
    * RNG function to determine if the Mew sprite is Shiny

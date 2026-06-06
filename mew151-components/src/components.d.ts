@@ -5,6 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { IPrismStoneFeedItem } from "./components/mew151-prismstone-feed/prismstone-feed-item";
+import { RssFeedProvider } from "./components/mew151-prismstone-feed/prismstone-feed-provider";
+export { IPrismStoneFeedItem } from "./components/mew151-prismstone-feed/prismstone-feed-item";
+export { RssFeedProvider } from "./components/mew151-prismstone-feed/prismstone-feed-provider";
 export namespace Components {
     /**
      * Component for the Mew sprites on the Mew151.net homepage. This handles the logic to swap out the image with the "shiny" equivalent sprite if the user is lucky enough.
@@ -12,6 +16,7 @@ export namespace Components {
     interface Mew151Mew {
         /**
           * Alt text to apply to the sprite.
+          * @default ''
          */
         "alt": string;
         /**
@@ -21,8 +26,24 @@ export namespace Components {
         "isShiny": () => boolean;
         /**
           * The image source to be passed in.
+          * @default ''
          */
         "src": string;
+    }
+    /**
+     * Renders my fediverse feed fetched from an RSS feed.
+     */
+    interface Mew151PrismstoneFeed {
+        /**
+          * The feed provider. This is mainly used for injecting a mock feed provider for testing.
+          * @default new PrismStoneFeedProvider()
+         */
+        "feedProvider": RssFeedProvider;
+        /**
+          * Items to render. If not provided, then the component will fetch a feed with the default Prism Stone Feed Provider.
+          * @default undefined
+         */
+        "items": IPrismStoneFeedItem[] | undefined;
     }
 }
 declare global {
@@ -35,8 +56,18 @@ declare global {
         prototype: HTMLMew151MewElement;
         new (): HTMLMew151MewElement;
     };
+    /**
+     * Renders my fediverse feed fetched from an RSS feed.
+     */
+    interface HTMLMew151PrismstoneFeedElement extends Components.Mew151PrismstoneFeed, HTMLStencilElement {
+    }
+    var HTMLMew151PrismstoneFeedElement: {
+        prototype: HTMLMew151PrismstoneFeedElement;
+        new (): HTMLMew151PrismstoneFeedElement;
+    };
     interface HTMLElementTagNameMap {
         "mew151-mew": HTMLMew151MewElement;
+        "mew151-prismstone-feed": HTMLMew151PrismstoneFeedElement;
     }
 }
 declare namespace LocalJSX {
@@ -46,6 +77,7 @@ declare namespace LocalJSX {
     interface Mew151Mew {
         /**
           * Alt text to apply to the sprite.
+          * @default ''
          */
         "alt"?: string;
         /**
@@ -55,8 +87,24 @@ declare namespace LocalJSX {
         "isShiny"?: () => boolean;
         /**
           * The image source to be passed in.
+          * @default ''
          */
         "src"?: string;
+    }
+    /**
+     * Renders my fediverse feed fetched from an RSS feed.
+     */
+    interface Mew151PrismstoneFeed {
+        /**
+          * The feed provider. This is mainly used for injecting a mock feed provider for testing.
+          * @default new PrismStoneFeedProvider()
+         */
+        "feedProvider"?: RssFeedProvider;
+        /**
+          * Items to render. If not provided, then the component will fetch a feed with the default Prism Stone Feed Provider.
+          * @default undefined
+         */
+        "items"?: IPrismStoneFeedItem[] | undefined;
     }
 
     interface Mew151MewAttributes {
@@ -66,6 +114,7 @@ declare namespace LocalJSX {
 
     interface IntrinsicElements {
         "mew151-mew": Omit<Mew151Mew, keyof Mew151MewAttributes> & { [K in keyof Mew151Mew & keyof Mew151MewAttributes]?: Mew151Mew[K] } & { [K in keyof Mew151Mew & keyof Mew151MewAttributes as `attr:${K}`]?: Mew151MewAttributes[K] } & { [K in keyof Mew151Mew & keyof Mew151MewAttributes as `prop:${K}`]?: Mew151Mew[K] };
+        "mew151-prismstone-feed": Mew151PrismstoneFeed;
     }
 }
 export { LocalJSX as JSX };
@@ -76,6 +125,10 @@ declare module "@stencil/core" {
              * Component for the Mew sprites on the Mew151.net homepage. This handles the logic to swap out the image with the "shiny" equivalent sprite if the user is lucky enough.
              */
             "mew151-mew": LocalJSX.IntrinsicElements["mew151-mew"] & JSXBase.HTMLAttributes<HTMLMew151MewElement>;
+            /**
+             * Renders my fediverse feed fetched from an RSS feed.
+             */
+            "mew151-prismstone-feed": LocalJSX.IntrinsicElements["mew151-prismstone-feed"] & JSXBase.HTMLAttributes<HTMLMew151PrismstoneFeedElement>;
         }
     }
 }

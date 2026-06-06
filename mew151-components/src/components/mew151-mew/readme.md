@@ -13,9 +13,9 @@ Component for the Mew sprites on the Mew151.net homepage. This handles the logic
 
 | Property  | Attribute | Description                                          | Type            | Default                           |
 | --------- | --------- | ---------------------------------------------------- | --------------- | --------------------------------- |
-| `alt`     | `alt`     | Alt text to apply to the sprite.                     | `string`        | `undefined`                       |
+| `alt`     | `alt`     | Alt text to apply to the sprite.                     | `string`        | `''`                              |
 | `isShiny` | --        | RNG function to determine if the Mew sprite is Shiny | `() => boolean` | `() => this.calculateShinyOdds()` |
-| `src`     | `src`     | The image source to be passed in.                    | `string`        | `undefined`                       |
+| `src`     | `src`     | The image source to be passed in.                    | `string`        | `''`                              |
 
 
 ----------------------------------------------
