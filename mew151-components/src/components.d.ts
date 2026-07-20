@@ -45,6 +45,26 @@ export namespace Components {
          */
         "items": IPrismStoneFeedItem[] | undefined;
     }
+    interface Mew151XXeyes {
+        /**
+          * Whether the eyes are biblically accurate or not
+          * @default false
+         */
+        "biblicallyAccurate": boolean;
+        /**
+          * The height of the canvas
+         */
+        "height": number;
+        /**
+          * Whether The Residents are watching or not
+          * @default false
+         */
+        "theResidentsMode": boolean;
+        /**
+          * The width of the canvas
+         */
+        "width": number;
+    }
 }
 declare global {
     /**
@@ -65,9 +85,16 @@ declare global {
         prototype: HTMLMew151PrismstoneFeedElement;
         new (): HTMLMew151PrismstoneFeedElement;
     };
+    interface HTMLMew151XXeyesElement extends Components.Mew151XXeyes, HTMLStencilElement {
+    }
+    var HTMLMew151XXeyesElement: {
+        prototype: HTMLMew151XXeyesElement;
+        new (): HTMLMew151XXeyesElement;
+    };
     interface HTMLElementTagNameMap {
         "mew151-mew": HTMLMew151MewElement;
         "mew151-prismstone-feed": HTMLMew151PrismstoneFeedElement;
+        "mew151-x-xeyes": HTMLMew151XXeyesElement;
     }
 }
 declare namespace LocalJSX {
@@ -106,15 +133,42 @@ declare namespace LocalJSX {
          */
         "items"?: IPrismStoneFeedItem[] | undefined;
     }
+    interface Mew151XXeyes {
+        /**
+          * Whether the eyes are biblically accurate or not
+          * @default false
+         */
+        "biblicallyAccurate"?: boolean;
+        /**
+          * The height of the canvas
+         */
+        "height"?: number;
+        /**
+          * Whether The Residents are watching or not
+          * @default false
+         */
+        "theResidentsMode"?: boolean;
+        /**
+          * The width of the canvas
+         */
+        "width"?: number;
+    }
 
     interface Mew151MewAttributes {
         "src": string;
         "alt": string;
     }
+    interface Mew151XXeyesAttributes {
+        "biblicallyAccurate": boolean;
+        "theResidentsMode": boolean;
+        "width": number;
+        "height": number;
+    }
 
     interface IntrinsicElements {
         "mew151-mew": Omit<Mew151Mew, keyof Mew151MewAttributes> & { [K in keyof Mew151Mew & keyof Mew151MewAttributes]?: Mew151Mew[K] } & { [K in keyof Mew151Mew & keyof Mew151MewAttributes as `attr:${K}`]?: Mew151MewAttributes[K] } & { [K in keyof Mew151Mew & keyof Mew151MewAttributes as `prop:${K}`]?: Mew151Mew[K] };
         "mew151-prismstone-feed": Mew151PrismstoneFeed;
+        "mew151-x-xeyes": Omit<Mew151XXeyes, keyof Mew151XXeyesAttributes> & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes]?: Mew151XXeyes[K] } & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes as `attr:${K}`]?: Mew151XXeyesAttributes[K] } & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes as `prop:${K}`]?: Mew151XXeyes[K] };
     }
 }
 export { LocalJSX as JSX };
@@ -129,6 +183,7 @@ declare module "@stencil/core" {
              * Renders my fediverse feed fetched from an RSS feed.
              */
             "mew151-prismstone-feed": LocalJSX.IntrinsicElements["mew151-prismstone-feed"] & JSXBase.HTMLAttributes<HTMLMew151PrismstoneFeedElement>;
+            "mew151-x-xeyes": LocalJSX.IntrinsicElements["mew151-x-xeyes"] & JSXBase.HTMLAttributes<HTMLMew151XXeyesElement>;
         }
     }
 }
