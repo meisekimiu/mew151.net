@@ -45,6 +45,16 @@ export namespace Components {
          */
         "items": IPrismStoneFeedItem[] | undefined;
     }
+    /**
+     * A cat clock, based on xclock's cat display mode.
+     */
+    interface Mew151XCatclock {
+        /**
+          * The color of the bowtie to display. Accepts any valid CSS colors, and possibly a few bonus ones.
+          * @default '#a99cef'
+         */
+        "color": string;
+    }
     interface Mew151XXeyes {
         /**
           * Whether the eyes are biblically accurate or not
@@ -85,6 +95,15 @@ declare global {
         prototype: HTMLMew151PrismstoneFeedElement;
         new (): HTMLMew151PrismstoneFeedElement;
     };
+    /**
+     * A cat clock, based on xclock's cat display mode.
+     */
+    interface HTMLMew151XCatclockElement extends Components.Mew151XCatclock, HTMLStencilElement {
+    }
+    var HTMLMew151XCatclockElement: {
+        prototype: HTMLMew151XCatclockElement;
+        new (): HTMLMew151XCatclockElement;
+    };
     interface HTMLMew151XXeyesElement extends Components.Mew151XXeyes, HTMLStencilElement {
     }
     var HTMLMew151XXeyesElement: {
@@ -94,6 +113,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "mew151-mew": HTMLMew151MewElement;
         "mew151-prismstone-feed": HTMLMew151PrismstoneFeedElement;
+        "mew151-x-catclock": HTMLMew151XCatclockElement;
         "mew151-x-xeyes": HTMLMew151XXeyesElement;
     }
 }
@@ -133,6 +153,16 @@ declare namespace LocalJSX {
          */
         "items"?: IPrismStoneFeedItem[] | undefined;
     }
+    /**
+     * A cat clock, based on xclock's cat display mode.
+     */
+    interface Mew151XCatclock {
+        /**
+          * The color of the bowtie to display. Accepts any valid CSS colors, and possibly a few bonus ones.
+          * @default '#a99cef'
+         */
+        "color"?: string;
+    }
     interface Mew151XXeyes {
         /**
           * Whether the eyes are biblically accurate or not
@@ -158,6 +188,9 @@ declare namespace LocalJSX {
         "src": string;
         "alt": string;
     }
+    interface Mew151XCatclockAttributes {
+        "color": string;
+    }
     interface Mew151XXeyesAttributes {
         "biblicallyAccurate": boolean;
         "theResidentsMode": boolean;
@@ -168,6 +201,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "mew151-mew": Omit<Mew151Mew, keyof Mew151MewAttributes> & { [K in keyof Mew151Mew & keyof Mew151MewAttributes]?: Mew151Mew[K] } & { [K in keyof Mew151Mew & keyof Mew151MewAttributes as `attr:${K}`]?: Mew151MewAttributes[K] } & { [K in keyof Mew151Mew & keyof Mew151MewAttributes as `prop:${K}`]?: Mew151Mew[K] };
         "mew151-prismstone-feed": Mew151PrismstoneFeed;
+        "mew151-x-catclock": Omit<Mew151XCatclock, keyof Mew151XCatclockAttributes> & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes]?: Mew151XCatclock[K] } & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes as `attr:${K}`]?: Mew151XCatclockAttributes[K] } & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes as `prop:${K}`]?: Mew151XCatclock[K] };
         "mew151-x-xeyes": Omit<Mew151XXeyes, keyof Mew151XXeyesAttributes> & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes]?: Mew151XXeyes[K] } & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes as `attr:${K}`]?: Mew151XXeyesAttributes[K] } & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes as `prop:${K}`]?: Mew151XXeyes[K] };
     }
 }
@@ -183,6 +217,10 @@ declare module "@stencil/core" {
              * Renders my fediverse feed fetched from an RSS feed.
              */
             "mew151-prismstone-feed": LocalJSX.IntrinsicElements["mew151-prismstone-feed"] & JSXBase.HTMLAttributes<HTMLMew151PrismstoneFeedElement>;
+            /**
+             * A cat clock, based on xclock's cat display mode.
+             */
+            "mew151-x-catclock": LocalJSX.IntrinsicElements["mew151-x-catclock"] & JSXBase.HTMLAttributes<HTMLMew151XCatclockElement>;
             "mew151-x-xeyes": LocalJSX.IntrinsicElements["mew151-x-xeyes"] & JSXBase.HTMLAttributes<HTMLMew151XXeyesElement>;
         }
     }
