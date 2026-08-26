@@ -55,6 +55,24 @@ export namespace Components {
          */
         "color": string;
     }
+    /**
+     * Renders cowsay in a "terminal"
+     */
+    interface Mew151XCowsay {
+        /**
+          * Replacement eyes for the cow
+         */
+        "eyes": string | undefined;
+        /**
+          * Replacement tongue for the cow
+         */
+        "mouth": string | undefined;
+        /**
+          * The text for the cow to say
+          * @default 'Moo!'
+         */
+        "text": string;
+    }
     interface Mew151XXeyes {
         /**
           * Whether the eyes are biblically accurate or not
@@ -104,6 +122,15 @@ declare global {
         prototype: HTMLMew151XCatclockElement;
         new (): HTMLMew151XCatclockElement;
     };
+    /**
+     * Renders cowsay in a "terminal"
+     */
+    interface HTMLMew151XCowsayElement extends Components.Mew151XCowsay, HTMLStencilElement {
+    }
+    var HTMLMew151XCowsayElement: {
+        prototype: HTMLMew151XCowsayElement;
+        new (): HTMLMew151XCowsayElement;
+    };
     interface HTMLMew151XXeyesElement extends Components.Mew151XXeyes, HTMLStencilElement {
     }
     var HTMLMew151XXeyesElement: {
@@ -114,6 +141,7 @@ declare global {
         "mew151-mew": HTMLMew151MewElement;
         "mew151-prismstone-feed": HTMLMew151PrismstoneFeedElement;
         "mew151-x-catclock": HTMLMew151XCatclockElement;
+        "mew151-x-cowsay": HTMLMew151XCowsayElement;
         "mew151-x-xeyes": HTMLMew151XXeyesElement;
     }
 }
@@ -163,6 +191,24 @@ declare namespace LocalJSX {
          */
         "color"?: string;
     }
+    /**
+     * Renders cowsay in a "terminal"
+     */
+    interface Mew151XCowsay {
+        /**
+          * Replacement eyes for the cow
+         */
+        "eyes"?: string | undefined;
+        /**
+          * Replacement tongue for the cow
+         */
+        "mouth"?: string | undefined;
+        /**
+          * The text for the cow to say
+          * @default 'Moo!'
+         */
+        "text"?: string;
+    }
     interface Mew151XXeyes {
         /**
           * Whether the eyes are biblically accurate or not
@@ -191,6 +237,11 @@ declare namespace LocalJSX {
     interface Mew151XCatclockAttributes {
         "color": string;
     }
+    interface Mew151XCowsayAttributes {
+        "text": string;
+        "eyes": string | undefined;
+        "mouth": string | undefined;
+    }
     interface Mew151XXeyesAttributes {
         "biblicallyAccurate": boolean;
         "theResidentsMode": boolean;
@@ -202,6 +253,7 @@ declare namespace LocalJSX {
         "mew151-mew": Omit<Mew151Mew, keyof Mew151MewAttributes> & { [K in keyof Mew151Mew & keyof Mew151MewAttributes]?: Mew151Mew[K] } & { [K in keyof Mew151Mew & keyof Mew151MewAttributes as `attr:${K}`]?: Mew151MewAttributes[K] } & { [K in keyof Mew151Mew & keyof Mew151MewAttributes as `prop:${K}`]?: Mew151Mew[K] };
         "mew151-prismstone-feed": Mew151PrismstoneFeed;
         "mew151-x-catclock": Omit<Mew151XCatclock, keyof Mew151XCatclockAttributes> & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes]?: Mew151XCatclock[K] } & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes as `attr:${K}`]?: Mew151XCatclockAttributes[K] } & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes as `prop:${K}`]?: Mew151XCatclock[K] };
+        "mew151-x-cowsay": Omit<Mew151XCowsay, keyof Mew151XCowsayAttributes> & { [K in keyof Mew151XCowsay & keyof Mew151XCowsayAttributes]?: Mew151XCowsay[K] } & { [K in keyof Mew151XCowsay & keyof Mew151XCowsayAttributes as `attr:${K}`]?: Mew151XCowsayAttributes[K] } & { [K in keyof Mew151XCowsay & keyof Mew151XCowsayAttributes as `prop:${K}`]?: Mew151XCowsay[K] };
         "mew151-x-xeyes": Omit<Mew151XXeyes, keyof Mew151XXeyesAttributes> & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes]?: Mew151XXeyes[K] } & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes as `attr:${K}`]?: Mew151XXeyesAttributes[K] } & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes as `prop:${K}`]?: Mew151XXeyes[K] };
     }
 }
@@ -221,6 +273,10 @@ declare module "@stencil/core" {
              * A cat clock, based on xclock's cat display mode.
              */
             "mew151-x-catclock": LocalJSX.IntrinsicElements["mew151-x-catclock"] & JSXBase.HTMLAttributes<HTMLMew151XCatclockElement>;
+            /**
+             * Renders cowsay in a "terminal"
+             */
+            "mew151-x-cowsay": LocalJSX.IntrinsicElements["mew151-x-cowsay"] & JSXBase.HTMLAttributes<HTMLMew151XCowsayElement>;
             "mew151-x-xeyes": LocalJSX.IntrinsicElements["mew151-x-xeyes"] & JSXBase.HTMLAttributes<HTMLMew151XXeyesElement>;
         }
     }
