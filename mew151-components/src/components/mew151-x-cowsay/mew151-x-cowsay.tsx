@@ -1,5 +1,6 @@
 import { Component, h, Prop } from '@stencil/core';
 import { say } from 'cowsay';
+import wrap from 'word-wrap';
 
 /** Renders cowsay in a "terminal" */
 @Component({
@@ -19,10 +20,10 @@ export class Mew151XCowsay {
 
   render() {
     const options = {
-      text: this.text,
+      text: wrap(this.text, { width: 30 }),
       eyes: this.eyes,
       tongue: this.mouth,
-      wrapLength: 30,
+      wrapLength: 1e10, // Ignore wrapping because we're going to be using word-wrap instead for cleaner lines
     };
     const altText = `ASCII art of a cow with a speech bubble that says: "${this.text}"`;
     return (

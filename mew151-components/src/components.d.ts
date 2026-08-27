@@ -73,6 +73,29 @@ export namespace Components {
          */
         "text": string;
     }
+    /**
+     * The main component that shows UNIX desktop toys on Mew151.net!
+     */
+    interface Mew151XRandom {
+        /**
+          * Odds of biblically accurate xeyes
+          * @default 1 / 128
+         */
+        "biblicallyAccurateOdds": number;
+        /**
+          * Allows a page to force a specific desktop toy to appear
+         */
+        "forceSelection": ToyType | undefined;
+        /**
+          * Odds of getting a The Residents xeyes
+          * @default 0
+         */
+        "residentOdds": number;
+        /**
+          * The color of the cat clock's tie
+         */
+        "tieColor": string | undefined;
+    }
     interface Mew151XXeyes {
         /**
           * Whether the eyes are biblically accurate or not
@@ -131,6 +154,15 @@ declare global {
         prototype: HTMLMew151XCowsayElement;
         new (): HTMLMew151XCowsayElement;
     };
+    /**
+     * The main component that shows UNIX desktop toys on Mew151.net!
+     */
+    interface HTMLMew151XRandomElement extends Components.Mew151XRandom, HTMLStencilElement {
+    }
+    var HTMLMew151XRandomElement: {
+        prototype: HTMLMew151XRandomElement;
+        new (): HTMLMew151XRandomElement;
+    };
     interface HTMLMew151XXeyesElement extends Components.Mew151XXeyes, HTMLStencilElement {
     }
     var HTMLMew151XXeyesElement: {
@@ -142,6 +174,7 @@ declare global {
         "mew151-prismstone-feed": HTMLMew151PrismstoneFeedElement;
         "mew151-x-catclock": HTMLMew151XCatclockElement;
         "mew151-x-cowsay": HTMLMew151XCowsayElement;
+        "mew151-x-random": HTMLMew151XRandomElement;
         "mew151-x-xeyes": HTMLMew151XXeyesElement;
     }
 }
@@ -209,6 +242,29 @@ declare namespace LocalJSX {
          */
         "text"?: string;
     }
+    /**
+     * The main component that shows UNIX desktop toys on Mew151.net!
+     */
+    interface Mew151XRandom {
+        /**
+          * Odds of biblically accurate xeyes
+          * @default 1 / 128
+         */
+        "biblicallyAccurateOdds"?: number;
+        /**
+          * Allows a page to force a specific desktop toy to appear
+         */
+        "forceSelection"?: ToyType | undefined;
+        /**
+          * Odds of getting a The Residents xeyes
+          * @default 0
+         */
+        "residentOdds"?: number;
+        /**
+          * The color of the cat clock's tie
+         */
+        "tieColor"?: string | undefined;
+    }
     interface Mew151XXeyes {
         /**
           * Whether the eyes are biblically accurate or not
@@ -242,6 +298,12 @@ declare namespace LocalJSX {
         "eyes": string | undefined;
         "mouth": string | undefined;
     }
+    interface Mew151XRandomAttributes {
+        "forceSelection": ToyType | undefined;
+        "biblicallyAccurateOdds": number;
+        "residentOdds": number;
+        "tieColor": string | undefined;
+    }
     interface Mew151XXeyesAttributes {
         "biblicallyAccurate": boolean;
         "theResidentsMode": boolean;
@@ -254,6 +316,7 @@ declare namespace LocalJSX {
         "mew151-prismstone-feed": Mew151PrismstoneFeed;
         "mew151-x-catclock": Omit<Mew151XCatclock, keyof Mew151XCatclockAttributes> & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes]?: Mew151XCatclock[K] } & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes as `attr:${K}`]?: Mew151XCatclockAttributes[K] } & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes as `prop:${K}`]?: Mew151XCatclock[K] };
         "mew151-x-cowsay": Omit<Mew151XCowsay, keyof Mew151XCowsayAttributes> & { [K in keyof Mew151XCowsay & keyof Mew151XCowsayAttributes]?: Mew151XCowsay[K] } & { [K in keyof Mew151XCowsay & keyof Mew151XCowsayAttributes as `attr:${K}`]?: Mew151XCowsayAttributes[K] } & { [K in keyof Mew151XCowsay & keyof Mew151XCowsayAttributes as `prop:${K}`]?: Mew151XCowsay[K] };
+        "mew151-x-random": Omit<Mew151XRandom, keyof Mew151XRandomAttributes> & { [K in keyof Mew151XRandom & keyof Mew151XRandomAttributes]?: Mew151XRandom[K] } & { [K in keyof Mew151XRandom & keyof Mew151XRandomAttributes as `attr:${K}`]?: Mew151XRandomAttributes[K] } & { [K in keyof Mew151XRandom & keyof Mew151XRandomAttributes as `prop:${K}`]?: Mew151XRandom[K] };
         "mew151-x-xeyes": Omit<Mew151XXeyes, keyof Mew151XXeyesAttributes> & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes]?: Mew151XXeyes[K] } & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes as `attr:${K}`]?: Mew151XXeyesAttributes[K] } & { [K in keyof Mew151XXeyes & keyof Mew151XXeyesAttributes as `prop:${K}`]?: Mew151XXeyes[K] };
     }
 }
@@ -277,6 +340,10 @@ declare module "@stencil/core" {
              * Renders cowsay in a "terminal"
              */
             "mew151-x-cowsay": LocalJSX.IntrinsicElements["mew151-x-cowsay"] & JSXBase.HTMLAttributes<HTMLMew151XCowsayElement>;
+            /**
+             * The main component that shows UNIX desktop toys on Mew151.net!
+             */
+            "mew151-x-random": LocalJSX.IntrinsicElements["mew151-x-random"] & JSXBase.HTMLAttributes<HTMLMew151XRandomElement>;
             "mew151-x-xeyes": LocalJSX.IntrinsicElements["mew151-x-xeyes"] & JSXBase.HTMLAttributes<HTMLMew151XXeyesElement>;
         }
     }
