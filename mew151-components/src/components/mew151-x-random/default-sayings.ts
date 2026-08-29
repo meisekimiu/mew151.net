@@ -98,6 +98,7 @@ export const defaultCatClockSayings: string[] = [
   'Nya...',
   'Mew meow!',
   'Tick tock!',
+  'Shout it out loud!',
 ];
 
 export const defaultEyesSayings: string[] = ['What are YOU looking at?', 'I think I need glasses', 'Eye see you!'];
@@ -110,6 +111,20 @@ export const defaultAnyoneSayings: string[] = [
   'Uninstall Windows!',
   "Make sure you're staying hydrated.",
   'Is this a dream?',
+  "It's a UNIX system!",
+  'Cancel your subscriptions!',
+  'Where the heck is the start menu?',
 ];
 
-export const defaultBiblicalSayings: string[] = ['BE NOT AFRAID', 'WE ARE ONE', 'WE THINK WE NEED GLASSES', 'WE ARE WATCHING', 'DO NOT MIND US, WE ARE JUST "HANGING OUT"'];
+export const defaultBiblicalSayings: string[] = [
+  'BE NOT AFRAID',
+  'WE ARE ONE',
+  'WE THINK WE NEED GLASSES',
+  'WE ARE WATCHING',
+  'DO NOT MIND US, WE ARE JUST "HANGING OUT"',
+  'THOU MUST USE RSS FEEDS',
+  'DELETE THY SOCIAL MEDIA',
+  'DISAVOW ONESELF FROM WINDOWS',
+  'TIS A UNIX SYSTEM',
+  'CANCEL THY SUBSCRIPTIONS',
+];

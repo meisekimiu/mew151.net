@@ -13,7 +13,7 @@ The main component that shows UNIX desktop toys on Mew151.net!
 
 | Property                 | Attribute                  | Description                                             | Type                                | Default     |
 | ------------------------ | -------------------------- | ------------------------------------------------------- | ----------------------------------- | ----------- |
-| `biblicallyAccurateOdds` | `biblically-accurate-odds` | Odds of biblically accurate xeyes                       | `number`                            | `1 / 256`   |
+| `biblicallyAccurateOdds` | `biblically-accurate-odds` | Odds of biblically accurate xeyes                       | `number`                            | `1 / 48`    |
 | `forceSelection`         | `force-selection`          | Allows a page to force a specific desktop toy to appear | `"catclock" \| "cowsay" \| "xeyes"` | `undefined` |
 | `residentOdds`           | `resident-odds`            | Odds of getting a The Residents xeyes                   | `number`                            | `0`         |
 | `tieColor`               | `tie-color`                | The color of the cat clock's tie                        | `string`                            | `undefined` |
