@@ -250,10 +250,10 @@ code.multiline {
 }
 
 .main-window {
-  left: 35%;
+  right: 32px;
   top: 16px;
   position: absolute;
-  width: 60%;
+  width: calc(65% - 32px);
 }
 
 .toy-window {
