@@ -5,8 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natalie" />
-    <meta name="description" content="Natalie's Personal Website" />
-    <link rel="stylesheet" type="text/css" href="style/mew.css" />
+    <meta
+      name="description"
+      content="This is where you can send the webmaster e-mail. If you're into that kind of thing I guess."
+    />
+    <link rel="stylesheet" type="text/css" href="style/mew.css?v2" />
     <link rel="alternate" type="application+rss/xml" href="/rss.xml" />
     <link rel="me" href="https://github.com/meisekimiu" />
     <link rel="me" href="https://prismst.one/users/natalie" />
@@ -14,39 +17,58 @@
     <link rel="canonical" href="https://www.mew151.net/contact.html" />
     <link rel="webmention" href="https://webmention.io/mew151.net/webmention" />
     <link rel="pingback" href="https://webmention.io/mew151.net/xmlrpc" />
-    <script src="style/autostyle.js" type="text/javascript"></script>
-    <script src="script/nav.js" type="text/javascript"></script>
+    <script src="style/autostyle.js?v2" type="text/javascript"></script>
+    <script src="script/nav.js?v2" type="text/javascript"></script>
+    <script src="components/mew151-x-random.js" type="module"></script>
   </head>
   <body>
     <div class="window nav-window">
-      <div class="window-bar">
-        <div class="window-title">My Computer</div>
-      </div>
-      <div class="window-content">
-        <nav class="explorer">
-          <iframe
-            title="Site Navigation"
-            src="/nav-fallback.html"
-            style="width: 100%; height: 100%"
-          ></iframe>
-        </nav>
+      <div class="inner-window">
+        <div class="window-bar">
+          <div class="window-title"><span>/home/mew151</span></div>
+        </div>
+        <div class="window-content">
+          <nav class="explorer">
+            <iframe
+              title="Site Navigation"
+              src="/nav-fallback.html"
+              style="width: 100%; height: 100%"
+            ></iframe>
+          </nav>
+        </div>
       </div>
     </div>
     <div class="window main-window">
-      <div class="window-bar">
-        <div class="window-title">Contact Me</div>
+      <div class="inner-window">
+        <div class="window-bar">
+          <div class="window-title"><span>Contact Me</span></div>
+        </div>
+        <div class="window-content">
+          <main id="main" style="background: #003; color: #eee">
+            <div style="text-align: center">
+              <h1>Contact Me</h1>
+            </div>
+            <p>
+              You can contact me at my e-mail address:
+              <a href="mailto:webmaster[at]mew151.net"
+                >webmaster[at]mew151.net</a
+              >
+            </p>
+            <p>Or you can find me on the fediverse: @natalie@prismst.one</p>
+          </main>
+        </div>
       </div>
-      <div class="window-content">
-        <main id="main" style="background: #003; color: #eee">
-          <div style="text-align: center">
-            <h1>Contact Me</h1>
+    </div>
+    <div class="toy-zone">
+      <div class="window toy-window" id="toy-app-window">
+        <div class="inner-window">
+          <div class="window-bar">
+            <div class="window-title"><span id="toy-app-name">xeyes</span></div>
           </div>
-          <p>
-            You can contact me at my e-mail address:
-            <a href="mailto:webmaster[at]mew151.net">webmaster[at]mew151.net</a>
-          </p>
-          <p>Or you can find me on the fediverse: @natalie@prismst.one</p>
-        </main>
+          <div class="window-content">
+            <mew151-x-random tie-color="#0000ff"></mew151-x-random>
+          </div>
+        </div>
       </div>
     </div>
   </body>

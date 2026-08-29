@@ -79,7 +79,7 @@ export namespace Components {
     interface Mew151XRandom {
         /**
           * Odds of biblically accurate xeyes
-          * @default 1 / 128
+          * @default 1 / 48
          */
         "biblicallyAccurateOdds": number;
         /**
@@ -248,7 +248,7 @@ declare namespace LocalJSX {
     interface Mew151XRandom {
         /**
           * Odds of biblically accurate xeyes
-          * @default 1 / 128
+          * @default 1 / 48
          */
         "biblicallyAccurateOdds"?: number;
         /**

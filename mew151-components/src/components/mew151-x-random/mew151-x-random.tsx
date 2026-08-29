@@ -15,7 +15,7 @@ export class Mew151XRandom {
   @Prop() public forceSelection: ToyType | undefined;
 
   /** Odds of biblically accurate xeyes */
-  @Prop() public biblicallyAccurateOdds: number = 1 / 128;
+  @Prop() public biblicallyAccurateOdds: number = 1 / 48;
 
   /** Odds of getting a The Residents xeyes */
   @Prop() public residentOdds: number = 0;
@@ -65,7 +65,31 @@ export class Mew151XRandom {
         this.tieColor = 'asexual';
       }
     }
+    this.setAppName();
     this.loadMessage();
+  }
+
+  private setAppName(): void {
+    const appWindow = document.getElementById('toy-app-window');
+    if (appWindow) {
+      appWindow.style.visibility = 'visible';
+      appWindow.classList.add(this.toyType!);
+    }
+    const titleSpan = document.getElementById('toy-app-name');
+    if (!titleSpan) {
+      return;
+    }
+    switch (this.toyType) {
+      case 'catclock':
+        titleSpan.innerText = 'xclock';
+        return;
+      case 'xeyes':
+        titleSpan.innerText = 'xeyes';
+        return;
+      case 'cowsay':
+        titleSpan.innerText = 'guest@mew151.net:~';
+        return;
+    }
   }
 
   /** Gets a random number from 0 to 1... but it's slightly modified for "special days". */
@@ -98,7 +122,7 @@ export class Mew151XRandom {
           break;
       }
     }
-    if (!this.message || (messageProgram?.allowFallback && Math.random() < 0.5)) {
+    if (!this.message || (messageProgram?.allowFallback && Math.random() < 0.5 && !this.biblicallyAccurate)) {
       this.message = pickRandom(this.getDefaultMessageSource());
     }
   }

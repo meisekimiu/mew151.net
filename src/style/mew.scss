@@ -1,18 +1,11 @@
-@font-face {
-  font-family: "W95FA";
-  src: url("fontz/w95fa.woff");
-  font-display: swap;
-}
-
 html {
   height: 100vh;
 }
 
 body {
-  background: #007c78;
+  background: url("/img/backgrounds/x-weave.png") repeat;
   color: #fff;
   font-family: "Times New Roman", Times, serif;
-  background-size: 100vw 100vh;
   height: 100%;
   margin: 0;
 }
@@ -46,66 +39,141 @@ code.multiline {
 
 .window {
   color: #000;
-  background: #b8bcb8;
-  border: 2px solid #e9ede9;
-  padding: 1px;
+  @extend %motif-button-border;
+  border-width: 2px !important;
+}
+
+.inner-window {
+  border-width: 2px;
+  border-left-color: #621f41;
+  border-top-color: #621f41;
+  border-right-color: #f0a1c5;
+  border-bottom-color: #f0a1c5;
+  border-style: solid;
+  position: relative;
+
+  .notches-top-left,
+  .notches-top-right,
+  .notches-bottom-left,
+  .notches-bottom-right {
+    position: absolute;
+    border: 1px solid #f0a1c5;
+    width: 23px;
+    height: 23px;
+
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+
+  .notches-top-left {
+    left: -4px;
+    top: -4px;
+    border-top: none;
+    border-left: none;
+  }
+
+  .notches-top-right {
+    width: 22px;
+    right: -4px;
+    top: -4px;
+    border-top: none;
+    border-right: none;
+  }
+
+  .notches-bottom-left {
+    left: -4px;
+    bottom: -4px;
+    border-bottom: none;
+    border-left: none;
+  }
+
+  .notches-bottom-right {
+    width: 22px;
+    right: -4px;
+    bottom: -4px;
+    border-bottom: none;
+    border-right: none;
+  }
 }
 
 .window-bar {
   height: 20px;
-  padding: 1px 3px;
-  background: #000078;
-  color: #fff;
-  font-family: "W95FA", "Times New Roman", Times, serif;
-  font-size: 16px;
+  padding: 0;
+  background: #b24e7b;
+  color: #ffdada;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.1rem;
   font-smooth: never;
   font-weight: bold;
   position: relative;
-}
-
-.window-buttons {
-  height: 20px;
-  position: absolute;
-  right: 3px;
-  top: 1px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .min-max-buttons {
+    display: flex;
+    padding: 0;
+  }
+
+  .window-title {
+    height: 1.1rem;
+    text-align: center;
+    flex-grow: 1;
+    cursor: default;
+    @extend %motif-button-border;
+
+    span {
+      display: block;
+      margin-top: -0.15rem;
+    }
+  }
+}
+
+%motif-button-border {
+  border-width: 1px;
+  border-left-color: #f0a1c5;
+  border-top-color: #f0a1c5;
+  border-right-color: #621f41;
+  border-bottom-color: #621f41;
+  border-style: solid;
+}
+
+.motif-window-button {
+  background: #b24e7b;
+  width: 1.1rem;
+  height: 1.1rem;
+  @extend %motif-button-border;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-}
 
-.window-buttons > div {
-  height: 11px;
-  width: 12px;
-  padding: 1px;
-  margin: 1px;
-  background-color: #cecece;
-  background-repeat: no-repeat;
-  background-position: center center;
-  border-width: 1px;
-  border-style: solid;
-  border-left-color: #dedede;
-  border-top-color: #dedede;
-  border-right-color: #8c8c8c;
-  border-bottom-color: #8c8c8c;
-}
+  .motif-close {
+    @extend %motif-button-border;
+    width: 0.5rem;
+    height: 0.25rem;
+  }
 
-.button-close {
-  background-image: url("windows_close.png");
-}
+  .motif-minimize {
+    @extend %motif-button-border;
+    width: 0.25rem;
+    height: 0.25rem;
+  }
 
-.button-maximize {
-  background-image: url("windows_max.png");
-}
-
-.button-minimize {
-  background-image: url("windows_min.png");
+  .motif-maximize {
+    @extend %motif-button-border;
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 }
 
 .window-content {
-  padding: 3px 1px;
   overflow: auto;
   max-height: 90vh;
+  position: relative;
+  z-index: 1;
 }
 
 .navigation-group {
@@ -124,7 +192,7 @@ code.multiline {
 }
 
 .navigation-group a:active {
-  background-color: #009;
+  background-color: #504;
 }
 
 .navigation-group a:active span {
@@ -144,16 +212,16 @@ code.multiline {
 }
 
 .navigation-group .icon span {
-  color: #000;
+  color: #250025;
   text-decoration: none;
   text-align: center;
-  max-width: 90px;
 }
 
 .explorer {
-  background: #fff;
+  background: #ffdada;
   font-size: 15px;
-  font-family: "W95FA", serif;
+  font-family: "Liberation Sans", "Arial", sans-serif;
+  color: #250025;
 }
 
 .nav-window {
@@ -161,6 +229,24 @@ code.multiline {
   position: absolute;
   left: 32px;
   top: 32px;
+
+  @media only screen and (max-height: 600px) {
+    top: 0;
+  }
+}
+
+.nav-window .window-content {
+  iframe {
+    min-height: 200px;
+  }
+  @media only screen and (min-width: 900px) {
+    max-height: calc(100vh - 300px - 32px - 64px - 100px);
+    min-height: 200px;
+  }
+
+  @media only screen and (max-height: 560px) {
+    max-height: 100vh;
+  }
 }
 
 .main-window {
@@ -168,7 +254,57 @@ code.multiline {
   top: 16px;
   position: absolute;
   width: 60%;
-  height: 95vh;
+}
+
+.toy-window {
+  display: inline-block;
+  visibility: hidden;
+
+  &.xeyes {
+    @media only screen and (min-width: 1660px) {
+      margin-left: -160px;
+    }
+  }
+}
+
+.toy-window .window-content {
+  background-color: #ccc6;
+  overflow: visible;
+}
+
+.toy-window .notches-bottom-left,
+.toy-window .notches-bottom-right {
+  display: none;
+}
+
+.toy-zone {
+  width: 30%;
+  bottom: 64px;
+  left: 32px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  @media only screen and (max-height: 666px) {
+    bottom: 1em;
+  }
+
+  @media only screen and (max-height: 608px) {
+    bottom: 0;
+  }
+
+  @media only screen and (max-height: 560px) {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1660px) {
+    justify-content: flex-start;
+  }
+
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
 }
 
 .maximized-window {
@@ -196,13 +332,17 @@ main {
 .navigation-header {
   padding: 2px;
   font-size: 1.5em;
-  font-weight: bold;
-  font-family: "Arial", sans-serif;
+  font-family: "Times New Roman", Times, serif;
+}
+
+div + .navigation-header {
+  border-top: 2px solid #621f41;
 }
 
 .navigation-header hr {
-  width: 50%;
   margin: 0;
+  width: 100%;
+  opacity: 0;
 }
 
 p,
@@ -556,7 +696,7 @@ ul.sitemap {
     display: none;
   }
   .nav-window .window-bar {
-    display: block;
+    display: flex;
   }
   .window {
     border: none;

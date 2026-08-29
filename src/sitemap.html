@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Natalie" />
     <meta name="description" content="Natalie's Personal Website" />
-    <link rel="stylesheet" type="text/css" href="style/mew.css" />
+    <link rel="stylesheet" type="text/css" href="style/mew.css?v2" />
     <link rel="alternate" type="application+rss/xml" href="/rss.xml" />
     <link rel="me" href="https://github.com/meisekimiu" />
     <link rel="me" href="https://prismst.one/users/natalie" />
@@ -14,284 +14,320 @@
     <link rel="canonical" href="https://www.mew151.net/sitemap.html" />
     <link rel="webmention" href="https://webmention.io/mew151.net/webmention" />
     <link rel="pingback" href="https://webmention.io/mew151.net/xmlrpc" />
-    <script src="style/autostyle.js" type="text/javascript"></script>
-    <script src="script/nav.js" type="text/javascript"></script>
+    <script src="style/autostyle.js?v2" type="text/javascript"></script>
+    <script src="script/nav.js?v2" type="text/javascript"></script>
+    <script src="components/mew151-x-random.js" type="module"></script>
   </head>
   <body>
     <div class="window nav-window">
-      <div class="window-bar">
-        <div class="window-title">My Computer</div>
-      </div>
-      <div class="window-content">
-        <nav class="explorer">
-          <iframe
-            title="Site Navigation"
-            src="/nav-fallback.html"
-            style="width: 100%; height: 100%"
-          ></iframe>
-        </nav>
+      <div class="inner-window">
+        <div class="window-bar">
+          <div class="window-title"><span>/home/mew151</span></div>
+        </div>
+        <div class="window-content">
+          <nav class="explorer">
+            <iframe
+              title="Site Navigation"
+              src="/nav-fallback.html"
+              style="width: 100%; height: 100%"
+            ></iframe>
+          </nav>
+        </div>
       </div>
     </div>
     <div class="window main-window">
-      <div class="window-bar">
-        <div class="window-title">Sitemap</div>
+      <div class="inner-window">
+        <div class="window-bar">
+          <div class="window-title"><span>Sitemap</span></div>
+        </div>
+        <div class="window-content">
+          <main
+            id="main"
+            style="
+              background: url(&quot;img/backgrounds/dblue024.jpg&quot;);
+              color: #eee;
+            "
+            data-gmi-ignore
+          >
+            <div style="text-align: center">
+              <h1>Sitemap</h1>
+            </div>
+            <ul class="sitemap">
+              <li>
+                <a href="index.html">Homepage</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
+                <ul>
+                  <li><a href="about.html#about-webmaster">About Me</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="journal.html">Social Posts</a>
+                <ul>
+                  <li>
+                    <a href="journal-twtxt.html">Journal (twtxt) Archive</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="shrines.html">Shrines</a>
+                <ul>
+                  <li><a href="shrines/prism">Pretty Rhythm Shrine</a></li>
+                </ul>
+                <ul>
+                  <li>
+                    <a href="shrines/rz">The Residents Shrine</a>
+                    <details>
+                      <summary>RESIDENTS WORLD</summary>
+                      <ul>
+                        <li>
+                          Featured Articles
+                          <ul>
+                            <li>
+                              <a href="shrines/rz/articles/iceberg"
+                                >The Residents Iceberg</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="shrines/rz/collection"
+                            >Residents Collection</a
+                          >
+                        </li>
+                        <li>
+                          <a href="shrines/rz/reviews">Residents Reviews</a>
+                          <ul>
+                            <li>
+                              <a href="shrines/rz/reviews/ghostofhope.html"
+                                >The Ghost of Hope Review</a
+                              >
+                            </li>
+                            <li>
+                              <a href="shrines/rz/reviews/inbetweendreams.html"
+                                >In Between Dreams Review</a
+                              >
+                            </li>
+                            <li>
+                              <a href="shrines/rz/reviews/iamaresident.html"
+                                >I Am A Resident Review</a
+                              >
+                            </li>
+                            <li>
+                              <a href="shrines/rz/reviews/intruders.html"
+                                >Intruders Review</a
+                              >
+                            </li>
+                            <li>
+                              <a href="shrines/rz/reviews/dyindog.html"
+                                >Metal Meat &amp; Bone Review</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="shrines/rz/jp">The Residents in Japan</a>
+                          <ul>
+                            <li>
+                              <a href="shrines/rz/jp/toc-archive01.html"
+                                >Talk of Creatures Archive: Intro</a
+                              >
+                            </li>
+                            <li>
+                              <a href="shrines/rz/jp/toc-archive02.html"
+                                >Talk of Creatures Archive: Translations</a
+                              >
+                            </li>
+                            <li>
+                              <a href="shrines/rz/jp/toc-archive03.html"
+                                >Talk of Creatures Archive: Blue Note</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a href="shrines/rz/streams"
+                            >Archived Residents Streams</a
+                          >
+                          <ul>
+                            <li>
+                              <a href="shrines/rz/streams/KALW.html"
+                                >KALW: The Residents Go To The Dogs</a
+                              >
+                            </li>
+                            <li>
+                              <a href="shrines/rz/streams/KALX.html"
+                                >KALX: The Worst Residents Interview Ever</a
+                              >
+                            </li>
+                            <li>
+                              <a href="shrines/rz/streams/bunnystream.html"
+                                >Bunny Boy Streaming Event @ Bourges, France</a
+                              >
+                            </li>
+                            <li>
+                              <a href="shrines/rz/streams/randyland31.html"
+                                >RandyLand - Episode 31</a
+                              >
+                            </li>
+                            <li>
+                              <a href="shrines/rz/streams/shadowland.html"
+                                >Shadowland @ L'Etrange Festival (2015)</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="random">Random Stuff</a>
+                <ul>
+                  <li>
+                    <a href="https://www.mew151.net/talktoadog/"
+                      >Talk to a Dog</a
+                    >
+                  </li>
+                  <li>
+                    <a href="random/freewebs/developers_blog.html"
+                      >A developers blog... (2008)</a
+                    >
+                  </li>
+                  <li><a href="random/quiz_results.html">Quiz Results</a></li>
+                  <li><a href="random/kawaii">Kawaii Username Generator</a></li>
+                  <li><a href="random/web1_lucid.html">Lucid Dreaming</a></li>
+                  <li>
+                    <a href="random/100webmaster.html"
+                      >100 Questions for Webmasters</a
+                    >
+                  </li>
+                  <li class="secret">
+                    <a href="random/grunny">Grunny Collection</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="accordion">Accordion</a>
+                <ul>
+                  <li><a href="accordion/collection.html">My Accordions</a></li>
+                  <li><a href="accordion/faq.html">Accordion FAQ</a></li>
+                  <li>
+                    <a href="accordion/blog">Squeeze Blog</a>
+                    <details>
+                      <summary>Posts</summary>
+                      <ul>
+                        <li>
+                          <a href="accordion/blog/posts/learning-accordion.html"
+                            >How Long Does It Take To Learn Accordion?</a
+                          >
+                        </li>
+                        <li>
+                          <a href="accordion/blog/posts/sheet-music.html"
+                            >Where Do You Find Accordion Sheet Music?</a
+                          >
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+                  <li><a href="accordion/quiz.html">Accordion Quiz</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="cyber">Cyberspace</a>
+                <ul>
+                  <li>
+                    <a href="cyber/kid-pilot.html"
+                      >Uncovering Kid Pilot's 20 Year Old Easter Egg</a
+                    >
+                  </li>
+                  <li>
+                    <a href="cyber/manifesto.html">Website Manifesto</a>
+                    <ul>
+                      <li>
+                        <a href="cyber/manifesto.html#privacy"
+                          >Privacy Policy</a
+                        >
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="cyber/neocities.html">The Neocities Algorithm</a>
+                  </li>
+                  <li>
+                    <a href="cyber/poem-iroha.html">The Iroha Poem in CSS</a>
+                  </li>
+                  <li>
+                    <a href="cyber/rss.html">RSS: Really Simple Syndication!</a>
+                  </li>
+                  <li>
+                    <a href="cyber/text">Gopher / Gemini</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="links.html">Links</a>
+                <ul>
+                  <li><a href="contact.html">Contact Me</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="sitemap.html">Sitemap</a>
+                <small style="font-weight: bold"
+                  >&lt;&mdash; YOU ARE HERE</small
+                >
+              </li>
+              <li>
+                <a href="noscript.html">JavaScript Info</a>
+              </li>
+              <li>
+                <a href="about-ai.html">On Linking To AI-Generated Content</a>
+              </li>
+              <li class="secret">
+                <a href="chipotle">/chipotle</a>
+              </li>
+              <li>
+                <a href="subsite">Sub-Sites</a>
+                <ul>
+                  <li><a href="subsite/bios.html">{ bios }</a></li>
+                  <li><a href="subsite/hac.html">Home Age Conversations</a></li>
+                  <li>
+                    <a href="subsite/games.html">Natalie's Gamez Archive</a>
+                  </li>
+                  <li>
+                    <a href="subsite/blog.html">Perfect Pop Star Academy</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </main>
+        </div>
       </div>
-      <div class="window-content">
-        <main
-          id="main"
-          style="
-            background: url(&quot;img/backgrounds/dblue024.jpg&quot;);
-            color: #eee;
-          "
-          data-gmi-ignore
-        >
-          <div style="text-align: center">
-            <h1>Sitemap</h1>
+    </div>
+    <div class="toy-zone">
+      <div class="window toy-window" id="toy-app-window">
+        <div class="inner-window">
+          <div class="window-bar">
+            <div class="window-title"><span id="toy-app-name">xeyes</span></div>
           </div>
-          <ul class="sitemap">
-            <li>
-              <a href="index.html">Homepage</a>
-            </li>
-            <li>
-              <a href="about.html">About</a>
-              <ul>
-                <li><a href="about.html#about-webmaster">About Me</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="journal.html">Social Posts</a>
-              <ul>
-                <li>
-                  <a href="journal-twtxt.html">Journal (twtxt) Archive</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="shrines.html">Shrines</a>
-              <ul>
-                <li><a href="shrines/prism">Pretty Rhythm Shrine</a></li>
-              </ul>
-              <ul>
-                <li>
-                  <a href="shrines/rz">The Residents Shrine</a>
-                  <details>
-                    <summary>RESIDENTS WORLD</summary>
-                    <ul>
-                      <li>
-                        Featured Articles
-                        <ul>
-                          <li>
-                            <a href="shrines/rz/articles/iceberg"
-                              >The Residents Iceberg</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="shrines/rz/collection">Residents Collection</a>
-                      </li>
-                      <li>
-                        <a href="shrines/rz/reviews">Residents Reviews</a>
-                        <ul>
-                          <li>
-                            <a href="shrines/rz/reviews/ghostofhope.html"
-                              >The Ghost of Hope Review</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shrines/rz/reviews/inbetweendreams.html"
-                              >In Between Dreams Review</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shrines/rz/reviews/iamaresident.html"
-                              >I Am A Resident Review</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shrines/rz/reviews/intruders.html"
-                              >Intruders Review</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shrines/rz/reviews/dyindog.html"
-                              >Metal Meat &amp; Bone Review</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="shrines/rz/jp">The Residents in Japan</a>
-                        <ul>
-                          <li>
-                            <a href="shrines/rz/jp/toc-archive01.html"
-                              >Talk of Creatures Archive: Intro</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shrines/rz/jp/toc-archive02.html"
-                              >Talk of Creatures Archive: Translations</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shrines/rz/jp/toc-archive03.html"
-                              >Talk of Creatures Archive: Blue Note</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="shrines/rz/streams"
-                          >Archived Residents Streams</a
-                        >
-                        <ul>
-                          <li>
-                            <a href="shrines/rz/streams/KALW.html"
-                              >KALW: The Residents Go To The Dogs</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shrines/rz/streams/KALX.html"
-                              >KALX: The Worst Residents Interview Ever</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shrines/rz/streams/bunnystream.html"
-                              >Bunny Boy Streaming Event @ Bourges, France</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shrines/rz/streams/randyland31.html"
-                              >RandyLand - Episode 31</a
-                            >
-                          </li>
-                          <li>
-                            <a href="shrines/rz/streams/shadowland.html"
-                              >Shadowland @ L'Etrange Festival (2015)</a
-                            >
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </details>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="random">Random Stuff</a>
-              <ul>
-                <li>
-                  <a href="https://www.mew151.net/talktoadog/">Talk to a Dog</a>
-                </li>
-                <li>
-                  <a href="random/freewebs/developers_blog.html"
-                    >A developers blog... (2008)</a
-                  >
-                </li>
-                <li><a href="random/quiz_results.html">Quiz Results</a></li>
-                <li><a href="random/kawaii">Kawaii Username Generator</a></li>
-                <li><a href="random/web1_lucid.html">Lucid Dreaming</a></li>
-                <li>
-                  <a href="random/100webmaster.html"
-                    >100 Questions for Webmasters</a
-                  >
-                </li>
-                <li class="secret">
-                  <a href="random/grunny">Grunny Collection</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="accordion">Accordion</a>
-              <ul>
-                <li><a href="accordion/collection.html">My Accordions</a></li>
-                <li><a href="accordion/faq.html">Accordion FAQ</a></li>
-                <li>
-                  <a href="accordion/blog">Squeeze Blog</a>
-                  <details>
-                    <summary>Posts</summary>
-                    <ul>
-                      <li>
-                        <a href="accordion/blog/posts/learning-accordion.html"
-                          >How Long Does It Take To Learn Accordion?</a
-                        >
-                      </li>
-                      <li>
-                        <a href="accordion/blog/posts/sheet-music.html"
-                          >Where Do You Find Accordion Sheet Music?</a
-                        >
-                      </li>
-                    </ul>
-                  </details>
-                </li>
-                <li><a href="accordion/quiz.html">Accordion Quiz</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="cyber">Cyberspace</a>
-              <ul>
-                <li>
-                  <a href="cyber/kid-pilot.html"
-                    >Uncovering Kid Pilot's 20 Year Old Easter Egg</a
-                  >
-                </li>
-                <li>
-                  <a href="cyber/manifesto.html">Website Manifesto</a>
-                  <ul>
-                    <li>
-                      <a href="cyber/manifesto.html#privacy">Privacy Policy</a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="cyber/neocities.html">The Neocities Algorithm</a>
-                </li>
-                <li>
-                  <a href="cyber/poem-iroha.html">The Iroha Poem in CSS</a>
-                </li>
-                <li>
-                  <a href="cyber/rss.html">RSS: Really Simple Syndication!</a>
-                </li>
-                <li>
-                  <a href="cyber/text">Gopher / Gemini</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="links.html">Links</a>
-              <ul>
-                <li><a href="contact.html">Contact Me</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="sitemap.html">Sitemap</a>
-              <small style="font-weight: bold">&lt;&mdash; YOU ARE HERE</small>
-            </li>
-            <li>
-              <a href="noscript.html">JavaScript Info</a>
-            </li>
-            <li>
-              <a href="about-ai.html">On Linking To AI-Generated Content</a>
-            </li>
-            <li class="secret">
-              <a href="chipotle">/chipotle</a>
-            </li>
-            <li>
-              <a href="subsite">Sub-Sites</a>
-              <ul>
-                <li><a href="subsite/bios.html">{ bios }</a></li>
-                <li><a href="subsite/hac.html">Home Age Conversations</a></li>
-                <li>
-                  <a href="subsite/games.html">Natalie's Gamez Archive</a>
-                </li>
-                <li>
-                  <a href="subsite/blog.html">Perfect Pop Star Academy</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </main>
+          <div class="window-content">
+            <mew151-x-random tie-color="#0000ff"></mew151-x-random>
+          </div>
+        </div>
       </div>
+      <script type="text/javascript">
+        window.unixMessages = {
+          catclock: [
+            "Apparently this site map is so comprehensive because its data is also used for the 404 page.",
+          ],
+          xeyes: ["I spy some pages not in the normal navigation..."],
+          biblical: ["WE ARE NOT LOST"],
+          cowsay: ["Of course it's not a real sitemap.xml format..."],
+          allowFallback: true,
+        };
+      </script>
     </div>
   </body>
 </html>

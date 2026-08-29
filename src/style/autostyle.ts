@@ -77,11 +77,12 @@ function setBackground(hour?: number) {
   const html = document.querySelector("html") as HTMLHtmlElement; // Assert that it exists
   if ((hours >= 18 && hours < 19) || hours === 6) {
     document.body.style.backgroundImage =
-      "linear-gradient(#000, #110058, orangered)";
+      "linear-gradient(#0009, #11005899, #FF450099), url('/img/backgrounds/x-weave.png')";
     return;
   } else if ((hours >= 19 && hours < 23) || hours === 5) {
     html.style.backgroundColor = "#000";
-    document.body.style.backgroundImage = "url('/style/backgrounds/stars.png')";
+    document.body.style.backgroundImage =
+      "url('/img/backgrounds/x-weave-night.png')";
     document.body.style.backgroundSize = "auto";
     return;
   } else if (hours === 4 && minutes === 44) {
@@ -99,19 +100,47 @@ function setBackground(hour?: number) {
   }
 }
 
+function createMotifWindowButton(classname: string): HTMLDivElement {
+  const parent = document.createElement("div");
+  parent.className = "motif-window-button";
+  const buttonDecor = document.createElement("div");
+  buttonDecor.className = "motif-" + classname;
+  parent.appendChild(buttonDecor);
+  return parent;
+}
+
+function createMotifWindowNotch(top: boolean, left: boolean): HTMLDivElement {
+  const notch = document.createElement("div");
+  notch.className =
+    "notches-" + (top ? "top" : "bottom") + "-" + (left ? "left" : "right");
+  return notch;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   setBackground();
   const windowBars = Array.from(document.getElementsByClassName("window-bar"));
   for (const bar of windowBars) {
-    const buttons = document.createElement("div");
-    buttons.className = "window-buttons";
-    const classes = ["button-minimize", "button-maximize", "button-close"];
-    for (const className of classes) {
-      const button = document.createElement("div");
-      button.className = className;
-      buttons.appendChild(button);
+    if (bar.querySelector(".motif-window-button")) {
+      continue;
     }
+    bar.prepend(createMotifWindowButton("close"));
+    const buttons = document.createElement("div");
+    buttons.className = "min-max-buttons";
+    buttons.appendChild(createMotifWindowButton("minimize"));
+    buttons.appendChild(createMotifWindowButton("maximize"));
     bar.appendChild(buttons);
+  }
+  const innerWindows = Array.from(
+    document.getElementsByClassName("inner-window"),
+  );
+  for (const innerWindow of innerWindows) {
+    if (innerWindow.querySelector(".notches-top-left")) {
+      continue;
+    }
+    innerWindow.prepend(createMotifWindowNotch(true, true));
+    innerWindow.prepend(createMotifWindowNotch(true, false));
+    innerWindow.prepend(createMotifWindowNotch(false, true));
+    innerWindow.prepend(createMotifWindowNotch(false, false));
   }
   if (window.location.host === "mew151.neocities.org") {
     const style = document.createElement("style");

@@ -339,7 +339,7 @@ const uname3 = Array.from(
     "Adventure",
     "Punk",
     "Nerd",
-  ])
+  ]),
 );
 
 const rand = (min: number, max: number) =>
@@ -372,8 +372,8 @@ const generateUsername = (useXs: boolean = false) => {
   const suffix = rand(0, 3)
     ? ""
     : rand(0, 3)
-    ? str_repeat(rand(1, 9).toString(), rand(1, 5))
-    : rand(1, 65535);
+      ? str_repeat(rand(1, 9).toString(), rand(1, 5))
+      : rand(1, 65535);
   if (rand(0, 5)) {
     username += uname1[rand(0, uname1.length - 1)] + glue;
     flag1 = false;
@@ -437,7 +437,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (copyright) {
     const currentYear = new Date().getFullYear();
     copyright.innerHTML = `&copy; 2013-${currentYear} <del>Mew151</del> <strong><ins>${generateUsername(
-      true
+      true,
     )}</ins></strong> all kawaiis belong to their rightful owners`;
   }
 });
+
+(window as any).unixMessages = {
+  catclock: ["Apparently I am " + generateUsername()],
+  xeyes: ["I got " + generateUsername()],
+  biblical: ["WE GOT " + generateUsername().toLocaleUpperCase()],
+  cowsay: ["I've added " + generateUsername() + " to the sudoers group."],
+  allowFallback: false,
+};

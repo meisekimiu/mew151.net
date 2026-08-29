@@ -21,25 +21,26 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   const navigation = [
     {
-      name: "Main Website",
+      name: "~mew151.net/",
+      icon: "/img/nav/motif/folder_home.png",
       items: [
         {
-          icon: "/img/nav/msie1-1.png",
+          icon: "/img/nav/motif/penguin.png",
           name: "Homepage",
           link: "/index.html",
         },
         {
-          icon: "/img/nav/monitor_moon.png",
+          icon: "/img/nav/motif/generic-pc.png",
           name: "About",
           link: "/about.html",
         },
         {
-          icon: "/img/nav/journal.png",
+          icon: "/img/nav/motif/Palm-m500-icon.png",
           name: "Posts",
           link: "/journal.html",
         },
         {
-          icon: "/img/nav/html2-2.png",
+          icon: "/img/nav/motif/folder-download.png",
           name: "Shrines",
           link: "/shrines.html",
         },
@@ -54,29 +55,30 @@ document.addEventListener("DOMContentLoaded", () => {
           link: "/accordion",
         },
         {
-          icon: "/img/nav/console_prompt-0.png",
+          icon: "/img/nav/motif/terminal.png",
           name: "Cyberspace",
           link: "/cyber",
         },
         {
-          icon: "/img/nav/recycle_bin_full-0.png",
+          icon: "/img/nav/motif/Cartoon_Disk_Pink_1_32x32x8.png",
           name: "Random Stuff",
           link: "/random",
         },
         {
-          icon: "/img/nav/connected_world-0.png",
+          icon: "/img/nav/motif/applications-internet.png",
           name: "Links",
           link: "/links.html",
         },
         {
-          icon: "/img/nav/help_book_cool-4.png",
+          icon: "/img/nav/motif/edit-find.png",
           name: "Sitemap",
           link: "/sitemap.html",
         },
       ],
     },
     {
-      name: "Sub-Sites",
+      name: "sub-sites/",
+      icon: "/img/nav/motif/folder.png",
       items: [
         {
           icon: "/img/nav/eve.png",
@@ -89,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
           link: "/subsite/hac.html",
         },
         {
-          icon: "/img/nav/joystick_alt-0.png",
+          icon: "/img/nav/motif/GameBoy_3_1_32x32x8.png",
           name: "Natalie's Gamez Archive",
           link: "/subsite/games.html",
         },
@@ -101,10 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
     },
     {
-      name: "Find Me Elsewhere",
+      name: "external-links/",
+      icon: "/img/nav/motif/folder_html.png",
       items: [
         {
-          icon: "/img/nav/joystick-4.png",
+          icon: "/img/nav/motif/Gravis-Joystick-icon.png",
           name: "Itch.io",
           link: "https://meisekimiu.itch.io",
         },
@@ -125,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (const section of navigation) {
       const header = document.createElement("div");
       header.className = "navigation-header";
-      header.innerHTML = `<strong>${section.name}</strong><hr />`;
+      header.innerHTML = `<strong>${section.name}</strong>`;
       if (!skipLinkAdded) {
         addSkipLink(header.firstElementChild);
         skipLinkAdded = true;

@@ -29,6 +29,7 @@
   padding: 0.75em;
   text-align: center;
   width: 200px;
+  word-wrap: break-word;
 }
 
 .message:after {
@@ -62,4 +63,10 @@
 .message-container.catclock-message-container {
   top: 84px;
   left: 140px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .message {
+    width: 100px;
+  }
 }
