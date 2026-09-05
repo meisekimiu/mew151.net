@@ -1,0 +1,70 @@
+body {background: #000000; color: #ffffff; font-family: arial;}
+p,h1,h2,h3,h4,h5,h6,b,i,u,sup,sub,pre,code,var,ul,li,ol,label {color: white; font-family: arial;}
+a:link {color: white; font-family: arial;}
+a:visited {color: white; font-family: arial;}
+a:hover {color: white; font-family: arial;}
+a:active {color: white; font-family: arial;}
+p:first-letter {color: #ff0000; font-size:xx-large;}
+h1,h2,h3,h4,h5,h6 {text-align: center;} 
+h1.strange,h2.strange,h3.strange,h4.strange,h5.strange,h6.strange {text-align: left;} 
+h1.stranger,h2.stranger,h3.stranger,h4.stranger,h5.stranger,h6.stranger {text-align: right;}
+.center {text-align: center;}
+p.regular:first-letter {color: white; font-size:8;}
+#footer img.mew_left {float: left;}
+#footer img.mew_right {float: right;}
+#footer img.mew_left:hover {opacity: .7; filter:alpha(opacity=70);}
+#footer img.mew_right:hover {opacity: .7; filter:alpha(opacity=70);}
+#footer {text-align: center; clear: both; padding: 5px; border: 1px solid white;}
+#footer p.small {font-size: xx-small;}
+#footer p.small:first-letter {color: white; font-size: xx-small;}
+#container {align:center; padding: 10px; border: 2px dotted white; margin: 2px;}
+#container h2 {float: left; background-color: #aaaaaa;}
+#back {padding: 10px; text-align: center;}
+#back a:hover,b:hover {background-color: #101010; filter:glow(color=#FFFFFFF, strength=8);}
+#navigation {float: left; padding: 20px; border: 2px 0px double #ffffef; margin-right: 10px; background: transparent;}
+#navigation a {font-family: arial;}
+#navigation a:link {text-decoration: none; font-weight: normal;}
+#navigation a:visited {color: #ffffff; text-decoration: none;}
+#navigation a:hover {color: #ff0000; text-decoration: underline;}
+#navigation a:active {color: #000000; text-decoration: none;}
+#navigation h3 {text-align: left;}
+#navigation ul {list-style-type: none;}
+.regular {color: white; font-family: arial;}
+#content {position: relative; width: 580px; border: solid #ffffff; border-width: 1px 3px; margin: 1px;}
+#related {float: right; padding: 20px; border: 2px 0px double #ffffef; margin: 10px; background: #09090d;}
+#related ul {list-style-type: none;}
+#related a {font-family: arial;}
+#related a:link {text-decoration: none; font-weight: normal;}
+#related a:visited {color: #ff0000; text-decoration: none;}
+#related a:hover {color: #ff0000; text-decoration: underline;}
+#related a:active {color: #000000; text-decoration: none;}
+#related h3 {text-align: left;}
+.quote {float: left; padding: 10px; margin: 5px;}
+.hr {padding: 3px; border-bottom: 2px double #ffffff; margin 10px;}
+input.black {background-color: black; font-color: #10ff10; padding: 0px; border: 1px  solid white;}
+.code {padding: 5px; border: 2px double #ffffff; background: #111511; margin-bottom: 10px; margin-left: 5px; margin-right: 5px; font-color: #ffffff;}
+.code .code_header {color: #ffeeee; font-size: 1.3em;}
+#site_navigation {padding: 5px; border: 2px solid #fffffe; background: transparent;}
+.description {display: none;}
+.newlayout {background: #ffffff url(http://www.freewebs.com/mew151-/MewPKMN.png) no-repeat top left fixed;}
+#navigation .new {margin-left: 150px; border: 2px solid #ffffff;}
+#navigation2 {float: right; background: transparent; border: 2px double #ffffef; margin-left: 10px; background: transparent;}
+#navigation2 a {font-family: arial;}
+#navigation2 a:link {text-decoration: none; font-weight: normal;}
+#navigation2 a:visited {color: #ffffff; text-decoration: none;}
+#navigation2 a:hover {color: #ff0000; text-decoration: underline;}
+#navigation2 a:active {color: #000000; text-decoration: none;}
+#navigation2 h3 {text-align: left;}
+#navigation2 ul {list-style-type: none;}
+ul.nodisplay {list-style-type: none;}
+.header {background: #101010; text-align: center; font-weight: bold; font-size: 1.5em; padding: 5px; border: 2px solid #ffffff; display: block; font-family: arial;}
+.blackbox {background-color: #000000; color: #00cc00; border: 1px solid #00ff00;}
+li.red {color: #ff0000;}
+li.red span {color: #ffffff;}
+li.blue {color: #0000ff;}
+li.blue span {color: #ffffff;}
+li.green {color: #00ff00;}
+li.green span {color: #ffffff;}
+.container {align:center; padding: 10px; border: 2px dotted white; margin: 2px;}
+li.yellow {color: #ffff00;}
+li.yellow span {color: #ffffff;}

@@ -1,0 +1,2 @@
+/* This file was compiled from Sass. You can view the original un-minified source code here: https://www.github.com/meisekimiu/mew151.net/tree/main/src/history/iframe.scss */
+.iframe-container{width:50%;aspect-ratio:4/3;margin:0 auto;position:relative}.web-snapshot{aspect-ratio:4/3;width:200%;transform:scale(0.5);transform-origin:0 0;position:absolute;top:0;left:0}.caption{margin-top:.25ex;font-style:italic;text-align:center;margin-bottom:.5em}.history-linkz a{font-size:2em;display:block;margin:4px auto;text-align:center}

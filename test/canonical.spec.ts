@@ -9,6 +9,7 @@ const skipFiles = [
   "src/ai/index.html",
   /^src\/blog/,
   /^src\/portfolio/,
+  /^src\/history\/archive/,
 ];
 
 const htmlFiles = globSync("src/**/*.html").filter(
