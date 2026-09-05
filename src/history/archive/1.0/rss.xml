@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rss version="2.0">
+  <channel>
+    <title>Mew151.net</title>
+    <link>https://mew151.net</link>
+    <description>Natalie's Personal Website</description>
+    <language>en-us</language>
+    <copyright>2009-2026 Natalie Martin</copyright>
+    <webMaster>webmaster@mew151.net</webMaster>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <ttl>180</ttl>
+    <pubDate>Thu, 27 Aug 2026 00:58:17 +0000</pubDate>
+    <lastBuildDate>Sat, 06 Jun 2026 01:51:59 +0000</lastBuildDate>
+    <generator>Feedmake v0.3.0 (https://github.com/meisekimiu/feedmake)</generator>
+    <item>
+      <title>Journal page fixed!</title>
+      <guid isPermaLink="false">9dc1fa8d21f08bf1f1d2da5838532968e31fc4b9</guid>
+      <pubDate>Sat, 06 Jun 2026 01:51:59 +0000</pubDate>
+      <description><![CDATA[<p>My fediverse instance changed softwares a few months back, and as a
+result the &quot;Journal&quot; page on my site that mirrored its feed was broken.
+I finally got around to fixing it so it gets the new feed now. Yay!</p>]]></description>
+    </item>
+    <item>
+      <title>Overhauling My Journal</title>
+      <guid isPermaLink="false">e0e3889dd8b8d0a8ee055163c72081143c6a6291</guid>
+      <pubDate>Sat, 28 Feb 2026 19:41:30 +0000</pubDate>
+      <description><![CDATA[<p>When I started this website, I added a self-hosted little microblog to
+the page as a way to still have a &quot;feed&quot; to post to without having to
+rely on a mainstream, centralized social media platform. It was a fun
+experiment, but soon after I started it, I joined the Fediverse and
+eventually started self-hosting my own social account. At that point,
+the &quot;journal&quot; section of this site kind of became redundant and
+abandoned.</p>
+<p>For a long time, I've been wanting to replace it with something else and
+well, I finally got around to it! I'm now mirroring some of my latest
+fediverse posts onto the new &quot;Posts&quot; page, repurposed from the previous
+&quot;Journal&quot; page. And for those who are going to miss my backlog of twtxt
+bangers, the old journal page is still up and linked to from the new
+one!</p>]]></description>
+    </item>
+    <item>
+      <title>Residents Iceberg Article</title>
+      <guid isPermaLink="false">b568c7640e26e12c565e93a69f52854ac7312489</guid>
+      <pubDate>Wed, 25 Feb 2026 22:52:59 +0000</pubDate>
+      <description><![CDATA[<p>I've added a <a href="/shrines/rz/articles/iceberg">new article</a> to my Residents
+Shrine all about exploring a funny &quot;iceberg chart&quot; meme I made years
+ago. It took a long time to write up, so I recommend you check it out if
+you're into that sort of thing.</p>]]></description>
+    </item>
+    <item>
+      <title>Kid Pilot Write-Up</title>
+      <guid isPermaLink="false">c5460d2335aef3a411fedbf697dbedcd8d46d1ff</guid>
+      <pubDate>Sun, 26 Oct 2025 08:03:59 +0000</pubDate>
+      <description><![CDATA[<p>Here's an article I've been wanting to write up and post to this site
+since I've started it: <a href="/cyber/kid-pilot.html">Uncovering Kid Pilot's 20 Year Old Easter
+Egg</a></p>
+<p>This is probably one of my favorite things I've written up for my site
+so far, so I hope you take a look! And look forward to more new things
+coming soon!</p>]]></description>
+    </item>
+    <item>
+      <title>HTML Day 2025: New Lucid Dreaming Page!</title>
+      <guid isPermaLink="false">58c20846fc88afcf4f59067c28efcf4ec2115107</guid>
+      <pubDate>Sat, 02 Aug 2025 23:51:28 +0000</pubDate>
+      <description><![CDATA[<p>Happy <a href="https://html.energy/html-day/2025/">HTML Day</a>! I've been pretty
+busy lately, but I've decided to add a small page to my site at the very
+least to celebrate the occasion. Check out the new <a href="random/web1_lucid.html">Lucid
+Dreaming</a> page I made. :)</p>]]></description>
+    </item>
+    <item>
+      <title>Shrine Construction, Part 2: Welcome to RESIDENTS WORLD!!</title>
+      <guid isPermaLink="false">a7c50a880ee76f555d143317667177128ed6ce3e</guid>
+      <pubDate>Wed, 12 Jul 2023 03:11:05 +0000</pubDate>
+      <description><![CDATA[<p>The shrines section of my site has been pretty much dead since I started
+working on the Pretty Rhythm shrine over a year ago. Well, I haven't
+really made any progress on the Pretty Rhythm shrine, but instead I've
+opened up a new shrine: RESIDENTS WORLD!</p>
+<p>This shrine is dedicated to my favorite band of all time, The Residents.
+And unlike the Pretty Rhythm shrine, it's actually already open and in
+an explorable state. That being said, I have plenty of more updates
+planned for Residents World, so check back often!</p>]]></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Motif/2.0 - Site History - Mew151.net</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natalie" />
+    <meta
+      name="description"
+      content="I recognize Mew151.net! It's a UNIX system!"
+    />
+    <link rel="stylesheet" type="text/css" href="../style/mew.css?v2" />
+    <link rel="alternate" type="application+rss/xml" href="/rss.xml" />
+    <link rel="me" href="https://github.com/meisekimiu" />
+    <link rel="me" href="https://prismst.one/users/natalie" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link rel="canonical" href="https://www.mew151.net/history/motif.html" />
+    <link rel="webmention" href="https://webmention.io/mew151.net/webmention" />
+    <link rel="pingback" href="https://webmention.io/mew151.net/xmlrpc" />
+    <script src="../style/autostyle.js?v2" type="text/javascript"></script>
+    <script src="../script/nav.js?v2" type="text/javascript"></script>
+    <script src="../components/mew151-x-random.js" type="module"></script>
+    <link rel="stylesheet" href="iframe.css" type="text/css" />
+    <style type="text/css"></style>
+  </head>
+  <body>
+    <div class="window nav-window">
+      <div class="inner-window">
+        <div class="window-bar">
+          <div class="window-title"><span>/home/mew151</span></div>
+        </div>
+        <div class="window-content">
+          <nav class="explorer">
+            <iframe
+              title="Site Navigation"
+              src="/nav-fallback.html"
+              style="width: 100%; height: 100%"
+            ></iframe>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="window main-window">
+      <div class="inner-window">
+        <div class="window-bar">
+          <div class="window-title">
+            <span>Motif/2.0 - Site History</span>
+          </div>
+        </div>
+        <div class="window-content">
+          <main
+            id="main"
+            class="light"
+            style="background: #ffdada; color: #250025"
+          >
+            <h1 style="text-align: center">Motif/2.0 - Site History</h1>
+            <p>
+              Welcome to the current iteration of this site! Heavily based on
+              the <a href="1-0.html">Windows 95 theme</a> from the site's
+              launch, I've given the main design a new coat of paint inspired by
+              early UNIX desktop environments running on the
+              <a href="https://en.wikipedia.org/wiki/X_Window_System"
+                >X Window System.</a
+              >
+            </p>
+            <p>
+              I've kept the navigation/content window layout pretty much exactly
+              the same, so the overall look and feel of the website's not
+              changed too much besides the framing aesthetics. The navigation
+              window's icons have mostly been replaced, sourced from a wider
+              diversity of older OS icons. Most content pages have remained
+              exactly the same, though I have touched up a few pages for this
+              redesign.
+            </p>
+            <p>
+              The windows teal has been replaced with a stylized version of
+              <a
+                href="https://matttproud.com/blog/posts/x-window-system-boot-stipple.html"
+                >The X Window System's Root Weave</a
+              >, as well as the sunrise/sunset and night mode backgrounds. I
+              think this overall gives everything a cozier retro feel (well,
+              dated X graphics look cozy to me anyway) and makes the color
+              palette of the site slightly more cohesive.
+            </p>
+            <p>
+              One of the bigger additions that's hard to miss is the addition of
+              various UNIX desktop toys in the previously empty bottom left
+              corner of the screen. When I came up with the idea of old UNIX
+              graphical theming, I <em>knew</em> I wanted to add something like
+              <kbd>xeyes</kbd> to the site to fill up that empty corner.
+            </p>
+            <p>
+              I settled on three specific decorations that could be randomly
+              selected for each page:
+              <a href="https://github.com/barkythedog/catclock">xclock,</a>
+              <a
+                href="https://xorg.freedesktop.org/archive/X11R7.5/doc/man/man1/xeyes.1.html"
+                >xeyes,</a
+              >
+              and a terminal window that represents both
+              <a href="https://en.wikipedia.org/wiki/Cowsay">cowsay</a> and
+              <a href="https://en.wikipedia.org/wiki/Fortune_(Unix)"
+                >fortune.</a
+              >
+              Porting all of these utilities over to JavaScript was a fun side
+              project though it was definitely one of the more time-consuming
+              parts of this whole redesign. Some of the C code I was using as
+              reference was decades old and wasn't exactly in the best
+              condition.
+            </p>
+            <p>
+              And yes, I ported over <kbd>xeyes</kbd> and <kbd>xclock</kbd> to
+              JavaScript by myself! I strove to make these pretty accurate
+              ports, so as an easter egg I've also supported the
+              <kbd>biblicallyAccurate</kbd> mode of xeyes as well. I've also
+              added a few additional features to both, like adding keyboard
+              accessibility to <kbd>xeyes</kbd> and adding some easter eggs to
+              both programs. I did end up using a
+              <a href="https://www.npmjs.com/package/cowsay"
+                >pre-existing port of cowsay</a
+              >
+              instead though.
+            </p>
+            <p>
+              At some point during the process, I liked the idea of having these
+              "little guys" on my site, having funny little comments to add to
+              each page. So while they have a random pool of general things
+              they'll say, there are unique things they'll also say on every
+              specific page of this site!
+            </p>
+            <div class="history-linkz">
+              <a href="index.html">Back to Site History</a>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+    <div class="toy-zone">
+      <div class="window toy-window" id="toy-app-window">
+        <div class="inner-window">
+          <div class="window-bar">
+            <div class="window-title"><span id="toy-app-name">xeyes</span></div>
+          </div>
+          <div class="window-content">
+            <mew151-x-random tie-color="rainbow"></mew151-x-random>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        window.unixMessages = {
+          catclock: ["Finally, it's time to talk about me!"],
+          xeyes: ["xeyes mentioned!!!"],
+          biblical: ["WE ARE MENTIONED!"],
+          cowsay: [
+            "Normally I'm the one talking about her so it's weird that she's talking about me.",
+          ],
+          allowFallback: false,
+        };
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,7 +1,12 @@
 import { globSync } from "glob";
 import { getPage } from "./util/getPage";
 
-const htmlFiles = globSync("src/**/*.html");
+const skipFiles = [/src\/history\/archive/];
+
+const htmlFiles = globSync("src/**/*.html").filter(
+  (file) =>
+    !skipFiles.reduce((result, skip) => result || !!file.match(skip), false),
+);
 
 describe("Accessibility", () => {
   test.each(htmlFiles)(
