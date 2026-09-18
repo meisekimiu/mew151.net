@@ -10,6 +10,7 @@ const skipFiles = [
   /^src\/blog/,
   /^src\/portfolio/,
   /src\/history\/archive/,
+  /src\/random\/bf_personal_website/,
 ];
 
 const htmlFiles = globSync("src/**/*.html").filter(

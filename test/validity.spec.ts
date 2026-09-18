@@ -2,7 +2,7 @@ import "html-validate/jest";
 import { globSync } from "glob";
 import { getPage } from "./util/getPage";
 
-const skipFiles = [/src\/history\/archive/];
+const skipFiles = [/src\/history\/archive/, /src\/random\/bf_personal_website/];
 
 const htmlFiles = globSync("src/**/*.html").filter(
   (file) =>

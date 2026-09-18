@@ -411,6 +411,11 @@ hr {
   margin: 2px;
 }
 
+// Why did I not have this until 2026?
+.center {
+  text-align: center;
+}
+
 a.inactive {
   &:hover {
     filter: saturate(100%);
