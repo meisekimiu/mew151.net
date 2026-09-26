@@ -1,6 +1,6 @@
 #!/bin/bash
 cd "$(dirname "$0")"
-GMI=$(find ../../src | grep '\.html' | grep -v "src/portfolio/" | grep -v "src/shrines/" | grep -v "style/" | grep -v "script/" | grep -v "src/subsite/" | grep -v "src/random/" | grep -v "src/img/" | grep -v "src/blog/")
+GMI=$(find ../../src | grep '\.html' | grep -v "src/portfolio/" | grep -v "src/shrines/" | grep -v "style/" | grep -v "script/" | grep -v "src/subsite/" | grep -v "src/random/" | grep -v "src/img/" | grep -v "src/blog/" | grep -v "src/history" | grep -v "src/ai")
 rm -rf build
 mkdir build
 while IFS= read -r i; do
