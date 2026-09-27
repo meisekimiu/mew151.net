@@ -1,6 +1,6 @@
 # About
 
-Welcome to the text version of my site! While my main website (https://mew151.net) is the main space that I want to represent my internet presence in, I understand that some people don't really like the idea of distracting images, goofy layouts trying to look like old Windows UIs, and (harmless, I swear!) JavaScript code running in the background while they load each new page.
+Welcome to the text version of my site! While my main website (https://www.mew151.net) is the main space that I want to represent my internet presence in, I understand that some people don't really like the idea of distracting images, goofy layouts trying to look like old UNIX UIs, and (harmless, I swear!) JavaScript code running in the background while they load each new page.
 
 While I like all the weird web-core stuff I have going on in my website, I also like the idea of the low-tech, text-based internet protocols like Gemini and Gopher. I too think the internet is bloated, and setting up a presence on these alternate protocols sounds super fun! So that is what I've done here. Hope you enjoy! This site is mostly an abridged version of my main website, lacking a lot of pages that really only work on the web. But I think I'm going to post some exclusive content here just for the fun of it!
 

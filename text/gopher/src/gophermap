@@ -10,6 +10,7 @@ iWelcome to Natalie's Gopher space!
 0About	about.txt
 1Natalie's Accordion Corner	accordion
 1Cyberspace	cyber
+1Media Log	medialog
 1Phlog	phlog
 1Antimoon	antimoon
 
@@ -25,3 +26,6 @@ i-----
 iThis service is powered by Motsognir.
 hMotsognir: Motsognir - a robust, reliable and easy to install gopher server	URL:http://motsognir.sourceforge.net/
 iGopher? I hardly know her!
+
+i...
+1Chipotle	chipotle

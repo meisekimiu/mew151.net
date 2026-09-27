@@ -53,7 +53,7 @@ jobs:
           strip_components: 3
           overwrite:
 
-      - name: 🧾🌌 Deploy HTML to text.mew151.net
+      - name: 🧾🌌 Deploy WWW landing page
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.GMI_HOST }}

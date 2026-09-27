@@ -11,6 +11,7 @@ Welcome to Natalie's Gemini capsule
 => about.gmi About
 => accordion Natalie's Accordion Corner
 => cyber Cyberspace
+=> medialog Media Log
 => gemlog Gemlog
 => antimoon Antimoon
 
@@ -26,3 +27,6 @@ And the World Wide Web:
 -----
 This service is powered by Agate
 => gemini://qwertqwefsday.eu/agate.gmi Agate: Simple Gemini server for static files
+
+...
+=> chipotle Chipotle
