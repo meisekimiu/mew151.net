@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mew151.net - Media Log</title>
+    <link>https://www.mew151.net/medialog/index.html</link>
+    <atom:link href="https://www.mew151.net/medialog/medialog.xml" rel="self" type="application/rss+xml" />
+    <description>Media Log from Mew151.net</description>
+    <language>en-us</language>
+    <copyright>2026 Natalie Martin</copyright>
+    <webMaster>webmaster@mew151.net (Natalie)</webMaster>
+    <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <ttl>180</ttl>
+    <pubDate>Sun, 27 Sep 2026 13:40:32 -0500</pubDate>
+    <item>
+      <title>Trip World DX (Nintendo Switch)</title>
+      <pubDate>Sun, 27 Sep 2026 13:40:32 -0500</pubDate>
+      <link>https://www.mew151.net/medialog/log/tripworld-dx.html</link>
+      <guid isPermaLink="true">https://www.mew151.net/medialog/log/tripworld-dx.html</guid>
+      <description>A review of Trip World DX on the Nintendo Switch.</description>
+    </item>
+  </channel>
+</rss>

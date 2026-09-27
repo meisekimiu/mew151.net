@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>[MEDIA NAME] - Media Log - Mew151.net</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natalie" />
+    <meta
+      name="description"
+      content="A review of [MEDIA NAME]"
+    />
+    <link rel="stylesheet" type="text/css" href="../../style/mew.css?v2" />
+    <link
+      rel="alternate"
+      type="application+rss/xml"
+      href="/rss.xml"
+      title="Mew151.net Main Feed"
+    />
+    <link
+      rel="alternate"
+      type="application+rss/xml"
+      href="../medialog.xml"
+      title="Mew151.net Media Log Feed"
+    />
+    <link rel="me" href="https://github.com/meisekimiu" />
+    <link rel="me" href="https://prismst.one/users/natalie" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link
+      rel="canonical"
+      href="https://www.mew151.net/medialog/log/[FILENAME]"
+    />
+    <link rel="webmention" href="https://webmention.io/mew151.net/webmention" />
+    <link rel="pingback" href="https://webmention.io/mew151.net/xmlrpc" />
+    <script src="../../style/autostyle.js?v2" type="text/javascript"></script>
+    <script src="../../script/nav.js?v2" type="text/javascript"></script>
+    <script src="../../components/mew151-x-random.js" type="module"></script>
+  </head>
+  <body>
+    <div class="window nav-window">
+      <div class="inner-window">
+        <div class="window-bar">
+          <div class="window-title"><span>/home/mew151</span></div>
+        </div>
+        <div class="window-content">
+          <nav class="explorer">
+            <iframe
+              title="Site Navigation"
+              src="/nav-fallback.html"
+              style="width: 100%; height: 100%"
+            ></iframe>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="window main-window">
+      <div class="inner-window">
+        <div class="window-bar">
+          <div class="window-title">
+            <span>[MEDIA NAME]</span>
+          </div>
+        </div>
+        <div class="window-content">
+          <main
+            id="main"
+            style="background: url(&quot;../5002.png&quot;) #000; color: #fff"
+          >
+            <h1 class="center">[MEDIA NAME]</h1>
+            <a class="back-to" href="..">Back to Media Log</a>
+          </main>
+        </div>
+      </div>
+    </div>
+    <div class="toy-zone">
+      <div class="window toy-window" id="toy-app-window">
+        <div class="inner-window">
+          <div class="window-bar">
+            <div class="window-title"><span id="toy-app-name">xeyes</span></div>
+          </div>
+          <div class="window-content">
+            <mew151-x-random></mew151-x-random>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        window.unixMessages = {
+          catclock: ["In medias res"],
+          xeyes: ["Perfect 5/7"],
+          biblical: ["WE RECOMMEND SOMETHING MORE... BIBLICAL"],
+          cowsay: ["What, no man page reviews?"],
+          allowFallback: true,
+        };
+      </script>
+    </div>
+  </body>
+</html>

@@ -416,6 +416,13 @@ hr {
   text-align: center;
 }
 
+.back-to {
+  text-align: center;
+  font-size: 2em;
+  display: block;
+  margin: 0 auto;
+}
+
 a.inactive {
   &:hover {
     filter: saturate(100%);
