@@ -1,0 +1,12 @@
+# ... And We're Back
+Posted 2026-09-27
+
+Earlier this year, around March of 2026, I had an issue with the server I was hosting my Gemini/Gopher sites from and it had to be wiped. During this time I was also doing some serious maintenance of my WWW site, so I put these text-only sites on the backburner until I had time do some sysadmin-ing to fix everything.
+
+And well... today's the day! Previously I was actually hosting these sites on the exact same server as my fediverse instance, and when that tanked I had my fediverse account AND text services all go down at once. It was probably a bad idea, but I thought it would be fine to host these weirdo text services on a server I was already using for other stuff.
+
+Well NOW I have everything set up so these text services are on their own tiny little server. For now it's through a VPS host, but I think in the future it'd be neat to self host this stuff on an actual physical machine. These services don't require too much juice, so it'd be fun (and actually a bit less stressful?) to host these on an old laptop or other upcycled device.
+
+Lately I've been upping my doomscrolling. I uh... tend to doomscroll more during eras of political chaos. I've been trying to cut that habit by focusing on browsing more personal, deplatformed web content and focusing on playing video games or consuming other media. So maybe it's time to revisit Gemini and Gopher and actually finish the sections I initially made on my site.
+
+If you've got any cool Gemini/Gopher site suggestions, feel free to send them my way. My e-mail address is on the top-level page of this domain!
