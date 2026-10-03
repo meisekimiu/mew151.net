@@ -45,6 +45,19 @@ export namespace Components {
          */
         "items": IPrismStoneFeedItem[] | undefined;
     }
+    interface Mew151RssDateCalculator {
+        /**
+          * Allows us to force a timezone output for testing purposes.
+          * @default new Date().getTimezoneOffset()
+         */
+        "forcedTimezoneOffset": number;
+        /**
+          * Allows us to force a fixed 'current' date for testing purposes.
+          * @returns A factory function for providing a new date
+          * @default () => new Date()
+         */
+        "newDateProvider": () => Date;
+    }
     /**
      * A cat clock, based on xclock's cat display mode.
      */
@@ -136,6 +149,12 @@ declare global {
         prototype: HTMLMew151PrismstoneFeedElement;
         new (): HTMLMew151PrismstoneFeedElement;
     };
+    interface HTMLMew151RssDateCalculatorElement extends Components.Mew151RssDateCalculator, HTMLStencilElement {
+    }
+    var HTMLMew151RssDateCalculatorElement: {
+        prototype: HTMLMew151RssDateCalculatorElement;
+        new (): HTMLMew151RssDateCalculatorElement;
+    };
     /**
      * A cat clock, based on xclock's cat display mode.
      */
@@ -172,6 +191,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "mew151-mew": HTMLMew151MewElement;
         "mew151-prismstone-feed": HTMLMew151PrismstoneFeedElement;
+        "mew151-rss-date-calculator": HTMLMew151RssDateCalculatorElement;
         "mew151-x-catclock": HTMLMew151XCatclockElement;
         "mew151-x-cowsay": HTMLMew151XCowsayElement;
         "mew151-x-random": HTMLMew151XRandomElement;
@@ -213,6 +233,19 @@ declare namespace LocalJSX {
           * @default undefined
          */
         "items"?: IPrismStoneFeedItem[] | undefined;
+    }
+    interface Mew151RssDateCalculator {
+        /**
+          * Allows us to force a timezone output for testing purposes.
+          * @default new Date().getTimezoneOffset()
+         */
+        "forcedTimezoneOffset"?: number;
+        /**
+          * Allows us to force a fixed 'current' date for testing purposes.
+          * @returns A factory function for providing a new date
+          * @default () => new Date()
+         */
+        "newDateProvider"?: () => Date;
     }
     /**
      * A cat clock, based on xclock's cat display mode.
@@ -290,6 +323,9 @@ declare namespace LocalJSX {
         "src": string;
         "alt": string;
     }
+    interface Mew151RssDateCalculatorAttributes {
+        "forcedTimezoneOffset": number;
+    }
     interface Mew151XCatclockAttributes {
         "color": string;
     }
@@ -314,6 +350,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "mew151-mew": Omit<Mew151Mew, keyof Mew151MewAttributes> & { [K in keyof Mew151Mew & keyof Mew151MewAttributes]?: Mew151Mew[K] } & { [K in keyof Mew151Mew & keyof Mew151MewAttributes as `attr:${K}`]?: Mew151MewAttributes[K] } & { [K in keyof Mew151Mew & keyof Mew151MewAttributes as `prop:${K}`]?: Mew151Mew[K] };
         "mew151-prismstone-feed": Mew151PrismstoneFeed;
+        "mew151-rss-date-calculator": Omit<Mew151RssDateCalculator, keyof Mew151RssDateCalculatorAttributes> & { [K in keyof Mew151RssDateCalculator & keyof Mew151RssDateCalculatorAttributes]?: Mew151RssDateCalculator[K] } & { [K in keyof Mew151RssDateCalculator & keyof Mew151RssDateCalculatorAttributes as `attr:${K}`]?: Mew151RssDateCalculatorAttributes[K] } & { [K in keyof Mew151RssDateCalculator & keyof Mew151RssDateCalculatorAttributes as `prop:${K}`]?: Mew151RssDateCalculator[K] };
         "mew151-x-catclock": Omit<Mew151XCatclock, keyof Mew151XCatclockAttributes> & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes]?: Mew151XCatclock[K] } & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes as `attr:${K}`]?: Mew151XCatclockAttributes[K] } & { [K in keyof Mew151XCatclock & keyof Mew151XCatclockAttributes as `prop:${K}`]?: Mew151XCatclock[K] };
         "mew151-x-cowsay": Omit<Mew151XCowsay, keyof Mew151XCowsayAttributes> & { [K in keyof Mew151XCowsay & keyof Mew151XCowsayAttributes]?: Mew151XCowsay[K] } & { [K in keyof Mew151XCowsay & keyof Mew151XCowsayAttributes as `attr:${K}`]?: Mew151XCowsayAttributes[K] } & { [K in keyof Mew151XCowsay & keyof Mew151XCowsayAttributes as `prop:${K}`]?: Mew151XCowsay[K] };
         "mew151-x-random": Omit<Mew151XRandom, keyof Mew151XRandomAttributes> & { [K in keyof Mew151XRandom & keyof Mew151XRandomAttributes]?: Mew151XRandom[K] } & { [K in keyof Mew151XRandom & keyof Mew151XRandomAttributes as `attr:${K}`]?: Mew151XRandomAttributes[K] } & { [K in keyof Mew151XRandom & keyof Mew151XRandomAttributes as `prop:${K}`]?: Mew151XRandom[K] };
@@ -332,6 +369,7 @@ declare module "@stencil/core" {
              * Renders my fediverse feed fetched from an RSS feed.
              */
             "mew151-prismstone-feed": LocalJSX.IntrinsicElements["mew151-prismstone-feed"] & JSXBase.HTMLAttributes<HTMLMew151PrismstoneFeedElement>;
+            "mew151-rss-date-calculator": LocalJSX.IntrinsicElements["mew151-rss-date-calculator"] & JSXBase.HTMLAttributes<HTMLMew151RssDateCalculatorElement>;
             /**
              * A cat clock, based on xclock's cat display mode.
              */

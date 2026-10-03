@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.input-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.input-date {
+  flex-grow: 1;
+  margin-left: 1ex;
+  margin-right: 1ex;
+  font-size: 1em;
+}
+
+.current-date-button {
+  font-size: 1em;
+}
+
+.output {
+  border: 2px dashed #fff;
+  background-color: #fff3;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 1em;
+  text-align: center;
+}

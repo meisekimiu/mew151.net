@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>RSS Date Calculator - Mew151.net</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Natalie" />
+    <meta
+      name="description"
+      content="Convert dates to the annoying format that RSS uses"
+    />
+    <link rel="stylesheet" type="text/css" href="../style/mew.css?v2" />
+    <link rel="alternate" type="application+rss/xml" href="/rss.xml" />
+    <link rel="me" href="https://github.com/meisekimiu" />
+    <link rel="me" href="https://prismst.one/users/natalie" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
+    <link
+      rel="canonical"
+      href="https://www.mew151.net/cyber/rss-date-calculator.html"
+    />
+    <link rel="webmention" href="https://webmention.io/mew151.net/webmention" />
+    <link rel="pingback" href="https://webmention.io/mew151.net/xmlrpc" />
+    <script src="../style/autostyle.js?v2" type="text/javascript"></script>
+    <script src="../script/nav.js?v2" type="text/javascript"></script>
+    <script src="../components/mew151-x-random.js" type="module"></script>
+    <script
+      src="../components/mew151-rss-date-calculator.js"
+      type="module"
+    ></script>
+    <style type="text/css">
+      main a:link {
+        color: darkblue !important;
+      }
+      main a:visited {
+        color: #402080 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="window nav-window">
+      <div class="inner-window">
+        <div class="window-bar">
+          <div class="window-title"><span>/home/mew151</span></div>
+        </div>
+        <div class="window-content">
+          <nav class="explorer">
+            <iframe
+              title="Site Navigation"
+              src="/nav-fallback.html"
+              style="width: 100%; height: 100%"
+            ></iframe>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="window main-window">
+      <div class="inner-window">
+        <div class="window-bar">
+          <div class="window-title">
+            <span>RSS Date Format Calculator</span>
+          </div>
+        </div>
+        <div class="window-content">
+          <main
+            id="main"
+            style="
+              background: url(&quot;/img/backgrounds/thumb-reds-orange002.jpg&quot;);
+              color: #000;
+            "
+            class="light"
+            data-gmi-ignore
+          >
+            <h1
+              id="top"
+              class="center"
+              style="
+                border-bottom: 10px double #fff;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+              "
+            >
+              RSS Date Format Calculator
+            </h1>
+            <p>
+              One of the most annoying parts of hand-writing your own RSS feed
+              is that pesky
+              <a href="https://www.rfc-editor.org/info/rfc822/">RFC 822</a> date
+              format that you need for <kbd>pubDate</kbd> tags. I
+              <em>always</em> end up copying from a past item, and then just
+              changing the values. I guess this format is supposed to be
+              human-readable, but for some reason I always have difficulty
+              writing it, especially since I'll sometimes drop commas or end up
+              accidentally using a different date format instead.
+            </p>
+            <p>
+              I'm surprised even web search engines don't have an automatic
+              "what is the current RFC 822 date" function (besides the silly AI
+              tools which I don't trust to write out such a specific format).
+            </p>
+            <p>
+              So I thought what the heck, why not just make a little tool that
+              can generate proper date formats for my hand-written RSS feeds and
+              never have to worry about this again.
+            </p>
+            <hr style="border: none; border-bottom: 10px double #fff" />
+            <h2 class="center">The Calculator</h2>
+            <p>
+              Simply enter the date you want in YYYY-MM-DD format (with time
+              being optional) and it'll spit out a proper RFC 822 date in your
+              local timezone. Yippee! Or just click the "Set To Current Date"
+              button if you just want the current time.
+            </p>
+            <mew151-rss-date-calculator></mew151-rss-date-calculator>
+            <noscript
+              >You need JavaScript enabled in order to view this calculator.
+              Because you know... it relies on scripting to calculate the
+              date.</noscript
+            >
+            <br />
+            <br />
+            <a class="back-to" href="rss.html">Back to RSS</a>
+            <a class="back-to" href=".">Back to Cyberspace</a>
+          </main>
+        </div>
+      </div>
+    </div>
+    <div class="toy-zone">
+      <div class="window toy-window" id="toy-app-window">
+        <div class="inner-window">
+          <div class="window-bar">
+            <div class="window-title">
+              <span id="toy-app-name">xeyes</span>
+            </div>
+          </div>
+          <div class="window-content">
+            <mew151-x-random tie-color="#ea7819"></mew151-x-random>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript">
+        window.unixMessages = {
+          catclock: ["Well, I for one love all date formats!"],
+          xeyes: ["Would it kill you to use a date picker?"],
+          biblical: ["BLESSED IS THY RSS FEED"],
+          cowsay: [
+            "I think it's a skill issue. I could recite that date format in my sleep.",
+          ],
+          allowFallback: false,
+        };
+      </script>
+    </div>
+  </body>
+</html>
