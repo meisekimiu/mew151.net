@@ -26,14 +26,21 @@ export class Mew151RssDateCalculator {
 
   @State() private rfcDateString: string = '';
 
-  public componentDidLoad(): void {
+  public componentWillLoad(): void {
     this.useCurrentDate();
   }
 
   private onDateChange(target: EventTarget): void {
     const input = target as HTMLInputElement;
-    this.date = new Date(input.value);
+    this.date = new Date(this.addMidnightIfOnlyDate(input.value));
     this.updateDateString();
+  }
+
+  private addMidnightIfOnlyDate(dateString: string): string {
+    if (dateString.trim().match(/^\d{4}\-\d{1,2}\-\d{1,2}$/)) {
+      return dateString + ' 00:00:00';
+    }
+    return dateString;
   }
 
   private padNumber(num: number): string {

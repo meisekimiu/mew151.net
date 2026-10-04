@@ -60,4 +60,19 @@ describe('mew151-rss-date-calculator', () => {
 
     expect(output.textContent).toContain(`Sat, 03 Oct 2026 12:50:26 ${expected}`);
   });
+  it('adds 00:00:00 to the date if you do not include the time', async () => {
+    const { root, waitForChanges } = await render(<mew151-rss-date-calculator forced-timezone-offset={420}></mew151-rss-date-calculator>);
+
+    const { input, output } = getInputAndOutput(root);
+    input.value = '2026-10-04';
+    input.dispatchEvent(new Event('change'));
+    await waitForChanges();
+    const noTimeOutput = output.textContent;
+
+    input.value = '2026-10-04 00:00:00';
+    input.dispatchEvent(new Event('change'));
+    await waitForChanges();
+
+    expect(output.textContent).toBe(noTimeOutput);
+  });
 });
