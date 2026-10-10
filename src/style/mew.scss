@@ -631,6 +631,9 @@ figure {
   img,
   video {
     max-width: 50%;
+    @media screen and (max-width: 900px) {
+      max-width: 100%;
+    }
   }
 
   figcaption {
