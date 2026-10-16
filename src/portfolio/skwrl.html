@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>
+      Superkids World - Natalie Martin: Software Engineer &amp; Game Developer
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="Natalie Martin" />
+    <meta
+      name="description"
+      content="A core literacy game that reinforces early reading skills through independent play (read: minigames!)"
+    />
+    <meta
+      property="og:image"
+      content="https://nataliemartin.dev/img/skwrl_title.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="Natalie Martin: Software Engineer &amp; Game Developer"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <a class="theme-switcher">Switch Themes</a>
+    <div class="about-me">
+      <div class="name-bio">
+        <h1>Natalie Martin</h1>
+        <span class="pronouns">(she/her)</span>
+      </div>
+      <h2>
+        <span class="avoid-wrap">Software Engineer</span> and
+        <span class="avoid-wrap">Game Developer</span>
+      </h2>
+      <hr />
+    </div>
+    <div class="game-summary">
+      <h2 title="I guess I must be having fun">Superkids World</h2>
+      <div class="cover-gameinfo">
+        <img
+          src="img/skwrl_title.png"
+          alt="Superkids World"
+          title="oh my GOD it happened we have a professional game in here oh god"
+        />
+        <table class="gameinfo">
+          <thead>
+            <tr>
+              <td colspan="2">Game Info</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Name:</td>
+              <td>Superkids World</td>
+            </tr>
+            <tr>
+              <td>Year:</td>
+              <td>2026</td>
+            </tr>
+            <tr>
+              <td>Developed in:</td>
+              <td>TypeScript / Pixi.js</td>
+            </tr>
+            <tr>
+              <td>Created by:</td>
+              <td>Filament Games / Zaner Bloser</td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <a
+                  href="https://www.filamentgames.com/project/superkids-world"
+                  rel="noopener noreferrer"
+                  >Read More on Filament Games' Website</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        <em>Superkids World</em> is my first professional game project
+        <a
+          href="czp.html"
+          title="This game will haunt me forever (affectionate) (... actually wait, derogatory)"
+          >(except for that one time)</a
+        >. It is a literacy game for early learners designed to reinforce early
+        reading skills through independant play (read: minigames) and act as a
+        portal to classroom digital materials such as books, videos, and other
+        learning resources.
+      </p>
+
+      <div class="webm">
+        <video
+          src="webm/skwrl.webm"
+          loop="loop"
+          autoplay="autoplay"
+          muted="muted"
+          controls="controls"
+          title="I actually gasped when Golly the dog started talking in this clip because when I was on this project he did NOT talk."
+        >
+          Superkids World Video
+        </video>
+      </div>
+      <h3>Technologies</h3>
+      <ul>
+        <li>
+          <strong>Programmed in:</strong>
+          <span
+            title="So hang on. I did all that C++ practice so I could get a job in TypeScript?!?! Okay."
+            >TypeScript</span
+          >
+        </li>
+        <li>
+          <span
+            title="Extreme Tax Masters ended up being so important to my career after all. I don't know how I feel about that."
+            >Pixi.js</span
+          >
+        </li>
+        <li>
+          <span title="Game devs of the world, untie!">Unity</span>
+          <small
+            >(How exactly Unity factored into our workflows will remain an
+            exercise for the reader)</small
+          >
+        </li>
+        <li>
+          <span
+            title="Okay so technically us Filament folks didn't really write much if any Angular but I just think it's kind of cosmically funny to put Angular on my portfolio, okay?"
+            >Angular</span
+          >
+        </li>
+      </ul>
+      <h3>Roles and Development</h3>
+      <p>
+        This game was a professional project as part of my employment at
+        Filament Games. The game was developed by Filament Games for Zaner
+        Bloser for their
+        <a
+          href="https://www.zaner-bloser.com/reading/superkids-reading-program/index"
+          rel="noopener noreferrer"
+          >Superkids Reading Program 2026.</a
+        >
+        I joined the project in April 2025 as an engineer working in TypeScript
+        and I worked on it until it shipped in 2026. I was one of 2 or 3
+        engineers working on this project.
+      </p>
+
+      <p>
+        Most game content was designed by Zaner Bloser, and served up with their
+        API. The game client, made by Filament Games, uses the API to display
+        game contents and persist data between sessions.
+      </p>
+
+      <p>
+        Because the Superkids Reading Program is designed to be used in schools,
+        it legally must be compliant with accessibility guidelines. So
+        <em>Superkids World</em> passes WCAG compliance checks and fully
+        playable with a screenreader, with captions support, and various other
+        accessiblity settings.
+      </p>
+
+      <p>
+        This game was the first time I really covered a good chunk of the
+        codebase with automated tests (with a peak of around 40% test coverage).
+        And it was successful! I found that it actually saved us from disaster a
+        few times, especially in a few areas which had some tricky edge cases
+        that we were able to safely navigate around without creating
+        regressions.
+      </p>
+
+      <p>
+        While the game is segmented into different sections, I pretty much got
+        my fingerprints on every part of the game by the end of the project. But
+        there was one minigame that I had main responsibility on. I ended up
+        creating a novel technical solution for the
+        <em>Text Evidence</em> reading comprehension minigame and I was able to
+        cover it completely with automated tests from the start.
+      </p>
+
+      <h3>Image Gallery</h3>
+      <div class="gallery">
+        <a href="img/skwrl_title.png" target="_blank">
+          <img
+            src="img/skwrl_title.png"
+            alt="Superkids World Title Screen"
+            title="I think we realized in one of the last development sprints that we forgot we needed a title screen lol"
+          />
+        </a>
+        <a href="img/skwrl_town.png" target="_blank">
+          <img
+            src="img/skwrl_town.png"
+            alt="Superkids World Town"
+            title="In my restless dreams I see that town..."
+          />
+        </a>
+        <a href="img/skwrl_dialogue.png" target="_blank">
+          <img
+            src="img/skwrl_dialogue.png"
+            alt="Superkids World Dialogue"
+            title="I know all these Superkids characters so well they feel like my children a little"
+          />
+        </a>
+        <a href="img/skwrl_multiplechoice.png" target="_blank">
+          <img
+            src="img/skwrl_multiplechoice.png"
+            alt="Superkids World Multiple Choice Game"
+            title="This feels like some kind of rebus puzzle"
+          />
+        </a>
+        <a href="img/skwrl_buckets.png" target="_blank">
+          <img
+            src="img/skwrl_buckets.png"
+            alt="Superkids World Buckets Game"
+            title="Sorting things into buckets? Wrong! Octopus tentacles."
+          />
+        </a>
+      </div>
+      <br /><br />
+      <a href="." class="back-to-homepage">Back to main page</a>
+    </div>
+  </body>
+</html>

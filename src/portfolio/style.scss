@@ -75,7 +75,9 @@ $underline-muffins: darken($bgcolor-muffins, 50%);
 }
 
 .transition {
-  transition: color 0.5s, background-color 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
 }
 
 %header {
@@ -89,8 +91,18 @@ $underline-muffins: darken($bgcolor-muffins, 50%);
 body {
   font-family: "Source Serif Pro", "Times New Roman", Times, serif;
   font-size: 1.35rem;
-  color: var(--fgcolor);
-  background-color: var(--bgcolor);
+  &.dark {
+    color: $fgcolor-dark;
+    background-color: $bgcolor-dark;
+  }
+  &.light {
+    color: $fgcolor-light;
+    background-color: $bgcolor-light;
+  }
+  &.muffins {
+    color: $fgcolor-muffins;
+    background-color: $bgcolor-muffins;
+  }
 
   @include printed() {
     color: #000 !important;
@@ -214,7 +226,9 @@ a {
       margin: 0 auto;
       max-width: 315px;
       width: 100%;
-      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+      transition:
+        opacity 0.3s ease-out,
+        transform 0.3s ease-out;
     }
     a {
       &:hover,
